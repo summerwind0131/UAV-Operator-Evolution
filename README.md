@@ -95,7 +95,8 @@ J(x) = 1.0 L(x) + 1000.0 C(x) + 5.0 S(x) + 10.0 R(x) + 0.5 N(x)
 
 | 模块 | 职责 |
 | --- | --- |
-| `operator_evolution_core/contracts/` | 实验性通用实例身份与目标评价契约；不依赖 UAV 实现 |
+| `operator_evolution_core/contracts/` | 实验性实例/评价模型与可组合 DomainAdapter 协议；不依赖 UAV 实现 |
+| `domain/` | UAV 实例/评价纯转换及初始化、评价、特征、codec、guard、trace encoder 装配 |
 | `environment/` | 连续几何、障碍物、风险区、六类地图、数据集清单与内容哈希 |
 | `path/` | 路径模型、A* 初始化、视线简化、目标函数和状态特征 |
 | `operators/` | 八个人工算子、有界 primitive、严格 OperatorSpec、Compiler 与 registry |
@@ -743,6 +744,14 @@ python -m pytest tests/test_core_contracts.py tests/test_uav_contract_adapters.p
 ```
 
 `InstanceRef` 只保存可稳定比较的实例身份，不复制完整地图；`ObjectiveEvaluation` 统一采用“有限标量成本、越小越好”的语义。二者目前均为实验性内部 API。
+
+Step 2 的完整 UAV `DomainAdapter` characterization 门：
+
+```powershell
+python -m pytest tests/test_uav_domain_adapter.py tests/test_uav_phase1_characterization.py
+```
+
+该 adapter 将初始化、评价、特征、路径复制/规范化、结构校验和 trace snapshot 拆成六个小组件。当前搜索与 recorder 尚未改用它；这条切换及新旧 shadow comparison 属于 Step 3–4。
 
 Phase 1–7 完整 smoke：
 

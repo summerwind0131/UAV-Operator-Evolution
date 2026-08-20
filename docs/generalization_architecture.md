@@ -237,7 +237,7 @@ class TraceEncoder(Protocol[InstanceT, SolutionT]):
         solution: SolutionT,
         instance: InstanceT,
         evaluation: ObjectiveEvaluation,
-        context: SearchContext,
+        context: SearchContextView,
     ) -> dict[str, JsonValue]: ...
 ```
 
@@ -387,9 +387,26 @@ python -m pytest tests/test_core_contracts.py tests/test_uav_contract_adapters.p
 
 ### Step 2：建立 UAV DomainAdapter
 
+状态：已完成（2026-08-20）。
+
 - 包装 `initialize_path`、`PathEvaluator`、`extract_path_features` 和路径复制/清洗。
 - 用 characterization tests 证明 adapter 的输出与原函数逐字段一致。
 - 不移动 `environment/`、`path/` 或 `operators/`。
+
+实现产物：
+
+- `src/operator_evolution_core/contracts/domain.py` 定义 initializer、evaluator、feature extractor、solution codec、structural guard、trace encoder 六个小协议，以及只负责装配的 `DomainAdapter`。core 仍不导入 UAV 类型。
+- `src/uav_operator_evolution/domain/uav_adapter.py` 以 `UAVDomainAdapter` 组合现有 A* initializer、`PathEvaluator` 和 `extract_path_features`，并实现路径规范 JSON/hash、结构 guard 与兼容 trace snapshot。
+- guard 只检查 waypoint 数量/有限性、端点与地图边界，不把碰撞可行性混入结构约束；碰撞仍由固定目标 evaluator 评价。
+- `tests/test_uav_domain_adapter.py` 对初始化结果和 RNG 状态、默认/碰撞评价、特征、codec/hash、legacy structure check 与 `_state_snapshot` 做逐字段对照，并拒绝非有限 trace context。
+
+执行回归门：
+
+```powershell
+python -m pytest tests/test_core_contracts.py tests/test_uav_contract_adapters.py tests/test_uav_domain_adapter.py tests/test_uav_phase1_characterization.py
+```
+
+本步骤建立了完整并行适配层，但没有修改 `SearchExecutor`、trajectory recorder、SQLite schema 或公开 CLI。Step 3 才会以 shadow comparison 驱动搜索循环切换。
 
 ### Step 3：使搜索循环依赖协议
 
@@ -401,7 +418,7 @@ python -m pytest tests/test_core_contracts.py tests/test_uav_contract_adapters.p
 ### Step 4：分离 trace core 与 UAV snapshot
 
 - `OperatorTrace`、recorder 和延迟收益保持在通用层。
-- 把 `_state_snapshot`、路径特征和环境特征移入 UAV trace encoder。
+- 将 recorder 接到 Step 2 已建立的 UAV trace encoder，并在对照通过后删除重复的 `_state_snapshot`；环境特征也移入领域层。
 - 第一阶段继续写出所有现有兼容字段，保证历史分析脚本不变。
 
 ### Step 5：泛化候选验证接缝

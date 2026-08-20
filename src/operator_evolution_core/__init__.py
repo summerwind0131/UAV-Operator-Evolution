@@ -5,6 +5,30 @@ validated the interfaces.  Its modules must never import UAV implementation
 types.
 """
 
-from .contracts import DatasetSplit, InstanceRef, ObjectiveEvaluation
+from .contracts import (
+    DatasetSplit,
+    DomainAdapter,
+    Evaluator,
+    FeatureExtractor,
+    Initializer,
+    InstanceRef,
+    ObjectiveEvaluation,
+    SearchContextView,
+    SolutionCodec,
+    SolutionGuard,
+    TraceEncoder,
+)
 
-__all__ = ["DatasetSplit", "InstanceRef", "ObjectiveEvaluation"]
+__all__ = [
+    "DatasetSplit",
+    "DomainAdapter",
+    "Evaluator",
+    "FeatureExtractor",
+    "Initializer",
+    "InstanceRef",
+    "ObjectiveEvaluation",
+    "SearchContextView",
+    "SolutionCodec",
+    "SolutionGuard",
+    "TraceEncoder",
+]
