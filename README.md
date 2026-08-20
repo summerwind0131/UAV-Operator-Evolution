@@ -13,6 +13,8 @@ Phase 1–7 实现了环境生成、固定搜索、三态轨迹、条件化诊�
 - Agent 的文字判断不能接受候选，测试集也不能参与候选保留。
 - 核心流程单进程、CPU 可运行，不依赖 GPU、网络、SciPy、ROS、PX4 或 AirSim。
 
+项目正在规划从 UAV 单领域实现演进为通用的 Trajectory-Informed Operator Evolution 架构。当前仓库继续作为第一个领域实现，通用协议、零行为变化门和 Job-Shop Scheduling 第二领域的分阶段方案见 [`docs/generalization_architecture.md`](docs/generalization_architecture.md)。
+
 ## 系统架构与数据流
 
 ```mermaid
@@ -93,6 +95,7 @@ J(x) = 1.0 L(x) + 1000.0 C(x) + 5.0 S(x) + 10.0 R(x) + 0.5 N(x)
 
 | 模块 | 职责 |
 | --- | --- |
+| `operator_evolution_core/contracts/` | 实验性通用实例身份与目标评价契约；不依赖 UAV 实现 |
 | `environment/` | 连续几何、障碍物、风险区、六类地图、数据集清单与内容哈希 |
 | `path/` | 路径模型、A* 初始化、视线简化、目标函数和状态特征 |
 | `operators/` | 八个人工算子、有界 primitive、严格 OperatorSpec、Compiler 与 registry |
@@ -724,6 +727,22 @@ python -m uav_operator_evolution.cli afl-uav-demo `
 ```powershell
 python -m pytest
 ```
+
+通用化第一阶段的 UAV 行为身份回归门：
+
+```powershell
+python -m pytest tests/test_uav_phase1_characterization.py
+```
+
+该回归门固定配置与数据清单 hash、八算子搜索顺序、三态轨迹、候选提案、验证结果和最终种群；时间戳与墙钟运行时间不进入行为身份。
+
+Step 1 的通用契约与 UAV 纯适配器回归门：
+
+```powershell
+python -m pytest tests/test_core_contracts.py tests/test_uav_contract_adapters.py
+```
+
+`InstanceRef` 只保存可稳定比较的实例身份，不复制完整地图；`ObjectiveEvaluation` 统一采用“有限标量成本、越小越好”的语义。二者目前均为实验性内部 API。
 
 Phase 1–7 完整 smoke：
 

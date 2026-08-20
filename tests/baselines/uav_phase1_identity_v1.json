@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "baseline": {
+    "commit": "0f74f21",
+    "python_requires": ">=3.11",
+    "reference_toolchain": {
+      "python": "3.12.4",
+      "numpy": "1.26.4",
+      "pandas": "2.2.2",
+      "matplotlib": "3.8.4",
+      "pydantic": "2.13.4",
+      "PyYAML": "6.0.1",
+      "pytest": "7.4.4"
+    },
+    "offline_tests_before_characterization": {
+      "passed": 264,
+      "skipped": 3
+    }
+  },
+  "volatile_fields_excluded": [
+    "timestamps",
+    "wall-clock runtimes",
+    "runtime-derived medians and reductions"
+  ],
+  "known_reproducibility_gaps": [
+    "parent fitness currently includes a 5% wall-clock runtime rank",
+    "the evolution characterization injects a deterministic clock without changing production behavior"
+  ],
+  "inventory": {
+    "config_hashes": {
+      "agent_smoke.yaml": {
+        "experiment_config_hash": "043cc9c24c3688d0a1fb34762ef536ebd47417ddda934c30d7c6056525aa2ef3",
+        "source_hash": "5ccfb3c13de90836723ea9db06b280110ffb9133200c4d9fb68929c1b7232073"
+      },
+      "default.yaml": {
+        "experiment_config_hash": "d262c0913635a2bb432cbcb128c12feae25238c5e1c8e6836ad7b629b527cb04",
+        "source_hash": "4791836b72ed931a7e1d39fd29a270a03b620d1d8f1713856c18824e4d02fa45"
+      },
+      "evolutionary_afl_uav_experiments_v1.yaml": {
+        "source_hash": "8bdceb9f74f20a2f1ce9ba1bd0ddcad1187235e0948c183afc3a27daca60170a"
+      },
+      "evolutionary_afl_uav_v1.yaml": {
+        "source_hash": "975bac875c0b1c9167726ce9a1910c76092e09632e0d98904fad0e0d58d38a8e"
+      },
+      "evolutionary_afl_uav_v2_candidate.yaml": {
+        "source_hash": "e3f0a456b8ad2c1be40d802162f81dcfcf4f9055aebc000a26a3378d83b0aee7"
+      },
+      "evolutionary_afl_uav_v2_development.yaml": {
+        "source_hash": "2c0fd469ddbb83674a78aac90cfc31e7f7ccece5e7b2073fdb431babfe3a6719"
+      },
+      "evolutionary_afl_uav_v2_freeze.yaml": {
+        "source_hash": "0a1425ce4658d313149bd06616b2310850f9d7c41891bd872dbb9ac6a41ff96c"
+      },
+      "evolutionary_seed_source_controls_v1.yaml": {
+        "source_hash": "00145fbf1654ab2938f3f6642d5b9bb382387f6d3d7f719225387741b343dad4"
+      },
+      "multi_agent_smoke.yaml": {
+        "experiment_config_hash": "21c1b659519ae8d5c78843ca924e81f96a2cfadb861e57d3174165ae997f06b4",
+        "source_hash": "ada7a1c860ef4b9db484bd6941d16cfe112b27356766c97ed09e65133618216e"
+      },
+      "smoke.yaml": {
+        "experiment_config_hash": "649980d786dd3c66c9e66a2d4008d83c23a682a342a5d9c5b111611e59d8a7af",
+        "source_hash": "b6098cb66bf86807e6217ac9f5a915bd5e3efadcbfa5363a023cc2d96b342644"
+      },
+      "uav_benchmark_v1.yaml": {
+        "experiment_config_hash": "0f4dd8267a127495782f04e4ba5ed366829ece79d4d2886df79354ed819b8472",
+        "source_hash": "de88da59082759a4c8a8f50091f3cb2947332f80e5e1c2c6e4d11189f8c899b8"
+      },
+      "uav_hidden_test_v2.yaml": {
+        "source_hash": "647ebc5bad00fdf4051625609f3c4cdf36cbd8b3a7a67dca2f81f656121ed879"
+      },
+      "uav_hidden_test_v2_execution_v1.yaml": {
+        "experiment_config_hash": "a83cdfe17d113f601987326c21b1a5ae0bcca518c4eddada20ed4167d1df46b2",
+        "source_hash": "64c81cd8c791b0375c982e21bf4d056e7623fa05576d6958ddd9252caa1332ad"
+      },
+      "uav_hidden_test_v3.yaml": {
+        "source_hash": "d54426a24bd8563219de8dfa849622b13e6f6df6bf706e5f54e87b967c4cf970"
+      },
+      "uav_hidden_test_v3_execution_v1.yaml": {
+        "experiment_config_hash": "37c12d2583d9073ed49175abc8329f0b21c30cae72202df5e93d5ee74b674825",
+        "source_hash": "c2898311a4ee7a6508e289f7f418322f790aca3ca0fe35872bb0f52c6c37c9e6"
+      }
+    },
+    "dataset_manifests": {
+      "multi-agent-smoke": {
+        "config_hash": "5edfdf9ebca043b6d9c76a4ed9e83998de7d026983e5acebe4d08f63e4040948",
+        "manifest_hash": "19a7f9367f7ad0b74038c96a70fc57d2549591909b79e9563cc5afeec5836de3",
+        "map_count": 5
+      },
+      "uav2d-v1": {
+        "config_hash": "0f4dd8267a127495782f04e4ba5ed366829ece79d4d2886df79354ed819b8472",
+        "manifest_hash": "1f980c2697f521d4e5b92ff596452ce8f2bc2874885d9b789288c790b71b1517",
+        "map_count": 360
+      }
+    }
+  },
+  "search": {
+    "accepted_sequence": [
+      true,
+      false,
+      false,
+      true,
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "best_path_hash": "7fe132100e69ac2fd6a2d2b306550acb8ef5e9ec9313cb83c50408eb815a6f12",
+    "combined_identity_hash": "e50ef976cd6bfbe1b7828323e5e0c609992e97b6fa2f23ae54ea16e6cd1957e1",
+    "created_new_best_sequence": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "environment_content_hash": "cb4a4efd1d56360d0e366011539cb10567ff3fa9d075fbd70b97c536f963b498",
+    "final_path_hash": "7fe132100e69ac2fd6a2d2b306550acb8ef5e9ec9313cb83c50408eb815a6f12",
+    "initial_path_hash": "7fa60b6d74979abbd5f5efdcc466f26e50feb4d0fa2984f2e622c3057974a6d6",
+    "operator_catalog_hash": "772178c20ed1c7abcd6855d0877576fbbca1a1b33130eccb738476e8b99630fb",
+    "operator_sequence": [
+      "segment_shift",
+      "obstacle_detour",
+      "shortcut",
+      "partial_reconstruction",
+      "insert_waypoint",
+      "smooth_segment",
+      "delete_waypoint",
+      "waypoint_perturb",
+      "waypoint_perturb",
+      "delete_waypoint",
+      "smooth_segment",
+      "insert_waypoint",
+      "obstacle_detour",
+      "partial_reconstruction",
+      "segment_shift",
+      "shortcut"
+    ],
+    "result_identity_hash": "4e55cb4de9fb36ab7ec5e059e2025e106cffa25377174bf1c164a0a18e9b98ec",
+    "step_identity_hashes": [
+      "b6cec93a293cef63ce8ddcdeeab7ac487ad829c591664803c8bbbd2eb9bcaba3",
+      "7535993dbc013b2c89fee3ce21fbac0d29e3a18a82a3eb736084a1170cf9459e",
+      "e6b6225977f7247ebe33f0780939cf4029fd5544ed922e0ddcf3534eb079ca88",
+      "7998c5e8ffde3be365e5cc2635a2ca3beb9b37b016b16d3b728b78c685145186",
+      "2743c93e356898732da7d21775158d5eb9b439e4a4d2b43cb5e38b27ece2d918",
+      "bb38265d96d2b86bf0dbdb072dad19b936051da5652fe10f406cade0d7ba2aac",
+      "63352897ff127d1b5047213a7dffae9cae454224317c8f451fe70650606f8517",
+      "8674fb53131036859c0fc71c9e62977f1b401cdae9989a1e9e5b6d26830763c5",
+      "8d1a8bfd10567c802020590bf3a1b18132a9b34e4260f131b2449fe74665450b",
+      "4d34ac515a4aa88524a47f66c018a90fa18ed9fde110291cc8e63e3b137923e9",
+      "a859aa82d56e823aa5956a41e33dce5d5da8638c7de7cc52be1344d59a29138b",
+      "33252302b94cdb36e091154ee27d5ee6a8144f89002c8aa5cdcf897742bca721",
+      "51c4e696d2d39fb1e4727389436e671d41af867294dfe753a8ea8182196dc973",
+      "97af0842b497106f13fe42b7b8c3e01615cf277976b39a1686c258e3ff705443",
+      "9714cb5e395f832062c10756443e6984ca02c7560f6a5a2f8dfa94ad3ff587c4",
+      "d13c27ed1e41612680f2a6c994b54d482c85ef73ffe5e9dad915de3e53c098b0"
+    ],
+    "trace_identity_hash": "0348e7aae9ed9cebcbfe4f76a2a5c2960f3fc43fb6df8e89d5f8b5c7aefab400",
+    "trace_identity_hashes": [
+      "7036771464e9e36829c048241a4b74e49d9b964757d1dfda5089e19578895114",
+      "77d260750e7abd7d5a699ad53a16f327ade1f20c5f952d4353ef2d62014de4ab",
+      "17d7ce05619a2cf4c9bc00b58f9d4ab7a5b4527f7e082f101dff2920bd501b2c",
+      "e46256c38071d84a11cef9bb2b721e2ff166033c13ea21899929a8a408cf54f1",
+      "9f247cb7bbacd0a7a25db311e93530eff9d355e0cc91b088df161ed73b9b4fba",
+      "872d8cbb299d3c562b15b8fce99c2e5d529980a10220ebb7e30deeb77afe28a3",
+      "4d1d3b7023beb1d2c48abfd5229eacc9ed66fa72ee8c751053e0584fb881ccf9",
+      "06c24e231a223fe751e0c3fdd5a0a757c96ca55d185d267e5b88ed1beeab22df",
+      "8fbcb737e74db6c52749b2f383cbfc9d41a430c7ccd0b90fedd8974a9be49c9a",
+      "46c502dc212a107cb616766c4dcff729b2b250c6f4f48f15801f8f96e52c90c9",
+      "99970870ec56bc339fd5fa66f306fa7ac0098c8fd733b92771dd2c2b2aa817a5",
+      "6e5aecbb32d513655e42f9aae1a6147bc19a80a8e2d373d85bc37dee1c07f098",
+      "92515dc709d8fc2f7ab1bd20b53bd2cad7e10103d83728d232b11b478068da4d",
+      "13139a9a9c36619799c5ee6735246baee36d06fa4727ac682ad5fb5421604a41",
+      "8f230cc14ee782b2673e550d2dd8604375657e9a7d48d5fd879d17e9d8ffd014",
+      "66376837ef962d03ce58731c12773abc5793e17469abd02257313524a037acb5"
+    ]
+  },
+  "evolution": {
+    "candidate_statuses": {
+      "G1C1_delete_waypoint_Composite": "rejected"
+    },
+    "dataset_content_hashes": {
+      "test": "50109af5a404d445ccc81f269cbd8840892e89908013787c60baaf77e1c4a1a7",
+      "train": "9b36d94d58a15e35a1ae68a9baa3b9d94c3408d55d7050b981b69f3ec507dda1",
+      "validation": "e22c348a373867e549c7d980105353619cdd15afb3f4876b8103456da3bd6f74"
+    },
+    "final_population": [
+      "waypoint_perturb",
+      "segment_shift",
+      "insert_waypoint",
+      "delete_waypoint",
+      "shortcut",
+      "smooth_segment",
+      "obstacle_detour",
+      "partial_reconstruction"
+    ],
+    "initial_population": [
+      "waypoint_perturb",
+      "segment_shift",
+      "insert_waypoint",
+      "delete_waypoint",
+      "shortcut",
+      "smooth_segment",
+      "obstacle_detour",
+      "partial_reconstruction"
+    ],
+    "proposal_identity_hashes": [
+      "fbfe492666bdd739af2b4a2a19591b2620caad01be6386fc42fe4cc90f46fde2"
+    ],
+    "result_identity_hash": "994f891b3b3b9dd3ad01761804e47251586bb39e259603a7f333c87f65421525",
+    "retained_candidates": [],
+    "test_outcomes_identity_hash": "39f3cad87eb700919ba5e637ea78fd3d254685bec13cb79866b8aba2066f300e",
+    "trace_count": 32,
+    "validation_identity_hashes": [
+      "5f12394995411b40ec934702c0cf6601ff6f22f9ac6015a1f55cb71e9e2bb90a"
+    ]
+  }
+}
