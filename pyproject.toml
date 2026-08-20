@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uav-operator-evolution"
+version = "0.1.0"
+description = "Trajectory-informed operator evolution for reproducible UAV path-planning research"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Research MVP"}]
+dependencies = [
+  "numpy>=1.26,<3",
+  "pandas>=2.1,<3",
+  "matplotlib>=3.8,<4",
+  "pydantic>=2.7,<3",
+  "PyYAML>=6,<7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4,<9"]
+llm = ["openai>=2.46,<3", "google-genai>=2.13,<3"]
+agent = ["openai-agents>=0.18,<0.19"]
+
+[project.scripts]
+uav-operator-evolution = "uav_operator_evolution.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+  "live: optional tests that contact a configured external LLM service",
+]
