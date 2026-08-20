@@ -1,0 +1,207 @@
+schema_version: uav2d-hidden-test-protocol-v1
+benchmark_id: uav2d-hidden-test-v2
+parent_benchmark_id: uav2d-v1
+master_seed: 2026081701
+generator_version: "3"
+
+dataset:
+  output_dir: data/benchmarks/uav2d-hidden-test-v2
+  split: test
+  count: 120
+  difficulties: [sparse, dense, corridor, clustered, rooms_maze, mixed]
+  width: 100.0
+  height: 100.0
+  safety_distance: 2.0
+  grid_resolution: 2.0
+  generation_attempts: 100
+  rooms_maze_balance:
+    rooms: 10
+    maze: 10
+  minimum_terminal_distance_diagonal_ratio: 0.65
+  deduplicate_against:
+    - data/benchmarks/uav2d-v1/manifest.json
+  required_cross_dataset_unique_fields:
+    - content_hash
+    - terminal_hash
+    - obstacle_layout_hash
+    - geometry_hash
+    - seed
+
+budget:
+  time_limit_seconds: 1.0
+  max_objective_evaluations: 2000
+  stochastic_repetitions: 5
+  deterministic_repetitions: 1
+  memory_limit: null
+
+shared_contract:
+  map_and_terminals: identical_per_comparison
+  stochastic_seed_schedule: identical_per_map_and_repetition
+  collision_checker: src/uav_operator_evolution/environment/environment.py
+  objective_evaluator: src/uav_operator_evolution/path/evaluator.py
+  hard_constraint_validator: src/uav_operator_evolution/planning_benchmarks/core.py
+  ranking: feasible_rate_then_trusted_total_cost
+  timeout_rule: status_timeout_or_elapsed_greater_than_or_equal_to_limit
+  failed_or_timed_out_paths_rank_as_feasibility_failures: true
+
+arms:
+  - arm_id: dijkstra
+    planner: dijkstra
+    family: deterministic_baseline
+    repetitions: 1
+  - arm_id: astar
+    planner: astar
+    family: deterministic_baseline
+    repetitions: 1
+  - arm_id: theta_star
+    planner: theta_star
+    family: deterministic_baseline
+    repetitions: 1
+  - arm_id: rrt
+    planner: rrt
+    family: stochastic_baseline
+    repetitions: 5
+  - arm_id: rrt_star
+    planner: rrt_star
+    family: stochastic_baseline
+    repetitions: 5
+  - arm_id: prm
+    planner: prm
+    family: stochastic_baseline
+    repetitions: 5
+  - arm_id: ga
+    planner: ga
+    family: stochastic_baseline
+    repetitions: 5
+  - arm_id: pso
+    planner: pso
+    family: stochastic_baseline
+    repetitions: 5
+  - arm_id: de
+    planner: de
+    family: stochastic_baseline
+    repetitions: 5
+  - arm_id: aco_acor
+    planner: aco_acor
+    family: stochastic_baseline
+    repetitions: 5
+  - arm_id: frozen_afl_uav
+    planner: afl_uav
+    family: frozen_method_baseline
+    repetitions: 5
+    artifact: artifacts/planning_benchmarks/afl_uav_artifacts/deepseek-v4pro-frozen-strict-v2/artifact.json
+    expected_artifact_id: d384eac99d8a1f5df9d544ff1c3adf2ef9838c04930809f140b18dcc5f34f455
+    expected_artifact_sha256: c4e83cc5fc589e50144fdc6df3d409e436edb36197ff2b1e663e13a83bd7a8fd
+  - arm_id: evolutionary_afl_uav_v1
+    planner: evolutionary_afl_uav
+    family: primary_method
+    repetitions: 5
+    artifact: artifacts/planning_benchmarks/evolutionary-afl-uav-methods/evolutionary-afl-uav-v1/artifact.json
+    expected_artifact_id: cf5d90443f61b182281071268ca3b8bc4275a2ae782bc1c7d9b6c2cef90823f3
+    expected_artifact_sha256: 596d80ba5c80168b1eb8dc5b98d30e65d5bd141dab0d3567101300fd20186551
+  - arm_id: evo_no_rooms_strategy
+    planner: evolutionary_afl_uav
+    family: preregistered_key_ablation
+    repetitions: 5
+    base_artifact: artifacts/planning_benchmarks/evolutionary-afl-uav-methods/evolutionary-afl-uav-v1/artifact.json
+    experiment_variant: no_rooms_maze_strategy
+    population_size: 32
+    archive_size: 8
+    max_generations: 20
+  - arm_id: evo_fixed_length
+    planner: evolutionary_afl_uav
+    family: preregistered_key_ablation
+    repetitions: 5
+    base_artifact: artifacts/planning_benchmarks/evolutionary-afl-uav-methods/evolutionary-afl-uav-v1/artifact.json
+    experiment_variant: fixed_length_population
+    population_size: 32
+    archive_size: 8
+    max_generations: 20
+
+expected_execution_matrix:
+  deterministic_baseline_records: 360
+  stochastic_baseline_records: 4200
+  frozen_afl_records: 600
+  primary_method_records: 600
+  key_ablation_records: 1200
+  total_records: 6960
+  unique_record_key: [planner, arm_id, map_id, seed]
+
+hypotheses:
+  primary:
+    - id: H1
+      comparison: evolutionary_afl_uav_v1_vs_frozen_afl_uav
+      claim: higher_or_equal_trusted_feasibility_then_lower_trusted_cost
+      unit: map_id
+      stochastic_aggregation: median_over_five_shared_seeds
+    - id: H2
+      comparison: evolutionary_afl_uav_v1_vs_astar_and_theta_star
+      claim: higher_or_equal_trusted_feasibility_then_lower_trusted_cost
+      unit: map_id
+      stochastic_aggregation: median_over_five_shared_seeds
+  secondary:
+    - id: H3
+      comparison: evolutionary_afl_uav_v1_vs_evo_no_rooms_strategy
+      subset: rooms_maze
+      claim: lower_trusted_cost
+      unit: map_id
+    - id: H4
+      comparison: evolutionary_afl_uav_v1_vs_evo_fixed_length
+      subset: rooms_maze
+      claim: lower_trusted_cost
+      unit: map_id
+
+analysis:
+  feasibility_metric: trusted_feasible_runs_divided_by_all_preregistered_runs
+  map_success_metric: maps_with_at_least_one_trusted_feasible_path
+  cost_summary: median_and_iqr_over_trusted_feasible_paths
+  paired_summary: per_map_win_tie_loss_and_half_tie_win_rate
+  diversity_metrics:
+    - unique_final_path_hashes_per_map_over_five_seeds
+    - within_map_cost_iqr
+  resource_metrics:
+    - elapsed_seconds
+    - objective_evaluations
+    - collision_checks
+    - node_expansions
+  uncertainty:
+    method: cluster_bootstrap_over_map_id
+    replicates: 10000
+    confidence_level: 0.95
+    seed: 2026081702
+  tie_tolerance: 1.0e-9
+  secondary_multiple_comparison_correction: holm
+  exclusions: none_after_execution_except_cryptographically_proven_corrupt_records
+  missing_records: count_as_protocol_failure_and_never_silently_drop
+  post_result_parameter_or_metric_changes_allowed: false
+
+frozen_implementation_hashes:
+  map_generator:
+    path: src/uav_operator_evolution/environment/generator.py
+    sha256: 537c75f6cd2aacafa36ee3b34cfa3834447d41ecf7b2fd06db7f6874f47d4c3e
+  planner_implementations:
+    path: src/uav_operator_evolution/planning_benchmarks/planners.py
+    sha256: a3be6b0055b19f1ba67b23612bca0516ec0c3203a87bf27fa875d2a65d08dcff
+  trusted_core:
+    path: src/uav_operator_evolution/planning_benchmarks/core.py
+    sha256: 96c114b017c61136a9bd151d256cb3b032d477e5ac78c0c6be58b3ad8e4939db
+  benchmark_runner:
+    path: src/uav_operator_evolution/planning_benchmarks/runner.py
+    sha256: 7f28c8142dae4d9d4a37054c24de606b2daf82918f10d0b2290730add5970f6f
+  ablation_harness:
+    path: src/uav_operator_evolution/planning_benchmarks/evolutionary_afl_experiments.py
+    sha256: e9b03d220489c47acbadc980b56914b8998394fb0deba8bb9dd52cc136929689
+  objective_evaluator:
+    path: src/uav_operator_evolution/path/evaluator.py
+    sha256: 10c35631f1454354bf24f81b41b782ed971735524e977bf6ae1a267d0c861d2e
+
+sealing:
+  status: sealed_unrun
+  seal_marker: data/benchmarks/uav2d-hidden-test-v2/SEALED.json
+  preregistration_receipt: data/benchmarks/uav2d-hidden-test-v2/preregistration.json
+  seal_receipt: data/benchmarks/uav2d-hidden-test-v2/seal_receipt.json
+  seed_schedule: data/benchmarks/uav2d-hidden-test-v2/seed_schedule.csv
+  forbidden_results_directory: artifacts/planning_benchmarks/uav2d-hidden-test-v2-final
+  api_calls_required: 0
+  test_maps_may_be_used_for_tuning: false
+  opening_policy: requires_future_explicit_user_authorization_and_matching_preregistration_hash

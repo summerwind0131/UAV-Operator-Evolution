@@ -1,0 +1,62 @@
+schema_version: evolutionary-afl-method-freeze-v2
+method_id: evolutionary-afl-uav-v2
+status: frozen
+
+frozen_core_source: src/uav_operator_evolution/planning_benchmarks/evolutionary_afl_v2.py
+expected_core_sha256: 081e9b2a876332696d61df778fa25b6f1916a8684b2dc58a56863539bcea76d4
+candidate_config: configs/evolutionary_afl_uav_v2_candidate.yaml
+expected_candidate_config_sha256: 3e395c06e7af785f07b4ba1830202e939d3b2ce4d62227cfd5cc7891207779fd
+
+seed_artifact: artifacts/planning_benchmarks/afl_uav_artifacts/deepseek-v4pro-frozen-strict-v2/artifact.json
+expected_seed_artifact_sha256: c4e83cc5fc589e50144fdc6df3d409e436edb36197ff2b1e663e13a83bd7a8fd
+expected_seed_artifact_id: d384eac99d8a1f5df9d544ff1c3adf2ef9838c04930809f140b18dcc5f34f455
+expected_seed_solver_hash: 302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c
+
+dataset_manifest: data/benchmarks/uav2d-v1/manifest.json
+expected_dataset_manifest_sha256: 34abb53bcd5f5c420c4fa288e44d8a2fdea1e98c23c9dd96fe5f1618c2280b9d
+validation_comparison: artifacts/planning_benchmarks/evolutionary-afl-uav-v2-validation-development-guarded-reliability-full/v2_validation_comparison.json
+expected_validation_comparison_sha256: a751fd8d47d25e82268bb67b4ed14ebb34627d153aba90e5b37f58107fbb67df
+development_receipt: artifacts/planning_benchmarks/evolutionary-afl-uav-v2-development-report-v1/development_receipt.json
+expected_development_receipt_sha256: 80d4ab0b4753b5284d8bbc2bc094c5c0c4436e9a5da1a99a36520ca52db5c82c
+pytest_junit: artifacts/planning_benchmarks/evolutionary-afl-uav-methods/evolutionary-afl-uav-v2-candidate/pytest.xml
+expected_pytest_junit_sha256: cbe11ca3ff28ce77238dd6572ca58ab8ba029f69438e41cce68be00c0f1e425b
+
+parameters:
+  variant: reliability_only
+  population_size: 32
+  archive_size: 8
+  max_generations: 20
+  max_waypoints: 64
+  base_iteration_limit: 64
+  crossover_probability: 0.40
+  extra_mutation_probability: 0.30
+  cooperative_budget_fraction: 0.97
+  portfolio_budget_fraction: 0.16
+  operation_deadline_fraction: 0.88
+  finalization_guard_fraction: 0.06
+  fallback_deadline_fraction: 0.90
+  source_quotas:
+    afl: 8
+    astar: 6
+    theta_star: 6
+    prm: 6
+    topology: 6
+
+analysis_contract:
+  primary_comparison: evolutionary_afl_uav_v2_vs_evolutionary_afl_uav_v1
+  ranking: trusted_feasible_rate_then_median_trusted_feasible_cost
+  timeout_rule: status_timeout_or_elapsed_greater_than_or_equal_to_limit
+  paired_unit: map_id
+  stochastic_aggregation: median_over_five_shared_seeds
+  bootstrap_unit: map_id
+  bootstrap_replicates: 10000
+  confidence_level: 0.95
+  tie_tolerance: 1.0e-9
+  post_result_changes_allowed: false
+
+development_policy:
+  train_validation_only_before_freeze: true
+  hidden_test_v2_reused: false
+  api_calls: 0
+  research_claim_eligible_after_hash_verified_freeze: true
+

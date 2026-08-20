@@ -1,0 +1,59 @@
+experiment_id: evolutionary-seed-source-controls-v1
+benchmark_config: configs/uav_benchmark_v1.yaml
+split: validation
+run_id: evolutionary-seed-source-controls-validation-v1
+
+frozen_v1_method_artifact: artifacts/planning_benchmarks/evolutionary-afl-uav-methods/evolutionary-afl-uav-v1/artifact.json
+frozen_v1_core_sha256: 79f0a085a0f26b246d2f1e0d0bc1ac7e8a6288b34dd0fbc8f29bc9387e1a7d4f
+afl_seed_artifact: artifacts/planning_benchmarks/afl_uav_artifacts/deepseek-v4pro-frozen-strict-v2
+afl_seed_artifact_id: d384eac99d8a1f5df9d544ff1c3adf2ef9838c04930809f140b18dcc5f34f455
+
+budget:
+  time_limit_seconds: 1.0
+  max_objective_evaluations: 2000
+  repetitions: 5
+
+shared_evolution_layer:
+  population_size: 32
+  archive_size: 8
+  max_generations: 20
+  max_waypoints: 64
+  base_iteration_limit: 64
+  crossover_probability: 0.40
+  extra_mutation_probability: 0.30
+  grid_resolution: 2.0
+  manual_seed_time_fraction: 0.18
+
+arms:
+  evolutionary_astar_seed:
+    seed_source: astar
+  evolutionary_theta_seed:
+    seed_source: theta_star
+  evolutionary_afl_uav_v1:
+    seed_source: afl_uav_deepseek_v4_pro
+  evolutionary_handcrafted_destroy_repair_seed:
+    seed_source: handcrafted_destroy_repair
+
+analysis:
+  primary_arm: evolutionary_afl_uav_v1
+  comparison_arms:
+    - evolutionary_astar_seed
+    - evolutionary_theta_seed
+    - evolutionary_handcrafted_destroy_repair_seed
+  ranking_rule: feasibility_first_then_feasible_cost
+  pair_key: [map_id, seed]
+  cost_tolerance: 1.0e-9
+  cluster_bootstrap_unit: map_id
+  bootstrap_resamples: 5000
+  bootstrap_seed: 20260819
+  superiority_rule:
+    feasible_rate_not_lower: true
+    paired_wins_must_exceed_losses: true
+    holm_corrected_sign_test_alpha: 0.05
+
+development_policy:
+  allowed_splits: [train, validation]
+  hidden_test_v2_access: forbidden
+  hidden_test_v3_access: forbidden
+  api_calls: 0
+  frozen_v1_modification: forbidden

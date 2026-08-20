@@ -1,0 +1,66 @@
+name: smoke
+seed: 42
+objective:
+  length: 1.0
+  collision: 1000.0
+  smoothness: 5.0
+  risk: 10.0
+  waypoint: 0.5
+maps:
+  grid_resolution: 4.0
+  generation_attempts: 30
+  train:
+    count: 6
+    difficulties: [sparse, medium, clustered, mixed]
+    width: 100.0
+    height: 100.0
+    safety_distance: 2.0
+  validation:
+    count: 6
+    difficulties: [dense, corridor]
+    width: 100.0
+    height: 100.0
+    safety_distance: 2.0
+  test:
+    count: 4
+    difficulties: [dense, corridor, clustered, mixed]
+    width: 130.0
+    height: 130.0
+    safety_distance: 3.0
+search:
+  train_iterations: 96
+  validation_iterations: 64
+  test_iterations: 96
+  temperature_start_ratio: 0.05
+  temperature_end_ratio: 0.001
+  recent_window: 10
+diagnostics:
+  delayed_horizons: [5, 10, 20]
+  minimum_context_samples: 3
+  representative_cases: 3
+  counterfactual_states: 4
+  counterfactual_operators: 4
+dsl:
+  max_conditions: 8
+  max_transformations: 8
+  max_repeat: 3
+  max_parents: 4
+  max_waypoints: 128
+  max_added_waypoints: 16
+  deadline_ms: 100.0
+evolution:
+  generations: 2
+  candidates_per_generation: 2
+  population_size: 8
+  min_global_gain: 0.02
+  min_specialist_gain: 0.05
+  min_feasibility_gain: 0.10
+  min_runtime_reduction: 0.25
+  runtime_validation_repetitions: 4
+  min_runtime_effective_call_rate: 0.10
+  require_bootstrap_ci: false
+output:
+  data_dir: data/generated
+  results_dir: artifacts/results
+  figures_dir: artifacts/figures
+  export_jsonl: true

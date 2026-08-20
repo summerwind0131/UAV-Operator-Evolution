@@ -1,0 +1,41 @@
+schema_version: evolutionary-afl-uav-v2-development-v1
+method_id: evolutionary-afl-uav-v2-development
+benchmark_config: configs/uav_benchmark_v1.yaml
+seed_artifact: artifacts/planning_benchmarks/afl_uav_artifacts/deepseek-v4pro-frozen-strict-v2
+split: validation
+run_id: evolutionary-afl-uav-v2-validation-development
+v1_validation_results: artifacts/planning_benchmarks/evolutionary-afl-uav-validation-v1/benchmark_runs.csv
+
+budget:
+  time_limit_seconds: 1.0
+  max_objective_evaluations: 2000
+  repetitions: 5
+
+parameters:
+  variant: full
+  population_size: 32
+  archive_size: 8
+  max_generations: 20
+  max_waypoints: 64
+  base_iteration_limit: 64
+  crossover_probability: 0.40
+  extra_mutation_probability: 0.30
+  cooperative_budget_fraction: 0.97
+  portfolio_budget_fraction: 0.16
+  operation_deadline_fraction: 0.88
+  finalization_guard_fraction: 0.06
+  fallback_deadline_fraction: 0.90
+  source_quotas:
+    afl: 8
+    astar: 6
+    theta_star: 6
+    prm: 6
+    topology: 6
+
+development_policy:
+  allowed_splits: [train, validation]
+  hidden_test_v2_access: forbidden
+  v1_source_modification: forbidden
+  api_calls: 0
+  research_claim_eligible: false
+  future_evaluation: freeze_v2_then_create_hidden_test_v3

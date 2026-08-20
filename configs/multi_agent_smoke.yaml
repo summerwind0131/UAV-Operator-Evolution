@@ -1,0 +1,95 @@
+name: multi-agent-smoke
+seed: 42
+objective:
+  length: 1.0
+  collision: 1000.0
+  smoothness: 5.0
+  risk: 10.0
+  waypoint: 0.5
+maps:
+  grid_resolution: 5.0
+  generation_attempts: 30
+  train:
+    count: 2
+    difficulties: [medium, clustered]
+    width: 80.0
+    height: 80.0
+    safety_distance: 2.0
+  validation:
+    count: 2
+    difficulties: [dense, corridor]
+    width: 80.0
+    height: 80.0
+    safety_distance: 2.0
+  test:
+    count: 1
+    difficulties: [mixed]
+    width: 100.0
+    height: 100.0
+    safety_distance: 3.0
+search:
+  train_iterations: 16
+  validation_iterations: 12
+  test_iterations: 12
+  temperature_start_ratio: 0.05
+  temperature_end_ratio: 0.001
+  recent_window: 6
+diagnostics:
+  delayed_horizons: [5, 10, 20]
+  minimum_context_samples: 1
+  representative_cases: 3
+  counterfactual_states: 2
+  counterfactual_operators: 2
+dsl:
+  max_conditions: 8
+  max_transformations: 8
+  max_repeat: 3
+  max_parents: 4
+  max_waypoints: 128
+  max_added_waypoints: 16
+  deadline_ms: 100.0
+evolution:
+  generations: 1
+  candidates_per_generation: 1
+  population_size: 8
+  min_global_gain: 0.02
+  min_specialist_gain: 0.05
+  min_feasibility_gain: 0.10
+  min_runtime_reduction: 0.25
+  runtime_validation_repetitions: 4
+  min_runtime_effective_call_rate: 0.10
+  require_bootstrap_ci: false
+agent:
+  designer_mode: multi_agent
+  provider: mock
+  memory_mode: mechanism_and_lineage
+  feedback_mode: diagnosis
+  review_mode: rule_based
+  remote_tracing: false
+  trace_include_sensitive_data: false
+  design_budget:
+    max_parent_specs: 4
+    max_context_evidence: 8
+    max_failure_evidence: 8
+    max_synergy_evidence: 8
+    max_counterfactual_evidence: 8
+    max_success_cases: 3
+    max_failure_cases: 3
+    max_bundle_chars: 60000
+    max_candidate_specs: 2
+  llm_call:
+    timeout_seconds: 60
+    max_retries: 2
+    max_output_tokens: 4096
+    max_total_tokens: 20000
+  agent_budget:
+    max_turns: 4
+    max_tool_calls: 12
+    max_candidate_specs: 2
+    max_revisions: 0
+    max_smoke_tests: 2
+output:
+  data_dir: data/multi-agent-smoke
+  results_dir: artifacts/results
+  figures_dir: artifacts/figures
+  export_jsonl: true

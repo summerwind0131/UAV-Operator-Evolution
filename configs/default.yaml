@@ -1,0 +1,66 @@
+name: default
+seed: 42
+objective:
+  length: 1.0
+  collision: 1000.0
+  smoothness: 5.0
+  risk: 10.0
+  waypoint: 0.5
+maps:
+  grid_resolution: 3.0
+  generation_attempts: 60
+  train:
+    count: 24
+    difficulties: [sparse, medium, clustered, mixed]
+    width: 120.0
+    height: 120.0
+    safety_distance: 2.5
+  validation:
+    count: 20
+    difficulties: [medium, dense, corridor, clustered]
+    width: 130.0
+    height: 130.0
+    safety_distance: 3.0
+  test:
+    count: 12
+    difficulties: [dense, corridor, clustered, mixed]
+    width: 170.0
+    height: 170.0
+    safety_distance: 4.0
+search:
+  train_iterations: 400
+  validation_iterations: 240
+  test_iterations: 400
+  temperature_start_ratio: 0.05
+  temperature_end_ratio: 0.001
+  recent_window: 20
+diagnostics:
+  delayed_horizons: [5, 10, 20]
+  minimum_context_samples: 8
+  representative_cases: 5
+  counterfactual_states: 20
+  counterfactual_operators: 4
+dsl:
+  max_conditions: 8
+  max_transformations: 8
+  max_repeat: 3
+  max_parents: 4
+  max_waypoints: 128
+  max_added_waypoints: 16
+  deadline_ms: 100.0
+evolution:
+  generations: 3
+  candidates_per_generation: 3
+  population_size: 8
+  min_global_gain: 0.02
+  min_specialist_gain: 0.05
+  min_feasibility_gain: 0.10
+  min_runtime_reduction: 0.25
+  runtime_validation_repetitions: 4
+  min_runtime_effective_call_rate: 0.10
+  require_bootstrap_ci: true
+output:
+  data_dir: data/generated
+  results_dir: artifacts/results
+  figures_dir: artifacts/figures
+  export_jsonl: true

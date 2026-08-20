@@ -1,0 +1,57 @@
+name: uav2d-v1
+seed: 20260725
+
+objective:
+  length: 1.0
+  collision: 1000.0
+  smoothness: 5.0
+  risk: 10.0
+  waypoint: 0.5
+
+maps:
+  grid_resolution: 2.0
+  generation_attempts: 100
+  train:
+    count: 180
+    difficulties: [sparse, dense, corridor, clustered, rooms_maze, mixed]
+    width: 100.0
+    height: 100.0
+    safety_distance: 2.0
+  validation:
+    count: 60
+    difficulties: [sparse, dense, corridor, clustered, rooms_maze, mixed]
+    width: 100.0
+    height: 100.0
+    safety_distance: 2.0
+  test:
+    count: 120
+    difficulties: [sparse, dense, corridor, clustered, rooms_maze, mixed]
+    width: 100.0
+    height: 100.0
+    safety_distance: 2.0
+
+planning_benchmark:
+  benchmark_id: uav2d-v1
+  time_limit_seconds: 1.0
+  max_objective_evaluations: 2000
+  stochastic_repetitions: 5
+  waypoint_count: 10
+  population_size: 32
+  planners:
+    - dijkstra
+    - astar
+    - theta_star
+    - rrt
+    - rrt_star
+    - prm
+    - ga
+    - pso
+    - de
+    - aco_acor
+    - afl_uav_mock
+
+output:
+  data_dir: data/benchmarks/uav2d-v1
+  results_dir: artifacts/planning_benchmarks
+  figures_dir: artifacts/planning_benchmarks/figures
+  export_jsonl: true

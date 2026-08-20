@@ -1,0 +1,48 @@
+method_id: evolutionary-afl-uav-v1
+status: frozen_after_validation
+frozen_core_source: src/uav_operator_evolution/planning_benchmarks/evolutionary_afl.py
+expected_core_sha256: 79f0a085a0f26b246d2f1e0d0bc1ac7e8a6288b34dd0fbc8f29bc9387e1a7d4f
+
+seed_artifact: artifacts/planning_benchmarks/afl_uav_artifacts/deepseek-v4pro-frozen-strict-v2/artifact.json
+expected_seed_artifact_id: d384eac99d8a1f5df9d544ff1c3adf2ef9838c04930809f140b18dcc5f34f455
+expected_seed_solver_hash: 302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c
+
+dataset_manifest: data/benchmarks/uav2d-v1/manifest.json
+expected_dataset_manifest_sha256: 34abb53bcd5f5c420c4fa288e44d8a2fdea1e98c23c9dd96fe5f1618c2280b9d
+validation_receipt: artifacts/planning_benchmarks/evolutionary-afl-uav-validation-analysis-v1/analysis_receipt.json
+expected_validation_receipt_sha256: 69af39c0dacce5a0c9b9514149fb29aebe3d94ec6bd3189e9444f45d2b7e8bd4
+experiment_matrix: configs/evolutionary_afl_uav_experiments_v1.yaml
+expected_experiment_matrix_sha256: f2b8f4b68054ba8264a316fa165fe033e8f29e1c66206ce5a2d51e0b4769f522
+experiments_receipt: artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/analysis_receipt.json
+expected_experiments_receipt_sha256: df0017a022aaff293eef1149b3184e59474a415ba5996d9718d1b08cb7903904
+pytest_junit: artifacts/planning_benchmarks/evolutionary-afl-uav-methods/evolutionary-afl-uav-v1/pytest.xml
+
+parameters:
+  population_size: 32
+  archive_size: 8
+  max_generations: 20
+  max_waypoints: 64
+  base_iteration_limit: 64
+  crossover_probability: 0.40
+  extra_mutation_probability: 0.30
+  soft_deadline_fraction: 0.88
+  primary_operator_schedule:
+    insert: 0.25
+    delete: 0.25
+    move: 0.25
+    swap: 0.25
+  representation: variable_length_waypoints
+  archive: pareto_quality_diversity
+  final_selection: minimum_trusted_weighted_total_cost
+  difficulty_generation_caps:
+    rooms_maze: 6
+    mixed: 12
+    corridor: 14
+    default: 20
+
+development_policy:
+  allowed_splits: [train, validation]
+  test_split_opened: false
+  api_calls_during_planning: 0
+  post_freeze_validation_tuning_allowed: false
+  sensitivity_design: one_factor_at_a_time
