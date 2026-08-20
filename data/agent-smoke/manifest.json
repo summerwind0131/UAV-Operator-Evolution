@@ -1,0 +1,47 @@
+{
+  "config_hash": "d6348aeb03ffc5485f3900e50fe541ca3598bac3c31f02bbbc6c4c28d10cea64",
+  "generator_version": "2",
+  "maps": [
+    {
+      "content_hash": "eb793e8f16e3f7445b7013a9cf5f4930732e4e7b2a5bcd76516df3280865c6bd",
+      "difficulty": "medium",
+      "map_id": "train-000-medium-cfa14451d7",
+      "relative_path": "train/train-000-medium-cfa14451d7.json",
+      "seed": 8236519124988529911,
+      "split": "train"
+    },
+    {
+      "content_hash": "811583b31edd24882e7dc0c73477e7b119a0f0ada2fcbd330888f390387e85c8",
+      "difficulty": "clustered",
+      "map_id": "train-001-clustered-54773799bd",
+      "relative_path": "train/train-001-clustered-54773799bd.json",
+      "seed": 5423809514916100460,
+      "split": "train"
+    },
+    {
+      "content_hash": "9a170864922d6660adcfc8d63d17ad64c27a07ffe9fe5e198d89f6ca30701458",
+      "difficulty": "dense",
+      "map_id": "validation-000-dense-5e62c6b6ac",
+      "relative_path": "validation/validation-000-dense-5e62c6b6ac.json",
+      "seed": 692736517948858234,
+      "split": "validation"
+    },
+    {
+      "content_hash": "1a9e65c98a78020a8970bb03f182cd0a54cd363c07d1133763a6d00c5cc784ff",
+      "difficulty": "corridor",
+      "map_id": "validation-001-corridor-ce4575b52c",
+      "relative_path": "validation/validation-001-corridor-ce4575b52c.json",
+      "seed": 5568372014714352745,
+      "split": "validation"
+    },
+    {
+      "content_hash": "8b3533ae1675cb5db5d8f08b2db30ea55f687d44ba496afdaec9209cd434584c",
+      "difficulty": "mixed",
+      "map_id": "test-000-mixed-89e1ffc4fa",
+      "relative_path": "test/test-000-mixed-89e1ffc4fa.json",
+      "seed": 2039174371262371684,
+      "split": "test"
+    }
+  ],
+  "master_seed": 42
+}

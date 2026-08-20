@@ -1,0 +1,57 @@
+{
+  "difficulty": "corridor",
+  "goal": [
+    91.77403666807159,
+    81.64844020934385
+  ],
+  "height": 100.0,
+  "layout_subtype": null,
+  "map_id": "test-086-corridor-75228c157b",
+  "obstacles": [
+    {
+      "kind": "rectangle",
+      "max_x": 44.75,
+      "max_y": 22.237649570276016,
+      "min_x": 39.25,
+      "min_y": 0.0
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 44.75,
+      "max_y": 100.0,
+      "min_x": 39.25,
+      "min_y": 39.23764957027602
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 68.75,
+      "max_y": 59.699539362211596,
+      "min_x": 63.25,
+      "min_y": 0.0
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 68.75,
+      "max_y": 100.0,
+      "min_x": 63.25,
+      "min_y": 76.6995393622116
+    }
+  ],
+  "risk_zones": [
+    {
+      "max_x": 62.0,
+      "max_y": 56.99999999999999,
+      "min_x": 46.0,
+      "min_y": 43.0,
+      "name": "corridor_crosswind",
+      "weight": 1.25
+    }
+  ],
+  "safety_distance": 2.0,
+  "seed": 1938240451305415782,
+  "start": [
+    8.303783340903488,
+    11.687122441748073
+  ],
+  "width": 100.0
+}

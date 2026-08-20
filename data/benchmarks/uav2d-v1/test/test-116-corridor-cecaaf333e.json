@@ -1,0 +1,57 @@
+{
+  "difficulty": "corridor",
+  "goal": [
+    94.57871465428738,
+    90.32062388715477
+  ],
+  "height": 100.0,
+  "layout_subtype": null,
+  "map_id": "test-116-corridor-cecaaf333e",
+  "obstacles": [
+    {
+      "kind": "rectangle",
+      "max_x": 44.75,
+      "max_y": 26.800133276495117,
+      "min_x": 39.25,
+      "min_y": 0.0
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 44.75,
+      "max_y": 100.0,
+      "min_x": 39.25,
+      "min_y": 43.80013327649512
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 68.75,
+      "max_y": 58.4659931890927,
+      "min_x": 63.25,
+      "min_y": 0.0
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 68.75,
+      "max_y": 100.0,
+      "min_x": 63.25,
+      "min_y": 75.4659931890927
+    }
+  ],
+  "risk_zones": [
+    {
+      "max_x": 62.0,
+      "max_y": 56.99999999999999,
+      "min_x": 46.0,
+      "min_y": 43.0,
+      "name": "corridor_crosswind",
+      "weight": 1.25
+    }
+  ],
+  "safety_distance": 2.0,
+  "seed": 261764173649221791,
+  "start": [
+    8.980650973898,
+    12.497967876098464
+  ],
+  "width": 100.0
+}

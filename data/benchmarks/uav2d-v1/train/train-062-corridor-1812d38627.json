@@ -1,0 +1,57 @@
+{
+  "difficulty": "corridor",
+  "goal": [
+    91.04284043354755,
+    92.17125825049483
+  ],
+  "height": 100.0,
+  "layout_subtype": null,
+  "map_id": "train-062-corridor-1812d38627",
+  "obstacles": [
+    {
+      "kind": "rectangle",
+      "max_x": 44.75,
+      "max_y": 26.6500424444545,
+      "min_x": 39.25,
+      "min_y": 0.0
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 44.75,
+      "max_y": 100.0,
+      "min_x": 39.25,
+      "min_y": 43.6500424444545
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 68.75,
+      "max_y": 56.73091603697297,
+      "min_x": 63.25,
+      "min_y": 0.0
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 68.75,
+      "max_y": 100.0,
+      "min_x": 63.25,
+      "min_y": 73.73091603697297
+    }
+  ],
+  "risk_zones": [
+    {
+      "max_x": 62.0,
+      "max_y": 56.99999999999999,
+      "min_x": 46.0,
+      "min_y": 43.0,
+      "name": "corridor_crosswind",
+      "weight": 1.25
+    }
+  ],
+  "safety_distance": 2.0,
+  "seed": 4758765293175047966,
+  "start": [
+    7.6682481321964895,
+    6.19601034046301
+  ],
+  "width": 100.0
+}

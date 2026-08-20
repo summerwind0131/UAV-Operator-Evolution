@@ -1,0 +1,76 @@
+{
+  "difficulty": "rooms_maze",
+  "goal": [
+    12.344942156936009,
+    8.539724017590512
+  ],
+  "height": 100.0,
+  "layout_subtype": "rooms",
+  "map_id": "validation-004-rooms_maze-33155f70ac",
+  "obstacles": [
+    {
+      "kind": "rectangle",
+      "max_x": 34.6,
+      "max_y": 51.175660674346155,
+      "min_x": 33.4,
+      "min_y": 0.0
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 34.6,
+      "max_y": 100.0,
+      "min_x": 33.4,
+      "min_y": 65.17566067434616
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 66.6,
+      "max_y": 57.84452050369161,
+      "min_x": 65.4,
+      "min_y": 0.0
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 66.6,
+      "max_y": 100.0,
+      "min_x": 65.4,
+      "min_y": 71.84452050369161
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 22.59936363448909,
+      "max_y": 36.6,
+      "min_x": 0.0,
+      "min_y": 35.4
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 100.0,
+      "max_y": 36.6,
+      "min_x": 36.599363634489094,
+      "min_y": 35.4
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 56.894732897301886,
+      "max_y": 64.6,
+      "min_x": 0.0,
+      "min_y": 63.4
+    },
+    {
+      "kind": "rectangle",
+      "max_x": 100.0,
+      "max_y": 64.6,
+      "min_x": 70.89473289730189,
+      "min_y": 63.4
+    }
+  ],
+  "risk_zones": [],
+  "safety_distance": 2.0,
+  "seed": 4833227022964900260,
+  "start": [
+    90.98115553109632,
+    90.87352115083742
+  ],
+  "width": 100.0
+}
