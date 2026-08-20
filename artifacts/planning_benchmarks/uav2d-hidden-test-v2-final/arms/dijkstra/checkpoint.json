@@ -1,0 +1,10 @@
+{
+  "arm_id": "dijkstra",
+  "benchmark_metadata_sha256": "0dabfa8fcb20c02c48a26be70f714cceaa31a6489e16a9512e0d45e621aec73a",
+  "benchmark_paths_sha256": "d8246dcb668670b577951ca44d20a1c16186607930e88650490a6250c290a100",
+  "benchmark_runs_sha256": "3fffe6ab2d97671d08a0cc10b6ecd2eef09feba923014639bf301baee73e8d5c",
+  "plan_id": "8da50c4196337441638a85abb0ca0ad782dec47dadd85c16592237251428029d",
+  "rows": 120,
+  "schema_version": "uav2d-final-arm-checkpoint-v1",
+  "status": "complete"
+}

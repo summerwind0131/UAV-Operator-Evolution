@@ -1,0 +1,106 @@
+{
+  "paired_comparisons": [],
+  "ranking": [
+    {
+      "arm_id": "evolutionary_afl_uav_v1",
+      "feasible_rate": 1.0,
+      "median_total_cost_feasible": 119.3226321368734,
+      "planner": "evolutionary_afl_uav",
+      "rank": 1
+    }
+  ],
+  "ranking_rule": "descending feasible_rate, then ascending median unified total cost among feasible paths",
+  "statistics": [
+    {
+      "arm_id": "evolutionary_afl_uav_v1",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 12,
+      "iqr_total_cost_feasible": 14.186447535911512,
+      "map_class": "all",
+      "median_runtime_seconds": 0.1277217999959248,
+      "median_total_cost_feasible": 119.3226321368734,
+      "planner": "evolutionary_afl_uav",
+      "runs": 12,
+      "timeout_rate": 1.0
+    },
+    {
+      "arm_id": "evolutionary_afl_uav_v1",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 2,
+      "iqr_total_cost_feasible": 0.0,
+      "map_class": "clustered",
+      "median_runtime_seconds": 0.13071979999585892,
+      "median_total_cost_feasible": 118.50560213004228,
+      "planner": "evolutionary_afl_uav",
+      "runs": 2,
+      "timeout_rate": 1.0
+    },
+    {
+      "arm_id": "evolutionary_afl_uav_v1",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 2,
+      "iqr_total_cost_feasible": 0.0,
+      "map_class": "corridor",
+      "median_runtime_seconds": 0.13442855000175769,
+      "median_total_cost_feasible": 312.81251540176686,
+      "planner": "evolutionary_afl_uav",
+      "runs": 2,
+      "timeout_rate": 1.0
+    },
+    {
+      "arm_id": "evolutionary_afl_uav_v1",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 2,
+      "iqr_total_cost_feasible": 0.0,
+      "map_class": "dense",
+      "median_runtime_seconds": 0.14577114999701735,
+      "median_total_cost_feasible": 120.13966214370451,
+      "planner": "evolutionary_afl_uav",
+      "runs": 2,
+      "timeout_rate": 1.0
+    },
+    {
+      "arm_id": "evolutionary_afl_uav_v1",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 2,
+      "iqr_total_cost_feasible": 0.0,
+      "map_class": "mixed",
+      "median_runtime_seconds": 0.1149117999993905,
+      "median_total_cost_feasible": 109.4909171776687,
+      "planner": "evolutionary_afl_uav",
+      "runs": 2,
+      "timeout_rate": 1.0
+    },
+    {
+      "arm_id": "evolutionary_afl_uav_v1",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 2,
+      "iqr_total_cost_feasible": 0.0,
+      "map_class": "rooms_maze",
+      "median_runtime_seconds": 0.12995569999839063,
+      "median_total_cost_feasible": 125.56676944343643,
+      "planner": "evolutionary_afl_uav",
+      "runs": 2,
+      "timeout_rate": 1.0
+    },
+    {
+      "arm_id": "evolutionary_afl_uav_v1",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 2,
+      "iqr_total_cost_feasible": 0.0,
+      "map_class": "sparse",
+      "median_runtime_seconds": 0.11639094999918598,
+      "median_total_cost_feasible": 111.38032190752492,
+      "planner": "evolutionary_afl_uav",
+      "runs": 2,
+      "timeout_rate": 1.0
+    }
+  ]
+}

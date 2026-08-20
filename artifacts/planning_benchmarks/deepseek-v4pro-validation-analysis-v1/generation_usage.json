@@ -1,0 +1,32 @@
+{
+  "deduplication_key": "provider response_id",
+  "candidate_audit_files": 16,
+  "generation_logical_calls": 232,
+  "generation_http_attempts": 243,
+  "generation_retries": 11,
+  "generation_input_tokens": 799103,
+  "generation_output_tokens": 245296,
+  "generation_total_tokens": 1044399,
+  "generation_provider_latency_ms": 2832735.342500011,
+  "minimal_probe": {
+    "input_tokens": 90,
+    "output_tokens": 5,
+    "total_tokens": 95,
+    "logical_calls": 1,
+    "http_attempts": 1,
+    "retries": 0,
+    "latency_ms": 3157.0
+  },
+  "all_live_calls_including_probe": 233,
+  "all_input_tokens_including_probe": 799193,
+  "all_output_tokens_including_probe": 245301,
+  "all_total_tokens_including_probe": 1044494,
+  "estimated_generation_cost_usd": 0.5610173249999999,
+  "estimated_probe_cost_usd": 4.35e-05,
+  "estimated_all_live_cost_usd": 0.5610608249999999,
+  "price_assumption_usd_per_million_tokens": {
+    "input": 0.435,
+    "output": 0.87,
+    "source": "https://api-docs.deepseek.com/quick_start/pricing/"
+  }
+}

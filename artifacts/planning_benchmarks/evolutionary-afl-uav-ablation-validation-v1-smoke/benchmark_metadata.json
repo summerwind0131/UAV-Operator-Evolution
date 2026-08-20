@@ -1,0 +1,581 @@
+{
+  "actual_records": 30,
+  "afl_generation_summary": {
+    "artifacts": 1,
+    "generation_success_rate": 1.0,
+    "logical_calls": 43,
+    "provider_latency_ms": 572245.3879000023,
+    "successful_artifacts": 1,
+    "total_tokens": 224141
+  },
+  "afl_uav_artifact": null,
+  "afl_uav_artifacts": [
+    {
+      "approved_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+      "arm_id": "evo_no_qd_archive",
+      "artifact_id": "d384eac99d8a1f5df9d544ff1c3adf2ef9838c04930809f140b18dcc5f34f455",
+      "artifact_path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\afl_uav_artifacts\\deepseek-v4pro-frozen-strict-v2",
+      "artifact_schema_version": "afl-uav-solver-artifact-v2",
+      "candidate_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+      "code_stage_revisions": {
+        "cost": 0,
+        "destroy": 0,
+        "geometry": 2,
+        "initial": 1,
+        "main": 0,
+        "post_audit": 6,
+        "read_problem": 0,
+        "repair": 2,
+        "validation": 0
+      },
+      "description_revisions": 2,
+      "evolutionary_parameters": {
+        "archive": "weighted_cost_elitism_only",
+        "archive_size": 8,
+        "base_iteration_limit": 64,
+        "crossover_probability": 0.4,
+        "experiment_variant": "no_quality_diversity_archive",
+        "extra_mutation_probability": 0.3,
+        "frozen_v1_core_modified": false,
+        "is_ablation": true,
+        "llm_calls_during_planning": 0,
+        "max_generations": 20,
+        "max_waypoints": 64,
+        "operators": [
+          "insert",
+          "delete",
+          "move",
+          "swap",
+          "crossover"
+        ],
+        "population_size": 32,
+        "representation": "variable_length_waypoints"
+      },
+      "execution_arm": "evolutionary_afl_uav:evo_no_qd_archive",
+      "generated_from_map_id": "train-000-sparse-c4b92a431b",
+      "generated_from_split": "train",
+      "generation_success": true,
+      "human_review": {
+        "approved_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+        "decision": "approved_for_restricted_qualification",
+        "llm_judgment_hash": "f157c542b9fbaf358be07e796929b180e96c77a6c2fd912d12d3aa0b66370054",
+        "overrode_llm_judgment": true,
+        "rationale": [
+          "Complete AST policy and deterministic solver contract passed.",
+          "The final LLM judgment mixed valid checks with source-contradicted findings; human review resolved those findings against the authoritative contract.",
+          "Approval is restricted to CLI smoke and six fixed Train qualification maps; the shared trusted evaluator remains authoritative."
+        ],
+        "reviewer": "delegated_human_review_by_codex"
+      },
+      "llm_usage": {
+        "input_tokens": 175408,
+        "logical_calls": 43,
+        "output_tokens": 48733,
+        "retries": 0,
+        "total_tokens": 224141
+      },
+      "model": "deepseek-v4-pro",
+      "planner": "evolutionary_afl_uav",
+      "provider": "deepseek",
+      "provider_call_count": 43,
+      "provider_latency_ms": 572245.3879000023,
+      "provider_retry_count": 0,
+      "provider_sdk_versions": {
+        "openai": "2.32.0"
+      },
+      "qualification_passed": true,
+      "research_claim_eligible": true,
+      "solver_cli_contract": "afl-uav-solver-cli-v2",
+      "solver_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c"
+    },
+    {
+      "approved_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+      "arm_id": "evo_no_crossover",
+      "artifact_id": "d384eac99d8a1f5df9d544ff1c3adf2ef9838c04930809f140b18dcc5f34f455",
+      "artifact_path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\afl_uav_artifacts\\deepseek-v4pro-frozen-strict-v2",
+      "artifact_schema_version": "afl-uav-solver-artifact-v2",
+      "candidate_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+      "code_stage_revisions": {
+        "cost": 0,
+        "destroy": 0,
+        "geometry": 2,
+        "initial": 1,
+        "main": 0,
+        "post_audit": 6,
+        "read_problem": 0,
+        "repair": 2,
+        "validation": 0
+      },
+      "description_revisions": 2,
+      "evolutionary_parameters": {
+        "archive": "pareto_quality_diversity",
+        "archive_size": 8,
+        "base_iteration_limit": 64,
+        "crossover_probability": 0.0,
+        "experiment_variant": "no_crossover",
+        "extra_mutation_probability": 0.3,
+        "frozen_v1_core_modified": false,
+        "is_ablation": true,
+        "llm_calls_during_planning": 0,
+        "max_generations": 20,
+        "max_waypoints": 64,
+        "operators": [
+          "insert",
+          "delete",
+          "move",
+          "swap",
+          "crossover"
+        ],
+        "population_size": 32,
+        "representation": "variable_length_waypoints"
+      },
+      "execution_arm": "evolutionary_afl_uav:evo_no_crossover",
+      "generated_from_map_id": "train-000-sparse-c4b92a431b",
+      "generated_from_split": "train",
+      "generation_success": true,
+      "human_review": {
+        "approved_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+        "decision": "approved_for_restricted_qualification",
+        "llm_judgment_hash": "f157c542b9fbaf358be07e796929b180e96c77a6c2fd912d12d3aa0b66370054",
+        "overrode_llm_judgment": true,
+        "rationale": [
+          "Complete AST policy and deterministic solver contract passed.",
+          "The final LLM judgment mixed valid checks with source-contradicted findings; human review resolved those findings against the authoritative contract.",
+          "Approval is restricted to CLI smoke and six fixed Train qualification maps; the shared trusted evaluator remains authoritative."
+        ],
+        "reviewer": "delegated_human_review_by_codex"
+      },
+      "llm_usage": {
+        "input_tokens": 175408,
+        "logical_calls": 43,
+        "output_tokens": 48733,
+        "retries": 0,
+        "total_tokens": 224141
+      },
+      "model": "deepseek-v4-pro",
+      "planner": "evolutionary_afl_uav",
+      "provider": "deepseek",
+      "provider_call_count": 43,
+      "provider_latency_ms": 572245.3879000023,
+      "provider_retry_count": 0,
+      "provider_sdk_versions": {
+        "openai": "2.32.0"
+      },
+      "qualification_passed": true,
+      "research_claim_eligible": true,
+      "solver_cli_contract": "afl-uav-solver-cli-v2",
+      "solver_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c"
+    },
+    {
+      "approved_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+      "arm_id": "evo_move_only",
+      "artifact_id": "d384eac99d8a1f5df9d544ff1c3adf2ef9838c04930809f140b18dcc5f34f455",
+      "artifact_path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\afl_uav_artifacts\\deepseek-v4pro-frozen-strict-v2",
+      "artifact_schema_version": "afl-uav-solver-artifact-v2",
+      "candidate_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+      "code_stage_revisions": {
+        "cost": 0,
+        "destroy": 0,
+        "geometry": 2,
+        "initial": 1,
+        "main": 0,
+        "post_audit": 6,
+        "read_problem": 0,
+        "repair": 2,
+        "validation": 0
+      },
+      "description_revisions": 2,
+      "evolutionary_parameters": {
+        "archive": "pareto_quality_diversity",
+        "archive_size": 8,
+        "base_iteration_limit": 64,
+        "crossover_probability": 0.0,
+        "experiment_variant": "move_only",
+        "extra_mutation_probability": 0.3,
+        "frozen_v1_core_modified": false,
+        "is_ablation": true,
+        "llm_calls_during_planning": 0,
+        "max_generations": 20,
+        "max_waypoints": 64,
+        "operators": [
+          "move"
+        ],
+        "population_size": 32,
+        "representation": "variable_length_waypoints"
+      },
+      "execution_arm": "evolutionary_afl_uav:evo_move_only",
+      "generated_from_map_id": "train-000-sparse-c4b92a431b",
+      "generated_from_split": "train",
+      "generation_success": true,
+      "human_review": {
+        "approved_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+        "decision": "approved_for_restricted_qualification",
+        "llm_judgment_hash": "f157c542b9fbaf358be07e796929b180e96c77a6c2fd912d12d3aa0b66370054",
+        "overrode_llm_judgment": true,
+        "rationale": [
+          "Complete AST policy and deterministic solver contract passed.",
+          "The final LLM judgment mixed valid checks with source-contradicted findings; human review resolved those findings against the authoritative contract.",
+          "Approval is restricted to CLI smoke and six fixed Train qualification maps; the shared trusted evaluator remains authoritative."
+        ],
+        "reviewer": "delegated_human_review_by_codex"
+      },
+      "llm_usage": {
+        "input_tokens": 175408,
+        "logical_calls": 43,
+        "output_tokens": 48733,
+        "retries": 0,
+        "total_tokens": 224141
+      },
+      "model": "deepseek-v4-pro",
+      "planner": "evolutionary_afl_uav",
+      "provider": "deepseek",
+      "provider_call_count": 43,
+      "provider_latency_ms": 572245.3879000023,
+      "provider_retry_count": 0,
+      "provider_sdk_versions": {
+        "openai": "2.32.0"
+      },
+      "qualification_passed": true,
+      "research_claim_eligible": true,
+      "solver_cli_contract": "afl-uav-solver-cli-v2",
+      "solver_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c"
+    },
+    {
+      "approved_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+      "arm_id": "evo_no_rooms_strategy",
+      "artifact_id": "d384eac99d8a1f5df9d544ff1c3adf2ef9838c04930809f140b18dcc5f34f455",
+      "artifact_path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\afl_uav_artifacts\\deepseek-v4pro-frozen-strict-v2",
+      "artifact_schema_version": "afl-uav-solver-artifact-v2",
+      "candidate_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+      "code_stage_revisions": {
+        "cost": 0,
+        "destroy": 0,
+        "geometry": 2,
+        "initial": 1,
+        "main": 0,
+        "post_audit": 6,
+        "read_problem": 0,
+        "repair": 2,
+        "validation": 0
+      },
+      "description_revisions": 2,
+      "evolutionary_parameters": {
+        "archive": "pareto_quality_diversity",
+        "archive_size": 8,
+        "base_iteration_limit": 64,
+        "crossover_probability": 0.4,
+        "difficulty_generation_caps": "disabled",
+        "experiment_variant": "no_rooms_maze_strategy",
+        "extra_mutation_probability": 0.3,
+        "frozen_v1_core_modified": false,
+        "is_ablation": true,
+        "llm_calls_during_planning": 0,
+        "max_generations": 20,
+        "max_waypoints": 64,
+        "operators": [
+          "insert",
+          "delete",
+          "move",
+          "swap",
+          "crossover"
+        ],
+        "population_size": 32,
+        "representation": "variable_length_waypoints",
+        "rooms_maze_geometry_adaptation": "disabled"
+      },
+      "execution_arm": "evolutionary_afl_uav:evo_no_rooms_strategy",
+      "generated_from_map_id": "train-000-sparse-c4b92a431b",
+      "generated_from_split": "train",
+      "generation_success": true,
+      "human_review": {
+        "approved_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+        "decision": "approved_for_restricted_qualification",
+        "llm_judgment_hash": "f157c542b9fbaf358be07e796929b180e96c77a6c2fd912d12d3aa0b66370054",
+        "overrode_llm_judgment": true,
+        "rationale": [
+          "Complete AST policy and deterministic solver contract passed.",
+          "The final LLM judgment mixed valid checks with source-contradicted findings; human review resolved those findings against the authoritative contract.",
+          "Approval is restricted to CLI smoke and six fixed Train qualification maps; the shared trusted evaluator remains authoritative."
+        ],
+        "reviewer": "delegated_human_review_by_codex"
+      },
+      "llm_usage": {
+        "input_tokens": 175408,
+        "logical_calls": 43,
+        "output_tokens": 48733,
+        "retries": 0,
+        "total_tokens": 224141
+      },
+      "model": "deepseek-v4-pro",
+      "planner": "evolutionary_afl_uav",
+      "provider": "deepseek",
+      "provider_call_count": 43,
+      "provider_latency_ms": 572245.3879000023,
+      "provider_retry_count": 0,
+      "provider_sdk_versions": {
+        "openai": "2.32.0"
+      },
+      "qualification_passed": true,
+      "research_claim_eligible": true,
+      "solver_cli_contract": "afl-uav-solver-cli-v2",
+      "solver_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c"
+    },
+    {
+      "approved_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+      "arm_id": "evo_fixed_length",
+      "artifact_id": "d384eac99d8a1f5df9d544ff1c3adf2ef9838c04930809f140b18dcc5f34f455",
+      "artifact_path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\afl_uav_artifacts\\deepseek-v4pro-frozen-strict-v2",
+      "artifact_schema_version": "afl-uav-solver-artifact-v2",
+      "candidate_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+      "code_stage_revisions": {
+        "cost": 0,
+        "destroy": 0,
+        "geometry": 2,
+        "initial": 1,
+        "main": 0,
+        "post_audit": 6,
+        "read_problem": 0,
+        "repair": 2,
+        "validation": 0
+      },
+      "description_revisions": 2,
+      "evolutionary_parameters": {
+        "archive": "pareto_quality_diversity",
+        "archive_size": 8,
+        "base_iteration_limit": 64,
+        "crossover_probability": 0.4,
+        "experiment_variant": "fixed_length_population",
+        "extra_mutation_probability": 0.3,
+        "frozen_v1_core_modified": false,
+        "is_ablation": true,
+        "llm_calls_during_planning": 0,
+        "max_generations": 20,
+        "max_waypoints": 64,
+        "operators": [
+          "move",
+          "swap",
+          "same_cut_crossover"
+        ],
+        "population_size": 32,
+        "representation": "fixed_seed_waypoint_count"
+      },
+      "execution_arm": "evolutionary_afl_uav:evo_fixed_length",
+      "generated_from_map_id": "train-000-sparse-c4b92a431b",
+      "generated_from_split": "train",
+      "generation_success": true,
+      "human_review": {
+        "approved_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+        "decision": "approved_for_restricted_qualification",
+        "llm_judgment_hash": "f157c542b9fbaf358be07e796929b180e96c77a6c2fd912d12d3aa0b66370054",
+        "overrode_llm_judgment": true,
+        "rationale": [
+          "Complete AST policy and deterministic solver contract passed.",
+          "The final LLM judgment mixed valid checks with source-contradicted findings; human review resolved those findings against the authoritative contract.",
+          "Approval is restricted to CLI smoke and six fixed Train qualification maps; the shared trusted evaluator remains authoritative."
+        ],
+        "reviewer": "delegated_human_review_by_codex"
+      },
+      "llm_usage": {
+        "input_tokens": 175408,
+        "logical_calls": 43,
+        "output_tokens": 48733,
+        "retries": 0,
+        "total_tokens": 224141
+      },
+      "model": "deepseek-v4-pro",
+      "planner": "evolutionary_afl_uav",
+      "provider": "deepseek",
+      "provider_call_count": 43,
+      "provider_latency_ms": 572245.3879000023,
+      "provider_retry_count": 0,
+      "provider_sdk_versions": {
+        "openai": "2.32.0"
+      },
+      "qualification_passed": true,
+      "research_claim_eligible": true,
+      "solver_cli_contract": "afl-uav-solver-cli-v2",
+      "solver_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c"
+    }
+  ],
+  "algorithm_parameters": {
+    "aco_label": "aco_acor",
+    "afl_uav_iteration_limit": 256,
+    "evolutionary_afl_uav": {
+      "evolutionary_afl_uav:evo_fixed_length": {
+        "archive": "pareto_quality_diversity",
+        "archive_size": 8,
+        "base_iteration_limit": 64,
+        "crossover_probability": 0.4,
+        "experiment_variant": "fixed_length_population",
+        "extra_mutation_probability": 0.3,
+        "frozen_v1_core_modified": false,
+        "is_ablation": true,
+        "llm_calls_during_planning": 0,
+        "max_generations": 20,
+        "max_waypoints": 64,
+        "operators": [
+          "move",
+          "swap",
+          "same_cut_crossover"
+        ],
+        "population_size": 32,
+        "representation": "fixed_seed_waypoint_count"
+      },
+      "evolutionary_afl_uav:evo_move_only": {
+        "archive": "pareto_quality_diversity",
+        "archive_size": 8,
+        "base_iteration_limit": 64,
+        "crossover_probability": 0.0,
+        "experiment_variant": "move_only",
+        "extra_mutation_probability": 0.3,
+        "frozen_v1_core_modified": false,
+        "is_ablation": true,
+        "llm_calls_during_planning": 0,
+        "max_generations": 20,
+        "max_waypoints": 64,
+        "operators": [
+          "move"
+        ],
+        "population_size": 32,
+        "representation": "variable_length_waypoints"
+      },
+      "evolutionary_afl_uav:evo_no_crossover": {
+        "archive": "pareto_quality_diversity",
+        "archive_size": 8,
+        "base_iteration_limit": 64,
+        "crossover_probability": 0.0,
+        "experiment_variant": "no_crossover",
+        "extra_mutation_probability": 0.3,
+        "frozen_v1_core_modified": false,
+        "is_ablation": true,
+        "llm_calls_during_planning": 0,
+        "max_generations": 20,
+        "max_waypoints": 64,
+        "operators": [
+          "insert",
+          "delete",
+          "move",
+          "swap",
+          "crossover"
+        ],
+        "population_size": 32,
+        "representation": "variable_length_waypoints"
+      },
+      "evolutionary_afl_uav:evo_no_qd_archive": {
+        "archive": "weighted_cost_elitism_only",
+        "archive_size": 8,
+        "base_iteration_limit": 64,
+        "crossover_probability": 0.4,
+        "experiment_variant": "no_quality_diversity_archive",
+        "extra_mutation_probability": 0.3,
+        "frozen_v1_core_modified": false,
+        "is_ablation": true,
+        "llm_calls_during_planning": 0,
+        "max_generations": 20,
+        "max_waypoints": 64,
+        "operators": [
+          "insert",
+          "delete",
+          "move",
+          "swap",
+          "crossover"
+        ],
+        "population_size": 32,
+        "representation": "variable_length_waypoints"
+      },
+      "evolutionary_afl_uav:evo_no_rooms_strategy": {
+        "archive": "pareto_quality_diversity",
+        "archive_size": 8,
+        "base_iteration_limit": 64,
+        "crossover_probability": 0.4,
+        "difficulty_generation_caps": "disabled",
+        "experiment_variant": "no_rooms_maze_strategy",
+        "extra_mutation_probability": 0.3,
+        "frozen_v1_core_modified": false,
+        "is_ablation": true,
+        "llm_calls_during_planning": 0,
+        "max_generations": 20,
+        "max_waypoints": 64,
+        "operators": [
+          "insert",
+          "delete",
+          "move",
+          "swap",
+          "crossover"
+        ],
+        "population_size": 32,
+        "representation": "variable_length_waypoints",
+        "rooms_maze_geometry_adaptation": "disabled"
+      }
+    },
+    "grid_resolution": 2.0,
+    "population_max_generations": 20,
+    "population_size": 32,
+    "prm_neighbor_count": 10,
+    "prm_sample_count": 180,
+    "rrt_goal_bias": 0.1,
+    "rrt_max_samples": 1000,
+    "rrt_step_size": 4.0,
+    "waypoint_count": 10
+  },
+  "benchmark_id": "uav2d-v1",
+  "budget": {
+    "max_objective_evaluations": 2000,
+    "time_limit_seconds": 1.0
+  },
+  "config_hash": "0f4dd8267a127495782f04e4ba5ed366829ece79d4d2886df79354ed819b8472",
+  "created_at_utc": "2026-08-16T16:01:39.477078+00:00",
+  "dependencies": {
+    "PyYAML": "6.0.1",
+    "numpy": "1.26.4",
+    "pydantic": "2.13.4"
+  },
+  "expected_records": 30,
+  "host": {
+    "hostname": "LAPTOP-6C3CNSPJ",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:03:56) [MSC v.1929 64 bit (AMD64)]"
+  },
+  "manifest_hash": "1f980c2697f521d4e5b92ff596452ce8f2bc2874885d9b789288c790b71b1517",
+  "manifest_path": "D:\\CodingLife\\Agent\\agnet_uav\\data\\benchmarks\\uav2d-v1\\manifest.json",
+  "objective": {
+    "collision": 1000.0,
+    "length": 1.0,
+    "risk": 10.0,
+    "smoothness": 5.0,
+    "waypoint": 0.5
+  },
+  "overrides": {
+    "maps_per_class": 1,
+    "max_objective_evaluations": 2000,
+    "planner_overrides": [
+      "evolutionary_afl_uav:evo_fixed_length",
+      "evolutionary_afl_uav:evo_move_only",
+      "evolutionary_afl_uav:evo_no_crossover",
+      "evolutionary_afl_uav:evo_no_qd_archive",
+      "evolutionary_afl_uav:evo_no_rooms_strategy"
+    ],
+    "planners": [
+      "evolutionary_afl_uav:evo_no_qd_archive",
+      "evolutionary_afl_uav:evo_no_crossover",
+      "evolutionary_afl_uav:evo_move_only",
+      "evolutionary_afl_uav:evo_no_rooms_strategy",
+      "evolutionary_afl_uav:evo_fixed_length"
+    ],
+    "repetitions": 1,
+    "time_limit_seconds": 1.0
+  },
+  "record_key_hash": "009e44182fea55981fe40ba8ba16dae2ad2802a68e7c17f594cc302b720b65bb",
+  "run_id": "evolutionary-afl-uav-ablation-validation-v1-smoke",
+  "selected_maps": 6,
+  "selected_planners": [
+    "evolutionary_afl_uav:evo_no_qd_archive",
+    "evolutionary_afl_uav:evo_no_crossover",
+    "evolutionary_afl_uav:evo_move_only",
+    "evolutionary_afl_uav:evo_no_rooms_strategy",
+    "evolutionary_afl_uav:evo_fixed_length"
+  ],
+  "split": "validation",
+  "stochastic_repetitions": 1
+}

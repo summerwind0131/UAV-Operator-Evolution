@@ -1,0 +1,73 @@
+{
+  "actual_records": 6,
+  "afl_generation_summary": {
+    "artifacts": 0,
+    "generation_success_rate": null,
+    "logical_calls": 0,
+    "provider_latency_ms": 0,
+    "successful_artifacts": 0,
+    "total_tokens": 0
+  },
+  "afl_uav_artifact": null,
+  "afl_uav_artifacts": [],
+  "algorithm_parameters": {
+    "aco_label": "aco_acor",
+    "afl_uav_iteration_limit": 256,
+    "evolutionary_afl_uav": {},
+    "grid_resolution": 2.0,
+    "population_max_generations": 20,
+    "population_size": 32,
+    "prm_neighbor_count": 10,
+    "prm_sample_count": 180,
+    "rrt_goal_bias": 0.1,
+    "rrt_max_samples": 1000,
+    "rrt_step_size": 4.0,
+    "waypoint_count": 10
+  },
+  "benchmark_id": "uav2d-v1",
+  "budget": {
+    "max_objective_evaluations": 50,
+    "time_limit_seconds": 0.1
+  },
+  "config_hash": "0f4dd8267a127495782f04e4ba5ed366829ece79d4d2886df79354ed819b8472",
+  "created_at_utc": "2026-08-17T15:00:49.179190+00:00",
+  "dependencies": {
+    "PyYAML": "6.0.1",
+    "numpy": "1.26.4",
+    "pydantic": "2.13.4"
+  },
+  "expected_records": 6,
+  "final_evaluation_authorization": null,
+  "host": {
+    "hostname": "LAPTOP-6C3CNSPJ",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:03:56) [MSC v.1929 64 bit (AMD64)]"
+  },
+  "manifest_hash": "1f980c2697f521d4e5b92ff596452ce8f2bc2874885d9b789288c790b71b1517",
+  "manifest_path": "D:\\CodingLife\\Agent\\agnet_uav\\data\\benchmarks\\uav2d-v1\\manifest.json",
+  "objective": {
+    "collision": 1000.0,
+    "length": 1.0,
+    "risk": 10.0,
+    "smoothness": 5.0,
+    "waypoint": 0.5
+  },
+  "overrides": {
+    "maps_per_class": 1,
+    "max_objective_evaluations": 50,
+    "planners": [
+      "theta_star"
+    ],
+    "repetitions": 2,
+    "time_limit_seconds": 0.1
+  },
+  "record_key_hash": "a5ad2f0851065d3f2916e6277213222561460e499aa7a5a15798a550d0759e7d",
+  "run_id": "preflight-02-theta_star",
+  "selected_maps": 6,
+  "selected_planners": [
+    "theta_star"
+  ],
+  "split": "validation",
+  "stochastic_repetitions": 2
+}

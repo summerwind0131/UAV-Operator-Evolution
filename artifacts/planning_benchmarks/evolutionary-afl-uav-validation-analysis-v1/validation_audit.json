@@ -1,0 +1,21 @@
+{
+  "actual_records": 300,
+  "all_feasible": true,
+  "all_validation_only": true,
+  "errors": [],
+  "exact_frozen_map_seed_alignment": true,
+  "expected_records": 300,
+  "max_elapsed_seconds": 0.9481277999984741,
+  "max_objective_evaluations": 737,
+  "rows_per_difficulty": {
+    "clustered": 50,
+    "corridor": 50,
+    "dense": 50,
+    "mixed": 50,
+    "rooms_maze": 50,
+    "sparse": 50
+  },
+  "status": "passed",
+  "unique_maps": 60,
+  "unique_record_keys": 300
+}

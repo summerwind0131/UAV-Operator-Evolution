@@ -1,0 +1,194 @@
+{
+  "analysis_id": "dcfcf8a1d72ccf8ade82d8c8eec55edd78d5940c73c2dbd38eba44556e98e79e",
+  "api_calls": 0,
+  "arms": {
+    "evolutionary_afl_uav_v1": {
+      "cost_q25": 112.53450727458126,
+      "cost_q75": 152.3734891855562,
+      "feasible": 300,
+      "feasible_rate": 1.0,
+      "maps": 60,
+      "maps_with_all_repetitions_feasible": 60,
+      "maps_with_any_feasible": 60,
+      "mean_archive_unique_paths": 8.0,
+      "median_cost_feasible": 117.50090617850191,
+      "median_elapsed_seconds": 0.9140345499999967,
+      "median_objective_evaluations": 316.0,
+      "median_outer_improvement": 1.3257688685456586,
+      "median_seed_cost": 120.81000405269464,
+      "records": 300,
+      "status_counts": {
+        "success": 300
+      },
+      "timeouts_with_trusted_path": 0,
+      "trusted_geometry_feasible": 300
+    },
+    "evolutionary_astar_seed": {
+      "cost_q25": 111.1732283584047,
+      "cost_q75": 198.25514048178292,
+      "feasible": 246,
+      "feasible_rate": 0.82,
+      "maps": 60,
+      "maps_with_all_repetitions_feasible": 48,
+      "maps_with_any_feasible": 50,
+      "mean_archive_unique_paths": 7.834008097165992,
+      "median_cost_feasible": 115.68627300992563,
+      "median_elapsed_seconds": 0.9114425500001744,
+      "median_objective_evaluations": 246.0,
+      "median_outer_improvement": 0.6878266564308717,
+      "median_seed_cost": 118.40325453164952,
+      "records": 300,
+      "status_counts": {
+        "success": 246,
+        "timeout": 54
+      },
+      "timeouts_with_trusted_path": 1,
+      "trusted_geometry_feasible": 247
+    },
+    "evolutionary_handcrafted_destroy_repair_seed": {
+      "cost_q25": 111.37818688486297,
+      "cost_q75": 204.3168495949744,
+      "feasible": 246,
+      "feasible_rate": 0.82,
+      "maps": 60,
+      "maps_with_all_repetitions_feasible": 49,
+      "maps_with_any_feasible": 50,
+      "mean_archive_unique_paths": 7.9227642276422765,
+      "median_cost_feasible": 115.69909732560087,
+      "median_elapsed_seconds": 0.9117042000007132,
+      "median_objective_evaluations": 243.0,
+      "median_outer_improvement": 0.5063865681239506,
+      "median_seed_cost": 118.32365080260827,
+      "records": 300,
+      "status_counts": {
+        "success": 246,
+        "timeout": 54
+      },
+      "timeouts_with_trusted_path": 0,
+      "trusted_geometry_feasible": 246
+    },
+    "evolutionary_theta_seed": {
+      "cost_q25": 111.37945459165692,
+      "cost_q75": 217.40031203564047,
+      "feasible": 263,
+      "feasible_rate": 0.8766666666666667,
+      "maps": 60,
+      "maps_with_all_repetitions_feasible": 52,
+      "maps_with_any_feasible": 54,
+      "mean_archive_unique_paths": 7.868421052631579,
+      "median_cost_feasible": 116.48884847577787,
+      "median_elapsed_seconds": 0.914919149999605,
+      "median_objective_evaluations": 256.0,
+      "median_outer_improvement": 0.5942625109705091,
+      "median_seed_cost": 118.41628452200776,
+      "records": 300,
+      "status_counts": {
+        "success": 263,
+        "timeout": 37
+      },
+      "timeouts_with_trusted_path": 3,
+      "trusted_geometry_feasible": 266
+    }
+  },
+  "conclusion": "afl_seed_clearly_superior_under_preregistered_validation_rule",
+  "created_at_utc": "2026-08-19T15:25:01.773191+00:00",
+  "experiment_id": "evolutionary-seed-source-controls-v1",
+  "hidden_test_access": false,
+  "input_hashes": {
+    "analysis_source_sha256": "22af4b14643137990c0e6f49071a9e3fab644917afe0479bbe7923acb9a67fef",
+    "config_sha256": "45143ccbeec717256538f4bf95146145ee0e48236df05bed82b30be2e015c6ea",
+    "paths_sha256": "067b66123b61fa7cc455581c1d1a9780332451b44f66506c44f56a3aadf74740",
+    "runs_sha256": "92e640af8eb337afb194515b63b2342aecf3655aa212da436ea8511114c097af"
+  },
+  "pairwise_against_afl_seed": {
+    "evolutionary_astar_seed": {
+      "afl_losses": 91,
+      "afl_wins": 176,
+      "both_feasible": 246,
+      "holm_adjusted_sign_p": 6.548586924240708e-07,
+      "paired_cost_difference": {
+        "ci95_high": 0.03335947563908803,
+        "ci95_low": 0.0,
+        "observed_median_control_minus_afl": 0.0
+      },
+      "pairs": 300,
+      "raw_two_sided_sign_p": 2.182862308080236e-07,
+      "ties": 33,
+      "win_loss_decomposition": {
+        "cost_losses_on_both_feasible": 91,
+        "cost_ties_on_both_feasible": 33,
+        "cost_wins_on_both_feasible": 122,
+        "feasibility_losses": 0,
+        "feasibility_wins": 54
+      }
+    },
+    "evolutionary_handcrafted_destroy_repair_seed": {
+      "afl_losses": 99,
+      "afl_wins": 166,
+      "both_feasible": 246,
+      "holm_adjusted_sign_p": 9.223254416511051e-05,
+      "paired_cost_difference": {
+        "ci95_high": 0.021959584868859582,
+        "ci95_low": -0.00025644504054866957,
+        "observed_median_control_minus_afl": 0.0
+      },
+      "pairs": 300,
+      "raw_two_sided_sign_p": 4.6116272082555254e-05,
+      "ties": 35,
+      "win_loss_decomposition": {
+        "cost_losses_on_both_feasible": 99,
+        "cost_ties_on_both_feasible": 35,
+        "cost_wins_on_both_feasible": 112,
+        "feasibility_losses": 0,
+        "feasibility_wins": 54
+      }
+    },
+    "evolutionary_theta_seed": {
+      "afl_losses": 106,
+      "afl_wins": 161,
+      "both_feasible": 263,
+      "holm_adjusted_sign_p": 0.0009159968717999793,
+      "paired_cost_difference": {
+        "ci95_high": 0.008924225780944539,
+        "ci95_low": 0.0,
+        "observed_median_control_minus_afl": 0.0
+      },
+      "pairs": 300,
+      "raw_two_sided_sign_p": 0.0009159968717999793,
+      "ties": 33,
+      "win_loss_decomposition": {
+        "cost_losses_on_both_feasible": 106,
+        "cost_ties_on_both_feasible": 33,
+        "cost_wins_on_both_feasible": 124,
+        "feasibility_losses": 0,
+        "feasibility_wins": 37
+      }
+    }
+  },
+  "protocol_correction": {
+    "raw_feasible_column_semantics": "trusted geometry feasibility",
+    "raw_runner_summary_authoritative": false,
+    "reason": "registered protocol counts every timeout as failure",
+    "rule": "status must be success and trusted path must be feasible"
+  },
+  "records": 1200,
+  "schema_version": "evolutionary-seed-source-controls-analysis-v1",
+  "split": "validation",
+  "superiority_criteria": {
+    "evolutionary_astar_seed": {
+      "feasible_rate_not_lower": true,
+      "holm_significant": true,
+      "paired_wins_exceed_losses": true
+    },
+    "evolutionary_handcrafted_destroy_repair_seed": {
+      "feasible_rate_not_lower": true,
+      "holm_significant": true,
+      "paired_wins_exceed_losses": true
+    },
+    "evolutionary_theta_seed": {
+      "feasible_rate_not_lower": true,
+      "holm_significant": true,
+      "paired_wins_exceed_losses": true
+    }
+  }
+}

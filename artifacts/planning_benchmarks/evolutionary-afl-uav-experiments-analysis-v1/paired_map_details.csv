@@ -1,0 +1,841 @@
+dataset,experiment_group,arm_id,label,map_id,difficulty,candidate_feasible_seeds,full_v1_feasible_seeds,candidate_median_cost,full_v1_median_cost,candidate_minus_full_cost
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-000-sparse-c9b13b3f28,sparse,5,5,111.38032190752492,111.38032190752492,0.0
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-001-dense-4ac25c8680,dense,5,5,120.13966214370451,119.00221003696154,1.1374521067429697
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-002-corridor-284a55aaca,corridor,5,5,312.81251540176686,295.12622636298187,17.68628903878499
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-003-clustered-4b46b12691,clustered,5,5,118.50560213004228,116.73216078697759,1.7734413430646896
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,125.56676944343643,123.4042304185459,2.1625390248905347
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-007-dense-c2a9dc256c,dense,5,5,123.79295057742557,121.33234156216771,2.460609015257859
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-008-corridor-642e33974b,corridor,5,5,337.3969257285869,306.04552623004815,31.35139949853874
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-009-clustered-aab5c1fb46,clustered,5,5,110.57120872736918,110.43708674985662,0.13412197751256372
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,125.20547143462822,124.59140268255241,0.6140687520758092
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-012-sparse-84a3f67668,sparse,5,5,111.11662502393112,111.10579135097738,0.01083367295373705
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-013-dense-7cf63ca81c,dense,5,5,113.04544532716741,112.53630966551411,0.5091356616533034
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-014-corridor-b987c1ce01,corridor,5,5,336.2933317639974,302.9472185974266,33.346113166570774
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-015-clustered-7a28d3fa10,clustered,5,5,114.78603004291821,113.796878915983,0.9891511269352122
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,126.29697056869203,117.62604459978655,8.670925968905479
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-017-mixed-bcc0e50136,mixed,5,5,151.53699674562026,115.14972086543224,36.387275880188014
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-020-corridor-dbe81a0f5a,corridor,5,5,336.4886866408645,303.4297070466529,33.05897959421162
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-021-clustered-ad956c8c39,clustered,5,5,117.68240666653271,116.32086622230307,1.3615404442296466
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,141.6406961185048,139.7398340988184,1.9008620196864001
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-023-mixed-76d07dc752,mixed,5,5,364.23691254217414,298.1644161579122,66.07249638426191
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-024-sparse-e4d54aacbe,sparse,5,5,166.15692344096908,109.34582170318481,56.81110173778427
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-025-dense-a74eae0372,dense,5,5,332.2826631407241,121.78030623837526,210.50235690234882
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-026-corridor-df1d0dc19b,corridor,5,5,332.00483785348763,302.40228391805533,29.602553935432297
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-027-clustered-01a4b58761,clustered,5,5,115.64939445360497,114.60954900251815,1.0398454510868191
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,125.03359946559186,120.393602970765,4.63999649482686
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-029-mixed-8e82fede1f,mixed,5,5,272.2420555260761,271.6698463619683,0.5722091641077895
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-030-sparse-d1867552b7,sparse,5,5,109.86204247189542,109.82117489516494,0.04086757673047714
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-031-dense-50fc319e8f,dense,5,5,121.48034596168475,121.09595225074584,0.38439371093890884
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-032-corridor-694b95bbde,corridor,5,5,318.1797919441162,293.7415063946532,24.43828554946299
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-033-clustered-efa513c067,clustered,5,5,114.25484376939538,113.79487016367284,0.45997360572253854
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,347.31586789558844,338.4966549423315,8.819212953256965
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-035-mixed-bdf8d13953,mixed,5,5,154.6817235231536,138.05876353944262,16.622959983710984
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-036-sparse-15569042ff,sparse,5,5,108.97849993863754,108.97422538146895,0.004274557168585602
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-037-dense-1ff936311d,dense,5,5,115.8838577088774,115.65806785316991,0.22578985570748955
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-038-corridor-bd65fd5653,corridor,5,5,309.47487342341094,297.6647189127574,11.810154510653547
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.63372677030954,112.26329110355593,0.3704356667536075
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,142.5840922394105,139.59033453164653,2.9937577077639617
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-041-mixed-91571ccd4c,mixed,5,5,259.2081094809415,231.12958387366058,28.078525607280937
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-042-sparse-096a0e75a7,sparse,5,5,109.48229065785911,107.28783875189126,2.1944519059678527
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-043-dense-29be9c710e,dense,5,5,118.16748093668433,117.22868939610983,0.9387915405744991
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-044-corridor-bf5b53b60d,corridor,5,5,306.62103214914896,294.9171987536064,11.703833395542574
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-045-clustered-49fd97b5bf,clustered,5,5,118.65109592619778,118.13513165700238,0.5159642691954076
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,154.79953735767018,152.44940084213545,2.3501365155347287
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-047-mixed-09023a351a,mixed,5,5,117.97971234227111,117.25121938837006,0.7284929539010534
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-049-dense-e3515336bb,dense,5,5,111.40707534521316,110.48761497589516,0.9194603693180028
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-050-corridor-02cfde4dab,corridor,5,5,333.89918002454976,299.5172515042074,34.38192852034234
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-051-clustered-306e6ea262,clustered,5,5,205.74740129401923,113.13799793872971,92.60940335528952
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,114.15840452523851,113.94678243690132,0.21162208833719376
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-053-mixed-91ecbe1d72,mixed,5,5,177.61297072710505,102.62019399504113,74.99277673206392
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-054-sparse-a789cc6b3a,sparse,5,5,108.86084620686567,108.77702577552387,0.08382043134180606
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-055-dense-ea424cfd6d,dense,5,5,121.80297093728001,118.00075877362092,3.8022121636590924
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-056-corridor-5d206c9670,corridor,5,5,310.0378344081018,298.6894182598806,11.34841614822119
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-057-clustered-235c9a4685,clustered,5,5,107.73239369372479,107.71396680016134,0.018426893563443514
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,117.2262250344485,113.62365319667978,3.6025718377687213
+frozen_afl,reference,deepseek_v4pro_strict,原始冻结 AFL-UAV,validation-059-mixed-e6df613ff4,mixed,5,5,118.17564310463956,117.44305117115546,0.7325919334841018
+ablation,ablation,evo_fixed_length,固定长度种群,validation-000-sparse-c9b13b3f28,sparse,5,5,111.37769266072151,111.38032190752492,-0.0026292468034085914
+ablation,ablation,evo_fixed_length,固定长度种群,validation-001-dense-4ac25c8680,dense,5,5,118.71140227564182,119.00221003696154,-0.2908077613197264
+ablation,ablation,evo_fixed_length,固定长度种群,validation-002-corridor-284a55aaca,corridor,5,5,292.96930069407495,295.12622636298187,-2.156925668906922
+ablation,ablation,evo_fixed_length,固定长度种群,validation-003-clustered-4b46b12691,clustered,5,5,117.44462482803587,116.73216078697759,0.7124640410582828
+ablation,ablation,evo_fixed_length,固定长度种群,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,123.4181850645607,123.4042304185459,0.013954646014809668
+ablation,ablation,evo_fixed_length,固定长度种群,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+ablation,ablation,evo_fixed_length,固定长度种群,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+ablation,ablation,evo_fixed_length,固定长度种群,validation-007-dense-c2a9dc256c,dense,5,5,121.92833017892382,121.33234156216771,0.5959886167561024
+ablation,ablation,evo_fixed_length,固定长度种群,validation-008-corridor-642e33974b,corridor,5,5,304.2472421483629,306.04552623004815,-1.7982840816852672
+ablation,ablation,evo_fixed_length,固定长度种群,validation-009-clustered-aab5c1fb46,clustered,5,5,110.43720860541099,110.43708674985662,0.00012185555436872164
+ablation,ablation,evo_fixed_length,固定长度种群,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,124.01918254270798,124.59140268255241,-0.5722201398444327
+ablation,ablation,evo_fixed_length,固定长度种群,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+ablation,ablation,evo_fixed_length,固定长度种群,validation-012-sparse-84a3f67668,sparse,5,5,111.11022674535971,111.10579135097738,0.004435394382326763
+ablation,ablation,evo_fixed_length,固定长度种群,validation-013-dense-7cf63ca81c,dense,5,5,112.98416932762765,112.53630966551411,0.4478596621135438
+ablation,ablation,evo_fixed_length,固定长度种群,validation-014-corridor-b987c1ce01,corridor,5,5,299.3182736218496,302.9472185974266,-3.628944975577042
+ablation,ablation,evo_fixed_length,固定长度种群,validation-015-clustered-7a28d3fa10,clustered,5,5,113.74231509615298,113.796878915983,-0.05456381983002245
+ablation,ablation,evo_fixed_length,固定长度种群,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,124.62665290909234,117.62604459978655,7.00060830930579
+ablation,ablation,evo_fixed_length,固定长度种群,validation-017-mixed-bcc0e50136,mixed,5,5,112.606409949263,115.14972086543224,-2.543310916169247
+ablation,ablation,evo_fixed_length,固定长度种群,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+ablation,ablation,evo_fixed_length,固定长度种群,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+ablation,ablation,evo_fixed_length,固定长度种群,validation-020-corridor-dbe81a0f5a,corridor,5,5,301.8742216278331,303.4297070466529,-1.555485418819785
+ablation,ablation,evo_fixed_length,固定长度种群,validation-021-clustered-ad956c8c39,clustered,5,5,116.96935811802383,116.32086622230307,0.6484918957207668
+ablation,ablation,evo_fixed_length,固定长度种群,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,139.89352347675018,139.7398340988184,0.1536893779317836
+ablation,ablation,evo_fixed_length,固定长度种群,validation-023-mixed-76d07dc752,mixed,5,5,349.99519540200953,298.1644161579122,51.8307792440973
+ablation,ablation,evo_fixed_length,固定长度种群,validation-024-sparse-e4d54aacbe,sparse,5,5,166.15692344096908,109.34582170318481,56.81110173778427
+ablation,ablation,evo_fixed_length,固定长度种群,validation-025-dense-a74eae0372,dense,5,5,185.3427994302051,121.78030623837526,63.562493191829844
+ablation,ablation,evo_fixed_length,固定长度种群,validation-026-corridor-df1d0dc19b,corridor,5,5,300.30800563018994,302.40228391805533,-2.094278287865393
+ablation,ablation,evo_fixed_length,固定长度种群,validation-027-clustered-01a4b58761,clustered,5,5,114.67410119415378,114.60954900251815,0.06455219163562731
+ablation,ablation,evo_fixed_length,固定长度种群,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,121.62092922057374,120.393602970765,1.2273262498087405
+ablation,ablation,evo_fixed_length,固定长度种群,validation-029-mixed-8e82fede1f,mixed,5,5,272.15539755688377,271.6698463619683,0.48555119491544474
+ablation,ablation,evo_fixed_length,固定长度种群,validation-030-sparse-d1867552b7,sparse,5,5,109.81502470250624,109.82117489516494,-0.00615019265870842
+ablation,ablation,evo_fixed_length,固定长度种群,validation-031-dense-50fc319e8f,dense,5,5,121.40736488098685,121.09595225074584,0.3114126302410085
+ablation,ablation,evo_fixed_length,固定长度种群,validation-032-corridor-694b95bbde,corridor,5,5,292.2789944404721,293.7415063946532,-1.4625119541810818
+ablation,ablation,evo_fixed_length,固定长度种群,validation-033-clustered-efa513c067,clustered,5,5,113.79508312596069,113.79487016367284,0.00021296228784706273
+ablation,ablation,evo_fixed_length,固定长度种群,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,339.2728052431195,338.4966549423315,0.7761503007880037
+ablation,ablation,evo_fixed_length,固定长度种群,validation-035-mixed-bdf8d13953,mixed,5,5,148.8404889657631,138.05876353944262,10.781725426320463
+ablation,ablation,evo_fixed_length,固定长度种群,validation-036-sparse-15569042ff,sparse,5,5,108.96483895109672,108.97422538146895,-0.009386430372231302
+ablation,ablation,evo_fixed_length,固定长度种群,validation-037-dense-1ff936311d,dense,5,5,115.7194687175515,115.65806785316991,0.06140086438159642
+ablation,ablation,evo_fixed_length,固定长度种群,validation-038-corridor-bd65fd5653,corridor,5,5,296.2802534157543,297.6647189127574,-1.3844654970030774
+ablation,ablation,evo_fixed_length,固定长度种群,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.257912527225,112.26329110355593,-0.005378576330926421
+ablation,ablation,evo_fixed_length,固定长度种群,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,139.76122162345033,139.59033453164653,0.1708870918037917
+ablation,ablation,evo_fixed_length,固定长度种群,validation-041-mixed-91571ccd4c,mixed,5,5,193.92922483165486,231.12958387366058,-37.200359042005715
+ablation,ablation,evo_fixed_length,固定长度种群,validation-042-sparse-096a0e75a7,sparse,5,5,107.28696568928277,107.28783875189126,-0.0008730626084911819
+ablation,ablation,evo_fixed_length,固定长度种群,validation-043-dense-29be9c710e,dense,5,5,117.68192979961856,117.22868939610983,0.45324040350872963
+ablation,ablation,evo_fixed_length,固定长度种群,validation-044-corridor-bf5b53b60d,corridor,5,5,297.0670856488457,294.9171987536064,2.1498868952393195
+ablation,ablation,evo_fixed_length,固定长度种群,validation-045-clustered-49fd97b5bf,clustered,5,5,118.05642807223373,118.13513165700238,-0.0787035847686468
+ablation,ablation,evo_fixed_length,固定长度种群,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,152.3941019312274,152.44940084213545,-0.05529891090804995
+ablation,ablation,evo_fixed_length,固定长度种群,validation-047-mixed-09023a351a,mixed,5,5,117.23373024889474,117.25121938837006,-0.01748913947531605
+ablation,ablation,evo_fixed_length,固定长度种群,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+ablation,ablation,evo_fixed_length,固定长度种群,validation-049-dense-e3515336bb,dense,5,5,110.48568435911106,110.48761497589516,-0.001930616784093786
+ablation,ablation,evo_fixed_length,固定长度种群,validation-050-corridor-02cfde4dab,corridor,5,5,298.7096996208526,299.5172515042074,-0.8075518833548472
+ablation,ablation,evo_fixed_length,固定长度种群,validation-051-clustered-306e6ea262,clustered,5,5,205.74740129401923,113.13799793872971,92.60940335528952
+ablation,ablation,evo_fixed_length,固定长度种群,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.95840372591402,113.94678243690132,0.011621289012708758
+ablation,ablation,evo_fixed_length,固定长度种群,validation-053-mixed-91ecbe1d72,mixed,5,5,177.61297072710505,102.62019399504113,74.99277673206392
+ablation,ablation,evo_fixed_length,固定长度种群,validation-054-sparse-a789cc6b3a,sparse,5,5,108.77454997485663,108.77702577552387,-0.0024758006672414012
+ablation,ablation,evo_fixed_length,固定长度种群,validation-055-dense-ea424cfd6d,dense,5,5,119.18869734552477,118.00075877362092,1.1879385719038567
+ablation,ablation,evo_fixed_length,固定长度种群,validation-056-corridor-5d206c9670,corridor,5,5,298.0440337025471,298.6894182598806,-0.6453845573335002
+ablation,ablation,evo_fixed_length,固定长度种群,validation-057-clustered-235c9a4685,clustered,5,5,107.7142151085908,107.71396680016134,0.00024830842946244047
+ablation,ablation,evo_fixed_length,固定长度种群,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,115.41247272752261,113.62365319667978,1.7888195308428294
+ablation,ablation,evo_fixed_length,固定长度种群,validation-059-mixed-e6df613ff4,mixed,4,5,117.49463259378703,117.44305117115546,0.05158142263157117
+ablation,ablation,evo_move_only,仅移动航点,validation-000-sparse-c9b13b3f28,sparse,5,5,111.37797575490507,111.38032190752492,-0.0023461526198502725
+ablation,ablation,evo_move_only,仅移动航点,validation-001-dense-4ac25c8680,dense,5,5,118.82527794734992,119.00221003696154,-0.17693208961162554
+ablation,ablation,evo_move_only,仅移动航点,validation-002-corridor-284a55aaca,corridor,5,5,293.0673480297944,295.12622636298187,-2.058878333187465
+ablation,ablation,evo_move_only,仅移动航点,validation-003-clustered-4b46b12691,clustered,5,5,117.29606799665194,116.73216078697759,0.5639072096743547
+ablation,ablation,evo_move_only,仅移动航点,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,122.92006642725063,123.4042304185459,-0.48416399129526155
+ablation,ablation,evo_move_only,仅移动航点,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+ablation,ablation,evo_move_only,仅移动航点,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+ablation,ablation,evo_move_only,仅移动航点,validation-007-dense-c2a9dc256c,dense,5,5,121.82767641401607,121.33234156216771,0.49533485184835513
+ablation,ablation,evo_move_only,仅移动航点,validation-008-corridor-642e33974b,corridor,5,5,303.70095136099894,306.04552623004815,-2.344574869049211
+ablation,ablation,evo_move_only,仅移动航点,validation-009-clustered-aab5c1fb46,clustered,5,5,110.4331686826258,110.43708674985662,-0.003918067230813449
+ablation,ablation,evo_move_only,仅移动航点,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,123.56058568083893,124.59140268255241,-1.030817001713487
+ablation,ablation,evo_move_only,仅移动航点,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+ablation,ablation,evo_move_only,仅移动航点,validation-012-sparse-84a3f67668,sparse,5,5,111.11116376067571,111.10579135097738,0.005372409698324532
+ablation,ablation,evo_move_only,仅移动航点,validation-013-dense-7cf63ca81c,dense,5,5,112.99334856848995,112.53630966551411,0.4570389029758388
+ablation,ablation,evo_move_only,仅移动航点,validation-014-corridor-b987c1ce01,corridor,5,5,298.3650739272042,302.9472185974266,-4.582144670222419
+ablation,ablation,evo_move_only,仅移动航点,validation-015-clustered-7a28d3fa10,clustered,5,5,113.77461488231738,113.796878915983,-0.02226403366562124
+ablation,ablation,evo_move_only,仅移动航点,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,123.7796787353323,117.62604459978655,6.153634135545744
+ablation,ablation,evo_move_only,仅移动航点,validation-017-mixed-bcc0e50136,mixed,5,5,112.89694077994702,115.14972086543224,-2.2527800854852273
+ablation,ablation,evo_move_only,仅移动航点,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+ablation,ablation,evo_move_only,仅移动航点,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+ablation,ablation,evo_move_only,仅移动航点,validation-020-corridor-dbe81a0f5a,corridor,5,5,300.5436808723423,303.4297070466529,-2.8860261743105866
+ablation,ablation,evo_move_only,仅移动航点,validation-021-clustered-ad956c8c39,clustered,5,5,116.89144729302687,116.32086622230307,0.5705810707238044
+ablation,ablation,evo_move_only,仅移动航点,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,139.5452618046492,139.7398340988184,-0.1945722941692054
+ablation,ablation,evo_move_only,仅移动航点,validation-023-mixed-76d07dc752,mixed,5,5,354.4015665548268,298.1644161579122,56.23715039691456
+ablation,ablation,evo_move_only,仅移动航点,validation-024-sparse-e4d54aacbe,sparse,5,5,166.15692344096908,109.34582170318481,56.81110173778427
+ablation,ablation,evo_move_only,仅移动航点,validation-025-dense-a74eae0372,dense,5,5,173.08293777657013,121.78030623837526,51.30263153819487
+ablation,ablation,evo_move_only,仅移动航点,validation-026-corridor-df1d0dc19b,corridor,5,5,299.5696287672529,302.40228391805533,-2.8326551508024522
+ablation,ablation,evo_move_only,仅移动航点,validation-027-clustered-01a4b58761,clustered,5,5,114.5692726472234,114.60954900251815,-0.04027635529475049
+ablation,ablation,evo_move_only,仅移动航点,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,121.32807494246042,120.393602970765,0.934471971695416
+ablation,ablation,evo_move_only,仅移动航点,validation-029-mixed-8e82fede1f,mixed,5,5,272.16423288161604,271.6698463619683,0.49438651964771907
+ablation,ablation,evo_move_only,仅移动航点,validation-030-sparse-d1867552b7,sparse,5,5,109.79979796646556,109.82117489516494,-0.021376928699382347
+ablation,ablation,evo_move_only,仅移动航点,validation-031-dense-50fc319e8f,dense,5,5,121.37303705684997,121.09595225074584,0.2770848061041278
+ablation,ablation,evo_move_only,仅移动航点,validation-032-corridor-694b95bbde,corridor,5,5,291.9878437329406,293.7415063946532,-1.7536626617126103
+ablation,ablation,evo_move_only,仅移动航点,validation-033-clustered-efa513c067,clustered,5,5,113.79479623534347,113.79487016367284,-7.392832937114235e-05
+ablation,ablation,evo_move_only,仅移动航点,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,335.46015960654165,338.4966549423315,-3.036495335789823
+ablation,ablation,evo_move_only,仅移动航点,validation-035-mixed-bdf8d13953,mixed,5,5,148.7010769317902,138.05876353944262,10.642313392347575
+ablation,ablation,evo_move_only,仅移动航点,validation-036-sparse-15569042ff,sparse,5,5,108.96529706571167,108.97422538146895,-0.008928315757287919
+ablation,ablation,evo_move_only,仅移动航点,validation-037-dense-1ff936311d,dense,5,5,115.70483283840348,115.65806785316991,0.046764985233565426
+ablation,ablation,evo_move_only,仅移动航点,validation-038-corridor-bd65fd5653,corridor,5,5,296.1362161224499,297.6647189127574,-1.5285027903074706
+ablation,ablation,evo_move_only,仅移动航点,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.2623005746287,112.26329110355593,-0.0009905289272325035
+ablation,ablation,evo_move_only,仅移动航点,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,139.61707942023057,139.59033453164653,0.026744888584033788
+ablation,ablation,evo_move_only,仅移动航点,validation-041-mixed-91571ccd4c,mixed,5,5,162.40275489514715,231.12958387366058,-68.72682897851342
+ablation,ablation,evo_move_only,仅移动航点,validation-042-sparse-096a0e75a7,sparse,5,5,107.2778464420909,107.28783875189126,-0.009992309800352928
+ablation,ablation,evo_move_only,仅移动航点,validation-043-dense-29be9c710e,dense,5,5,117.64144696809468,117.22868939610983,0.4127575719848551
+ablation,ablation,evo_move_only,仅移动航点,validation-044-corridor-bf5b53b60d,corridor,5,5,294.5896141585324,294.9171987536064,-0.3275845950739722
+ablation,ablation,evo_move_only,仅移动航点,validation-045-clustered-49fd97b5bf,clustered,5,5,118.04729314734716,118.13513165700238,-0.08783850965521367
+ablation,ablation,evo_move_only,仅移动航点,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,152.15870777582106,152.44940084213545,-0.2906930663143896
+ablation,ablation,evo_move_only,仅移动航点,validation-047-mixed-09023a351a,mixed,5,5,117.15301865257042,117.25121938837006,-0.09820073579963662
+ablation,ablation,evo_move_only,仅移动航点,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+ablation,ablation,evo_move_only,仅移动航点,validation-049-dense-e3515336bb,dense,5,5,110.48513645890502,110.48761497589516,-0.0024785169901377913
+ablation,ablation,evo_move_only,仅移动航点,validation-050-corridor-02cfde4dab,corridor,5,5,298.4817275165085,299.5172515042074,-1.035523987698923
+ablation,ablation,evo_move_only,仅移动航点,validation-051-clustered-306e6ea262,clustered,5,5,205.74740129401923,113.13799793872971,92.60940335528952
+ablation,ablation,evo_move_only,仅移动航点,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.9364764526975,113.94678243690132,-0.01030598420381068
+ablation,ablation,evo_move_only,仅移动航点,validation-053-mixed-91ecbe1d72,mixed,5,5,177.61297072710505,102.62019399504113,74.99277673206392
+ablation,ablation,evo_move_only,仅移动航点,validation-054-sparse-a789cc6b3a,sparse,5,5,108.77774503377361,108.77702577552387,0.0007192582497452804
+ablation,ablation,evo_move_only,仅移动航点,validation-055-dense-ea424cfd6d,dense,5,5,118.88969407166317,118.00075877362092,0.8889352980422558
+ablation,ablation,evo_move_only,仅移动航点,validation-056-corridor-5d206c9670,corridor,5,5,297.5932768839809,298.6894182598806,-1.0961413758997196
+ablation,ablation,evo_move_only,仅移动航点,validation-057-clustered-235c9a4685,clustered,5,5,107.70813383742126,107.71396680016134,-0.0058329627400866
+ablation,ablation,evo_move_only,仅移动航点,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,115.23496517587961,113.62365319667978,1.6113119791998258
+ablation,ablation,evo_move_only,仅移动航点,validation-059-mixed-e6df613ff4,mixed,5,5,117.28406180019067,117.44305117115546,-0.1589893709647896
+ablation,ablation,evo_no_crossover,去掉交叉,validation-000-sparse-c9b13b3f28,sparse,5,5,111.38032190752492,111.38032190752492,0.0
+ablation,ablation,evo_no_crossover,去掉交叉,validation-001-dense-4ac25c8680,dense,5,5,119.11340310440683,119.00221003696154,0.11119306744528501
+ablation,ablation,evo_no_crossover,去掉交叉,validation-002-corridor-284a55aaca,corridor,5,5,296.39180283067583,295.12622636298187,1.2655764676939611
+ablation,ablation,evo_no_crossover,去掉交叉,validation-003-clustered-4b46b12691,clustered,5,5,116.87502382697949,116.73216078697759,0.14286304000189887
+ablation,ablation,evo_no_crossover,去掉交叉,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,123.23734350370563,123.4042304185459,-0.16688691484026208
+ablation,ablation,evo_no_crossover,去掉交叉,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+ablation,ablation,evo_no_crossover,去掉交叉,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+ablation,ablation,evo_no_crossover,去掉交叉,validation-007-dense-c2a9dc256c,dense,5,5,121.30459937988225,121.33234156216771,-0.027742182285464878
+ablation,ablation,evo_no_crossover,去掉交叉,validation-008-corridor-642e33974b,corridor,5,5,312.0946087843276,306.04552623004815,6.049082554279437
+ablation,ablation,evo_no_crossover,去掉交叉,validation-009-clustered-aab5c1fb46,clustered,5,5,110.45787038738128,110.43708674985662,0.020783637524658616
+ablation,ablation,evo_no_crossover,去掉交叉,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,124.30121305589654,124.59140268255241,-0.29018962665587367
+ablation,ablation,evo_no_crossover,去掉交叉,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+ablation,ablation,evo_no_crossover,去掉交叉,validation-012-sparse-84a3f67668,sparse,5,5,111.10614347354976,111.10579135097738,0.00035212257238015354
+ablation,ablation,evo_no_crossover,去掉交叉,validation-013-dense-7cf63ca81c,dense,5,5,112.52767979694724,112.53630966551411,-0.008629868566870869
+ablation,ablation,evo_no_crossover,去掉交叉,validation-014-corridor-b987c1ce01,corridor,5,5,310.783213740714,302.9472185974266,7.835995143287391
+ablation,ablation,evo_no_crossover,去掉交叉,validation-015-clustered-7a28d3fa10,clustered,5,5,113.78042979918702,113.796878915983,-0.016449116795982377
+ablation,ablation,evo_no_crossover,去掉交叉,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,119.8645927709348,117.62604459978655,2.2385481711482527
+ablation,ablation,evo_no_crossover,去掉交叉,validation-017-mixed-bcc0e50136,mixed,5,5,113.48770766018738,115.14972086543224,-1.662013205244861
+ablation,ablation,evo_no_crossover,去掉交叉,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+ablation,ablation,evo_no_crossover,去掉交叉,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+ablation,ablation,evo_no_crossover,去掉交叉,validation-020-corridor-dbe81a0f5a,corridor,5,5,301.1675210084198,303.4297070466529,-2.2621860382330965
+ablation,ablation,evo_no_crossover,去掉交叉,validation-021-clustered-ad956c8c39,clustered,5,5,116.32282924919701,116.32086622230307,0.0019630268939465623
+ablation,ablation,evo_no_crossover,去掉交叉,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,139.86922666524995,139.7398340988184,0.12939256643156227
+ablation,ablation,evo_no_crossover,去掉交叉,validation-023-mixed-76d07dc752,mixed,5,5,301.84782182791963,298.1644161579122,3.683405670007403
+ablation,ablation,evo_no_crossover,去掉交叉,validation-024-sparse-e4d54aacbe,sparse,5,5,109.39997086656837,109.34582170318481,0.05414916338355624
+ablation,ablation,evo_no_crossover,去掉交叉,validation-025-dense-a74eae0372,dense,5,5,120.40685012555608,121.78030623837526,-1.3734561128191842
+ablation,ablation,evo_no_crossover,去掉交叉,validation-026-corridor-df1d0dc19b,corridor,5,5,305.9354487708572,302.40228391805533,3.5331648528018604
+ablation,ablation,evo_no_crossover,去掉交叉,validation-027-clustered-01a4b58761,clustered,5,5,114.32139927172653,114.60954900251815,-0.2881497307916163
+ablation,ablation,evo_no_crossover,去掉交叉,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,120.40851715226354,120.393602970765,0.014914181498539847
+ablation,ablation,evo_no_crossover,去掉交叉,validation-029-mixed-8e82fede1f,mixed,5,5,271.6586364419636,271.6698463619683,-0.011209920004716878
+ablation,ablation,evo_no_crossover,去掉交叉,validation-030-sparse-d1867552b7,sparse,5,5,109.808096812001,109.82117489516494,-0.013078083163946985
+ablation,ablation,evo_no_crossover,去掉交叉,validation-031-dense-50fc319e8f,dense,5,5,121.20092849210317,121.09595225074584,0.10497624135733474
+ablation,ablation,evo_no_crossover,去掉交叉,validation-032-corridor-694b95bbde,corridor,5,5,293.9729351733373,293.7415063946532,0.23142877868411915
+ablation,ablation,evo_no_crossover,去掉交叉,validation-033-clustered-efa513c067,clustered,5,5,113.79501388014559,113.79487016367284,0.00014371647274913357
+ablation,ablation,evo_no_crossover,去掉交叉,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,335.47134581886706,338.4966549423315,-3.0253091234644103
+ablation,ablation,evo_no_crossover,去掉交叉,validation-035-mixed-bdf8d13953,mixed,5,5,134.0137448117759,138.05876353944262,-4.045018727666729
+ablation,ablation,evo_no_crossover,去掉交叉,validation-036-sparse-15569042ff,sparse,5,5,108.96651412199705,108.97422538146895,-0.007711259471903986
+ablation,ablation,evo_no_crossover,去掉交叉,validation-037-dense-1ff936311d,dense,5,5,115.65883930675021,115.65806785316991,0.0007714535802989531
+ablation,ablation,evo_no_crossover,去掉交叉,validation-038-corridor-bd65fd5653,corridor,5,5,297.64003046494713,297.6647189127574,-0.024688447810262915
+ablation,ablation,evo_no_crossover,去掉交叉,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.25989961116686,112.26329110355593,-0.0033914923890705495
+ablation,ablation,evo_no_crossover,去掉交叉,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,138.72189359437616,139.59033453164653,-0.8684409372703783
+ablation,ablation,evo_no_crossover,去掉交叉,validation-041-mixed-91571ccd4c,mixed,5,5,245.7607696724914,231.12958387366058,14.631185798830813
+ablation,ablation,evo_no_crossover,去掉交叉,validation-042-sparse-096a0e75a7,sparse,5,5,107.29662714924848,107.28783875189126,0.008788397357221811
+ablation,ablation,evo_no_crossover,去掉交叉,validation-043-dense-29be9c710e,dense,5,5,117.23540479975983,117.22868939610983,0.006715403650005669
+ablation,ablation,evo_no_crossover,去掉交叉,validation-044-corridor-bf5b53b60d,corridor,5,5,295.98026236462687,294.9171987536064,1.0630636110204819
+ablation,ablation,evo_no_crossover,去掉交叉,validation-045-clustered-49fd97b5bf,clustered,5,5,118.09185092646581,118.13513165700238,-0.04328073053656567
+ablation,ablation,evo_no_crossover,去掉交叉,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,152.3734891855562,152.44940084213545,-0.07591165657925103
+ablation,ablation,evo_no_crossover,去掉交叉,validation-047-mixed-09023a351a,mixed,5,5,117.45072025227599,117.25121938837006,0.19950086390592503
+ablation,ablation,evo_no_crossover,去掉交叉,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+ablation,ablation,evo_no_crossover,去掉交叉,validation-049-dense-e3515336bb,dense,5,5,110.48528613065857,110.48761497589516,-0.0023288452365903822
+ablation,ablation,evo_no_crossover,去掉交叉,validation-050-corridor-02cfde4dab,corridor,5,5,298.39566883401517,299.5172515042074,-1.1215826701922538
+ablation,ablation,evo_no_crossover,去掉交叉,validation-051-clustered-306e6ea262,clustered,5,5,113.15759322775574,113.13799793872971,0.019595289026028695
+ablation,ablation,evo_no_crossover,去掉交叉,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.94369982620242,113.94678243690132,-0.003082610698896815
+ablation,ablation,evo_no_crossover,去掉交叉,validation-053-mixed-91ecbe1d72,mixed,5,5,102.51067599932256,102.62019399504113,-0.10951799571857634
+ablation,ablation,evo_no_crossover,去掉交叉,validation-054-sparse-a789cc6b3a,sparse,5,5,108.77660653715206,108.77702577552387,-0.00041923837180490864
+ablation,ablation,evo_no_crossover,去掉交叉,validation-055-dense-ea424cfd6d,dense,5,5,118.29559947285793,118.00075877362092,0.29484069923701384
+ablation,ablation,evo_no_crossover,去掉交叉,validation-056-corridor-5d206c9670,corridor,5,5,299.0072770209919,298.6894182598806,0.3178587611113244
+ablation,ablation,evo_no_crossover,去掉交叉,validation-057-clustered-235c9a4685,clustered,5,5,107.71763283716747,107.71396680016134,0.0036660370061269987
+ablation,ablation,evo_no_crossover,去掉交叉,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,113.60187914197898,113.62365319667978,-0.021774054700799184
+ablation,ablation,evo_no_crossover,去掉交叉,validation-059-mixed-e6df613ff4,mixed,5,5,117.31462180713284,117.44305117115546,-0.1284293640226224
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-000-sparse-c9b13b3f28,sparse,5,5,111.38032190752492,111.38032190752492,0.0
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-001-dense-4ac25c8680,dense,5,5,118.8680854925197,119.00221003696154,-0.13412454444184618
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-002-corridor-284a55aaca,corridor,5,5,294.5673738642563,295.12622636298187,-0.558852498725571
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-003-clustered-4b46b12691,clustered,5,5,116.71860971405344,116.73216078697759,-0.013551072924144592
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,123.28500331974566,123.4042304185459,-0.11922709880023774
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-007-dense-c2a9dc256c,dense,5,5,121.23548690492868,121.33234156216771,-0.09685465723903519
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-008-corridor-642e33974b,corridor,5,5,308.19814965313395,306.04552623004815,2.1526234230857995
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-009-clustered-aab5c1fb46,clustered,5,5,110.45647337046798,110.43708674985662,0.019386620611356875
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,124.30685512272586,124.59140268255241,-0.28454755982654945
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-012-sparse-84a3f67668,sparse,5,5,111.11008852820841,111.10579135097738,0.004297177231023852
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-013-dense-7cf63ca81c,dense,5,5,112.52672312532356,112.53630966551411,-0.00958654019055416
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-014-corridor-b987c1ce01,corridor,5,5,298.7275607133254,302.9472185974266,-4.219657884101252
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-015-clustered-7a28d3fa10,clustered,5,5,113.79662668527392,113.796878915983,-0.00025223070907998135
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,122.10029110490436,117.62604459978655,4.474246505117804
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-017-mixed-bcc0e50136,mixed,5,5,112.95269710201723,115.14972086543224,-2.197023763415018
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-020-corridor-dbe81a0f5a,corridor,5,5,303.7636100991905,303.4297070466529,0.33390305253760744
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-021-clustered-ad956c8c39,clustered,5,5,116.24989624270208,116.32086622230307,-0.07096997960098861
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,139.68671798150638,139.7398340988184,-0.053116117312015376
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-023-mixed-76d07dc752,mixed,5,5,295.2183124404836,298.1644161579122,-2.9461037174286275
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-024-sparse-e4d54aacbe,sparse,5,5,109.35533911136368,109.34582170318481,0.009517408178865594
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-025-dense-a74eae0372,dense,5,5,120.32900555545227,121.78030623837526,-1.4513006829229909
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-026-corridor-df1d0dc19b,corridor,5,5,299.667288226037,302.40228391805533,-2.7349956920183445
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-027-clustered-01a4b58761,clustered,5,5,114.25907673837884,114.60954900251815,-0.350472264139313
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,120.43392128008618,120.393602970765,0.04031830932117941
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-029-mixed-8e82fede1f,mixed,5,5,271.5931747435423,271.6698463619683,-0.076671618426019
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-030-sparse-d1867552b7,sparse,5,5,109.82464775797217,109.82117489516494,0.0034728628072286938
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-031-dense-50fc319e8f,dense,5,5,121.19087997344892,121.09595225074584,0.09492772270307626
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-032-corridor-694b95bbde,corridor,5,5,292.9900992590502,293.7415063946532,-0.7514071356029604
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-033-clustered-efa513c067,clustered,5,5,113.7947744057246,113.79487016367284,-9.575794824456807e-05
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,333.3997077779584,338.4966549423315,-5.096947164373091
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-035-mixed-bdf8d13953,mixed,5,5,133.18951664796668,138.05876353944262,-4.869246891475939
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-036-sparse-15569042ff,sparse,5,5,108.96699000113307,108.97422538146895,-0.007235380335885111
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-037-dense-1ff936311d,dense,5,5,115.65923416400373,115.65806785316991,0.0011663108338240136
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-038-corridor-bd65fd5653,corridor,5,5,297.86765392900855,297.6647189127574,0.2029350162511605
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.26595074888832,112.26329110355593,0.0026596453323861624
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,138.7859904542545,139.59033453164653,-0.8043440773920452
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-041-mixed-91571ccd4c,mixed,5,5,231.13919625566643,231.12958387366058,0.009612382005855125
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-042-sparse-096a0e75a7,sparse,5,5,107.28439717121317,107.28783875189126,-0.003441580678085643
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-043-dense-29be9c710e,dense,5,5,117.24628177431042,117.22868939610983,0.017592378200589565
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-044-corridor-bf5b53b60d,corridor,5,5,295.7960552490741,294.9171987536064,0.8788564954676872
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-045-clustered-49fd97b5bf,clustered,5,5,118.0381396639093,118.13513165700238,-0.09699199309307005
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,152.39549454602664,152.44940084213545,-0.05390629610880637
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-047-mixed-09023a351a,mixed,5,5,117.48262757052409,117.25121938837006,0.23140818215402703
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-049-dense-e3515336bb,dense,5,5,110.48556293681949,110.48761497589516,-0.0020520390756644247
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-050-corridor-02cfde4dab,corridor,5,5,299.17688119335793,299.5172515042074,-0.34037031084949376
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-051-clustered-306e6ea262,clustered,5,5,113.16767189290515,113.13799793872971,0.02967395417543628
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.9353128468752,113.94678243690132,-0.0114695900261097
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-053-mixed-91ecbe1d72,mixed,5,5,102.38626214274348,102.62019399504113,-0.23393185229765834
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-054-sparse-a789cc6b3a,sparse,5,5,108.78158857925436,108.77702577552387,0.00456280373049367
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-055-dense-ea424cfd6d,dense,5,5,117.96971285067855,118.00075877362092,-0.03104592294236852
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-056-corridor-5d206c9670,corridor,5,5,298.25519695889164,298.6894182598806,-0.43422130098895195
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-057-clustered-235c9a4685,clustered,5,5,107.71602779431372,107.71396680016134,0.0020609941523730413
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,113.62365319667978,113.62365319667978,0.0
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,validation-059-mixed-e6df613ff4,mixed,5,5,117.4025240502706,117.44305117115546,-0.040527120884860324
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-000-sparse-c9b13b3f28,sparse,5,5,111.38032190752492,111.38032190752492,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-001-dense-4ac25c8680,dense,5,5,119.00221003696154,119.00221003696154,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-002-corridor-284a55aaca,corridor,5,5,295.94093761787497,295.12622636298187,0.8147112548930977
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-003-clustered-4b46b12691,clustered,5,5,116.84615498052885,116.73216078697759,0.11399419355126383
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,123.30501131125511,123.4042304185459,-0.09921910729077865
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-007-dense-c2a9dc256c,dense,5,5,121.33336495403718,121.33234156216771,0.00102339186946665
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-008-corridor-642e33974b,corridor,5,5,306.34383661448555,306.04552623004815,0.2983103844374
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-009-clustered-aab5c1fb46,clustered,5,5,110.43708674985662,110.43708674985662,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,124.3467887365186,124.59140268255241,-0.24461394603380882
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-012-sparse-84a3f67668,sparse,5,5,111.10579135097738,111.10579135097738,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-013-dense-7cf63ca81c,dense,5,5,112.53489051632553,112.53630966551411,-0.001419149188578217
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-014-corridor-b987c1ce01,corridor,5,5,304.4271263677535,302.9472185974266,1.4799077703268608
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-015-clustered-7a28d3fa10,clustered,5,5,113.80523224576255,113.796878915983,0.00835332977955261
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,118.8396826163781,117.62604459978655,1.2136380165915455
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-017-mixed-bcc0e50136,mixed,5,5,115.23181137309767,115.14972086543224,0.08209050766542703
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-020-corridor-dbe81a0f5a,corridor,5,5,305.28209907295866,303.4297070466529,1.852392026305779
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-021-clustered-ad956c8c39,clustered,5,5,116.31866334818224,116.32086622230307,-0.0022028741208259817
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,140.08585419705378,139.7398340988184,0.3460200982353854
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-023-mixed-76d07dc752,mixed,5,5,298.38182130997757,298.1644161579122,0.21740515206533928
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-024-sparse-e4d54aacbe,sparse,5,5,109.38267107992407,109.34582170318481,0.036849376739255035
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-025-dense-a74eae0372,dense,5,5,120.46874288796005,121.78030623837526,-1.3115633504152129
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-026-corridor-df1d0dc19b,corridor,5,5,303.07997805356007,302.40228391805533,0.677694135504737
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-027-clustered-01a4b58761,clustered,5,5,114.60954900251815,114.60954900251815,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,121.2523899347445,120.393602970765,0.8587869639794974
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-029-mixed-8e82fede1f,mixed,5,5,271.6698463619683,271.6698463619683,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-030-sparse-d1867552b7,sparse,5,5,109.8235203728535,109.82117489516494,0.0023454776885500905
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-031-dense-50fc319e8f,dense,5,5,121.1464545180217,121.09595225074584,0.050502267275859936
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-032-corridor-694b95bbde,corridor,5,5,293.7415063946532,293.7415063946532,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-033-clustered-efa513c067,clustered,5,5,113.79487016367284,113.79487016367284,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,323.59995747728647,338.4966549423315,-14.896697465045008
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-035-mixed-bdf8d13953,mixed,5,5,138.05876353944262,138.05876353944262,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-036-sparse-15569042ff,sparse,5,5,108.97422538146895,108.97422538146895,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-037-dense-1ff936311d,dense,5,5,115.65806785316991,115.65806785316991,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-038-corridor-bd65fd5653,corridor,5,5,298.14910192906063,297.6647189127574,0.48438301630324077
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.2650664347214,112.26329110355593,0.0017753311654757908
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,139.88368379780258,139.59033453164653,0.2933492661560422
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-041-mixed-91571ccd4c,mixed,5,5,231.12958387366058,231.12958387366058,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-042-sparse-096a0e75a7,sparse,5,5,107.29432100256356,107.28783875189126,0.006482250672306122
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-043-dense-29be9c710e,dense,5,5,117.22868939610983,117.22868939610983,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-044-corridor-bf5b53b60d,corridor,5,5,294.91938322370424,294.9171987536064,0.002184470097859048
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-045-clustered-49fd97b5bf,clustered,5,5,118.13557426270091,118.13513165700238,0.00044260569853804554
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,152.63100927247766,152.44940084213545,0.18160843034220875
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-047-mixed-09023a351a,mixed,5,5,117.25121938837006,117.25121938837006,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-049-dense-e3515336bb,dense,5,5,110.48761497589516,110.48761497589516,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-050-corridor-02cfde4dab,corridor,5,5,300.5863274248746,299.5172515042074,1.06907592066716
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-051-clustered-306e6ea262,clustered,5,5,113.26103830803483,113.13799793872971,0.12304036930511586
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.94215913646426,113.94678243690132,-0.004623300437060607
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-053-mixed-91ecbe1d72,mixed,5,5,102.99127997946232,102.62019399504113,0.37108598442118534
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-054-sparse-a789cc6b3a,sparse,5,5,108.77702577552387,108.77702577552387,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-055-dense-ea424cfd6d,dense,5,5,118.36451309102972,118.00075877362092,0.36375431740880515
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-056-corridor-5d206c9670,corridor,5,5,298.6894182598806,298.6894182598806,0.0
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-057-clustered-235c9a4685,clustered,5,5,107.71704939426621,107.71396680016134,0.003082594104867553
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,113.62929126281261,113.62365319667978,0.005638066132831909
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,validation-059-mixed-e6df613ff4,mixed,3,5,117.4330914988941,117.44305117115546,-0.009959672261359742
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-000-sparse-c9b13b3f28,sparse,5,5,111.38032190752492,111.38032190752492,0.0
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-001-dense-4ac25c8680,dense,5,5,118.53534916497928,119.00221003696154,-0.4668608719822629
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-002-corridor-284a55aaca,corridor,5,5,295.5427595930777,295.12622636298187,0.41653323009580845
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-003-clustered-4b46b12691,clustered,5,5,116.7668676463076,116.73216078697759,0.03470685933001505
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,123.10848043676494,123.4042304185459,-0.2957499817809577
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-007-dense-c2a9dc256c,dense,5,5,121.17551712213411,121.33234156216771,-0.15682444003360274
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-008-corridor-642e33974b,corridor,5,5,302.52685751173345,306.04552623004815,-3.5186687183147
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-009-clustered-aab5c1fb46,clustered,5,5,110.45835392893454,110.43708674985662,0.02126717907792397
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,123.60014304461755,124.59140268255241,-0.9912596379348599
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-012-sparse-84a3f67668,sparse,5,5,111.1060934980912,111.10579135097738,0.00030214711381404413
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-013-dense-7cf63ca81c,dense,5,5,112.5362539175976,112.53630966551411,-5.574791650531097e-05
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-014-corridor-b987c1ce01,corridor,5,5,298.51258930281693,302.9472185974266,-4.434629294609692
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-015-clustered-7a28d3fa10,clustered,5,5,113.78956353888502,113.796878915983,-0.007315377097981468
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,116.78169714216624,117.62604459978655,-0.8443474576203158
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-017-mixed-bcc0e50136,mixed,5,5,113.28076216851352,115.14972086543224,-1.8689586969187246
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-020-corridor-dbe81a0f5a,corridor,5,5,307.70905265424324,303.4297070466529,4.279345607590358
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-021-clustered-ad956c8c39,clustered,5,5,116.33199431550858,116.32086622230307,0.011128093205513778
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,139.7549004919753,139.7398340988184,0.015066393156899949
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-023-mixed-76d07dc752,mixed,5,5,305.2599797660417,298.1644161579122,7.095563608129453
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-024-sparse-e4d54aacbe,sparse,5,5,109.37163586673552,109.34582170318481,0.02581416355070587
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-025-dense-a74eae0372,dense,5,5,123.55066111283273,121.78030623837526,1.7703548744574675
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-026-corridor-df1d0dc19b,corridor,5,5,301.7193335711058,302.40228391805533,-0.6829503469495535
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-027-clustered-01a4b58761,clustered,5,5,114.35104123122835,114.60954900251815,-0.25850777128979985
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,120.51091348895872,120.393602970765,0.11731051819371885
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-029-mixed-8e82fede1f,mixed,5,5,271.61315207522824,271.6698463619683,-0.05669428674008259
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-030-sparse-d1867552b7,sparse,5,5,109.8271120483737,109.82117489516494,0.005937153208762425
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-031-dense-50fc319e8f,dense,5,5,121.40879841554208,121.09595225074584,0.31284616479624106
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-032-corridor-694b95bbde,corridor,5,5,292.6592181453917,293.7415063946532,-1.0822882492614667
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-033-clustered-efa513c067,clustered,5,5,113.79543874952245,113.79487016367284,0.0005685858496065066
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,338.5528671604966,338.4966549423315,0.05621221816511479
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-035-mixed-bdf8d13953,mixed,5,5,135.66611307195754,138.05876353944262,-2.3926504674850833
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-036-sparse-15569042ff,sparse,5,5,108.97262164878673,108.97422538146895,-0.0016037326822271325
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-037-dense-1ff936311d,dense,5,5,115.65312532589498,115.65806785316991,-0.004942527274934605
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-038-corridor-bd65fd5653,corridor,5,5,297.57033494486143,297.6647189127574,-0.09438396789596482
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.26735810362611,112.26329110355593,0.004067000070179461
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,139.6462122371025,139.59033453164653,0.05587770545596982
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-041-mixed-91571ccd4c,mixed,5,5,227.1630500117347,231.12958387366058,-3.966533861925882
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-042-sparse-096a0e75a7,sparse,5,5,107.28662745255244,107.28783875189126,-0.0012112993388200266
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-043-dense-29be9c710e,dense,5,5,117.25064406063801,117.22868939610983,0.021954664528180956
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-044-corridor-bf5b53b60d,corridor,5,5,296.9748789125103,294.9171987536064,2.0576801589039064
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-045-clustered-49fd97b5bf,clustered,5,5,118.08221177579401,118.13513165700238,-0.05291988120836777
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,152.62689476439863,152.44940084213545,0.1774939222631815
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-047-mixed-09023a351a,mixed,5,5,117.47890534759433,117.25121938837006,0.22768595922427437
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-049-dense-e3515336bb,dense,5,5,110.48535996419753,110.48761497589516,-0.0022550116976276513
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-050-corridor-02cfde4dab,corridor,5,5,298.80963011433664,299.5172515042074,-0.7076213898707806
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-051-clustered-306e6ea262,clustered,5,5,113.1716338999248,113.13799793872971,0.03363596119508827
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.92799886431301,113.94678243690132,-0.018783572588304764
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-053-mixed-91ecbe1d72,mixed,5,5,102.67745447544385,102.62019399504113,0.05726048040271792
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-054-sparse-a789cc6b3a,sparse,5,5,108.78294513744002,108.77702577552387,0.005919361916156163
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-055-dense-ea424cfd6d,dense,5,5,118.1114473499341,118.00075877362092,0.11068857631317996
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-056-corridor-5d206c9670,corridor,5,5,298.3654171848966,298.6894182598806,-0.32400107498398256
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-057-clustered-235c9a4685,clustered,5,5,107.7098394875008,107.71396680016134,-0.004127312660543225
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,113.69377521628296,113.62365319667978,0.07012201960317554
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,validation-059-mixed-e6df613ff4,mixed,5,5,117.54133880002969,117.44305117115546,0.09828762887423181
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-000-sparse-c9b13b3f28,sparse,5,5,111.37965011999424,111.38032190752492,-0.0006717875306776477
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-001-dense-4ac25c8680,dense,5,5,118.76329017764532,119.00221003696154,-0.23891985931622628
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-002-corridor-284a55aaca,corridor,5,5,293.58108104852,295.12622636298187,-1.5451453144618768
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-003-clustered-4b46b12691,clustered,5,5,117.03513438239571,116.73216078697759,0.3029735954181234
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,122.99374393049042,123.4042304185459,-0.4104864880554686
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-007-dense-c2a9dc256c,dense,5,5,121.1651835807706,121.33234156216771,-0.1671579813971107
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-008-corridor-642e33974b,corridor,5,5,301.77919504711826,306.04552623004815,-4.266331182929889
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-009-clustered-aab5c1fb46,clustered,5,5,110.45209317257401,110.43708674985662,0.015006422717391388
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,123.354910038795,124.59140268255241,-1.2364926437574155
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-012-sparse-84a3f67668,sparse,5,5,111.10497206760783,111.10579135097738,-0.0008192833695517265
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-013-dense-7cf63ca81c,dense,5,5,112.52973686142496,112.53630966551411,-0.006572804089145734
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-014-corridor-b987c1ce01,corridor,5,5,297.6378248709957,302.9472185974266,-5.309393726430926
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-015-clustered-7a28d3fa10,clustered,5,5,113.78956353888502,113.796878915983,-0.007315377097981468
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,116.33302610564996,117.62604459978655,-1.2930184941365894
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-017-mixed-bcc0e50136,mixed,5,5,114.65641571907874,115.14972086543224,-0.49330514635350653
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-020-corridor-dbe81a0f5a,corridor,5,5,310.64740176504637,303.4297070466529,7.2176947183934885
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-021-clustered-ad956c8c39,clustered,5,5,116.35790251313495,116.32086622230307,0.037036290831878205
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,139.65228370086854,139.7398340988184,-0.08755039794985464
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-023-mixed-76d07dc752,mixed,5,5,295.8447095653459,298.1644161579122,-2.3197065925663196
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-024-sparse-e4d54aacbe,sparse,5,5,109.35751110004138,109.34582170318481,0.011689396856567669
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-025-dense-a74eae0372,dense,5,5,120.50793287075143,121.78030623837526,-1.2723733676238282
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-026-corridor-df1d0dc19b,corridor,5,5,299.76364339976544,302.40228391805533,-2.6386405182898898
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-027-clustered-01a4b58761,clustered,5,5,114.24819485397663,114.60954900251815,-0.3613541485415226
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,120.24042024376784,120.393602970765,-0.15318272699715862
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-029-mixed-8e82fede1f,mixed,5,5,271.6748438822133,271.6698463619683,0.004997520244955922
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-030-sparse-d1867552b7,sparse,5,5,109.80851473882477,109.82117489516494,-0.012660156340174922
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-031-dense-50fc319e8f,dense,5,5,121.02796477369982,121.09595225074584,-0.06798747704601737
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-032-corridor-694b95bbde,corridor,5,5,293.6439444717772,293.7415063946532,-0.09756192287596832
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-033-clustered-efa513c067,clustered,5,5,113.79501234951267,113.79487016367284,0.00014218583983449662
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,326.2995364639065,338.4966549423315,-12.197118478424954
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-035-mixed-bdf8d13953,mixed,5,5,134.32753313973478,138.05876353944262,-3.73123039970784
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-036-sparse-15569042ff,sparse,5,5,108.96307247118695,108.97422538146895,-0.011152910282007156
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-037-dense-1ff936311d,dense,5,5,115.66506789424052,115.65806785316991,0.0070000410706114735
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-038-corridor-bd65fd5653,corridor,5,5,297.55471816622537,297.6647189127574,-0.11000074653202319
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.26677938053517,112.26329110355593,0.003488276979240368
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,139.36528887825628,139.59033453164653,-0.22504565339025362
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-041-mixed-91571ccd4c,mixed,5,5,227.295560984628,231.12958387366058,-3.834022889032582
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-042-sparse-096a0e75a7,sparse,5,5,107.28976707509298,107.28783875189126,0.0019283232017244245
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-043-dense-29be9c710e,dense,5,5,117.27495752011023,117.22868939610983,0.04626812400040592
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-044-corridor-bf5b53b60d,corridor,5,5,297.39287092219615,294.9171987536064,2.4756721685897674
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-045-clustered-49fd97b5bf,clustered,5,5,118.07057259433098,118.13513165700238,-0.06455906267139255
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,152.39264902482694,152.44940084213545,-0.05675181730850909
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-047-mixed-09023a351a,mixed,5,5,117.35847659138821,117.25121938837006,0.10725720301815045
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-049-dense-e3515336bb,dense,5,5,110.48559172025494,110.48761497589516,-0.002023255640210664
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-050-corridor-02cfde4dab,corridor,5,5,299.7586203580085,299.5172515042074,0.24136885380107742
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-051-clustered-306e6ea262,clustered,5,5,113.15471395402068,113.13799793872971,0.016716015290967334
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.92280005996082,113.94678243690132,-0.023982376940494987
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-053-mixed-91ecbe1d72,mixed,5,5,102.86315382860164,102.62019399504113,0.242959833560505
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-054-sparse-a789cc6b3a,sparse,5,5,108.78351599058539,108.77702577552387,0.006490215061518256
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-055-dense-ea424cfd6d,dense,5,5,118.47080852811177,118.00075877362092,0.4700497544908586
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-056-corridor-5d206c9670,corridor,5,5,299.32000010653917,298.6894182598806,0.630581846658572
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-057-clustered-235c9a4685,clustered,5,5,107.71224969730575,107.71396680016134,-0.0017171028555935663
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,113.63405684554237,113.62365319667978,0.010403648862592263
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,validation-059-mixed-e6df613ff4,mixed,5,5,117.38682382240074,117.44305117115546,-0.056227348754717354
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-000-sparse-c9b13b3f28,sparse,5,5,111.38032190752492,111.38032190752492,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-001-dense-4ac25c8680,dense,5,5,118.93928703846271,119.00221003696154,-0.0629229984988342
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-002-corridor-284a55aaca,corridor,5,5,295.12622636298187,295.12622636298187,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-003-clustered-4b46b12691,clustered,5,5,116.68213402066773,116.73216078697759,-0.050026766309855475
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,122.96261197525014,123.4042304185459,-0.44161844329575217
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-007-dense-c2a9dc256c,dense,5,5,121.33234156216771,121.33234156216771,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-008-corridor-642e33974b,corridor,5,5,301.1560998817978,306.04552623004815,-4.8894263482503675
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-009-clustered-aab5c1fb46,clustered,5,5,110.43708674985662,110.43708674985662,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,123.36829525023373,124.59140268255241,-1.2231074323186846
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-012-sparse-84a3f67668,sparse,5,5,111.10760924419459,111.10579135097738,0.0018178932172077111
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-013-dense-7cf63ca81c,dense,5,5,112.53630966551411,112.53630966551411,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-014-corridor-b987c1ce01,corridor,5,5,298.3773370247301,302.9472185974266,-4.569881572696545
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-015-clustered-7a28d3fa10,clustered,5,5,113.796878915983,113.796878915983,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,117.62604459978655,117.62604459978655,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-017-mixed-bcc0e50136,mixed,5,5,114.7293903352763,115.14972086543224,-0.4203305301559368
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-020-corridor-dbe81a0f5a,corridor,5,5,305.28209907295866,303.4297070466529,1.852392026305779
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-021-clustered-ad956c8c39,clustered,5,5,116.31866334818224,116.32086622230307,-0.0022028741208259817
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,139.7398340988184,139.7398340988184,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-023-mixed-76d07dc752,mixed,5,5,298.38182130997757,298.1644161579122,0.21740515206533928
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-024-sparse-e4d54aacbe,sparse,5,5,109.3969160700618,109.34582170318481,0.05109436687699542
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-025-dense-a74eae0372,dense,5,5,122.09006264715153,121.78030623837526,0.3097564087762663
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-026-corridor-df1d0dc19b,corridor,5,5,302.40228391805533,302.40228391805533,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-027-clustered-01a4b58761,clustered,5,5,114.60954900251815,114.60954900251815,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,120.32480171326291,120.393602970765,-0.06880125750208776
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-029-mixed-8e82fede1f,mixed,5,5,271.6698463619683,271.6698463619683,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-030-sparse-d1867552b7,sparse,5,5,109.8235203728535,109.82117489516494,0.0023454776885500905
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-031-dense-50fc319e8f,dense,5,5,121.09595225074584,121.09595225074584,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-032-corridor-694b95bbde,corridor,5,5,293.7415063946532,293.7415063946532,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-033-clustered-efa513c067,clustered,5,5,113.79537363405746,113.79487016367284,0.0005034703846149569
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,338.4966549423315,338.4966549423315,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-035-mixed-bdf8d13953,mixed,5,5,137.9541976776991,138.05876353944262,-0.10456586174350946
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-036-sparse-15569042ff,sparse,5,5,108.97624554184557,108.97422538146895,0.0020201603766167864
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-037-dense-1ff936311d,dense,5,5,115.65806785316991,115.65806785316991,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-038-corridor-bd65fd5653,corridor,5,5,297.6647189127574,297.6647189127574,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.2650664347214,112.26329110355593,0.0017753311654757908
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,139.59033453164653,139.59033453164653,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-041-mixed-91571ccd4c,mixed,5,5,222.9987589649947,231.12958387366058,-8.130824908665886
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-042-sparse-096a0e75a7,sparse,5,5,107.29432100256356,107.28783875189126,0.006482250672306122
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-043-dense-29be9c710e,dense,5,5,117.22868939610983,117.22868939610983,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-044-corridor-bf5b53b60d,corridor,5,5,294.91938322370424,294.9171987536064,0.002184470097859048
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-045-clustered-49fd97b5bf,clustered,5,5,118.13557426270091,118.13513165700238,0.00044260569853804554
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,152.44940084213545,152.44940084213545,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-047-mixed-09023a351a,mixed,5,5,117.25121938837006,117.25121938837006,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-049-dense-e3515336bb,dense,5,5,110.48761497589516,110.48761497589516,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-050-corridor-02cfde4dab,corridor,5,5,299.5172515042074,299.5172515042074,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-051-clustered-306e6ea262,clustered,5,5,113.17908038800486,113.13799793872971,0.04108244927515159
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.94678243690132,113.94678243690132,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-053-mixed-91ecbe1d72,mixed,5,5,102.62019399504113,102.62019399504113,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-054-sparse-a789cc6b3a,sparse,5,5,108.78354935965034,108.77702577552387,0.006523584126469473
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-055-dense-ea424cfd6d,dense,5,5,118.21731936486634,118.00075877362092,0.21656059124542537
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-056-corridor-5d206c9670,corridor,5,5,298.6894182598806,298.6894182598806,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-057-clustered-235c9a4685,clustered,5,5,107.71704939426621,107.71396680016134,0.003082594104867553
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,113.62365319667978,113.62365319667978,0.0
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,validation-059-mixed-e6df613ff4,mixed,5,5,117.44305117115546,117.44305117115546,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-000-sparse-c9b13b3f28,sparse,5,5,111.38032190752492,111.38032190752492,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-001-dense-4ac25c8680,dense,5,5,119.0253495301238,119.00221003696154,0.023139493162261715
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-002-corridor-284a55aaca,corridor,5,5,295.40979466377144,295.12622636298187,0.2835683007895682
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-003-clustered-4b46b12691,clustered,5,5,117.07260448231088,116.73216078697759,0.3404436953332919
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,122.96261197525014,123.4042304185459,-0.44161844329575217
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-007-dense-c2a9dc256c,dense,5,5,121.44252366292396,121.33234156216771,0.11018210075624779
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-008-corridor-642e33974b,corridor,5,5,306.04552623004815,306.04552623004815,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-009-clustered-aab5c1fb46,clustered,5,5,110.48663608175454,110.43708674985662,0.049549331897921434
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,123.36829525023373,124.59140268255241,-1.2231074323186846
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-012-sparse-84a3f67668,sparse,5,5,111.11223311234927,111.10579135097738,0.006441761371888788
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-013-dense-7cf63ca81c,dense,5,5,112.56596611042713,112.53630966551411,0.02965644491301589
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-014-corridor-b987c1ce01,corridor,5,5,302.9472185974266,302.9472185974266,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-015-clustered-7a28d3fa10,clustered,5,5,113.94340185161461,113.796878915983,0.14652293563160868
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,117.23246181296228,117.62604459978655,-0.3935827868242683
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-017-mixed-bcc0e50136,mixed,5,5,115.14972086543224,115.14972086543224,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-020-corridor-dbe81a0f5a,corridor,5,5,305.28209907295866,303.4297070466529,1.852392026305779
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-021-clustered-ad956c8c39,clustered,5,5,116.4135969066783,116.32086622230307,0.09273068437522625
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,139.7398340988184,139.7398340988184,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-023-mixed-76d07dc752,mixed,5,5,298.38182130997757,298.1644161579122,0.21740515206533928
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-024-sparse-e4d54aacbe,sparse,5,5,109.4249479643855,109.34582170318481,0.07912626120068467
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-025-dense-a74eae0372,dense,5,5,123.25493747578015,121.78030623837526,1.4746312374048927
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-026-corridor-df1d0dc19b,corridor,5,5,302.40228391805533,302.40228391805533,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-027-clustered-01a4b58761,clustered,5,5,114.70583078335248,114.60954900251815,0.0962817808343317
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,120.32480171326291,120.393602970765,-0.06880125750208776
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-029-mixed-8e82fede1f,mixed,5,5,271.6698463619683,271.6698463619683,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-030-sparse-d1867552b7,sparse,5,5,109.85134530949766,109.82117489516494,0.030170414332715723
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-031-dense-50fc319e8f,dense,5,5,121.15123523058271,121.09595225074584,0.0552829798368748
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-032-corridor-694b95bbde,corridor,5,5,293.7415063946532,293.7415063946532,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-033-clustered-efa513c067,clustered,5,5,113.79578930140016,113.79487016367284,0.0009191377273225498
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,338.4966549423315,338.4966549423315,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-035-mixed-bdf8d13953,mixed,5,5,137.9541976776991,138.05876353944262,-0.10456586174350946
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-036-sparse-15569042ff,sparse,5,5,108.97776011600212,108.97422538146895,0.0035347345331615543
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-037-dense-1ff936311d,dense,5,5,115.65845112096267,115.65806785316991,0.0003832677927562145
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-038-corridor-bd65fd5653,corridor,5,5,297.6647189127574,297.6647189127574,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.30055591376976,112.26329110355593,0.037264810213827104
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,139.57179268671328,139.59033453164653,-0.01854184493325306
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-041-mixed-91571ccd4c,mixed,5,5,222.9987589649947,231.12958387366058,-8.130824908665886
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-042-sparse-096a0e75a7,sparse,5,5,107.32734533039105,107.28783875189126,0.039506578499796774
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-043-dense-29be9c710e,dense,5,5,117.48844160111237,117.22868939610983,0.2597522050025418
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-044-corridor-bf5b53b60d,corridor,5,5,294.91938322370424,294.9171987536064,0.002184470097859048
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-045-clustered-49fd97b5bf,clustered,5,5,118.21021201699175,118.13513165700238,0.07508035998937146
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,152.44940084213545,152.44940084213545,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-047-mixed-09023a351a,mixed,5,5,117.25121938837006,117.25121938837006,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-049-dense-e3515336bb,dense,5,5,110.49465750867385,110.48761497589516,0.007042532778697819
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-050-corridor-02cfde4dab,corridor,5,5,299.5172515042074,299.5172515042074,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-051-clustered-306e6ea262,clustered,5,5,113.68205436665667,113.13799793872971,0.5440564279269609
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.94678243690132,113.94678243690132,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-053-mixed-91ecbe1d72,mixed,5,5,102.99127997946232,102.62019399504113,0.37108598442118534
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-054-sparse-a789cc6b3a,sparse,5,5,108.79317231568702,108.77702577552387,0.01614654016314887
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-055-dense-ea424cfd6d,dense,5,5,118.37227350617351,118.00075877362092,0.3715147325525976
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-056-corridor-5d206c9670,corridor,5,5,298.6894182598806,298.6894182598806,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-057-clustered-235c9a4685,clustered,5,5,107.73239369372479,107.71396680016134,0.018426893563443514
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,113.62365319667978,113.62365319667978,0.0
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,validation-059-mixed-e6df613ff4,mixed,5,5,117.44305117115546,117.44305117115546,0.0
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-000-sparse-c9b13b3f28,sparse,5,5,111.38032190752492,111.38032190752492,0.0
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-001-dense-4ac25c8680,dense,5,5,118.94533837024163,119.00221003696154,-0.05687166671991406
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-002-corridor-284a55aaca,corridor,5,5,293.302484959429,295.12622636298187,-1.8237414035528445
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-003-clustered-4b46b12691,clustered,5,5,116.96971359551125,116.73216078697759,0.237552808533664
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,123.21092954455321,123.4042304185459,-0.19330087399268336
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-007-dense-c2a9dc256c,dense,5,5,121.3009116071327,121.33234156216771,-0.03142995503500856
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-008-corridor-642e33974b,corridor,5,5,303.71078192112157,306.04552623004815,-2.334744308926588
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-009-clustered-aab5c1fb46,clustered,5,5,110.45971116366921,110.43708674985662,0.022624413812593502
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,123.82231984225048,124.59140268255241,-0.7690828403019339
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-012-sparse-84a3f67668,sparse,5,5,111.11054446501217,111.10579135097738,0.004753114034784289
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-013-dense-7cf63ca81c,dense,5,5,112.54452217101743,112.53630966551411,0.008212505503323086
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-014-corridor-b987c1ce01,corridor,5,5,308.33991017917225,302.9472185974266,5.392691581745623
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-015-clustered-7a28d3fa10,clustered,5,5,113.78956353888502,113.796878915983,-0.007315377097981468
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,118.26749717457632,117.62604459978655,0.641452574789767
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-017-mixed-bcc0e50136,mixed,5,5,113.17705246423061,115.14972086543224,-1.9726684012016307
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-020-corridor-dbe81a0f5a,corridor,5,5,309.28847213474654,303.4297070466529,5.858765088093662
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-021-clustered-ad956c8c39,clustered,5,5,116.21780120136124,116.32086622230307,-0.1030650209418269
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,139.65228370086854,139.7398340988184,-0.08755039794985464
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-023-mixed-76d07dc752,mixed,5,5,297.8065056281773,298.1644161579122,-0.3579105297349088
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-024-sparse-e4d54aacbe,sparse,5,5,109.37645532800813,109.34582170318481,0.030633624823323657
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-025-dense-a74eae0372,dense,5,5,121.41690780458111,121.78030623837526,-0.3633984337941456
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-026-corridor-df1d0dc19b,corridor,5,5,302.2180666755216,302.40228391805533,-0.18421724253374805
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-027-clustered-01a4b58761,clustered,5,5,114.35380733552999,114.60954900251815,-0.2557416669881576
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,120.24743986238013,120.393602970765,-0.14616310838486868
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-029-mixed-8e82fede1f,mixed,5,5,271.62031953373173,271.6698463619683,-0.049526828236594156
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-030-sparse-d1867552b7,sparse,5,5,109.86204247189542,109.82117489516494,0.04086757673047714
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-031-dense-50fc319e8f,dense,5,5,121.3706408601902,121.09595225074584,0.2746886094443681
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-032-corridor-694b95bbde,corridor,5,5,292.01033533424305,293.7415063946532,-1.7311710604101336
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-033-clustered-efa513c067,clustered,5,5,113.7954704226467,113.79487016367284,0.0006002589738614006
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,335.15450005821026,338.4966549423315,-3.3421548841212143
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-035-mixed-bdf8d13953,mixed,5,5,133.5178839291076,138.05876353944262,-4.5408796103350255
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-036-sparse-15569042ff,sparse,5,5,108.97776011600212,108.97422538146895,0.0035347345331615543
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-037-dense-1ff936311d,dense,5,5,115.67672799638666,115.65806785316991,0.018660143216749248
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-038-corridor-bd65fd5653,corridor,5,5,296.9292679743455,297.6647189127574,-0.7354509384118728
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.27608610688596,112.26329110355593,0.012795003330026589
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,139.45013422759942,139.59033453164653,-0.14020030404711292
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-041-mixed-91571ccd4c,mixed,5,5,215.62009469421403,231.12958387366058,-15.509489179446547
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-042-sparse-096a0e75a7,sparse,5,5,107.28465284981819,107.28783875189126,-0.003185902073070679
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-043-dense-29be9c710e,dense,5,5,117.25423414299138,117.22868939610983,0.025544746881550395
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-044-corridor-bf5b53b60d,corridor,5,5,296.8274279399791,294.9171987536064,1.9102291863727032
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-045-clustered-49fd97b5bf,clustered,5,5,118.05870552683828,118.13513165700238,-0.07642613016409427
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,152.1041126451368,152.44940084213545,-0.3452881969986379
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-047-mixed-09023a351a,mixed,5,5,117.45599739675698,117.25121938837006,0.20477800838692417
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-049-dense-e3515336bb,dense,5,5,110.49345827520004,110.48761497589516,0.005843299304885363
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-050-corridor-02cfde4dab,corridor,5,5,299.723419229768,299.5172515042074,0.20616772556059004
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-051-clustered-306e6ea262,clustered,5,5,113.77046125426676,113.13799793872971,0.632463315537052
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.95689058052865,113.94678243690132,0.010108143627334698
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-053-mixed-91ecbe1d72,mixed,5,5,102.29052530793736,102.62019399504113,-0.3296686871037764
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-054-sparse-a789cc6b3a,sparse,5,5,108.78213709867076,108.77702577552387,0.0051113231468917775
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-055-dense-ea424cfd6d,dense,5,5,118.38600456165511,118.00075877362092,0.3852457880341973
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-056-corridor-5d206c9670,corridor,5,5,298.3617224131136,298.6894182598806,-0.3276958467669715
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-057-clustered-235c9a4685,clustered,5,5,107.71639698193454,107.71396680016134,0.0024301817731924302
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,113.62365319667978,113.62365319667978,0.0
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,validation-059-mixed-e6df613ff4,mixed,5,5,117.43901485757473,117.44305117115546,-0.004036313580726869
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-000-sparse-c9b13b3f28,sparse,5,5,111.38032190752492,111.38032190752492,0.0
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-001-dense-4ac25c8680,dense,5,5,118.80035574991456,119.00221003696154,-0.20185428704698438
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-002-corridor-284a55aaca,corridor,5,5,293.4639020432221,295.12622636298187,-1.6623243197597617
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-003-clustered-4b46b12691,clustered,5,5,116.87587668948969,116.73216078697759,0.1437159025120991
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,122.96945450969989,123.4042304185459,-0.4347759088460066
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-007-dense-c2a9dc256c,dense,5,5,121.26299793228245,121.33234156216771,-0.06934362988526743
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-008-corridor-642e33974b,corridor,5,5,306.29593806646545,306.04552623004815,0.2504118364172996
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-009-clustered-aab5c1fb46,clustered,5,5,110.48663608175454,110.43708674985662,0.049549331897921434
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,123.41823087932258,124.59140268255241,-1.1731718032298346
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-012-sparse-84a3f67668,sparse,5,5,111.10635062807954,111.10579135097738,0.0005592771021554199
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-013-dense-7cf63ca81c,dense,5,5,112.5276957772103,112.53630966551411,-0.008613888303813155
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-014-corridor-b987c1ce01,corridor,5,5,299.4370170746497,302.9472185974266,-3.5102015227769243
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-015-clustered-7a28d3fa10,clustered,5,5,113.78611849143478,113.796878915983,-0.010760424548223568
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,117.34412056227494,117.62604459978655,-0.2819240375116152
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-017-mixed-bcc0e50136,mixed,5,5,114.06735860144886,115.14972086543224,-1.0823622639833843
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-020-corridor-dbe81a0f5a,corridor,5,5,306.3128839204036,303.4297070466529,2.883176873750699
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-021-clustered-ad956c8c39,clustered,5,5,116.24529978517816,116.32086622230307,-0.0755664371249054
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,140.10201738719775,139.7398340988184,0.36218328837935587
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-023-mixed-76d07dc752,mixed,5,5,307.7306102131446,298.1644161579122,9.566194055232359
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-024-sparse-e4d54aacbe,sparse,5,5,109.36504227810666,109.34582170318481,0.019220574921845923
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-025-dense-a74eae0372,dense,5,5,120.31560231139375,121.78030623837526,-1.4647039269815139
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-026-corridor-df1d0dc19b,corridor,5,5,302.3882485367983,302.40228391805533,-0.014035381257031077
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-027-clustered-01a4b58761,clustered,5,5,114.31410091533593,114.60954900251815,-0.2954480871822227
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,120.25851237167885,120.393602970765,-0.13509059908615484
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-029-mixed-8e82fede1f,mixed,5,5,271.1767970487874,271.6698463619683,-0.4930493131809044
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-030-sparse-d1867552b7,sparse,5,5,109.80644353026653,109.82117489516494,-0.014731364898409538
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-031-dense-50fc319e8f,dense,5,5,121.09008865405805,121.09595225074584,-0.005863596687788686
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-032-corridor-694b95bbde,corridor,5,5,293.3950455834178,293.7415063946532,-0.3464608112353744
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-033-clustered-efa513c067,clustered,5,5,113.79555022155257,113.79487016367284,0.0006800578797339085
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,334.2787515561831,338.4966549423315,-4.21790338614835
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-035-mixed-bdf8d13953,mixed,5,5,134.67992291880682,138.05876353944262,-3.378840620635799
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-036-sparse-15569042ff,sparse,5,5,108.97003140959933,108.97422538146895,-0.004193971869625557
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-037-dense-1ff936311d,dense,5,5,115.67139975636105,115.65806785316991,0.013331903191144079
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-038-corridor-bd65fd5653,corridor,5,5,296.4981663827079,297.6647189127574,-1.1665525300495005
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.26549462144379,112.26329110355593,0.0022035178878638817
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,139.67388927709612,139.59033453164653,0.08355474544958952
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-041-mixed-91571ccd4c,mixed,5,5,238.960731072951,231.12958387366058,7.831147199290427
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-042-sparse-096a0e75a7,sparse,5,5,107.28684245311673,107.28783875189126,-0.000996298774524007
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-043-dense-29be9c710e,dense,5,5,117.238258011223,117.22868939610983,0.009568615113167311
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-044-corridor-bf5b53b60d,corridor,5,5,295.99661537995087,294.9171987536064,1.0794166263444822
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-045-clustered-49fd97b5bf,clustered,5,5,118.0850843730826,118.13513165700238,-0.050047283919781194
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,152.32014982934174,152.44940084213545,-0.1292510127937021
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-047-mixed-09023a351a,mixed,5,5,117.26474968840411,117.25121938837006,0.013530300034048537
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-049-dense-e3515336bb,dense,5,5,110.48604445569939,110.48761497589516,-0.0015705201957700865
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-050-corridor-02cfde4dab,corridor,5,5,297.74505961291925,299.5172515042074,-1.7721918912881733
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-051-clustered-306e6ea262,clustered,5,5,113.16180553125274,113.13799793872971,0.023807592523027665
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.91324335947648,113.94678243690132,-0.03353907742483386
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-053-mixed-91ecbe1d72,mixed,5,5,102.37561973200376,102.62019399504113,-0.24457426303737861
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-054-sparse-a789cc6b3a,sparse,5,5,108.79120681522089,108.77702577552387,0.014181039697021447
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-055-dense-ea424cfd6d,dense,5,5,118.06137721669727,118.00075877362092,0.06061844307635056
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-056-corridor-5d206c9670,corridor,5,5,298.92814008263235,298.6894182598806,0.23872182275175646
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-057-clustered-235c9a4685,clustered,5,5,107.7126428136973,107.71396680016134,-0.0013239864640439691
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,113.63781511298578,113.62365319667978,0.014161916305994282
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,validation-059-mixed-e6df613ff4,mixed,5,5,117.52782062459,117.44305117115546,0.08476945343454645
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-000-sparse-c9b13b3f28,sparse,5,5,111.38032190752492,111.38032190752492,0.0
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-001-dense-4ac25c8680,dense,5,5,120.13966214370451,119.00221003696154,1.1374521067429697
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-002-corridor-284a55aaca,corridor,5,5,308.3541676245913,295.12622636298187,13.22794126160943
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-003-clustered-4b46b12691,clustered,5,5,117.78038895584551,116.73216078697759,1.0482281688679222
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,124.78131300620855,123.4042304185459,1.377082587662656
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-007-dense-c2a9dc256c,dense,5,5,122.88905878670764,121.33234156216771,1.5567172245399234
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-008-corridor-642e33974b,corridor,5,5,328.93888615072973,306.04552623004815,22.893359920681576
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-009-clustered-aab5c1fb46,clustered,5,5,110.57120872736918,110.43708674985662,0.13412197751256372
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,125.16260996814181,124.59140268255241,0.571207285589395
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-012-sparse-84a3f67668,sparse,5,5,111.11662502393112,111.10579135097738,0.01083367295373705
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-013-dense-7cf63ca81c,dense,5,5,113.01849043984484,112.53630966551411,0.4821807743307289
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-014-corridor-b987c1ce01,corridor,5,5,326.14375155102067,302.9472185974266,23.196532953594044
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-015-clustered-7a28d3fa10,clustered,5,5,114.1835681078702,113.796878915983,0.38668919188719997
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,125.03823693059309,117.62604459978655,7.412192330806533
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-017-mixed-bcc0e50136,mixed,5,5,138.06067598234102,115.14972086543224,22.91095511690878
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-020-corridor-dbe81a0f5a,corridor,5,5,333.95974603719316,303.4297070466529,30.530038990540277
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-021-clustered-ad956c8c39,clustered,5,5,116.84458089596666,116.32086622230307,0.5237146736635907
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,141.16892497000998,139.7398340988184,1.4290908711915904
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-023-mixed-76d07dc752,mixed,5,5,350.4101513697997,298.1644161579122,52.24573521188745
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-024-sparse-e4d54aacbe,sparse,5,5,109.92455234198553,109.34582170318481,0.578730638800721
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-025-dense-a74eae0372,dense,4,5,205.5015559925344,121.78030623837526,83.72124975415915
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-026-corridor-df1d0dc19b,corridor,5,5,319.24355044092533,302.40228391805533,16.84126652287
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-027-clustered-01a4b58761,clustered,5,5,114.90834769736458,114.60954900251815,0.2987986948464254
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,121.3569895846654,120.393602970765,0.963386613900397
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-029-mixed-8e82fede1f,mixed,5,5,271.6817482832026,271.6698463619683,0.011901921234255042
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-030-sparse-d1867552b7,sparse,5,5,109.86204247189542,109.82117489516494,0.04086757673047714
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-031-dense-50fc319e8f,dense,5,5,121.48034596168475,121.09595225074584,0.38439371093890884
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-032-corridor-694b95bbde,corridor,5,5,298.32823622270234,293.7415063946532,4.586729828049158
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-033-clustered-efa513c067,clustered,5,5,113.80863176058833,113.79487016367284,0.013761596915486507
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,346.8358542410732,338.4966549423315,8.339199298741732
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-035-mixed-bdf8d13953,mixed,5,5,149.43443252334282,138.05876353944262,11.375668983900198
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-036-sparse-15569042ff,sparse,5,5,108.97849993863754,108.97422538146895,0.004274557168585602
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-037-dense-1ff936311d,dense,5,5,115.85047351279363,115.65806785316991,0.19240565962371647
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-038-corridor-bd65fd5653,corridor,5,5,305.4353575763937,297.6647189127574,7.770638663636305
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.34206940641522,112.26329110355593,0.07877830285929122
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,141.56396248134345,139.59033453164653,1.973627949696919
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-041-mixed-91571ccd4c,mixed,5,5,251.3393197798721,231.12958387366058,20.209735906211534
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-042-sparse-096a0e75a7,sparse,5,5,107.59392277526675,107.28783875189126,0.30608402337549023
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-043-dense-29be9c710e,dense,5,5,118.14414479168501,117.22868939610983,0.9154553955751794
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-044-corridor-bf5b53b60d,corridor,5,5,303.1309962578157,294.9171987536064,8.21379750420931
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-045-clustered-49fd97b5bf,clustered,5,5,118.47193022622528,118.13513165700238,0.33679856922290696
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,153.47134311230846,152.44940084213545,1.0219422701730139
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-047-mixed-09023a351a,mixed,5,5,117.63070504654759,117.25121938837006,0.3794856581775292
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-049-dense-e3515336bb,dense,5,5,110.53960009888607,110.48761497589516,0.051985122990913624
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-050-corridor-02cfde4dab,corridor,5,5,320.04219597662063,299.5172515042074,20.52494447241321
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-051-clustered-306e6ea262,clustered,5,5,133.78150542753264,113.13799793872971,20.643507488802925
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.96318870276562,113.94678243690132,0.016406265864304714
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-053-mixed-91ecbe1d72,mixed,5,5,135.4773071779669,102.62019399504113,32.85711318292577
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-054-sparse-a789cc6b3a,sparse,5,5,108.82368086279948,108.77702577552387,0.046655087275610185
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-055-dense-ea424cfd6d,dense,5,5,120.51571343815009,118.00075877362092,2.5149546645291707
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-056-corridor-5d206c9670,corridor,5,5,305.6886786516558,298.6894182598806,6.999260391775181
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-057-clustered-235c9a4685,clustered,5,5,107.73239369372479,107.71396680016134,0.018426893563443514
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,114.61395583603621,113.62365319667978,0.9903026393564289
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,validation-059-mixed-e6df613ff4,mixed,5,5,118.17564310463956,117.44305117115546,0.7325919334841018
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-000-sparse-c9b13b3f28,sparse,5,5,111.38032190752492,111.38032190752492,0.0
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-001-dense-4ac25c8680,dense,5,5,119.13740971852081,119.00221003696154,0.1351996815592713
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-002-corridor-284a55aaca,corridor,5,5,302.50204316081727,295.12622636298187,7.375816797835398
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-003-clustered-4b46b12691,clustered,5,5,117.58689539011877,116.73216078697759,0.854734603141182
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-004-rooms_maze-33155f70ac,rooms_maze,5,5,123.4130453579543,123.4042304185459,0.008814939408409828
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-005-mixed-00e28968ec,mixed,5,5,109.4909171776687,109.4909171776687,0.0
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-006-sparse-1d6c6d46f9,sparse,5,5,117.9980513440667,117.9980513440667,0.0
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-007-dense-c2a9dc256c,dense,5,5,121.62222137772086,121.33234156216771,0.28987981555314946
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-008-corridor-642e33974b,corridor,5,5,314.4855100111591,306.04552623004815,8.439983781110925
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-009-clustered-aab5c1fb46,clustered,5,5,110.48663608175454,110.43708674985662,0.049549331897921434
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-010-rooms_maze-3771cb0a3e,rooms_maze,5,5,124.81224356625162,124.59140268255241,0.22084088369921062
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-011-mixed-931865136a,mixed,5,5,107.027365817738,107.027365817738,0.0
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-012-sparse-84a3f67668,sparse,5,5,111.11202781956172,111.10579135097738,0.0062364685843334655
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-013-dense-7cf63ca81c,dense,5,5,112.67427507152237,112.53630966551411,0.1379654060082629
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-014-corridor-b987c1ce01,corridor,5,5,318.1652470155885,302.9472185974266,15.21802841816185
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-015-clustered-7a28d3fa10,clustered,5,5,113.96331002022403,113.796878915983,0.16643110424102758
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-016-rooms_maze-65e65f49ba,rooms_maze,5,5,120.98164420900619,117.62604459978655,3.355599609219638
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-017-mixed-bcc0e50136,mixed,5,5,115.89901112989186,115.14972086543224,0.7492902644596171
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-018-sparse-51b59abcbc,sparse,5,5,108.55575937319546,108.55575937319546,0.0
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-019-dense-0d2d8d4b61,dense,5,5,114.12224324741516,114.12224324741516,0.0
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-020-corridor-dbe81a0f5a,corridor,5,5,320.87705957773954,303.4297070466529,17.447352531086665
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-021-clustered-ad956c8c39,clustered,5,5,116.68151371664851,116.32086622230307,0.36064749434544296
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-022-rooms_maze-2c4283538b,rooms_maze,5,5,140.3960091735247,139.7398340988184,0.6561750747063115
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-023-mixed-76d07dc752,mixed,5,5,310.4638778970302,298.1644161579122,12.299461739117987
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-024-sparse-e4d54aacbe,sparse,5,5,109.4249479643855,109.34582170318481,0.07912626120068467
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-025-dense-a74eae0372,dense,5,5,123.76495408248395,121.78030623837526,1.984647844108693
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-026-corridor-df1d0dc19b,corridor,5,5,312.93453790794547,302.40228391805533,10.532253989890137
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-027-clustered-01a4b58761,clustered,5,5,114.70583078335248,114.60954900251815,0.0962817808343317
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-028-rooms_maze-59383c2cf3,rooms_maze,5,5,121.23594765024762,120.393602970765,0.8423446794826219
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-029-mixed-8e82fede1f,mixed,5,5,271.6817482832026,271.6698463619683,0.011901921234255042
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-030-sparse-d1867552b7,sparse,5,5,109.85134530949766,109.82117489516494,0.030170414332715723
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-031-dense-50fc319e8f,dense,5,5,121.19886490974426,121.09595225074584,0.10291265899842017
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-032-corridor-694b95bbde,corridor,5,5,296.16903229013917,293.7415063946532,2.427525895485985
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-033-clustered-efa513c067,clustered,5,5,113.79578930140016,113.79487016367284,0.0009191377273225498
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-034-rooms_maze-406be3359c,rooms_maze,5,5,342.0964792023473,338.4966549423315,3.5998242600158505
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-035-mixed-bdf8d13953,mixed,5,5,146.48959453566556,138.05876353944262,8.430830996222937
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-036-sparse-15569042ff,sparse,5,5,108.97624554184557,108.97422538146895,0.0020201603766167864
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-037-dense-1ff936311d,dense,5,5,115.65845112096267,115.65806785316991,0.0003832677927562145
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-038-corridor-bd65fd5653,corridor,5,5,300.3926737054196,297.6647189127574,2.727954792662217
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-039-clustered-40f8a3e6f8,clustered,5,5,112.30055591376976,112.26329110355593,0.037264810213827104
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-040-rooms_maze-17442270fd,rooms_maze,5,5,140.15549223388686,139.59033453164653,0.5651577022403274
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-041-mixed-91571ccd4c,mixed,5,5,247.9545423413271,231.12958387366058,16.824958467666534
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-042-sparse-096a0e75a7,sparse,5,5,107.32734533039105,107.28783875189126,0.039506578499796774
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-043-dense-29be9c710e,dense,5,5,117.48844160111237,117.22868939610983,0.2597522050025418
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-044-corridor-bf5b53b60d,corridor,5,5,298.1491446588074,294.9171987536064,3.23194590520103
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-045-clustered-49fd97b5bf,clustered,5,5,118.21021201699175,118.13513165700238,0.07508035998937146
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-046-rooms_maze-0d89099427,rooms_maze,5,5,152.76717752837325,152.44940084213545,0.3177766862378064
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-047-mixed-09023a351a,mixed,5,5,117.5776196222567,117.25121938837006,0.32640023388664474
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-048-sparse-9fb3e608e2,sparse,5,5,113.62472776255126,113.62472776255126,0.0
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-049-dense-e3515336bb,dense,5,5,110.49394584624362,110.48761497589516,0.006330870348463691
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-050-corridor-02cfde4dab,corridor,5,5,316.07723750931746,299.5172515042074,16.559986005110034
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-051-clustered-306e6ea262,clustered,5,5,114.19225806875829,113.13799793872971,1.054260130028581
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-052-rooms_maze-72038f7d90,rooms_maze,5,5,113.95870552240771,113.94678243690132,0.011923085506396092
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-053-mixed-91ecbe1d72,mixed,5,5,108.22075461998602,102.62019399504113,5.60056062494489
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-054-sparse-a789cc6b3a,sparse,5,5,108.79317231568702,108.77702577552387,0.01614654016314887
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-055-dense-ea424cfd6d,dense,5,5,119.09790979894845,118.00075877362092,1.097151025327534
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-056-corridor-5d206c9670,corridor,5,5,302.94754889997654,298.6894182598806,4.258130640095942
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-057-clustered-235c9a4685,clustered,5,5,107.73239369372479,107.71396680016134,0.018426893563443514
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-058-rooms_maze-d092d61788,rooms_maze,5,5,113.8163048353554,113.62365319667978,0.1926516386756134
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,validation-059-mixed-e6df613ff4,mixed,5,5,118.05187483226979,117.44305117115546,0.6088236611143287

@@ -1,0 +1,95 @@
+matrix_id: evolutionary-afl-uav-experiments-v1
+benchmark_config: configs/uav_benchmark_v1.yaml
+frozen_method_artifact: artifacts/planning_benchmarks/evolutionary-afl-uav-methods/evolutionary-afl-uav-v1/artifact.json
+expected_frozen_core_sha256: 79f0a085a0f26b246d2f1e0d0bc1ac7e8a6288b34dd0fbc8f29bc9387e1a7d4f
+seed_artifact: artifacts/planning_benchmarks/afl_uav_artifacts/deepseek-v4pro-frozen-strict-v2
+split: validation
+repetitions: 5
+max_objective_evaluations: 2000
+
+runs:
+  ablation:
+    run_id: evolutionary-afl-uav-ablation-validation-v1
+    time_limit_seconds: 1.0
+    arms:
+      evo_no_qd_archive:
+        variant: no_quality_diversity_archive
+        population_size: 32
+        archive_size: 8
+        max_generations: 20
+      evo_no_crossover:
+        variant: no_crossover
+        population_size: 32
+        archive_size: 8
+        max_generations: 20
+      evo_move_only:
+        variant: move_only
+        population_size: 32
+        archive_size: 8
+        max_generations: 20
+      evo_no_rooms_strategy:
+        variant: no_rooms_maze_strategy
+        population_size: 32
+        archive_size: 8
+        max_generations: 20
+      evo_fixed_length:
+        variant: fixed_length_population
+        population_size: 32
+        archive_size: 8
+        max_generations: 20
+
+  sensitivity_algorithm:
+    run_id: evolutionary-afl-uav-sensitivity-algorithm-validation-v1
+    time_limit_seconds: 1.0
+    arms:
+      evo_population_16:
+        variant: full_v1
+        population_size: 16
+        archive_size: 8
+        max_generations: 20
+      evo_population_24:
+        variant: full_v1
+        population_size: 24
+        archive_size: 8
+        max_generations: 20
+      evo_archive_4:
+        variant: full_v1
+        population_size: 32
+        archive_size: 4
+        max_generations: 20
+      evo_archive_12:
+        variant: full_v1
+        population_size: 32
+        archive_size: 12
+        max_generations: 20
+      evo_generations_6:
+        variant: full_v1
+        population_size: 32
+        archive_size: 8
+        max_generations: 6
+      evo_generations_12:
+        variant: full_v1
+        population_size: 32
+        archive_size: 8
+        max_generations: 12
+
+  sensitivity_time_025:
+    run_id: evolutionary-afl-uav-sensitivity-time025-validation-v1
+    time_limit_seconds: 0.25
+    arms:
+      evo_time_025:
+        variant: full_v1
+        population_size: 32
+        archive_size: 8
+        max_generations: 20
+
+  sensitivity_time_050:
+    run_id: evolutionary-afl-uav-sensitivity-time050-validation-v1
+    time_limit_seconds: 0.5
+    arms:
+      evo_time_050:
+        variant: full_v1
+        population_size: 32
+        archive_size: 8
+        max_generations: 20
+

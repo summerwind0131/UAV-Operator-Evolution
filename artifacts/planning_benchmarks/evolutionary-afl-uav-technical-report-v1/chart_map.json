@@ -1,0 +1,36 @@
+{
+  "delivery_surface": "portable HTML report",
+  "charts": [
+    {
+      "section": "ablation",
+      "question": "cost change after removing each mechanism",
+      "family": "comparison and ranking",
+      "type": "horizontalBar",
+      "fields": [
+        "variant",
+        "candidate_minus_full_cost"
+      ],
+      "takeaway": "component effects are mixed; rooms/fixed-length are clearest degradations",
+      "palette_policy": "single-root with neutral zero reference"
+    },
+    {
+      "section": "time sensitivity",
+      "question": "cost change across three discrete time budgets",
+      "family": "comparison",
+      "type": "bar",
+      "fields": [
+        "time_budget",
+        "median_cost"
+      ],
+      "takeaway": "shorter budgets mildly increase cost",
+      "palette_policy": "single-root"
+    }
+  ],
+  "tables": [
+    "ablation exact results",
+    "rooms_maze exact results",
+    "OFAT sensitivity",
+    "operator structure-change diagnostics"
+  ],
+  "qa_target": "portable report.html desktop and narrow verifier"
+}

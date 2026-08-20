@@ -1,0 +1,148 @@
+{
+  "analysis_id": "deepseek-v4pro-validation-analysis-v1",
+  "generated_at_utc": "2026-08-13T04:08:15.289411+00:00",
+  "scope": "uav2d-v1 Validation only; Test was not read",
+  "confidence": "ready_to_share_with_experimental_caveats",
+  "contract": {
+    "status": "passed",
+    "expected_records": 2880,
+    "actual_records": 2880,
+    "unique_record_keys": 2880,
+    "unique_maps": 60,
+    "maps_per_class": {
+      "clustered": 10,
+      "corridor": 10,
+      "dense": 10,
+      "mixed": 10,
+      "rooms_maze": 10,
+      "sparse": 10
+    },
+    "planner_record_counts": {
+      "aco_acor": 300,
+      "afl_uav:deepseek_v4pro": 300,
+      "afl_uav:offline_v3": 300,
+      "astar": 60,
+      "de": 300,
+      "dijkstra": 60,
+      "ga": 300,
+      "prm": 300,
+      "pso": 300,
+      "rrt": 300,
+      "rrt_star": 300,
+      "theta_star": 60
+    },
+    "all_sources_validation_only": true,
+    "shared_stochastic_seed_sets": true,
+    "budget": {
+      "max_objective_evaluations": 2000,
+      "time_limit_seconds": 1.0
+    },
+    "path_records": {
+      "status": "passed",
+      "path_records": 300,
+      "unique_path_record_keys": 300,
+      "hash_mismatches": 0,
+      "missing_feasible_paths": 0,
+      "errors": []
+    },
+    "errors": []
+  },
+  "deepseek_v4pro": {
+    "runs": 300,
+    "maps": 60,
+    "feasible_runs": 300,
+    "feasible_rate": 1.0,
+    "maps_solved": 60,
+    "map_solved_rate": 1.0,
+    "maps_all_five_seeds_feasible": 60,
+    "median_feasible_cost": 119.85198062709364,
+    "cost_q1": 113.8519583817807,
+    "cost_q3": 218.2179136640178,
+    "median_elapsed_seconds": 0.18305185000099294,
+    "median_objective_evaluations": 257.0,
+    "max_objective_evaluations": 257,
+    "median_unique_paths_per_map": 4.0,
+    "median_within_map_cost_iqr": 0.2991514797727959,
+    "p90_within_map_cost_iqr": 3.406011347440216,
+    "research_claim_eligible": true
+  },
+  "paired_map_median_vs_astar": {
+    "candidate_planner_key": "afl_uav:deepseek_v4pro",
+    "planner": "afl_uav",
+    "planner_label": "AFL-UAV (DeepSeek V4 Pro)",
+    "baseline_label": "A*",
+    "maps_compared": 60,
+    "both_feasible_maps": 57,
+    "candidate_only_feasible_maps": 3,
+    "baseline_only_feasible_maps": 0,
+    "wins": 25,
+    "ties": 11,
+    "losses": 21,
+    "strict_win_rate": 0.43859649122807015,
+    "half_tie_win_rate": 0.5350877192982456,
+    "half_tie_win_rate_ci_low": 0.42105263157894735,
+    "half_tie_win_rate_ci_high": 0.6491228070175439,
+    "median_cost_delta": 0.0
+  },
+  "paired_map_median_vs_theta_star": {
+    "candidate_planner_key": "afl_uav:deepseek_v4pro",
+    "planner": "afl_uav",
+    "planner_label": "AFL-UAV (DeepSeek V4 Pro)",
+    "baseline_label": "Theta*",
+    "maps_compared": 60,
+    "both_feasible_maps": 58,
+    "candidate_only_feasible_maps": 2,
+    "baseline_only_feasible_maps": 0,
+    "wins": 22,
+    "ties": 12,
+    "losses": 24,
+    "strict_win_rate": 0.3793103448275862,
+    "half_tie_win_rate": 0.4827586206896552,
+    "half_tie_win_rate_ci_low": 0.3706896551724138,
+    "half_tie_win_rate_ci_high": 0.5950431034482747,
+    "median_cost_delta": 0.0
+  },
+  "generation_usage_all_attempts": {
+    "deduplication_key": "provider response_id",
+    "candidate_audit_files": 16,
+    "generation_logical_calls": 232,
+    "generation_http_attempts": 243,
+    "generation_retries": 11,
+    "generation_input_tokens": 799103,
+    "generation_output_tokens": 245296,
+    "generation_total_tokens": 1044399,
+    "generation_provider_latency_ms": 2832735.342500011,
+    "minimal_probe": {
+      "input_tokens": 90,
+      "output_tokens": 5,
+      "total_tokens": 95,
+      "logical_calls": 1,
+      "http_attempts": 1,
+      "retries": 0,
+      "latency_ms": 3157.0
+    },
+    "all_live_calls_including_probe": 233,
+    "all_input_tokens_including_probe": 799193,
+    "all_output_tokens_including_probe": 245301,
+    "all_total_tokens_including_probe": 1044494,
+    "estimated_generation_cost_usd": 0.5610173249999999,
+    "estimated_probe_cost_usd": 4.35e-05,
+    "estimated_all_live_cost_usd": 0.5610608249999999,
+    "price_assumption_usd_per_million_tokens": {
+      "input": 0.435,
+      "output": 0.87,
+      "source": "https://api-docs.deepseek.com/quick_start/pricing/"
+    }
+  },
+  "methodology": {
+    "ranking": "feasible rate first, then median trusted feasible cost",
+    "paired_deterministic_baselines": "one median DeepSeek cost per map versus the deterministic baseline result on that map",
+    "paired_stochastic_baselines": "exact map and shared seed",
+    "uncertainty": "cluster bootstrap over map_id, 2000 replicates, seed 20260731"
+  },
+  "inputs": {
+    "artifacts/planning_benchmarks/offline-traditional-validation-v1/benchmark_runs.csv": "ded657e3e04b0951c91596e226ad72b628c8bd5db69b90ebed180ee3e5563200",
+    "artifacts/planning_benchmarks/afl-uav-offline-v3-validation-v1/benchmark_runs.csv": "dbe71c1a5ab960743c59d2c7638279806694f67ecf02b9b6311104bf6eac8c10",
+    "artifacts/planning_benchmarks/deepseek-v4pro-validation-v1/benchmark_runs.csv": "e0ce2677b7536594a49e9a2c4654bc08c6b78f443a0473e77f8515b7abef5822"
+  }
+}

@@ -1,0 +1,1049 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "Evolutionary AFL-UAV v1 冻结、消融与敏感性报告",
+    "description": "uav2d-v1 Validation-only technical report",
+    "generatedAt": "2026-08-16T17:06:48.653550+00:00",
+    "sources": [
+      {
+        "id": "source-arm-statistics",
+        "label": "Validation arm statistics",
+        "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/arm_statistics.csv",
+        "query": {
+          "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/arm_statistics.csv')",
+          "engine": "duckdb",
+          "description": "Trusted feasibility, cost, runtime, evaluations, and final-path diversity by arm.",
+          "language": "sql",
+          "tables_used": [
+            "arm_statistics.csv"
+          ],
+          "filters": [
+            "split=validation",
+            "effective timeout excludes elapsed >= advertised limit"
+          ],
+          "metric_definitions": [
+            "median_cost = median trusted total cost over feasible non-timeout runs",
+            "trusted_feasible_rate = feasible non-timeout runs / all runs"
+          ]
+        }
+      },
+      {
+        "id": "source-paired",
+        "label": "Paired map comparison against full v1",
+        "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/paired_vs_full.csv",
+        "query": {
+          "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/paired_vs_full.csv')",
+          "engine": "duckdb",
+          "description": "Exact-map, shared-seed comparison summarized at the per-map median grain.",
+          "language": "sql",
+          "tables_used": [
+            "paired_vs_full.csv"
+          ],
+          "filters": [
+            "60 validation maps",
+            "5 shared seeds per arm",
+            "Test excluded"
+          ],
+          "metric_definitions": [
+            "candidate_minus_full_cost = candidate per-map median cost - full-v1 per-map median cost",
+            "positive delta means full v1 has lower cost"
+          ]
+        }
+      },
+      {
+        "id": "source-rooms",
+        "label": "rooms_maze paired comparison",
+        "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/rooms_maze_comparison.csv",
+        "query": {
+          "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/rooms_maze_comparison.csv')",
+          "engine": "duckdb",
+          "description": "The paired comparison restricted to the ten Validation rooms_maze maps.",
+          "language": "sql",
+          "tables_used": [
+            "rooms_maze_comparison.csv"
+          ],
+          "filters": [
+            "difficulty=rooms_maze",
+            "10 maps",
+            "5 shared seeds per arm"
+          ]
+        }
+      },
+      {
+        "id": "source-operators",
+        "label": "Evolutionary operator diagnostics",
+        "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/operator_diagnostics.csv",
+        "query": {
+          "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/operator_diagnostics.csv')",
+          "engine": "duckdb",
+          "description": "Aggregated operator attempts and valid structural changes from planner diagnostics.",
+          "language": "sql",
+          "tables_used": [
+            "operator_diagnostics.csv"
+          ],
+          "metric_definitions": [
+            "structure_change_rate = structurally changed proposals / operator attempts",
+            "this is not a per-operation objective improvement rate"
+          ]
+        }
+      },
+      {
+        "id": "source-ablation",
+        "label": "Joined ablation comparison and execution statistics",
+        "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/paired_vs_full.csv",
+        "query": {
+          "sql": "WITH p AS (SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/paired_vs_full.csv')), a AS (SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/arm_statistics.csv')) SELECT p.*, a.trusted_feasible_rate, a.effective_timeouts, a.median_cost, a.maps_with_multiple_paths FROM p JOIN a USING (arm_id) WHERE p.experiment_group = 'ablation'",
+          "engine": "duckdb",
+          "language": "sql",
+          "description": "Paired ablation effects joined to trusted execution statistics.",
+          "tables_used": [
+            "paired_vs_full.csv",
+            "arm_statistics.csv"
+          ],
+          "filters": [
+            "experiment_group=ablation",
+            "split=validation"
+          ]
+        }
+      },
+      {
+        "id": "source-sensitivity",
+        "label": "Joined OFAT sensitivity comparison and execution statistics",
+        "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/sensitivity_summary.csv",
+        "query": {
+          "sql": "WITH p AS (SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/sensitivity_summary.csv')), a AS (SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/arm_statistics.csv')) SELECT p.*, a.trusted_feasible_rate, a.effective_timeouts, a.median_cost FROM p JOIN a USING (arm_id)",
+          "engine": "duckdb",
+          "language": "sql",
+          "description": "OFAT paired effects joined to trusted execution statistics; v1 baselines are reused by the report transformation.",
+          "tables_used": [
+            "sensitivity_summary.csv",
+            "arm_statistics.csv"
+          ],
+          "filters": [
+            "experiment_group=sensitivity",
+            "split=validation"
+          ]
+        }
+      },
+      {
+        "id": "source-audit",
+        "label": "Validation data-quality audit",
+        "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/validation_audit.json",
+        "query": {
+          "description": "Record-count, key, budget, path-hash, split, and offline-planning audit.",
+          "language": "python",
+          "filters": [
+            "Validation only",
+            "zero online LLM calls"
+          ]
+        }
+      }
+    ],
+    "cards": [
+      {
+        "id": "card-full-cost",
+        "dataset": "headline",
+        "sourceId": "source-arm-statistics",
+        "description": "完整 v1 的统一可信总成本中位数；越低越好。",
+        "metrics": [
+          {
+            "label": "完整 v1 成本中位数",
+            "field": "full_median_cost",
+            "format": "number"
+          },
+          {
+            "label": "原始冻结 AFL",
+            "field": "frozen_median_cost",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "card-map-wins",
+        "dataset": "headline",
+        "sourceId": "source-paired",
+        "description": "按每张地图的五种子成本中位数比较。",
+        "metrics": [
+          {
+            "label": "相对原始 AFL 胜图",
+            "field": "map_wins_vs_frozen",
+            "format": "number"
+          },
+          {
+            "label": "平",
+            "field": "map_ties_vs_frozen",
+            "format": "number"
+          },
+          {
+            "label": "负",
+            "field": "map_losses_vs_frozen",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "card-diversity",
+        "dataset": "headline",
+        "sourceId": "source-arm-statistics",
+        "description": "五个种子产生多个不同最终路径哈希的地图数。",
+        "metrics": [
+          {
+            "label": "有多路径的地图",
+            "field": "maps_with_multiple_paths",
+            "format": "number"
+          },
+          {
+            "label": "Validation 地图",
+            "field": "validation_maps",
+            "format": "number"
+          }
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "id": "chart-ablation-delta",
+        "title": "消融臂相对完整 v1 的每图成本中位数差",
+        "subtitle": "60 张 Validation 地图；正值表示完整 v1 成本更低，0 为等效基线",
+        "showDescription": true,
+        "intent": "comparison",
+        "question": "去掉每个机制后，路径成本如何变化？",
+        "rationale": "水平条形图适合比较五个长标签的有符号差值。",
+        "comparisonContext": {
+          "baseline": "完整 Evolutionary AFL-UAV v1",
+          "grain": "per-map median",
+          "unit": "trusted total cost"
+        },
+        "type": "horizontalBar",
+        "dataset": "ablation",
+        "sourceId": "source-ablation",
+        "encodings": {
+          "x": {
+            "field": "variant",
+            "type": "nominal",
+            "label": "消融设置"
+          },
+          "y": {
+            "field": "candidate_minus_full_cost",
+            "type": "quantitative",
+            "label": "候选 - 完整 v1",
+            "format": "number"
+          },
+          "tooltip": [
+            {
+              "field": "candidate_map_wins",
+              "type": "quantitative",
+              "label": "候选胜图"
+            },
+            {
+              "field": "candidate_map_losses",
+              "type": "quantitative",
+              "label": "候选负图"
+            },
+            {
+              "field": "trusted_feasible_rate",
+              "type": "quantitative",
+              "label": "可信可行率",
+              "format": "percent"
+            }
+          ]
+        },
+        "valueFormat": "number",
+        "unit": "cost",
+        "layout": "full",
+        "maxRows": 5,
+        "referenceLines": [
+          {
+            "axis": "y",
+            "value": 0,
+            "label": "完整 v1",
+            "color": "neutral",
+            "lineStyle": "dashed"
+          }
+        ],
+        "surface": {
+          "surface": "card",
+          "showControls": false,
+          "viewMode": "both"
+        }
+      },
+      {
+        "id": "chart-time-cost",
+        "title": "不同时间预算下的路径成本中位数",
+        "subtitle": "60 张 Validation 地图 × 5 种子；0.25 秒含 1 条有效超时",
+        "showDescription": true,
+        "intent": "comparison",
+        "question": "缩短规划时间后成本退化多少？",
+        "rationale": "三个离散预算点使用条形图，不暗示连续时间趋势。",
+        "comparisonContext": {
+          "baseline": "1 second v1",
+          "grain": "run",
+          "unit": "trusted total cost"
+        },
+        "type": "bar",
+        "dataset": "time_sensitivity",
+        "sourceId": "source-arm-statistics",
+        "encodings": {
+          "x": {
+            "field": "time_budget",
+            "type": "ordinal",
+            "label": "时间预算"
+          },
+          "y": {
+            "field": "median_cost",
+            "type": "quantitative",
+            "label": "成本中位数",
+            "format": "number"
+          },
+          "tooltip": [
+            {
+              "field": "trusted_feasible_rate",
+              "type": "quantitative",
+              "label": "可信可行率",
+              "format": "percent"
+            },
+            {
+              "field": "effective_timeouts",
+              "type": "quantitative",
+              "label": "有效超时"
+            },
+            {
+              "field": "median_objective_evaluations",
+              "type": "quantitative",
+              "label": "评价次数中位数"
+            }
+          ]
+        },
+        "valueFormat": "number",
+        "unit": "cost",
+        "layout": "full",
+        "maxRows": 3,
+        "surface": {
+          "surface": "card",
+          "showControls": false,
+          "viewMode": "both"
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "table-ablation",
+        "title": "消融结果明细",
+        "subtitle": "候选臂相对完整 v1 的 60 图成对比较；正成本差表示完整 v1 更好",
+        "showDescription": true,
+        "dataset": "ablation",
+        "sourceId": "source-ablation",
+        "defaultSort": {
+          "field": "candidate_minus_full_cost",
+          "direction": "desc"
+        },
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "variant",
+            "label": "消融设置",
+            "type": "text"
+          },
+          {
+            "field": "candidate_map_wins",
+            "label": "候选胜",
+            "format": "number"
+          },
+          {
+            "field": "candidate_map_ties",
+            "label": "平",
+            "format": "number"
+          },
+          {
+            "field": "candidate_map_losses",
+            "label": "候选负",
+            "format": "number"
+          },
+          {
+            "field": "candidate_minus_full_cost",
+            "label": "候选-完整成本",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "trusted_feasible_rate",
+            "label": "可信可行率",
+            "format": "percent"
+          },
+          {
+            "field": "effective_timeouts",
+            "label": "有效超时",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "table-rooms",
+        "title": "rooms_maze 消融比较",
+        "subtitle": "10 张 rooms_maze Validation 地图；每图使用五种子中位数",
+        "showDescription": true,
+        "dataset": "rooms",
+        "sourceId": "source-rooms",
+        "defaultSort": {
+          "field": "candidate_minus_full_cost",
+          "direction": "desc"
+        },
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "variant",
+            "label": "消融设置",
+            "type": "text"
+          },
+          {
+            "field": "candidate_wins",
+            "label": "候选胜",
+            "format": "number"
+          },
+          {
+            "field": "ties",
+            "label": "平",
+            "format": "number"
+          },
+          {
+            "field": "candidate_losses",
+            "label": "候选负",
+            "format": "number"
+          },
+          {
+            "field": "candidate_minus_full_cost",
+            "label": "候选-完整成本",
+            "format": "number",
+            "movement": true
+          }
+        ]
+      },
+      {
+        "id": "table-sensitivity",
+        "title": "算法参数单因素敏感性",
+        "subtitle": "种群、档案、代数分别只改一个参数；v1 基线复用而不重跑调参",
+        "showDescription": true,
+        "dataset": "sensitivity",
+        "sourceId": "source-sensitivity",
+        "defaultSort": {
+          "field": "factor",
+          "direction": "asc"
+        },
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "factor",
+            "label": "因素",
+            "type": "text"
+          },
+          {
+            "field": "setting",
+            "label": "设置",
+            "type": "text"
+          },
+          {
+            "field": "median_cost",
+            "label": "运行级成本中位数",
+            "format": "number"
+          },
+          {
+            "field": "candidate_minus_full_cost",
+            "label": "每图中位差",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "trusted_feasible_rate",
+            "label": "可信可行率",
+            "format": "percent"
+          },
+          {
+            "field": "effective_timeouts",
+            "label": "有效超时",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "table-operators",
+        "title": "完整 v1 算子有效变更率",
+        "subtitle": "结构发生有效变化的比例；不能解释为成本改善概率",
+        "showDescription": true,
+        "dataset": "operators",
+        "sourceId": "source-operators",
+        "defaultSort": {
+          "field": "structure_change_rate",
+          "direction": "desc"
+        },
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "operator",
+            "label": "算子",
+            "type": "text"
+          },
+          {
+            "field": "attempts",
+            "label": "尝试",
+            "format": "number"
+          },
+          {
+            "field": "structure_changes",
+            "label": "结构变化",
+            "format": "number"
+          },
+          {
+            "field": "structure_change_rate",
+            "label": "有效变更率",
+            "format": "percent"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "layout": "full",
+        "body": "# Evolutionary AFL-UAV v1 冻结、消融与敏感性报告"
+      },
+      {
+        "id": "technical-summary",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 完整 v1 明显优于原始 AFL，但不是每个进化组件都得到单独支持\n\n完整 Evolutionary AFL-UAV v1 在 60 张 Validation 地图、每图 5 个共享种子上全部可信可行，成本中位数为 **117.363**；原始冻结 AFL 为 **120.810**。按每图五种子中位数，完整 v1 对原始 AFL 为 **53 胜、7 平、0 负**。\n\n消融显示：移除 rooms_maze 专用策略和改成固定长度，在 rooms_maze 上通常变差；但去掉质量—多样性档案、只允许移动或去掉交叉，并未稳定导致更高成本。结论应写成“完整组合有效，但部分组件的独立成本贡献尚不明确”，不能宣称每个算子都被证明必要。"
+      },
+      {
+        "id": "headline-strip",
+        "type": "metric-strip",
+        "layout": "full",
+        "cardIds": [
+          "card-full-cost",
+          "card-map-wins",
+          "card-diversity"
+        ]
+      },
+      {
+        "id": "ablation-finding",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## rooms 策略与可变长度有针对性价值，档案和交叉的成本贡献不清晰\n\n正的“候选−完整 v1”表示去掉组件后更差。去 rooms 策略在全部地图上更常输（8 胜、23 平、29 负），固定长度为 24 胜、6 平、30 负；两者在 rooms_maze 的成本中位差分别为 **+0.094** 和 **+0.162**。\n\n相反，去掉质量—多样性档案和仅移动航点的中位差略为负，且多数置信区间触及 0。它们没有证明完整 v1 更差，但明确说明：当前 Validation 不足以把成本提升归因给档案或交叉。档案仍可能服务于搜索多样性，不过最终五种子路径哈希多样性与完整 v1 接近。"
+      },
+      {
+        "id": "ablation-chart-block",
+        "type": "chart",
+        "layout": "full",
+        "chartId": "chart-ablation-delta"
+      },
+      {
+        "id": "ablation-table-block",
+        "type": "table",
+        "layout": "full",
+        "tableId": "table-ablation"
+      },
+      {
+        "id": "rooms-finding",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## rooms_maze 改善仍然存在，但机制证据是局部而非普遍\n\n去掉 rooms_maze 专用策略后，候选在 10 张 rooms_maze 地图上为 4 胜、0 平、6 负；固定长度为 2 胜、0 平、8 负。这个方向与设计目标一致：窄门洞需要针对性的局部松弛，可变长度允许在复杂通道增加航点、在开阔处删除冗余航点。\n\n不过仅移动、去交叉和去档案在 rooms_maze 的一些地图上反而更好，说明完整策略还存在搜索预算分配和算子干扰，不能把 rooms_maze 的全部收益归因给单一组件。"
+      },
+      {
+        "id": "rooms-table-block",
+        "type": "table",
+        "layout": "full",
+        "tableId": "table-rooms"
+      },
+      {
+        "id": "sensitivity-finding",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 算法参数附近稳定，时间预算主要改变解质量而非可行性\n\n种群 16/24/32、档案 4/8/12、代数 6/12/20 的 9 个 OFAT 设置全部达到 100% 可信可行，运行级成本中位数集中在 **117.303–117.495**。这说明 v1 在所测邻域没有脆弱崩溃，但不代表 32/8/20 是最优参数。\n\n预算缩短到 0.5 秒时成本中位数为 **117.998**，0.25 秒时为 **118.314**；后者有 1/300 条有效超时。时间越短，成本温和退化，符合 anytime 搜索预期。"
+      },
+      {
+        "id": "time-chart-block",
+        "type": "chart",
+        "layout": "full",
+        "chartId": "chart-time-cost"
+      },
+      {
+        "id": "sensitivity-table-block",
+        "type": "table",
+        "layout": "full",
+        "tableId": "table-sensitivity"
+      },
+      {
+        "id": "scope-definitions",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 比较口径锁定为 Validation 地图 × 共享 seed\n\n数据范围仅为 **uav2d-v1 Validation 60 图**，每个随机臂 5 个共享 seed。可信可行要求：统一硬约束验收通过，且没有达到或越过该臂的墙钟时间边界。最终排名先看可信可行率，再看可信可行路径的统一总成本。\n\n成本由统一 `PathEvaluator` 计算，包含长度、风险、平滑度和航点惩罚；实验臂不能用自报成本替代。所有运行最多 2,000 次目标评价。"
+      },
+      {
+        "id": "methodology",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 消融采用成对地图比较，敏感性采用单因素变化\n\n每个候选臂与冻结完整 v1 按完全相同的 map_id 和 seed 配对；主统计先在每张地图内取五种子成本中位数，再统计 60 图胜/平/负。成本差的 95% 区间使用以 map_id 为簇的 2,000 次 bootstrap。\n\n敏感性不做参数搜索：每次只改变种群、档案、代数或时间中的一个因素；32/8/20/1 秒基线直接复用冻结结果，任何敏感性结果都不回写 v1。"
+      },
+      {
+        "id": "operator-finding",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 算子计数只能回答“是否产生变化”，质量贡献依赖消融\n\n完整 v1 中插入算子的有效变更率为 100%，移动约 96%，交叉约 92%，删除约 69%，交换约 40%。这些计数说明算子实现实际被触发并产生了不同结构，但没有记录每一步对最终成本的边际归因。\n\n因此，成本贡献只能结合消融臂解释；当前证据不支持把高有效变更率直接等同于高质量贡献。"
+      },
+      {
+        "id": "operator-table-block",
+        "type": "table",
+        "layout": "full",
+        "tableId": "table-operators"
+      },
+      {
+        "id": "limitations",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 结论可用于方法说明，但不能替代隐藏终测\n\n审计核验了 **4,500** 条记录：记录数和唯一键完整、路径哈希一致、评价次数未超过 2,000，规划阶段在线 LLM 调用为 0。消融历史数据中有 3 条越过 1 秒边界，其中 2 条旧记录仍写为 success；本报告原样保留并统一按有效超时处理。\n\nValidation 已被用于方法开发和解释，继续据此修改 v1 会增加选择偏差。因此 artifact 明确禁止冻结后 Validation 调参。Test 未读取，最终泛化结论仍需新的隐藏终测集。"
+      },
+      {
+        "id": "recommended-next",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 下一步应先保持 v1 不动，再设计隐藏终测\n\n1. 保留完整 v1 作为主方法，同时把交叉与质量—多样性档案的独立贡献写成未证实结果。\n2. 不再查看 Validation 调参；另建未参与开发的隐藏 Test-v2，一次性比较完整 v1、原始 AFL、关键消融和传统基线。\n3. 若后续研究算子信用分配，应在新版本中增加逐操作成本变化日志，并将其预先注册为 v2 指标，不能回填本次结果。"
+      },
+      {
+        "id": "further-questions",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 仍需回答的问题\n\n- 质量—多样性档案是否在更长预算、更难地图或跨分布地图上才体现收益？\n- 固定长度的劣势是否主要集中在门洞数量、转角数或通道宽度较高的 rooms_maze 子集？\n- 交叉是否被移动/插入算子覆盖，还是当前交叉实现缺少适合路径几何的拼接与修复？"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-16T17:06:48.653550+00:00",
+    "status": "ready",
+    "datasets": {
+      "headline": [
+        {
+          "full_median_cost": 117.36331026215021,
+          "frozen_median_cost": 120.81000405269464,
+          "map_wins_vs_frozen": 53,
+          "map_ties_vs_frozen": 7,
+          "map_losses_vs_frozen": 0,
+          "maps_with_multiple_paths": 54,
+          "validation_maps": 60,
+          "validation_runs": 300
+        }
+      ],
+      "ablation": [
+        {
+          "arm_id": "evo_no_qd_archive",
+          "variant": "去掉质量—多样性档案",
+          "candidate_minus_full_cost": -0.0027468098768750338,
+          "ci_low": -0.053116117312015376,
+          "ci_high": 0.0,
+          "candidate_map_wins": 33,
+          "candidate_map_ties": 8,
+          "candidate_map_losses": 19,
+          "trusted_feasible_rate": 1.0,
+          "effective_timeouts": 0,
+          "median_cost": 117.44640142782936,
+          "maps_with_multiple_paths": 54
+        },
+        {
+          "arm_id": "evo_no_crossover",
+          "variant": "去掉交叉",
+          "candidate_minus_full_cost": 0.0,
+          "ci_low": -0.0033914923890705495,
+          "ci_high": 0.0035337631111929113,
+          "candidate_map_wins": 26,
+          "candidate_map_ties": 7,
+          "candidate_map_losses": 27,
+          "trusted_feasible_rate": 1.0,
+          "effective_timeouts": 0,
+          "median_cost": 117.46917283386644,
+          "maps_with_multiple_paths": 54
+        },
+        {
+          "arm_id": "evo_move_only",
+          "variant": "仅移动航点",
+          "candidate_minus_full_cost": -0.002412334804994032,
+          "ci_low": -0.022283799299416172,
+          "ci_high": 0.0,
+          "candidate_map_wins": 33,
+          "candidate_map_ties": 6,
+          "candidate_map_losses": 21,
+          "trusted_feasible_rate": 1.0,
+          "effective_timeouts": 0,
+          "median_cost": 118.33685532338275,
+          "maps_with_multiple_paths": 51
+        },
+        {
+          "arm_id": "evo_no_rooms_strategy",
+          "variant": "去掉 rooms_maze 专用策略",
+          "candidate_minus_full_cost": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.005638066132831909,
+          "candidate_map_wins": 8,
+          "candidate_map_ties": 23,
+          "candidate_map_losses": 29,
+          "trusted_feasible_rate": 0.9933333333333333,
+          "effective_timeouts": 2,
+          "median_cost": 117.40216791420264,
+          "maps_with_multiple_paths": 54
+        },
+        {
+          "arm_id": "evo_fixed_length",
+          "variant": "固定长度种群",
+          "candidate_minus_full_cost": 6.092777718436082e-05,
+          "ci_low": -0.0016744316378662916,
+          "ci_high": 0.06297652800861187,
+          "candidate_map_wins": 24,
+          "candidate_map_ties": 6,
+          "candidate_map_losses": 30,
+          "trusted_feasible_rate": 0.9966666666666667,
+          "effective_timeouts": 1,
+          "median_cost": 118.58684975979958,
+          "maps_with_multiple_paths": 51
+        }
+      ],
+      "rooms": [
+        {
+          "arm_id": "evo_no_qd_archive",
+          "variant": "去掉质量—多样性档案",
+          "candidate_wins": 7,
+          "ties": 1,
+          "candidate_losses": 2,
+          "candidate_minus_full_cost": -0.053511206710410875,
+          "maps": 10
+        },
+        {
+          "arm_id": "evo_no_crossover",
+          "variant": "去掉交叉",
+          "candidate_wins": 7,
+          "ties": 0,
+          "candidate_losses": 3,
+          "candidate_minus_full_cost": -0.04884285564002511,
+          "maps": 10
+        },
+        {
+          "arm_id": "evo_move_only",
+          "variant": "仅移动航点",
+          "candidate_wins": 6,
+          "ties": 0,
+          "candidate_losses": 4,
+          "candidate_minus_full_cost": -0.10243913918650804,
+          "maps": 10
+        },
+        {
+          "arm_id": "evo_no_rooms_strategy",
+          "variant": "去掉 rooms_maze 专用策略",
+          "candidate_wins": 4,
+          "ties": 0,
+          "candidate_losses": 6,
+          "candidate_minus_full_cost": 0.09362324823752033,
+          "maps": 10
+        },
+        {
+          "arm_id": "evo_fixed_length",
+          "variant": "固定长度种群",
+          "candidate_wins": 2,
+          "ties": 0,
+          "candidate_losses": 8,
+          "candidate_minus_full_cost": 0.16228823486778765,
+          "maps": 10
+        }
+      ],
+      "sensitivity": [
+        {
+          "factor": "种群",
+          "setting": "16",
+          "arm_id": "evo_population_16",
+          "median_cost": 117.44750612716587,
+          "trusted_feasible_rate": 1.0,
+          "candidate_minus_full_cost": 0.0,
+          "effective_timeouts": 0
+        },
+        {
+          "factor": "种群",
+          "setting": "24",
+          "arm_id": "evo_population_24",
+          "median_cost": 117.30276274453453,
+          "trusted_feasible_rate": 1.0,
+          "candidate_minus_full_cost": -0.001160142619283988,
+          "effective_timeouts": 0
+        },
+        {
+          "factor": "种群",
+          "setting": "32（v1）",
+          "arm_id": "deepseek_v4pro_evo",
+          "median_cost": 117.36331026215021,
+          "trusted_feasible_rate": 1.0,
+          "candidate_minus_full_cost": 0.0,
+          "effective_timeouts": 0
+        },
+        {
+          "factor": "档案",
+          "setting": "4",
+          "arm_id": "evo_archive_4",
+          "median_cost": 117.30252061180838,
+          "trusted_feasible_rate": 1.0,
+          "candidate_minus_full_cost": -0.004298029864678199,
+          "effective_timeouts": 0
+        },
+        {
+          "factor": "档案",
+          "setting": "8（v1）",
+          "arm_id": "deepseek_v4pro_evo",
+          "median_cost": 117.36331026215021,
+          "trusted_feasible_rate": 1.0,
+          "candidate_minus_full_cost": 0.0,
+          "effective_timeouts": 0
+        },
+        {
+          "factor": "档案",
+          "setting": "12",
+          "arm_id": "evo_archive_12",
+          "median_cost": 117.49473988428971,
+          "trusted_feasible_rate": 1.0,
+          "candidate_minus_full_cost": 0.0,
+          "effective_timeouts": 0
+        },
+        {
+          "factor": "代数",
+          "setting": "6",
+          "arm_id": "evo_generations_6",
+          "median_cost": 117.37906290700279,
+          "trusted_feasible_rate": 1.0,
+          "candidate_minus_full_cost": 0.00019163389637810724,
+          "effective_timeouts": 0
+        },
+        {
+          "factor": "代数",
+          "setting": "12",
+          "arm_id": "evo_generations_12",
+          "median_cost": 117.37906290700279,
+          "trusted_feasible_rate": 1.0,
+          "candidate_minus_full_cost": 0.0,
+          "effective_timeouts": 0
+        },
+        {
+          "factor": "代数",
+          "setting": "20（v1）",
+          "arm_id": "deepseek_v4pro_evo",
+          "median_cost": 117.36331026215021,
+          "trusted_feasible_rate": 1.0,
+          "candidate_minus_full_cost": 0.0,
+          "effective_timeouts": 0
+        }
+      ],
+      "time_sensitivity": [
+        {
+          "time_budget": "0.25 秒",
+          "seconds": 0.25,
+          "median_cost": 118.31354650759758,
+          "trusted_feasible_rate": 0.9966666666666667,
+          "effective_timeouts": 1,
+          "median_objective_evaluations": 102.0
+        },
+        {
+          "time_budget": "0.5 秒",
+          "seconds": 0.5,
+          "median_cost": 117.9980513440667,
+          "trusted_feasible_rate": 1.0,
+          "effective_timeouts": 0,
+          "median_objective_evaluations": 193.0
+        },
+        {
+          "time_budget": "1 秒（v1）",
+          "seconds": 1.0,
+          "median_cost": 117.36331026215021,
+          "trusted_feasible_rate": 1.0,
+          "effective_timeouts": 0,
+          "median_objective_evaluations": 396.5
+        }
+      ],
+      "operators": [
+        {
+          "operator": "crossover",
+          "attempts": 62980,
+          "structure_changes": 57974,
+          "structure_change_rate": 0.9205144490314385,
+          "accepted_offspring_all_operators": 102173,
+          "interpretation": "结构变化率，不是成本改善率"
+        },
+        {
+          "operator": "delete",
+          "attempts": 52331,
+          "structure_changes": 36199,
+          "structure_change_rate": 0.6917314784735625,
+          "accepted_offspring_all_operators": 102173,
+          "interpretation": "结构变化率，不是成本改善率"
+        },
+        {
+          "operator": "insert",
+          "attempts": 52723,
+          "structure_changes": 52723,
+          "structure_change_rate": 1.0,
+          "accepted_offspring_all_operators": 102173,
+          "interpretation": "结构变化率，不是成本改善率"
+        },
+        {
+          "operator": "move",
+          "attempts": 52454,
+          "structure_changes": 50350,
+          "structure_change_rate": 0.9598886643535288,
+          "accepted_offspring_all_operators": 102173,
+          "interpretation": "结构变化率，不是成本改善率"
+        },
+        {
+          "operator": "swap",
+          "attempts": 52255,
+          "structure_changes": 20711,
+          "structure_change_rate": 0.39634484738302556,
+          "accepted_offspring_all_operators": 102173,
+          "interpretation": "结构变化率，不是成本改善率"
+        }
+      ]
+    },
+    "accessIssues": []
+  },
+  "sources": [
+    {
+      "id": "source-arm-statistics",
+      "label": "Validation arm statistics",
+      "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/arm_statistics.csv",
+      "query": {
+        "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/arm_statistics.csv')",
+        "engine": "duckdb",
+        "description": "Trusted feasibility, cost, runtime, evaluations, and final-path diversity by arm.",
+        "language": "sql",
+        "tables_used": [
+          "arm_statistics.csv"
+        ],
+        "filters": [
+          "split=validation",
+          "effective timeout excludes elapsed >= advertised limit"
+        ],
+        "metric_definitions": [
+          "median_cost = median trusted total cost over feasible non-timeout runs",
+          "trusted_feasible_rate = feasible non-timeout runs / all runs"
+        ]
+      }
+    },
+    {
+      "id": "source-paired",
+      "label": "Paired map comparison against full v1",
+      "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/paired_vs_full.csv",
+      "query": {
+        "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/paired_vs_full.csv')",
+        "engine": "duckdb",
+        "description": "Exact-map, shared-seed comparison summarized at the per-map median grain.",
+        "language": "sql",
+        "tables_used": [
+          "paired_vs_full.csv"
+        ],
+        "filters": [
+          "60 validation maps",
+          "5 shared seeds per arm",
+          "Test excluded"
+        ],
+        "metric_definitions": [
+          "candidate_minus_full_cost = candidate per-map median cost - full-v1 per-map median cost",
+          "positive delta means full v1 has lower cost"
+        ]
+      }
+    },
+    {
+      "id": "source-rooms",
+      "label": "rooms_maze paired comparison",
+      "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/rooms_maze_comparison.csv",
+      "query": {
+        "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/rooms_maze_comparison.csv')",
+        "engine": "duckdb",
+        "description": "The paired comparison restricted to the ten Validation rooms_maze maps.",
+        "language": "sql",
+        "tables_used": [
+          "rooms_maze_comparison.csv"
+        ],
+        "filters": [
+          "difficulty=rooms_maze",
+          "10 maps",
+          "5 shared seeds per arm"
+        ]
+      }
+    },
+    {
+      "id": "source-operators",
+      "label": "Evolutionary operator diagnostics",
+      "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/operator_diagnostics.csv",
+      "query": {
+        "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/operator_diagnostics.csv')",
+        "engine": "duckdb",
+        "description": "Aggregated operator attempts and valid structural changes from planner diagnostics.",
+        "language": "sql",
+        "tables_used": [
+          "operator_diagnostics.csv"
+        ],
+        "metric_definitions": [
+          "structure_change_rate = structurally changed proposals / operator attempts",
+          "this is not a per-operation objective improvement rate"
+        ]
+      }
+    },
+    {
+      "id": "source-ablation",
+      "label": "Joined ablation comparison and execution statistics",
+      "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/paired_vs_full.csv",
+      "query": {
+        "sql": "WITH p AS (SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/paired_vs_full.csv')), a AS (SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/arm_statistics.csv')) SELECT p.*, a.trusted_feasible_rate, a.effective_timeouts, a.median_cost, a.maps_with_multiple_paths FROM p JOIN a USING (arm_id) WHERE p.experiment_group = 'ablation'",
+        "engine": "duckdb",
+        "language": "sql",
+        "description": "Paired ablation effects joined to trusted execution statistics.",
+        "tables_used": [
+          "paired_vs_full.csv",
+          "arm_statistics.csv"
+        ],
+        "filters": [
+          "experiment_group=ablation",
+          "split=validation"
+        ]
+      }
+    },
+    {
+      "id": "source-sensitivity",
+      "label": "Joined OFAT sensitivity comparison and execution statistics",
+      "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/sensitivity_summary.csv",
+      "query": {
+        "sql": "WITH p AS (SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/sensitivity_summary.csv')), a AS (SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/arm_statistics.csv')) SELECT p.*, a.trusted_feasible_rate, a.effective_timeouts, a.median_cost FROM p JOIN a USING (arm_id)",
+        "engine": "duckdb",
+        "language": "sql",
+        "description": "OFAT paired effects joined to trusted execution statistics; v1 baselines are reused by the report transformation.",
+        "tables_used": [
+          "sensitivity_summary.csv",
+          "arm_statistics.csv"
+        ],
+        "filters": [
+          "experiment_group=sensitivity",
+          "split=validation"
+        ]
+      }
+    },
+    {
+      "id": "source-audit",
+      "label": "Validation data-quality audit",
+      "path": "artifacts/planning_benchmarks/evolutionary-afl-uav-experiments-analysis-v1/validation_audit.json",
+      "query": {
+        "description": "Record-count, key, budget, path-hash, split, and offline-planning audit.",
+        "language": "python",
+        "filters": [
+          "Validation only",
+          "zero online LLM calls"
+        ]
+      }
+    }
+  ]
+}

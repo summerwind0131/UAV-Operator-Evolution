@@ -1,0 +1,10 @@
+{
+  "arm_id": "aco_acor",
+  "benchmark_metadata_sha256": "f58cc9e465db631748ca68c4f415b713c1c6be72591ed78d55ab91f6a2a0b18f",
+  "benchmark_paths_sha256": "e0cb7760729d810923e43f8dd941b572e50311af21b0160c14bf7021f955c9b2",
+  "benchmark_runs_sha256": "18ce95ecb968eabe3dac506f5c4445cc10e7b9b754491c4dcd382469295181a5",
+  "plan_id": "1533c7b9483b0801783d59b40ad9c6f2acd6729216683ecc1534f560b7c6f5a1",
+  "rows": 12,
+  "schema_version": "uav2d-final-arm-checkpoint-v3",
+  "status": "complete"
+}

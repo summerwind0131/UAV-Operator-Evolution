@@ -1,0 +1,2802 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "UAV2D-v1 离线路径规划 Validation 报告",
+    "description": "API-free traditional planners and offline AFL-UAV v3 on the fixed UAV2D-v1 Validation split.",
+    "generatedAt": "2026-07-31T01:57:38.296979+00:00",
+    "sources": [
+      {
+        "id": "raw_runs",
+        "label": "Merged offline Validation run records",
+        "path": "artifacts/planning_benchmarks/offline-validation-analysis-v1/offline_validation_runs.csv",
+        "query": {
+          "engine": "DuckDB",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/offline-validation-analysis-v1/offline_validation_runs.csv', header = true);",
+          "description": "Read the audited 2,580-record merged Validation result table used as the analysis population.",
+          "executed_at": "2026-07-31T01:57:38.296979+00:00",
+          "tables_used": [
+            "artifacts/planning_benchmarks/offline-validation-analysis-v1/offline_validation_runs.csv"
+          ],
+          "filters": [
+            "benchmark_id = uav2d-v1",
+            "split = validation",
+            "60 fixed maps; 10 maps in each of six classes",
+            "time limit = 1 second; objective-evaluation limit = 2,000",
+            "deterministic planners run once per map",
+            "stochastic planners and offline AFL-UAV run five shared seeds per map"
+          ],
+          "metric_definitions": [
+            "Feasible rate = trusted hard-validator feasible runs / all runs for the planner.",
+            "Map solved rate = maps with at least one feasible run / 60 Validation maps.",
+            "Median feasible cost uses only paths accepted by the shared PathEvaluator and hard validator.",
+            "Uncertainty intervals are 95% percentile intervals from 2,000 map-cluster bootstrap replicates.",
+            "Paired win rate uses per-map median feasible cost; ties contribute one half to the displayed half-tie win rate."
+          ]
+        }
+      },
+      {
+        "id": "overall_stats",
+        "label": "Overall planner statistics",
+        "path": "artifacts/planning_benchmarks/offline-validation-analysis-v1/overall_statistics.csv",
+        "query": {
+          "engine": "DuckDB",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/offline-validation-analysis-v1/overall_statistics.csv', header = true);",
+          "description": "Read the reviewed planner-level feasibility, cost, runtime, and map-cluster bootstrap statistics.",
+          "executed_at": "2026-07-31T01:57:38.296979+00:00",
+          "tables_used": [
+            "artifacts/planning_benchmarks/offline-validation-analysis-v1/overall_statistics.csv"
+          ],
+          "filters": [
+            "benchmark_id = uav2d-v1",
+            "split = validation",
+            "60 fixed maps; 10 maps in each of six classes",
+            "time limit = 1 second; objective-evaluation limit = 2,000",
+            "deterministic planners run once per map",
+            "stochastic planners and offline AFL-UAV run five shared seeds per map"
+          ],
+          "metric_definitions": [
+            "Feasible rate = trusted hard-validator feasible runs / all runs for the planner.",
+            "Map solved rate = maps with at least one feasible run / 60 Validation maps.",
+            "Median feasible cost uses only paths accepted by the shared PathEvaluator and hard validator.",
+            "Uncertainty intervals are 95% percentile intervals from 2,000 map-cluster bootstrap replicates.",
+            "Paired win rate uses per-map median feasible cost; ties contribute one half to the displayed half-tie win rate."
+          ]
+        }
+      },
+      {
+        "id": "paired_stats",
+        "label": "Paired planner comparisons",
+        "path": "artifacts/planning_benchmarks/offline-validation-analysis-v1/paired_comparisons.csv",
+        "query": {
+          "engine": "DuckDB",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/offline-validation-analysis-v1/paired_comparisons.csv', header = true);",
+          "description": "Read the reviewed per-map paired comparisons against A* and Theta*.",
+          "executed_at": "2026-07-31T01:57:38.296979+00:00",
+          "tables_used": [
+            "artifacts/planning_benchmarks/offline-validation-analysis-v1/paired_comparisons.csv"
+          ],
+          "filters": [
+            "benchmark_id = uav2d-v1",
+            "split = validation",
+            "60 fixed maps; 10 maps in each of six classes",
+            "time limit = 1 second; objective-evaluation limit = 2,000",
+            "deterministic planners run once per map",
+            "stochastic planners and offline AFL-UAV run five shared seeds per map"
+          ],
+          "metric_definitions": [
+            "Feasible rate = trusted hard-validator feasible runs / all runs for the planner.",
+            "Map solved rate = maps with at least one feasible run / 60 Validation maps.",
+            "Median feasible cost uses only paths accepted by the shared PathEvaluator and hard validator.",
+            "Uncertainty intervals are 95% percentile intervals from 2,000 map-cluster bootstrap replicates.",
+            "Paired win rate uses per-map median feasible cost; ties contribute one half to the displayed half-tie win rate."
+          ]
+        }
+      },
+      {
+        "id": "difficulty_stats",
+        "label": "Planner statistics by map class",
+        "path": "artifacts/planning_benchmarks/offline-validation-analysis-v1/by_difficulty_statistics.csv",
+        "query": {
+          "engine": "DuckDB",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/offline-validation-analysis-v1/by_difficulty_statistics.csv', header = true);",
+          "description": "Read the reviewed planner statistics for each of six map classes.",
+          "executed_at": "2026-07-31T01:57:38.296979+00:00",
+          "tables_used": [
+            "artifacts/planning_benchmarks/offline-validation-analysis-v1/by_difficulty_statistics.csv"
+          ],
+          "filters": [
+            "benchmark_id = uav2d-v1",
+            "split = validation",
+            "60 fixed maps; 10 maps in each of six classes",
+            "time limit = 1 second; objective-evaluation limit = 2,000",
+            "deterministic planners run once per map",
+            "stochastic planners and offline AFL-UAV run five shared seeds per map"
+          ],
+          "metric_definitions": [
+            "Feasible rate = trusted hard-validator feasible runs / all runs for the planner.",
+            "Map solved rate = maps with at least one feasible run / 60 Validation maps.",
+            "Median feasible cost uses only paths accepted by the shared PathEvaluator and hard validator.",
+            "Uncertainty intervals are 95% percentile intervals from 2,000 map-cluster bootstrap replicates.",
+            "Paired win rate uses per-map median feasible cost; ties contribute one half to the displayed half-tie win rate."
+          ]
+        }
+      },
+      {
+        "id": "stability_stats",
+        "label": "Shared-seed stability statistics",
+        "path": "artifacts/planning_benchmarks/offline-validation-analysis-v1/seed_stability.csv",
+        "query": {
+          "engine": "DuckDB",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/offline-validation-analysis-v1/seed_stability.csv', header = true);",
+          "description": "Read the reviewed five-seed stability statistics by planner.",
+          "executed_at": "2026-07-31T01:57:38.296979+00:00",
+          "tables_used": [
+            "artifacts/planning_benchmarks/offline-validation-analysis-v1/seed_stability.csv"
+          ],
+          "filters": [
+            "benchmark_id = uav2d-v1",
+            "split = validation",
+            "60 fixed maps; 10 maps in each of six classes",
+            "time limit = 1 second; objective-evaluation limit = 2,000",
+            "deterministic planners run once per map",
+            "stochastic planners and offline AFL-UAV run five shared seeds per map"
+          ],
+          "metric_definitions": [
+            "Feasible rate = trusted hard-validator feasible runs / all runs for the planner.",
+            "Map solved rate = maps with at least one feasible run / 60 Validation maps.",
+            "Median feasible cost uses only paths accepted by the shared PathEvaluator and hard validator.",
+            "Uncertainty intervals are 95% percentile intervals from 2,000 map-cluster bootstrap replicates.",
+            "Paired win rate uses per-map median feasible cost; ties contribute one half to the displayed half-tie win rate."
+          ]
+        }
+      },
+      {
+        "id": "failure_stats",
+        "label": "Planner termination-status counts",
+        "path": "artifacts/planning_benchmarks/offline-validation-analysis-v1/failure_status.csv",
+        "query": {
+          "engine": "DuckDB",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/offline-validation-analysis-v1/failure_status.csv', header = true);",
+          "description": "Read the reviewed termination-status counts by planner.",
+          "executed_at": "2026-07-31T01:57:38.296979+00:00",
+          "tables_used": [
+            "artifacts/planning_benchmarks/offline-validation-analysis-v1/failure_status.csv"
+          ],
+          "filters": [
+            "benchmark_id = uav2d-v1",
+            "split = validation",
+            "60 fixed maps; 10 maps in each of six classes",
+            "time limit = 1 second; objective-evaluation limit = 2,000",
+            "deterministic planners run once per map",
+            "stochastic planners and offline AFL-UAV run five shared seeds per map"
+          ],
+          "metric_definitions": [
+            "Feasible rate = trusted hard-validator feasible runs / all runs for the planner.",
+            "Map solved rate = maps with at least one feasible run / 60 Validation maps.",
+            "Median feasible cost uses only paths accepted by the shared PathEvaluator and hard validator.",
+            "Uncertainty intervals are 95% percentile intervals from 2,000 map-cluster bootstrap replicates.",
+            "Paired win rate uses per-map median feasible cost; ties contribute one half to the displayed half-tie win rate."
+          ]
+        }
+      }
+    ],
+    "charts": [
+      {
+        "id": "feasibility_chart",
+        "title": "各规划器的 Validation 运行可行率",
+        "subtitle": "误差范围为按地图聚类 bootstrap 的 95% 区间；明细表保留地图解出率。",
+        "type": "bar",
+        "dataset": "overall",
+        "sourceId": "overall_stats",
+        "encodings": {
+          "x": {
+            "field": "planner_label",
+            "type": "nominal",
+            "label": "规划器"
+          },
+          "y": {
+            "field": "feasible_rate",
+            "type": "quantitative",
+            "format": "percent",
+            "label": "运行可行率"
+          },
+          "tooltip": [
+            {
+              "field": "runs",
+              "type": "quantitative",
+              "label": "运行数"
+            },
+            {
+              "field": "maps_solved",
+              "type": "quantitative",
+              "label": "解出地图数"
+            },
+            {
+              "field": "map_solved_rate",
+              "type": "quantitative",
+              "format": "percent",
+              "label": "地图解出率"
+            },
+            {
+              "field": "feasible_rate_ci_low",
+              "type": "quantitative",
+              "format": "percent",
+              "label": "95% CI 下界"
+            },
+            {
+              "field": "feasible_rate_ci_high",
+              "type": "quantitative",
+              "format": "percent",
+              "label": "95% CI 上界"
+            }
+          ]
+        },
+        "settings": {
+          "orientation": "vertical",
+          "showValues": true
+        },
+        "layout": "full"
+      },
+      {
+        "id": "cost_chart",
+        "title": "可信可行路径的统一总成本中位数",
+        "subtitle": "仅统计通过共享硬约束验证器的路径；失败和超时不转为惩罚成本。",
+        "type": "bar",
+        "dataset": "overall",
+        "sourceId": "overall_stats",
+        "encodings": {
+          "x": {
+            "field": "planner_label",
+            "type": "nominal",
+            "label": "规划器"
+          },
+          "y": {
+            "field": "median_feasible_cost",
+            "type": "quantitative",
+            "format": "number",
+            "label": "总成本中位数"
+          },
+          "tooltip": [
+            {
+              "field": "feasible_runs",
+              "type": "quantitative",
+              "label": "可行运行数"
+            },
+            {
+              "field": "cost_q1",
+              "type": "quantitative",
+              "format": "number",
+              "label": "成本 Q1"
+            },
+            {
+              "field": "cost_q3",
+              "type": "quantitative",
+              "format": "number",
+              "label": "成本 Q3"
+            }
+          ]
+        },
+        "settings": {
+          "orientation": "vertical",
+          "showValues": true
+        },
+        "layout": "full"
+      },
+      {
+        "id": "paired_chart",
+        "title": "相对 A* 与 Theta* 的成对成本胜率",
+        "subtitle": "同图双方均可行时比较；胜计 1、平计 0.5、负计 0。",
+        "type": "bar",
+        "dataset": "paired",
+        "sourceId": "paired_stats",
+        "encodings": {
+          "x": {
+            "field": "planner_label",
+            "type": "nominal",
+            "label": "候选规划器"
+          },
+          "y": {
+            "field": "half_tie_win_rate",
+            "type": "quantitative",
+            "format": "percent",
+            "label": "半计平局胜率"
+          },
+          "color": {
+            "field": "baseline_label",
+            "type": "nominal",
+            "label": "基线"
+          },
+          "tooltip": [
+            {
+              "field": "both_feasible_maps",
+              "type": "quantitative",
+              "label": "双方可行地图"
+            },
+            {
+              "field": "wins",
+              "type": "quantitative",
+              "label": "胜"
+            },
+            {
+              "field": "ties",
+              "type": "quantitative",
+              "label": "平"
+            },
+            {
+              "field": "losses",
+              "type": "quantitative",
+              "label": "负"
+            }
+          ]
+        },
+        "settings": {
+          "orientation": "vertical",
+          "groupMode": "grouped",
+          "showValues": false
+        },
+        "legend": {
+          "position": "bottom",
+          "sort": "spec",
+          "title": "比较基线"
+        },
+        "layout": "full"
+      },
+      {
+        "id": "runtime_quality_chart",
+        "title": "运行时间与可信可行路径成本",
+        "subtitle": "每个点为一个规划器；成本仅对可行路径计算。",
+        "type": "scatter",
+        "dataset": "overall",
+        "sourceId": "overall_stats",
+        "encodings": {
+          "x": {
+            "field": "median_elapsed_seconds",
+            "type": "quantitative",
+            "format": "number",
+            "label": "运行时间中位数（秒）"
+          },
+          "y": {
+            "field": "median_feasible_cost",
+            "type": "quantitative",
+            "format": "number",
+            "label": "总成本中位数"
+          },
+          "label": {
+            "field": "planner_label",
+            "type": "text",
+            "label": "规划器"
+          },
+          "tooltip": [
+            {
+              "field": "feasible_rate",
+              "type": "quantitative",
+              "format": "percent",
+              "label": "运行可行率"
+            },
+            {
+              "field": "runs",
+              "type": "quantitative",
+              "label": "运行数"
+            }
+          ]
+        },
+        "layout": "full"
+      }
+    ],
+    "tables": [
+      {
+        "id": "overall_table",
+        "title": "总体规划器统计",
+        "subtitle": "排名先按可行率降序，再按条件成本中位数升序。",
+        "dataset": "overall",
+        "defaultSort": {
+          "field": "rank",
+          "direction": "asc"
+        },
+        "density": "dense",
+        "sourceId": "overall_stats",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "rank",
+            "label": "排名",
+            "format": "number"
+          },
+          {
+            "field": "planner_label",
+            "label": "规划器",
+            "type": "text"
+          },
+          {
+            "field": "runs",
+            "label": "运行数",
+            "format": "number"
+          },
+          {
+            "field": "feasible_rate",
+            "label": "运行可行率",
+            "format": "percent"
+          },
+          {
+            "field": "map_solved_rate",
+            "label": "地图解出率",
+            "format": "percent"
+          },
+          {
+            "field": "median_feasible_cost",
+            "label": "成本中位数",
+            "format": "number"
+          },
+          {
+            "field": "cost_q1",
+            "label": "成本 Q1",
+            "format": "number"
+          },
+          {
+            "field": "cost_q3",
+            "label": "成本 Q3",
+            "format": "number"
+          },
+          {
+            "field": "median_elapsed_seconds",
+            "label": "时间中位数（秒）",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "difficulty_table",
+        "title": "按地图类别分层的规划器统计",
+        "subtitle": "六类地图各 10 张；随机执行臂每类 50 次运行。",
+        "dataset": "by_difficulty",
+        "defaultSort": {
+          "field": "feasible_rate",
+          "direction": "desc"
+        },
+        "density": "dense",
+        "sourceId": "difficulty_stats",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "difficulty",
+            "label": "地图类别",
+            "type": "text"
+          },
+          {
+            "field": "planner_label",
+            "label": "规划器",
+            "type": "text"
+          },
+          {
+            "field": "runs",
+            "label": "运行数",
+            "format": "number"
+          },
+          {
+            "field": "feasible_rate",
+            "label": "运行可行率",
+            "format": "percent"
+          },
+          {
+            "field": "map_solved_rate",
+            "label": "地图解出率",
+            "format": "percent"
+          },
+          {
+            "field": "median_feasible_cost",
+            "label": "成本中位数",
+            "format": "number"
+          },
+          {
+            "field": "median_elapsed_seconds",
+            "label": "时间中位数（秒）",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "stability_table",
+        "title": "随机执行臂的跨种子稳定性",
+        "subtitle": "每图五个共享种子；成本 IQR 仅在可行重复中计算。",
+        "dataset": "stability",
+        "defaultSort": {
+          "field": "mean_within_map_feasible_rate",
+          "direction": "desc"
+        },
+        "density": "dense",
+        "sourceId": "stability_stats",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "planner_label",
+            "label": "规划器",
+            "type": "text"
+          },
+          {
+            "field": "mean_within_map_feasible_rate",
+            "label": "平均单图可行率",
+            "format": "percent"
+          },
+          {
+            "field": "fully_feasible_maps",
+            "label": "五次全可行地图",
+            "format": "number"
+          },
+          {
+            "field": "never_feasible_maps",
+            "label": "五次全失败地图",
+            "format": "number"
+          },
+          {
+            "field": "median_unique_feasible_paths",
+            "label": "单图不同可行路径中位数",
+            "format": "number"
+          },
+          {
+            "field": "median_within_map_cost_iqr",
+            "label": "单图成本 IQR 中位数",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "failure_table",
+        "title": "各规划器的终止状态",
+        "subtitle": "终止状态独立于统一硬约束验证结果。",
+        "dataset": "status",
+        "defaultSort": {
+          "field": "records",
+          "direction": "desc"
+        },
+        "density": "dense",
+        "sourceId": "failure_stats",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "planner_label",
+            "label": "规划器",
+            "type": "text"
+          },
+          {
+            "field": "status",
+            "label": "终止状态",
+            "type": "text"
+          },
+          {
+            "field": "records",
+            "label": "记录数",
+            "format": "number"
+          },
+          {
+            "field": "record_share",
+            "label": "规划器内占比",
+            "format": "percent"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# UAV2D-v1 离线路径规划 Validation 报告",
+        "layout": "full"
+      },
+      {
+        "id": "technical_summary",
+        "type": "markdown",
+        "body": "## 技术摘要\n\n本次离线 Validation 已完整生成 **2,580/2,580** 条唯一记录，覆盖 60 张固定地图、6 类场景和 11 个执行臂。按“先可行率、后可行成本”的预注册规则，当前第一名是 **AFL-UAV (offline v3)**（可行率 100.0%，可行路径成本中位数 117.390）。\n\n离线 AFL-UAV v3 的运行可行率为 **100.0%**，至少解出一条路径的地图占 **100.0%**；与 A*、Theta* 在共同可行地图上的半计平局成本胜率分别为 **79.8%** 和 **75.0%**。这些结果只验证离线 Agent→求解器→统一评测链路，不构成真实 LLM 方法效果证据。",
+        "layout": "full"
+      },
+      {
+        "id": "feasibility_narrative",
+        "type": "markdown",
+        "body": "## 关键发现：可行性\n\n图中同时给出逐次运行可行率和地图解出率。随机算法的两者含义不同：前者衡量跨种子稳健性，后者只要求五个共享种子中至少一次成功。误差区间以地图为重采样单位，因此不会把同一地图的五次重复误当成独立样本。",
+        "sourceId": "overall_stats",
+        "layout": "full"
+      },
+      {
+        "id": "feasibility_visual",
+        "type": "chart",
+        "chartId": "feasibility_chart",
+        "layout": "full"
+      },
+      {
+        "id": "overall_exact",
+        "type": "table",
+        "tableId": "overall_table",
+        "layout": "full"
+      },
+      {
+        "id": "cost_narrative",
+        "type": "markdown",
+        "body": "## 关键发现：统一成本\n\n在所有可信可行路径中，成本中位数最低的是 **AFL-UAV (offline v3)**（117.390）。该比较是条件性的：失败与超时没有被替换为惩罚成本，所以必须与上面的可行率一起阅读。",
+        "sourceId": "overall_stats",
+        "layout": "full"
+      },
+      {
+        "id": "cost_visual",
+        "type": "chart",
+        "chartId": "cost_chart",
+        "layout": "full"
+      },
+      {
+        "id": "paired_narrative",
+        "type": "markdown",
+        "body": "## 关键发现：成对比较\n\n为控制地图难度，先在每张地图内对随机算法的可行成本取中位数，再与同图 A* 或 Theta* 比较。显示值为“胜=1、平=0.5、负=0”的平均值；只有双方都可行的地图进入成本胜率，单方可行数量保留在明细表中。",
+        "sourceId": "paired_stats",
+        "layout": "full"
+      },
+      {
+        "id": "paired_visual",
+        "type": "chart",
+        "chartId": "paired_chart",
+        "layout": "full"
+      },
+      {
+        "id": "runtime_quality_visual",
+        "type": "chart",
+        "chartId": "runtime_quality_chart",
+        "layout": "full"
+      },
+      {
+        "id": "class_narrative",
+        "type": "markdown",
+        "body": "## 六类地图表现\n\n下表保留每类地图的运行数、可行率、地图解出率、条件成本和运行时间，用于定位 corridor、rooms/maze 等结构性失败。每类固定 10 张地图；随机方法每类 50 次运行，确定性方法每类 10 次。当前最有区分度的是 **rooms/maze**：离线 AFL-UAV 的运行可行率为 **100.0%**，传统方法中最高的是 **RRT***（**86.0%**）。",
+        "sourceId": "difficulty_stats",
+        "layout": "full"
+      },
+      {
+        "id": "class_table",
+        "type": "table",
+        "tableId": "difficulty_table",
+        "layout": "full"
+      },
+      {
+        "id": "stability_narrative",
+        "type": "markdown",
+        "body": "## 随机种子稳定性\n\n五个规划种子在所有随机执行臂间共享。完全可行地图数越高，说明结果越不依赖碰巧抽到的种子；单图成本 IQR 越低，说明成功路径质量越稳定。",
+        "sourceId": "stability_stats",
+        "layout": "full"
+      },
+      {
+        "id": "stability_detail",
+        "type": "table",
+        "tableId": "stability_table",
+        "layout": "full"
+      },
+      {
+        "id": "failure_narrative",
+        "type": "markdown",
+        "body": "## 终止状态与失败模式\n\n终止状态与可信可行性是两个维度：达到 1 秒后返回的 best-so-far 仍可能通过硬约束验证，因此 `timeout` 不会自动计为不可行；反之，任何未通过统一验证的返回都不进入成本统计。下表用于区分搜索超时与明确的 `no_path`。",
+        "sourceId": "failure_stats",
+        "layout": "full"
+      },
+      {
+        "id": "failure_detail",
+        "type": "table",
+        "tableId": "failure_table",
+        "layout": "full"
+      },
+      {
+        "id": "scope_methods",
+        "type": "markdown",
+        "body": "## 范围、数据与方法\n\n范围限定为二维、静态、已知障碍物的 UAV2D-v1 Validation；未读取 Test。传统确定性算法每图一次，传统随机算法与离线 AFL-UAV 每图五次，共用地图、起终点、随机种子、连续碰撞检测、硬约束验证器、目标函数、1 秒时间预算和 2,000 次可信目标评价预算。最终排名先比较运行可行率，再比较可信可行路径的统一总成本中位数。95% 区间使用 2,000 次地图聚类 bootstrap，保留同一地图内重复运行的相关性。",
+        "sourceId": "raw_runs",
+        "layout": "full"
+      },
+      {
+        "id": "limitations",
+        "type": "markdown",
+        "body": "## 局限性与不确定性\n\nValidation 已参与方法开发，不能替代隐藏终测集；此前工程 Pilot 打开过原 Test，因此最终论文应另建未触碰的隐藏测试集。离线 AFL-UAV 由 mock provider 生成并标记 `research_claim_eligible=false`，只能验证架构与实验协议。1 秒墙钟预算会受到本机调度影响；bootstrap 区间反映 60 张地图的抽样不确定性，不包含地图生成分布或硬件变化。",
+        "layout": "full"
+      },
+      {
+        "id": "recommendations",
+        "type": "markdown",
+        "body": "## 建议的下一步\n\n先冻结本次离线结果和分析脚本，基于失败状态与六类地图分层定位可行性短板；随后在不访问 Test 的前提下完善真实 Provider 候选生成、人工哈希批准和六图资格门禁。真实模型接入后沿用相同 Validation 协议，最后为论文重新生成独立隐藏终测集，再一次性比较 AFL-UAV 与 Evolutionary AFL-UAV。",
+        "layout": "full"
+      },
+      {
+        "id": "further_questions",
+        "type": "markdown",
+        "body": "## 进一步研究问题\n\n离线 Agent 生成的求解器究竟在哪些地图结构上改变了成功概率？在相同 LLM 调用与 token 预算下，进化修订带来的收益来自更高可行率，还是来自共同可行地图上的成本下降？这种收益能否跨模型、跨隐藏地图种子复现？",
+        "layout": "full"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-07-31T01:57:38.296979+00:00",
+    "status": "ready",
+    "datasets": {
+      "overall": [
+        {
+          "rank": 1,
+          "planner": "afl_uav",
+          "planner_label": "AFL-UAV (offline v3)",
+          "runs": 300,
+          "maps": 60,
+          "feasible_runs": 300,
+          "feasible_rate": 1.0,
+          "feasible_rate_ci_low": 1.0,
+          "feasible_rate_ci_high": 1.0,
+          "maps_solved": 60,
+          "map_solved_rate": 1.0,
+          "maps_all_repetitions_feasible": 60,
+          "map_all_repetitions_feasible_rate": 1.0,
+          "median_feasible_cost": 117.38960885361432,
+          "cost_q1": 112.27280109091615,
+          "cost_q3": 127.28745711591841,
+          "median_cost_ci_low": 114.00961878552266,
+          "median_cost_ci_high": 120.45089450097336,
+          "median_elapsed_seconds": 0.3065613500002655,
+          "elapsed_q1": 0.245382774999598,
+          "elapsed_q3": 0.3533321000004434,
+          "median_objective_evaluations": 257.0,
+          "median_collision_checks": 21188.0,
+          "median_node_expansions": 313.5,
+          "timeout_rate": 0.0,
+          "budget_exhausted_rate": 0.0,
+          "research_claim_eligible": false
+        },
+        {
+          "rank": 2,
+          "planner": "rrt_star",
+          "planner_label": "RRT*",
+          "runs": 300,
+          "maps": 60,
+          "feasible_runs": 293,
+          "feasible_rate": 0.9766666666666667,
+          "feasible_rate_ci_low": 0.9433333333333334,
+          "feasible_rate_ci_high": 1.0,
+          "maps_solved": 60,
+          "map_solved_rate": 1.0,
+          "maps_all_repetitions_feasible": 57,
+          "map_all_repetitions_feasible_rate": 0.95,
+          "median_feasible_cost": 119.80496159741868,
+          "cost_q1": 113.62472776255126,
+          "cost_q3": 177.61297072710505,
+          "median_cost_ci_low": 116.20474220465168,
+          "median_cost_ci_high": 125.72016473182214,
+          "median_elapsed_seconds": 0.2627848499996617,
+          "elapsed_q1": 0.19245642500072785,
+          "elapsed_q3": 0.5346546750001835,
+          "median_objective_evaluations": 87.0,
+          "median_collision_checks": 6070.5,
+          "median_node_expansions": 844.0,
+          "timeout_rate": 0.04666666666666667,
+          "budget_exhausted_rate": 0.0,
+          "research_claim_eligible": true
+        },
+        {
+          "rank": 3,
+          "planner": "rrt",
+          "planner_label": "RRT",
+          "runs": 300,
+          "maps": 60,
+          "feasible_runs": 293,
+          "feasible_rate": 0.9766666666666667,
+          "feasible_rate_ci_low": 0.9433333333333334,
+          "feasible_rate_ci_high": 1.0,
+          "maps_solved": 60,
+          "map_solved_rate": 1.0,
+          "maps_all_repetitions_feasible": 57,
+          "map_all_repetitions_feasible_rate": 0.95,
+          "median_feasible_cost": 126.96144656836525,
+          "cost_q1": 114.12224324741516,
+          "cost_q3": 299.30851595984785,
+          "median_cost_ci_low": 118.32914129504924,
+          "median_cost_ci_high": 142.8534676613863,
+          "median_elapsed_seconds": 0.00782425000033975,
+          "elapsed_q1": 0.0027533000002222,
+          "elapsed_q3": 0.019667899999603826,
+          "median_objective_evaluations": 1.0,
+          "median_collision_checks": 278.5,
+          "median_node_expansions": 104.0,
+          "timeout_rate": 0.0,
+          "budget_exhausted_rate": 0.0,
+          "research_claim_eligible": true
+        },
+        {
+          "rank": 4,
+          "planner": "theta_star",
+          "planner_label": "Theta*",
+          "runs": 60,
+          "maps": 60,
+          "feasible_runs": 58,
+          "feasible_rate": 0.9666666666666667,
+          "feasible_rate_ci_low": 0.9166666666666666,
+          "feasible_rate_ci_high": 1.0,
+          "maps_solved": 58,
+          "map_solved_rate": 0.9666666666666667,
+          "maps_all_repetitions_feasible": 58,
+          "map_all_repetitions_feasible_rate": 0.9666666666666667,
+          "median_feasible_cost": 119.71538631046192,
+          "cost_q1": 113.67438032086237,
+          "cost_q3": 244.2851192251989,
+          "median_cost_ci_low": 117.36291579574332,
+          "median_cost_ci_high": 125.1257005778536,
+          "median_elapsed_seconds": 0.03994874999989401,
+          "elapsed_q1": 0.009906525000133075,
+          "elapsed_q3": 0.1323241499999312,
+          "median_objective_evaluations": 0.0,
+          "median_collision_checks": 1697.5,
+          "median_node_expansions": 168.0,
+          "timeout_rate": 0.03333333333333333,
+          "budget_exhausted_rate": 0.0,
+          "research_claim_eligible": true
+        },
+        {
+          "rank": 5,
+          "planner": "astar",
+          "planner_label": "A*",
+          "runs": 60,
+          "maps": 60,
+          "feasible_runs": 57,
+          "feasible_rate": 0.95,
+          "feasible_rate_ci_low": 0.8833333333333333,
+          "feasible_rate_ci_high": 1.0,
+          "maps_solved": 57,
+          "map_solved_rate": 0.95,
+          "maps_all_repetitions_feasible": 57,
+          "map_all_repetitions_feasible_rate": 0.95,
+          "median_feasible_cost": 119.30229550349917,
+          "cost_q1": 113.62472776255126,
+          "cost_q3": 205.74740129401923,
+          "median_cost_ci_low": 115.0949374603283,
+          "median_cost_ci_high": 125.19479844368531,
+          "median_elapsed_seconds": 0.053215850000015,
+          "elapsed_q1": 0.011724100001174475,
+          "elapsed_q3": 0.2283127500004411,
+          "median_objective_evaluations": 0.0,
+          "median_collision_checks": 3042.5,
+          "median_node_expansions": 324.0,
+          "timeout_rate": 0.05,
+          "budget_exhausted_rate": 0.0,
+          "research_claim_eligible": true
+        },
+        {
+          "rank": 6,
+          "planner": "ga",
+          "planner_label": "GA",
+          "runs": 300,
+          "maps": 60,
+          "feasible_runs": 282,
+          "feasible_rate": 0.94,
+          "feasible_rate_ci_low": 0.88,
+          "feasible_rate_ci_high": 0.9900833333333329,
+          "maps_solved": 57,
+          "map_solved_rate": 0.95,
+          "maps_all_repetitions_feasible": 55,
+          "map_all_repetitions_feasible_rate": 0.9166666666666666,
+          "median_feasible_cost": 118.7254692009629,
+          "cost_q1": 113.77331821578187,
+          "cost_q3": 198.7137936522907,
+          "median_cost_ci_low": 117.5350582424893,
+          "median_cost_ci_high": 126.46745832265668,
+          "median_elapsed_seconds": 0.3460907999997289,
+          "elapsed_q1": 0.1344379750003099,
+          "elapsed_q3": 0.8750565249997635,
+          "median_objective_evaluations": 672.0,
+          "median_collision_checks": 3055.0,
+          "median_node_expansions": 906.5,
+          "timeout_rate": 0.19666666666666666,
+          "budget_exhausted_rate": 0.0,
+          "research_claim_eligible": true
+        },
+        {
+          "rank": 7,
+          "planner": "pso",
+          "planner_label": "PSO",
+          "runs": 300,
+          "maps": 60,
+          "feasible_runs": 281,
+          "feasible_rate": 0.9366666666666666,
+          "feasible_rate_ci_low": 0.87,
+          "feasible_rate_ci_high": 0.9866666666666667,
+          "maps_solved": 57,
+          "map_solved_rate": 0.95,
+          "maps_all_repetitions_feasible": 55,
+          "map_all_repetitions_feasible_rate": 0.9166666666666666,
+          "median_feasible_cost": 119.98082678036997,
+          "cost_q1": 113.8907158272956,
+          "cost_q3": 205.74740129401923,
+          "median_cost_ci_low": 117.32031453370679,
+          "median_cost_ci_high": 128.6591631899504,
+          "median_elapsed_seconds": 0.32887854999989935,
+          "elapsed_q1": 0.1212322750002385,
+          "elapsed_q3": 0.8460974749991692,
+          "median_objective_evaluations": 672.0,
+          "median_collision_checks": 3054.0,
+          "median_node_expansions": 909.0,
+          "timeout_rate": 0.20333333333333334,
+          "budget_exhausted_rate": 0.0,
+          "research_claim_eligible": true
+        },
+        {
+          "rank": 8,
+          "planner": "de",
+          "planner_label": "DE",
+          "runs": 300,
+          "maps": 60,
+          "feasible_runs": 269,
+          "feasible_rate": 0.8966666666666666,
+          "feasible_rate_ci_low": 0.82,
+          "feasible_rate_ci_high": 0.9633333333333334,
+          "maps_solved": 55,
+          "map_solved_rate": 0.9166666666666666,
+          "maps_all_repetitions_feasible": 52,
+          "map_all_repetitions_feasible_rate": 0.8666666666666667,
+          "median_feasible_cost": 125.92779217322014,
+          "cost_q1": 114.08629819888844,
+          "cost_q3": 205.74740129401923,
+          "median_cost_ci_low": 118.6022597747281,
+          "median_cost_ci_high": 143.9380889964904,
+          "median_elapsed_seconds": 0.35979479999969044,
+          "elapsed_q1": 0.1445461500002238,
+          "elapsed_q3": 0.8984325749993332,
+          "median_objective_evaluations": 672.0,
+          "median_collision_checks": 3055.0,
+          "median_node_expansions": 906.5,
+          "timeout_rate": 0.20666666666666667,
+          "budget_exhausted_rate": 0.0,
+          "research_claim_eligible": true
+        },
+        {
+          "rank": 9,
+          "planner": "aco_acor",
+          "planner_label": "ACO/ACOR",
+          "runs": 300,
+          "maps": 60,
+          "feasible_runs": 268,
+          "feasible_rate": 0.8933333333333333,
+          "feasible_rate_ci_low": 0.8066666666666666,
+          "feasible_rate_ci_high": 0.96,
+          "maps_solved": 56,
+          "map_solved_rate": 0.9333333333333333,
+          "maps_all_repetitions_feasible": 53,
+          "map_all_repetitions_feasible_rate": 0.8833333333333333,
+          "median_feasible_cost": 126.8813542930466,
+          "cost_q1": 113.8907158272956,
+          "cost_q3": 222.8452147850892,
+          "median_cost_ci_low": 118.32067138567284,
+          "median_cost_ci_high": 155.78793240437477,
+          "median_elapsed_seconds": 0.35532134999994014,
+          "elapsed_q1": 0.1472880749997784,
+          "elapsed_q3": 0.8620592249994843,
+          "median_objective_evaluations": 672.0,
+          "median_collision_checks": 3056.0,
+          "median_node_expansions": 906.5,
+          "timeout_rate": 0.21666666666666667,
+          "budget_exhausted_rate": 0.0,
+          "research_claim_eligible": true
+        },
+        {
+          "rank": 10,
+          "planner": "prm",
+          "planner_label": "PRM",
+          "runs": 300,
+          "maps": 60,
+          "feasible_runs": 265,
+          "feasible_rate": 0.8833333333333333,
+          "feasible_rate_ci_low": 0.8233333333333334,
+          "feasible_rate_ci_high": 0.94,
+          "maps_solved": 59,
+          "map_solved_rate": 0.9833333333333333,
+          "maps_all_repetitions_feasible": 44,
+          "map_all_repetitions_feasible_rate": 0.7333333333333333,
+          "median_feasible_cost": 123.97525181657808,
+          "cost_q1": 114.37292687013456,
+          "cost_q3": 248.7236469868776,
+          "median_cost_ci_low": 119.425566669082,
+          "median_cost_ci_high": 134.4292283263712,
+          "median_elapsed_seconds": 0.03327540000100265,
+          "elapsed_q1": 0.0231740499989427,
+          "elapsed_q3": 0.0972081500012791,
+          "median_objective_evaluations": 0.0,
+          "median_collision_checks": 1302.5,
+          "median_node_expansions": 171.0,
+          "timeout_rate": 0.0,
+          "budget_exhausted_rate": 0.0,
+          "research_claim_eligible": true
+        },
+        {
+          "rank": 11,
+          "planner": "dijkstra",
+          "planner_label": "Dijkstra",
+          "runs": 60,
+          "maps": 60,
+          "feasible_runs": 43,
+          "feasible_rate": 0.7166666666666667,
+          "feasible_rate_ci_low": 0.6,
+          "feasible_rate_ci_high": 0.8333333333333334,
+          "maps_solved": 43,
+          "map_solved_rate": 0.7166666666666667,
+          "maps_all_repetitions_feasible": 43,
+          "map_all_repetitions_feasible_rate": 0.7166666666666667,
+          "median_feasible_cost": 117.63491641398367,
+          "cost_q1": 112.19380984765185,
+          "cost_q3": 153.01982126027917,
+          "median_cost_ci_low": 113.82700410109172,
+          "median_cost_ci_high": 119.84328131615123,
+          "median_elapsed_seconds": 0.2572456999996575,
+          "elapsed_q1": 0.16517999999996386,
+          "elapsed_q3": 1.0001155249992735,
+          "median_objective_evaluations": 0.0,
+          "median_collision_checks": 15379.5,
+          "median_node_expansions": 1772.5,
+          "timeout_rate": 0.2833333333333333,
+          "budget_exhausted_rate": 0.0,
+          "research_claim_eligible": true
+        }
+      ],
+      "paired": [
+        {
+          "candidate_planner_key": "afl_uav:offline_v3",
+          "planner": "afl_uav",
+          "planner_label": "AFL-UAV (offline v3)",
+          "baseline": "astar",
+          "baseline_label": "A*",
+          "maps_compared": 60,
+          "both_feasible_maps": 57,
+          "candidate_only_feasible_maps": 3,
+          "baseline_only_feasible_maps": 0,
+          "wins": 40,
+          "ties": 11,
+          "losses": 6,
+          "strict_win_rate": 0.7017543859649122,
+          "half_tie_win_rate": 0.7982456140350878,
+          "half_tie_win_rate_ci_low": 0.7105263157894737,
+          "half_tie_win_rate_ci_high": 0.8859649122807017,
+          "median_cost_delta": -0.44115565552588976
+        },
+        {
+          "candidate_planner_key": "theta_star",
+          "planner": "theta_star",
+          "planner_label": "Theta*",
+          "baseline": "astar",
+          "baseline_label": "A*",
+          "maps_compared": 60,
+          "both_feasible_maps": 57,
+          "candidate_only_feasible_maps": 1,
+          "baseline_only_feasible_maps": 0,
+          "wins": 25,
+          "ties": 22,
+          "losses": 10,
+          "strict_win_rate": 0.43859649122807015,
+          "half_tie_win_rate": 0.631578947368421,
+          "half_tie_win_rate_ci_low": 0.5350877192982456,
+          "half_tie_win_rate_ci_high": 0.719517543859648,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "dijkstra",
+          "planner": "dijkstra",
+          "planner_label": "Dijkstra",
+          "baseline": "astar",
+          "baseline_label": "A*",
+          "maps_compared": 60,
+          "both_feasible_maps": 43,
+          "candidate_only_feasible_maps": 0,
+          "baseline_only_feasible_maps": 14,
+          "wins": 18,
+          "ties": 16,
+          "losses": 9,
+          "strict_win_rate": 0.4186046511627907,
+          "half_tie_win_rate": 0.6046511627906976,
+          "half_tie_win_rate_ci_low": 0.4883720930232558,
+          "half_tie_win_rate_ci_high": 0.7209302325581395,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "rrt_star",
+          "planner": "rrt_star",
+          "planner_label": "RRT*",
+          "baseline": "astar",
+          "baseline_label": "A*",
+          "maps_compared": 60,
+          "both_feasible_maps": 57,
+          "candidate_only_feasible_maps": 3,
+          "baseline_only_feasible_maps": 0,
+          "wins": 28,
+          "ties": 9,
+          "losses": 20,
+          "strict_win_rate": 0.49122807017543857,
+          "half_tie_win_rate": 0.5701754385964912,
+          "half_tie_win_rate_ci_low": 0.4473684210526316,
+          "half_tie_win_rate_ci_high": 0.6842105263157895,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "ga",
+          "planner": "ga",
+          "planner_label": "GA",
+          "baseline": "astar",
+          "baseline_label": "A*",
+          "maps_compared": 60,
+          "both_feasible_maps": 57,
+          "candidate_only_feasible_maps": 0,
+          "baseline_only_feasible_maps": 0,
+          "wins": 24,
+          "ties": 9,
+          "losses": 24,
+          "strict_win_rate": 0.42105263157894735,
+          "half_tie_win_rate": 0.5,
+          "half_tie_win_rate_ci_low": 0.38596491228070173,
+          "half_tie_win_rate_ci_high": 0.6228070175438597,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "pso",
+          "planner": "pso",
+          "planner_label": "PSO",
+          "baseline": "astar",
+          "baseline_label": "A*",
+          "maps_compared": 60,
+          "both_feasible_maps": 57,
+          "candidate_only_feasible_maps": 0,
+          "baseline_only_feasible_maps": 0,
+          "wins": 23,
+          "ties": 9,
+          "losses": 25,
+          "strict_win_rate": 0.40350877192982454,
+          "half_tie_win_rate": 0.4824561403508772,
+          "half_tie_win_rate_ci_low": 0.3684210526315789,
+          "half_tie_win_rate_ci_high": 0.5964912280701754,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "de",
+          "planner": "de",
+          "planner_label": "DE",
+          "baseline": "astar",
+          "baseline_label": "A*",
+          "maps_compared": 60,
+          "both_feasible_maps": 55,
+          "candidate_only_feasible_maps": 0,
+          "baseline_only_feasible_maps": 2,
+          "wins": 21,
+          "ties": 9,
+          "losses": 25,
+          "strict_win_rate": 0.38181818181818183,
+          "half_tie_win_rate": 0.4636363636363636,
+          "half_tie_win_rate_ci_low": 0.33636363636363636,
+          "half_tie_win_rate_ci_high": 0.5820454545454533,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "aco_acor",
+          "planner": "aco_acor",
+          "planner_label": "ACO/ACOR",
+          "baseline": "astar",
+          "baseline_label": "A*",
+          "maps_compared": 60,
+          "both_feasible_maps": 56,
+          "candidate_only_feasible_maps": 0,
+          "baseline_only_feasible_maps": 1,
+          "wins": 21,
+          "ties": 9,
+          "losses": 26,
+          "strict_win_rate": 0.375,
+          "half_tie_win_rate": 0.45535714285714285,
+          "half_tie_win_rate_ci_low": 0.3392857142857143,
+          "half_tie_win_rate_ci_high": 0.5714285714285714,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "rrt",
+          "planner": "rrt",
+          "planner_label": "RRT",
+          "baseline": "astar",
+          "baseline_label": "A*",
+          "maps_compared": 60,
+          "both_feasible_maps": 57,
+          "candidate_only_feasible_maps": 3,
+          "baseline_only_feasible_maps": 0,
+          "wins": 15,
+          "ties": 9,
+          "losses": 33,
+          "strict_win_rate": 0.2631578947368421,
+          "half_tie_win_rate": 0.34210526315789475,
+          "half_tie_win_rate_ci_low": 0.23684210526315788,
+          "half_tie_win_rate_ci_high": 0.45614035087719296,
+          "median_cost_delta": 0.9159581002741817
+        },
+        {
+          "candidate_planner_key": "prm",
+          "planner": "prm",
+          "planner_label": "PRM",
+          "baseline": "astar",
+          "baseline_label": "A*",
+          "maps_compared": 60,
+          "both_feasible_maps": 56,
+          "candidate_only_feasible_maps": 3,
+          "baseline_only_feasible_maps": 1,
+          "wins": 14,
+          "ties": 9,
+          "losses": 33,
+          "strict_win_rate": 0.25,
+          "half_tie_win_rate": 0.33035714285714285,
+          "half_tie_win_rate_ci_low": 0.22321428571428573,
+          "half_tie_win_rate_ci_high": 0.44642857142857145,
+          "median_cost_delta": 1.0808043365710773
+        },
+        {
+          "candidate_planner_key": "afl_uav:offline_v3",
+          "planner": "afl_uav",
+          "planner_label": "AFL-UAV (offline v3)",
+          "baseline": "theta_star",
+          "baseline_label": "Theta*",
+          "maps_compared": 60,
+          "both_feasible_maps": 58,
+          "candidate_only_feasible_maps": 2,
+          "baseline_only_feasible_maps": 0,
+          "wins": 38,
+          "ties": 11,
+          "losses": 9,
+          "strict_win_rate": 0.6551724137931034,
+          "half_tie_win_rate": 0.75,
+          "half_tie_win_rate_ci_low": 0.6549568965517242,
+          "half_tie_win_rate_ci_high": 0.8448275862068966,
+          "median_cost_delta": -0.3444577762948384
+        },
+        {
+          "candidate_planner_key": "ga",
+          "planner": "ga",
+          "planner_label": "GA",
+          "baseline": "theta_star",
+          "baseline_label": "Theta*",
+          "maps_compared": 60,
+          "both_feasible_maps": 57,
+          "candidate_only_feasible_maps": 0,
+          "baseline_only_feasible_maps": 1,
+          "wins": 26,
+          "ties": 9,
+          "losses": 22,
+          "strict_win_rate": 0.45614035087719296,
+          "half_tie_win_rate": 0.5350877192982456,
+          "half_tie_win_rate_ci_low": 0.42105263157894735,
+          "half_tie_win_rate_ci_high": 0.6491228070175439,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "rrt_star",
+          "planner": "rrt_star",
+          "planner_label": "RRT*",
+          "baseline": "theta_star",
+          "baseline_label": "Theta*",
+          "maps_compared": 60,
+          "both_feasible_maps": 58,
+          "candidate_only_feasible_maps": 2,
+          "baseline_only_feasible_maps": 0,
+          "wins": 26,
+          "ties": 9,
+          "losses": 23,
+          "strict_win_rate": 0.4482758620689655,
+          "half_tie_win_rate": 0.5258620689655172,
+          "half_tie_win_rate_ci_low": 0.4051724137931034,
+          "half_tie_win_rate_ci_high": 0.646551724137931,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "dijkstra",
+          "planner": "dijkstra",
+          "planner_label": "Dijkstra",
+          "baseline": "theta_star",
+          "baseline_label": "Theta*",
+          "maps_compared": 60,
+          "both_feasible_maps": 43,
+          "candidate_only_feasible_maps": 0,
+          "baseline_only_feasible_maps": 15,
+          "wins": 12,
+          "ties": 21,
+          "losses": 10,
+          "strict_win_rate": 0.27906976744186046,
+          "half_tie_win_rate": 0.5232558139534884,
+          "half_tie_win_rate_ci_low": 0.4069767441860465,
+          "half_tie_win_rate_ci_high": 0.627906976744186,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "pso",
+          "planner": "pso",
+          "planner_label": "PSO",
+          "baseline": "theta_star",
+          "baseline_label": "Theta*",
+          "maps_compared": 60,
+          "both_feasible_maps": 57,
+          "candidate_only_feasible_maps": 0,
+          "baseline_only_feasible_maps": 1,
+          "wins": 25,
+          "ties": 9,
+          "losses": 23,
+          "strict_win_rate": 0.43859649122807015,
+          "half_tie_win_rate": 0.5175438596491229,
+          "half_tie_win_rate_ci_low": 0.40350877192982454,
+          "half_tie_win_rate_ci_high": 0.6403508771929824,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "de",
+          "planner": "de",
+          "planner_label": "DE",
+          "baseline": "theta_star",
+          "baseline_label": "Theta*",
+          "maps_compared": 60,
+          "both_feasible_maps": 55,
+          "candidate_only_feasible_maps": 0,
+          "baseline_only_feasible_maps": 3,
+          "wins": 21,
+          "ties": 9,
+          "losses": 25,
+          "strict_win_rate": 0.38181818181818183,
+          "half_tie_win_rate": 0.4636363636363636,
+          "half_tie_win_rate_ci_low": 0.34545454545454546,
+          "half_tie_win_rate_ci_high": 0.5818181818181818,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "aco_acor",
+          "planner": "aco_acor",
+          "planner_label": "ACO/ACOR",
+          "baseline": "theta_star",
+          "baseline_label": "Theta*",
+          "maps_compared": 60,
+          "both_feasible_maps": 56,
+          "candidate_only_feasible_maps": 0,
+          "baseline_only_feasible_maps": 2,
+          "wins": 21,
+          "ties": 9,
+          "losses": 26,
+          "strict_win_rate": 0.375,
+          "half_tie_win_rate": 0.45535714285714285,
+          "half_tie_win_rate_ci_low": 0.33035714285714285,
+          "half_tie_win_rate_ci_high": 0.5714285714285714,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "astar",
+          "planner": "astar",
+          "planner_label": "A*",
+          "baseline": "theta_star",
+          "baseline_label": "Theta*",
+          "maps_compared": 60,
+          "both_feasible_maps": 57,
+          "candidate_only_feasible_maps": 0,
+          "baseline_only_feasible_maps": 1,
+          "wins": 10,
+          "ties": 22,
+          "losses": 25,
+          "strict_win_rate": 0.17543859649122806,
+          "half_tie_win_rate": 0.3684210526315789,
+          "half_tie_win_rate_ci_low": 0.2807017543859649,
+          "half_tie_win_rate_ci_high": 0.4649122807017544,
+          "median_cost_delta": 0.0
+        },
+        {
+          "candidate_planner_key": "prm",
+          "planner": "prm",
+          "planner_label": "PRM",
+          "baseline": "theta_star",
+          "baseline_label": "Theta*",
+          "maps_compared": 60,
+          "both_feasible_maps": 57,
+          "candidate_only_feasible_maps": 2,
+          "baseline_only_feasible_maps": 1,
+          "wins": 14,
+          "ties": 9,
+          "losses": 34,
+          "strict_win_rate": 0.24561403508771928,
+          "half_tie_win_rate": 0.32456140350877194,
+          "half_tie_win_rate_ci_low": 0.21052631578947367,
+          "half_tie_win_rate_ci_high": 0.43859649122807015,
+          "median_cost_delta": 1.0994131233681657
+        },
+        {
+          "candidate_planner_key": "rrt",
+          "planner": "rrt",
+          "planner_label": "RRT",
+          "baseline": "theta_star",
+          "baseline_label": "Theta*",
+          "maps_compared": 60,
+          "both_feasible_maps": 58,
+          "candidate_only_feasible_maps": 2,
+          "baseline_only_feasible_maps": 0,
+          "wins": 11,
+          "ties": 9,
+          "losses": 38,
+          "strict_win_rate": 0.1896551724137931,
+          "half_tie_win_rate": 0.2672413793103448,
+          "half_tie_win_rate_ci_low": 0.1724137931034483,
+          "half_tie_win_rate_ci_high": 0.3706896551724138,
+          "median_cost_delta": 0.9841501802467221
+        }
+      ],
+      "by_difficulty": [
+        {
+          "difficulty": "clustered",
+          "planner": "afl_uav",
+          "planner_label": "AFL-UAV (offline v3)",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 113.79486668593711,
+          "cost_q1": 112.2726329495765,
+          "cost_q3": 117.09028828475483,
+          "median_elapsed_seconds": 0.345630899999378
+        },
+        {
+          "difficulty": "clustered",
+          "planner": "theta_star",
+          "planner_label": "Theta*",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 113.99057477188276,
+          "cost_q1": 113.211307839783,
+          "cost_q3": 117.57165237579443,
+          "median_elapsed_seconds": 0.016129800000271602
+        },
+        {
+          "difficulty": "clustered",
+          "planner": "dijkstra",
+          "planner_label": "Dijkstra",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 114.03323607648589,
+          "cost_q1": 113.48190918795177,
+          "cost_q3": 118.11809111757455,
+          "median_elapsed_seconds": 0.18916830000125626
+        },
+        {
+          "difficulty": "clustered",
+          "planner": "astar",
+          "planner_label": "A*",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 114.07191598005609,
+          "cost_q1": 113.56149745751273,
+          "cost_q3": 118.09716627839963,
+          "median_elapsed_seconds": 0.0298300999993443
+        },
+        {
+          "difficulty": "clustered",
+          "planner": "rrt_star",
+          "planner_label": "RRT*",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 114.53017951904266,
+          "cost_q1": 113.19788152874318,
+          "cost_q3": 118.62620989177208,
+          "median_elapsed_seconds": 0.2192019499998423
+        },
+        {
+          "difficulty": "clustered",
+          "planner": "ga",
+          "planner_label": "GA",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 115.08102354202512,
+          "cost_q1": 113.8907158272956,
+          "cost_q3": 118.47452735066246,
+          "median_elapsed_seconds": 0.15944685000067685
+        },
+        {
+          "difficulty": "clustered",
+          "planner": "pso",
+          "planner_label": "PSO",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 115.19691390141138,
+          "cost_q1": 113.8907158272956,
+          "cost_q3": 118.53833738539873,
+          "median_elapsed_seconds": 0.14968885000052973
+        },
+        {
+          "difficulty": "clustered",
+          "planner": "rrt",
+          "planner_label": "RRT",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 118.21213368092447,
+          "cost_q1": 114.05882172171597,
+          "cost_q3": 125.35040734449058,
+          "median_elapsed_seconds": 0.0032695000008970496
+        },
+        {
+          "difficulty": "clustered",
+          "planner": "aco_acor",
+          "planner_label": "ACO/ACOR",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 118.6022597747281,
+          "cost_q1": 113.8907158272956,
+          "cost_q3": 125.4818322129868,
+          "median_elapsed_seconds": 0.16917829999874806
+        },
+        {
+          "difficulty": "clustered",
+          "planner": "de",
+          "planner_label": "DE",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 118.6022597747281,
+          "cost_q1": 114.25364575862504,
+          "cost_q3": 123.09919616354567,
+          "median_elapsed_seconds": 0.17442405000019784
+        },
+        {
+          "difficulty": "clustered",
+          "planner": "prm",
+          "planner_label": "PRM",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 120.06517044340933,
+          "cost_q1": 115.7330512162745,
+          "cost_q3": 125.12511111987888,
+          "median_elapsed_seconds": 0.0244120499992277
+        },
+        {
+          "difficulty": "corridor",
+          "planner": "afl_uav",
+          "planner_label": "AFL-UAV (offline v3)",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 297.0765045283229,
+          "cost_q1": 294.8554220202814,
+          "cost_q3": 298.1657364149804,
+          "median_elapsed_seconds": 0.24196764999942383
+        },
+        {
+          "difficulty": "corridor",
+          "planner": "ga",
+          "planner_label": "GA",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 298.5634497910264,
+          "cost_q1": 295.91536962023537,
+          "cost_q3": 305.4479744979444,
+          "median_elapsed_seconds": 0.7235765999994328
+        },
+        {
+          "difficulty": "corridor",
+          "planner": "pso",
+          "planner_label": "PSO",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 300.669144351054,
+          "cost_q1": 297.2697591158485,
+          "cost_q3": 311.42425110247774,
+          "median_elapsed_seconds": 0.6898603499994351
+        },
+        {
+          "difficulty": "corridor",
+          "planner": "aco_acor",
+          "planner_label": "ACO/ACOR",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 311.558686149781,
+          "cost_q1": 303.04476403705917,
+          "cost_q3": 326.0169166528321,
+          "median_elapsed_seconds": 0.6843146500004877
+        },
+        {
+          "difficulty": "corridor",
+          "planner": "de",
+          "planner_label": "DE",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 317.1733482330866,
+          "cost_q1": 307.7596988559347,
+          "cost_q3": 328.9013162110401,
+          "median_elapsed_seconds": 0.763040999999248
+        },
+        {
+          "difficulty": "corridor",
+          "planner": "rrt_star",
+          "planner_label": "RRT*",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 318.9885021236091,
+          "cost_q1": 309.0695480382882,
+          "cost_q3": 324.40600650764924,
+          "median_elapsed_seconds": 0.4728109500001665
+        },
+        {
+          "difficulty": "corridor",
+          "planner": "rrt",
+          "planner_label": "RRT",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 338.24278970994817,
+          "cost_q1": 320.86020331459815,
+          "cost_q3": 348.42861179843885,
+          "median_elapsed_seconds": 0.0166477499997199
+        },
+        {
+          "difficulty": "corridor",
+          "planner": "theta_star",
+          "planner_label": "Theta*",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 341.50861015932367,
+          "cost_q1": 331.020730143023,
+          "cost_q3": 348.09765800173216,
+          "median_elapsed_seconds": 0.10973949999879545
+        },
+        {
+          "difficulty": "corridor",
+          "planner": "astar",
+          "planner_label": "A*",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 344.4397467560241,
+          "cost_q1": 337.393992131927,
+          "cost_q3": 353.18233151932037,
+          "median_elapsed_seconds": 0.21137864999946032
+        },
+        {
+          "difficulty": "corridor",
+          "planner": "prm",
+          "planner_label": "PRM",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 43,
+          "feasible_rate": 0.86,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 319.7268159435243,
+          "cost_q1": 306.5229288710631,
+          "cost_q3": 336.7457247885936,
+          "median_elapsed_seconds": 0.07938255000044585
+        },
+        {
+          "difficulty": "corridor",
+          "planner": "dijkstra",
+          "planner_label": "Dijkstra",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 7,
+          "feasible_rate": 0.7,
+          "map_solved_rate": 0.7,
+          "median_feasible_cost": 340.35005954263545,
+          "cost_q1": 324.65767269831207,
+          "cost_q3": 341.63288642792895,
+          "median_elapsed_seconds": 0.887265049999769
+        },
+        {
+          "difficulty": "dense",
+          "planner": "afl_uav",
+          "planner_label": "AFL-UAV (offline v3)",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 117.75830223078815,
+          "cost_q1": 114.12224324741516,
+          "cost_q3": 120.37108407043999,
+          "median_elapsed_seconds": 0.3486893500012229
+        },
+        {
+          "difficulty": "dense",
+          "planner": "dijkstra",
+          "planner_label": "Dijkstra",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 118.66194980128637,
+          "cost_q1": 114.52297489593171,
+          "cost_q3": 121.84216070825772,
+          "median_elapsed_seconds": 0.21716800000012876
+        },
+        {
+          "difficulty": "dense",
+          "planner": "rrt_star",
+          "planner_label": "RRT*",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 118.87916410827097,
+          "cost_q1": 114.12224324741516,
+          "cost_q3": 122.7601589270698,
+          "median_elapsed_seconds": 0.22500214999945456
+        },
+        {
+          "difficulty": "dense",
+          "planner": "theta_star",
+          "planner_label": "Theta*",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 119.05263385529841,
+          "cost_q1": 114.52418254524684,
+          "cost_q3": 121.04570682934727,
+          "median_elapsed_seconds": 0.01420270000016895
+        },
+        {
+          "difficulty": "dense",
+          "planner": "astar",
+          "planner_label": "A*",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 119.06517577132048,
+          "cost_q1": 114.55336337807998,
+          "cost_q3": 121.48724212795705,
+          "median_elapsed_seconds": 0.02844150000055375
+        },
+        {
+          "difficulty": "dense",
+          "planner": "pso",
+          "planner_label": "PSO",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 119.59428933886227,
+          "cost_q1": 114.12224324741516,
+          "cost_q3": 123.31487733344379,
+          "median_elapsed_seconds": 0.1557126000006974
+        },
+        {
+          "difficulty": "dense",
+          "planner": "rrt",
+          "planner_label": "RRT",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 125.6155573171113,
+          "cost_q1": 115.83896697443377,
+          "cost_q3": 130.77840484153296,
+          "median_elapsed_seconds": 0.0052264000005379
+        },
+        {
+          "difficulty": "dense",
+          "planner": "aco_acor",
+          "planner_label": "ACO/ACOR",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 128.32765630239362,
+          "cost_q1": 114.41356514562041,
+          "cost_q3": 154.27028118585122,
+          "median_elapsed_seconds": 0.1658522500001709
+        },
+        {
+          "difficulty": "dense",
+          "planner": "ga",
+          "planner_label": "GA",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 49,
+          "feasible_rate": 0.98,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 119.41327708775454,
+          "cost_q1": 114.12224324741516,
+          "cost_q3": 123.27726375354192,
+          "median_elapsed_seconds": 0.16481815000042838
+        },
+        {
+          "difficulty": "dense",
+          "planner": "prm",
+          "planner_label": "PRM",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 49,
+          "feasible_rate": 0.98,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 123.42167962167451,
+          "cost_q1": 114.576230840528,
+          "cost_q3": 130.1238802295413,
+          "median_elapsed_seconds": 0.027324549999320852
+        },
+        {
+          "difficulty": "dense",
+          "planner": "de",
+          "planner_label": "DE",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 49,
+          "feasible_rate": 0.98,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 129.347548279938,
+          "cost_q1": 114.3119047428056,
+          "cost_q3": 144.79460981563506,
+          "median_elapsed_seconds": 0.16790229999969597
+        },
+        {
+          "difficulty": "mixed",
+          "planner": "afl_uav",
+          "planner_label": "AFL-UAV (offline v3)",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 116.52958424030379,
+          "cost_q1": 109.4909171776687,
+          "cost_q3": 124.04017563484337,
+          "median_elapsed_seconds": 0.309888449997743
+        },
+        {
+          "difficulty": "mixed",
+          "planner": "ga",
+          "planner_label": "GA",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 119.40221736199359,
+          "cost_q1": 117.55077486387833,
+          "cost_q3": 177.61297072710505,
+          "median_elapsed_seconds": 0.8411190500000885
+        },
+        {
+          "difficulty": "mixed",
+          "planner": "rrt_star",
+          "planner_label": "RRT*",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 124.57653203084118,
+          "cost_q1": 115.35855422120777,
+          "cost_q3": 177.61297072710505,
+          "median_elapsed_seconds": 0.5705720500009193
+        },
+        {
+          "difficulty": "mixed",
+          "planner": "pso",
+          "planner_label": "PSO",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 131.0913716247054,
+          "cost_q1": 118.2483585440385,
+          "cost_q3": 193.27115768389643,
+          "median_elapsed_seconds": 0.7875807500004157
+        },
+        {
+          "difficulty": "mixed",
+          "planner": "de",
+          "planner_label": "DE",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 137.3677844419535,
+          "cost_q1": 122.02997801260248,
+          "cost_q3": 177.61297072710505,
+          "median_elapsed_seconds": 0.7859357000006639
+        },
+        {
+          "difficulty": "mixed",
+          "planner": "astar",
+          "planner_label": "A*",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 143.3245398707128,
+          "cost_q1": 118.0335394340668,
+          "cost_q3": 243.49050732572425,
+          "median_elapsed_seconds": 0.1856398499994611
+        },
+        {
+          "difficulty": "mixed",
+          "planner": "aco_acor",
+          "planner_label": "ACO/ACOR",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 147.4458479472081,
+          "cost_q1": 117.45697216211522,
+          "cost_q3": 209.80059469890244,
+          "median_elapsed_seconds": 0.7644809000003079
+        },
+        {
+          "difficulty": "mixed",
+          "planner": "prm",
+          "planner_label": "PRM",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 162.90736667639015,
+          "cost_q1": 119.42819274552689,
+          "cost_q3": 255.5377062464179,
+          "median_elapsed_seconds": 0.09472784999979915
+        },
+        {
+          "difficulty": "mixed",
+          "planner": "theta_star",
+          "planner_label": "Theta*",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 165.7149381299172,
+          "cost_q1": 119.60405207658809,
+          "cost_q3": 274.55317556249673,
+          "median_elapsed_seconds": 0.11557299999913079
+        },
+        {
+          "difficulty": "mixed",
+          "planner": "rrt",
+          "planner_label": "RRT",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 177.61297072710505,
+          "cost_q1": 119.87544071626729,
+          "cost_q3": 356.89160548373127,
+          "median_elapsed_seconds": 0.012974200000826351
+        },
+        {
+          "difficulty": "mixed",
+          "planner": "dijkstra",
+          "planner_label": "Dijkstra",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 3,
+          "feasible_rate": 0.3,
+          "map_solved_rate": 0.3,
+          "median_feasible_cost": 109.4909171776687,
+          "cost_q1": 108.25914149770335,
+          "cost_q3": 143.55194395238686,
+          "median_elapsed_seconds": 1.0001917499994306
+        },
+        {
+          "difficulty": "rooms_maze",
+          "planner": "afl_uav",
+          "planner_label": "AFL-UAV (offline v3)",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 125.06485069058971,
+          "cost_q1": 116.84219952845885,
+          "cost_q3": 141.2056132370259,
+          "median_elapsed_seconds": 0.33968315000129223
+        },
+        {
+          "difficulty": "rooms_maze",
+          "planner": "rrt_star",
+          "planner_label": "RRT*",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 43,
+          "feasible_rate": 0.86,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 126.11213124459952,
+          "cost_q1": 120.53044818972515,
+          "cost_q3": 143.68098339305322,
+          "median_elapsed_seconds": 0.6692085000004226
+        },
+        {
+          "difficulty": "rooms_maze",
+          "planner": "rrt",
+          "planner_label": "RRT",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 43,
+          "feasible_rate": 0.86,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 129.10858997294588,
+          "cost_q1": 121.98390137009525,
+          "cost_q3": 151.38070393284954,
+          "median_elapsed_seconds": 0.0684364999997342
+        },
+        {
+          "difficulty": "rooms_maze",
+          "planner": "theta_star",
+          "planner_label": "Theta*",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 8,
+          "feasible_rate": 0.8,
+          "map_solved_rate": 0.8,
+          "median_feasible_cost": 123.15128030971658,
+          "cost_q1": 120.19998773787113,
+          "cost_q3": 128.6691967280696,
+          "median_elapsed_seconds": 0.42150885000046395
+        },
+        {
+          "difficulty": "rooms_maze",
+          "planner": "astar",
+          "planner_label": "A*",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 7,
+          "feasible_rate": 0.7,
+          "map_solved_rate": 0.7,
+          "median_feasible_cost": 122.77528471251344,
+          "cost_q1": 117.48552304936894,
+          "cost_q3": 125.20689655004638,
+          "median_elapsed_seconds": 0.6312761500003035
+        },
+        {
+          "difficulty": "rooms_maze",
+          "planner": "ga",
+          "planner_label": "GA",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 33,
+          "feasible_rate": 0.66,
+          "map_solved_rate": 0.7,
+          "median_feasible_cost": 125.50768452191276,
+          "cost_q1": 118.7254692009629,
+          "cost_q3": 133.6496834017993,
+          "median_elapsed_seconds": 1.0006398000004992
+        },
+        {
+          "difficulty": "rooms_maze",
+          "planner": "pso",
+          "planner_label": "PSO",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 31,
+          "feasible_rate": 0.62,
+          "map_solved_rate": 0.7,
+          "median_feasible_cost": 125.21724742943351,
+          "cost_q1": 118.7254692009629,
+          "cost_q3": 135.26631541487296,
+          "median_elapsed_seconds": 1.0007316999999603
+        },
+        {
+          "difficulty": "rooms_maze",
+          "planner": "prm",
+          "planner_label": "PRM",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 23,
+          "feasible_rate": 0.46,
+          "map_solved_rate": 0.9,
+          "median_feasible_cost": 137.01887392735173,
+          "cost_q1": 123.27310397682628,
+          "cost_q3": 157.8683780114452,
+          "median_elapsed_seconds": 0.21680844999991675
+        },
+        {
+          "difficulty": "rooms_maze",
+          "planner": "de",
+          "planner_label": "DE",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 20,
+          "feasible_rate": 0.4,
+          "map_solved_rate": 0.5,
+          "median_feasible_cost": 128.59358165534903,
+          "cost_q1": 118.62426974714039,
+          "cost_q3": 165.65523617664007,
+          "median_elapsed_seconds": 1.0005324999992808
+        },
+        {
+          "difficulty": "rooms_maze",
+          "planner": "aco_acor",
+          "planner_label": "ACO/ACOR",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 18,
+          "feasible_rate": 0.36,
+          "map_solved_rate": 0.6,
+          "median_feasible_cost": 118.7254692009629,
+          "cost_q1": 118.42187083949536,
+          "cost_q3": 153.91299755656974,
+          "median_elapsed_seconds": 1.0005304499991325
+        },
+        {
+          "difficulty": "rooms_maze",
+          "planner": "dijkstra",
+          "planner_label": "Dijkstra",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 3,
+          "feasible_rate": 0.3,
+          "map_solved_rate": 0.3,
+          "median_feasible_cost": 122.94963953892872,
+          "cost_q1": 118.45604265962245,
+          "cost_q3": 131.416179309259,
+          "median_elapsed_seconds": 1.0001165499998024
+        },
+        {
+          "difficulty": "sparse",
+          "planner": "afl_uav",
+          "planner_label": "AFL-UAV (offline v3)",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 109.84455727843249,
+          "cost_q1": 108.8293787411228,
+          "cost_q3": 111.38032190752492,
+          "median_elapsed_seconds": 0.2273944499993376
+        },
+        {
+          "difficulty": "sparse",
+          "planner": "dijkstra",
+          "planner_label": "Dijkstra",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 110.59240652797814,
+          "cost_q1": 108.98228978215167,
+          "cost_q3": 113.06362629879467,
+          "median_elapsed_seconds": 0.0942920499992396
+        },
+        {
+          "difficulty": "sparse",
+          "planner": "theta_star",
+          "planner_label": "Theta*",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 110.6789861656274,
+          "cost_q1": 108.98228978215167,
+          "cost_q3": 113.06362629879467,
+          "median_elapsed_seconds": 0.0032149999997272503
+        },
+        {
+          "difficulty": "sparse",
+          "planner": "astar",
+          "planner_label": "A*",
+          "runs": 10,
+          "maps": 10,
+          "feasible_runs": 10,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 110.71576764182498,
+          "cost_q1": 109.11935291049942,
+          "cost_q3": 113.1022878464122,
+          "median_elapsed_seconds": 0.0038198000002011502
+        },
+        {
+          "difficulty": "sparse",
+          "planner": "ga",
+          "planner_label": "GA",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 110.93671256471568,
+          "cost_q1": 108.91126395413986,
+          "cost_q3": 113.62472776255126,
+          "median_elapsed_seconds": 0.07439524999972486
+        },
+        {
+          "difficulty": "sparse",
+          "planner": "rrt_star",
+          "planner_label": "RRT*",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 110.95580976274269,
+          "cost_q1": 109.02042858384027,
+          "cost_q3": 113.62472776255126,
+          "median_elapsed_seconds": 0.1816903999997521
+        },
+        {
+          "difficulty": "sparse",
+          "planner": "pso",
+          "planner_label": "PSO",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 111.11394724442327,
+          "cost_q1": 108.86050375638929,
+          "cost_q3": 113.62472776255126,
+          "median_elapsed_seconds": 0.059791399999994554
+        },
+        {
+          "difficulty": "sparse",
+          "planner": "aco_acor",
+          "planner_label": "ACO/ACOR",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 111.20996487817382,
+          "cost_q1": 108.97483751903113,
+          "cost_q3": 113.62472776255126,
+          "median_elapsed_seconds": 0.07843375000084049
+        },
+        {
+          "difficulty": "sparse",
+          "planner": "de",
+          "planner_label": "DE",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 111.20996487817382,
+          "cost_q1": 108.97483751903113,
+          "cost_q3": 114.40279050747476,
+          "median_elapsed_seconds": 0.0800741500006552
+        },
+        {
+          "difficulty": "sparse",
+          "planner": "rrt",
+          "planner_label": "RRT",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 111.52698938916251,
+          "cost_q1": 109.87704379562254,
+          "cost_q3": 114.15027829324386,
+          "median_elapsed_seconds": 0.0013245999998616502
+        },
+        {
+          "difficulty": "sparse",
+          "planner": "prm",
+          "planner_label": "PRM",
+          "runs": 50,
+          "maps": 10,
+          "feasible_runs": 50,
+          "feasible_rate": 1.0,
+          "map_solved_rate": 1.0,
+          "median_feasible_cost": 112.29959807354324,
+          "cost_q1": 110.81956503379371,
+          "cost_q3": 115.33768337173079,
+          "median_elapsed_seconds": 0.01723515000048785
+        }
+      ],
+      "stability": [
+        {
+          "planner": "afl_uav",
+          "planner_key": "afl_uav:offline_v3",
+          "planner_label": "AFL-UAV (offline v3)",
+          "maps": 60,
+          "mean_within_map_feasible_rate": 1.0,
+          "fully_feasible_maps": 60,
+          "never_feasible_maps": 0,
+          "median_unique_feasible_paths": 5.0,
+          "median_within_map_cost_iqr": 0.1535992453450845,
+          "p90_within_map_cost_iqr": 0.8787097560693254
+        },
+        {
+          "planner": "rrt_star",
+          "planner_key": "rrt_star",
+          "planner_label": "RRT*",
+          "maps": 60,
+          "mean_within_map_feasible_rate": 0.9766666666666666,
+          "fully_feasible_maps": 57,
+          "never_feasible_maps": 0,
+          "median_unique_feasible_paths": 5.0,
+          "median_within_map_cost_iqr": 0.6482181441073536,
+          "p90_within_map_cost_iqr": 18.046295642310252
+        },
+        {
+          "planner": "rrt",
+          "planner_key": "rrt",
+          "planner_label": "RRT",
+          "maps": 60,
+          "mean_within_map_feasible_rate": 0.9766666666666666,
+          "fully_feasible_maps": 57,
+          "never_feasible_maps": 0,
+          "median_unique_feasible_paths": 5.0,
+          "median_within_map_cost_iqr": 2.840961350799944,
+          "p90_within_map_cost_iqr": 54.430457210080334
+        },
+        {
+          "planner": "ga",
+          "planner_key": "ga",
+          "planner_label": "GA",
+          "maps": 60,
+          "mean_within_map_feasible_rate": 0.9400000000000001,
+          "fully_feasible_maps": 55,
+          "never_feasible_maps": 3,
+          "median_unique_feasible_paths": 5.0,
+          "median_within_map_cost_iqr": 0.29214812457196615,
+          "p90_within_map_cost_iqr": 7.515325998359775
+        },
+        {
+          "planner": "pso",
+          "planner_key": "pso",
+          "planner_label": "PSO",
+          "maps": 60,
+          "mean_within_map_feasible_rate": 0.9366666666666668,
+          "fully_feasible_maps": 55,
+          "never_feasible_maps": 3,
+          "median_unique_feasible_paths": 5.0,
+          "median_within_map_cost_iqr": 0.838449434227357,
+          "p90_within_map_cost_iqr": 11.85817692086791
+        },
+        {
+          "planner": "de",
+          "planner_key": "de",
+          "planner_label": "DE",
+          "maps": 60,
+          "mean_within_map_feasible_rate": 0.8966666666666666,
+          "fully_feasible_maps": 52,
+          "never_feasible_maps": 5,
+          "median_unique_feasible_paths": 5.0,
+          "median_within_map_cost_iqr": 3.376732341503029,
+          "p90_within_map_cost_iqr": 24.898742118602193
+        },
+        {
+          "planner": "aco_acor",
+          "planner_key": "aco_acor",
+          "planner_label": "ACO/ACOR",
+          "maps": 60,
+          "mean_within_map_feasible_rate": 0.8933333333333332,
+          "fully_feasible_maps": 53,
+          "never_feasible_maps": 4,
+          "median_unique_feasible_paths": 5.0,
+          "median_within_map_cost_iqr": 1.955530489598921,
+          "p90_within_map_cost_iqr": 30.399942271521894
+        },
+        {
+          "planner": "prm",
+          "planner_key": "prm",
+          "planner_label": "PRM",
+          "maps": 60,
+          "mean_within_map_feasible_rate": 0.8833333333333333,
+          "fully_feasible_maps": 44,
+          "never_feasible_maps": 1,
+          "median_unique_feasible_paths": 5.0,
+          "median_within_map_cost_iqr": 4.166312284818389,
+          "p90_within_map_cost_iqr": 37.85565178907912
+        }
+      ],
+      "status": [
+        {
+          "planner_key": "astar",
+          "planner_label": "A*",
+          "status": "success",
+          "records": 57,
+          "record_share": 0.95
+        },
+        {
+          "planner_key": "astar",
+          "planner_label": "A*",
+          "status": "timeout",
+          "records": 3,
+          "record_share": 0.05
+        },
+        {
+          "planner_key": "aco_acor",
+          "planner_label": "ACO/ACOR",
+          "status": "success",
+          "records": 235,
+          "record_share": 0.7833333333333333
+        },
+        {
+          "planner_key": "aco_acor",
+          "planner_label": "ACO/ACOR",
+          "status": "timeout",
+          "records": 65,
+          "record_share": 0.21666666666666667
+        },
+        {
+          "planner_key": "afl_uav:offline_v3",
+          "planner_label": "AFL-UAV (offline v3)",
+          "status": "success",
+          "records": 300,
+          "record_share": 1.0
+        },
+        {
+          "planner_key": "de",
+          "planner_label": "DE",
+          "status": "success",
+          "records": 237,
+          "record_share": 0.79
+        },
+        {
+          "planner_key": "de",
+          "planner_label": "DE",
+          "status": "timeout",
+          "records": 62,
+          "record_share": 0.20666666666666667
+        },
+        {
+          "planner_key": "de",
+          "planner_label": "DE",
+          "status": "no_path",
+          "records": 1,
+          "record_share": 0.0033333333333333335
+        },
+        {
+          "planner_key": "dijkstra",
+          "planner_label": "Dijkstra",
+          "status": "success",
+          "records": 43,
+          "record_share": 0.7166666666666667
+        },
+        {
+          "planner_key": "dijkstra",
+          "planner_label": "Dijkstra",
+          "status": "timeout",
+          "records": 17,
+          "record_share": 0.2833333333333333
+        },
+        {
+          "planner_key": "ga",
+          "planner_label": "GA",
+          "status": "success",
+          "records": 240,
+          "record_share": 0.8
+        },
+        {
+          "planner_key": "ga",
+          "planner_label": "GA",
+          "status": "timeout",
+          "records": 59,
+          "record_share": 0.19666666666666666
+        },
+        {
+          "planner_key": "ga",
+          "planner_label": "GA",
+          "status": "no_path",
+          "records": 1,
+          "record_share": 0.0033333333333333335
+        },
+        {
+          "planner_key": "prm",
+          "planner_label": "PRM",
+          "status": "success",
+          "records": 265,
+          "record_share": 0.8833333333333333
+        },
+        {
+          "planner_key": "prm",
+          "planner_label": "PRM",
+          "status": "no_path",
+          "records": 35,
+          "record_share": 0.11666666666666667
+        },
+        {
+          "planner_key": "pso",
+          "planner_label": "PSO",
+          "status": "success",
+          "records": 239,
+          "record_share": 0.7966666666666666
+        },
+        {
+          "planner_key": "pso",
+          "planner_label": "PSO",
+          "status": "timeout",
+          "records": 61,
+          "record_share": 0.20333333333333334
+        },
+        {
+          "planner_key": "rrt",
+          "planner_label": "RRT",
+          "status": "success",
+          "records": 293,
+          "record_share": 0.9766666666666667
+        },
+        {
+          "planner_key": "rrt",
+          "planner_label": "RRT",
+          "status": "no_path",
+          "records": 7,
+          "record_share": 0.023333333333333334
+        },
+        {
+          "planner_key": "rrt_star",
+          "planner_label": "RRT*",
+          "status": "success",
+          "records": 279,
+          "record_share": 0.93
+        },
+        {
+          "planner_key": "rrt_star",
+          "planner_label": "RRT*",
+          "status": "timeout",
+          "records": 14,
+          "record_share": 0.04666666666666667
+        },
+        {
+          "planner_key": "rrt_star",
+          "planner_label": "RRT*",
+          "status": "no_path",
+          "records": 7,
+          "record_share": 0.023333333333333334
+        },
+        {
+          "planner_key": "theta_star",
+          "planner_label": "Theta*",
+          "status": "success",
+          "records": 58,
+          "record_share": 0.9666666666666667
+        },
+        {
+          "planner_key": "theta_star",
+          "planner_label": "Theta*",
+          "status": "timeout",
+          "records": 2,
+          "record_share": 0.03333333333333333
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "raw_runs",
+      "label": "Merged offline Validation run records",
+      "path": "artifacts/planning_benchmarks/offline-validation-analysis-v1/offline_validation_runs.csv",
+      "query": {
+        "engine": "DuckDB",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/offline-validation-analysis-v1/offline_validation_runs.csv', header = true);",
+        "description": "Read the audited 2,580-record merged Validation result table used as the analysis population.",
+        "executed_at": "2026-07-31T01:57:38.296979+00:00",
+        "tables_used": [
+          "artifacts/planning_benchmarks/offline-validation-analysis-v1/offline_validation_runs.csv"
+        ],
+        "filters": [
+          "benchmark_id = uav2d-v1",
+          "split = validation",
+          "60 fixed maps; 10 maps in each of six classes",
+          "time limit = 1 second; objective-evaluation limit = 2,000",
+          "deterministic planners run once per map",
+          "stochastic planners and offline AFL-UAV run five shared seeds per map"
+        ],
+        "metric_definitions": [
+          "Feasible rate = trusted hard-validator feasible runs / all runs for the planner.",
+          "Map solved rate = maps with at least one feasible run / 60 Validation maps.",
+          "Median feasible cost uses only paths accepted by the shared PathEvaluator and hard validator.",
+          "Uncertainty intervals are 95% percentile intervals from 2,000 map-cluster bootstrap replicates.",
+          "Paired win rate uses per-map median feasible cost; ties contribute one half to the displayed half-tie win rate."
+        ]
+      }
+    },
+    {
+      "id": "overall_stats",
+      "label": "Overall planner statistics",
+      "path": "artifacts/planning_benchmarks/offline-validation-analysis-v1/overall_statistics.csv",
+      "query": {
+        "engine": "DuckDB",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/offline-validation-analysis-v1/overall_statistics.csv', header = true);",
+        "description": "Read the reviewed planner-level feasibility, cost, runtime, and map-cluster bootstrap statistics.",
+        "executed_at": "2026-07-31T01:57:38.296979+00:00",
+        "tables_used": [
+          "artifacts/planning_benchmarks/offline-validation-analysis-v1/overall_statistics.csv"
+        ],
+        "filters": [
+          "benchmark_id = uav2d-v1",
+          "split = validation",
+          "60 fixed maps; 10 maps in each of six classes",
+          "time limit = 1 second; objective-evaluation limit = 2,000",
+          "deterministic planners run once per map",
+          "stochastic planners and offline AFL-UAV run five shared seeds per map"
+        ],
+        "metric_definitions": [
+          "Feasible rate = trusted hard-validator feasible runs / all runs for the planner.",
+          "Map solved rate = maps with at least one feasible run / 60 Validation maps.",
+          "Median feasible cost uses only paths accepted by the shared PathEvaluator and hard validator.",
+          "Uncertainty intervals are 95% percentile intervals from 2,000 map-cluster bootstrap replicates.",
+          "Paired win rate uses per-map median feasible cost; ties contribute one half to the displayed half-tie win rate."
+        ]
+      }
+    },
+    {
+      "id": "paired_stats",
+      "label": "Paired planner comparisons",
+      "path": "artifacts/planning_benchmarks/offline-validation-analysis-v1/paired_comparisons.csv",
+      "query": {
+        "engine": "DuckDB",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/offline-validation-analysis-v1/paired_comparisons.csv', header = true);",
+        "description": "Read the reviewed per-map paired comparisons against A* and Theta*.",
+        "executed_at": "2026-07-31T01:57:38.296979+00:00",
+        "tables_used": [
+          "artifacts/planning_benchmarks/offline-validation-analysis-v1/paired_comparisons.csv"
+        ],
+        "filters": [
+          "benchmark_id = uav2d-v1",
+          "split = validation",
+          "60 fixed maps; 10 maps in each of six classes",
+          "time limit = 1 second; objective-evaluation limit = 2,000",
+          "deterministic planners run once per map",
+          "stochastic planners and offline AFL-UAV run five shared seeds per map"
+        ],
+        "metric_definitions": [
+          "Feasible rate = trusted hard-validator feasible runs / all runs for the planner.",
+          "Map solved rate = maps with at least one feasible run / 60 Validation maps.",
+          "Median feasible cost uses only paths accepted by the shared PathEvaluator and hard validator.",
+          "Uncertainty intervals are 95% percentile intervals from 2,000 map-cluster bootstrap replicates.",
+          "Paired win rate uses per-map median feasible cost; ties contribute one half to the displayed half-tie win rate."
+        ]
+      }
+    },
+    {
+      "id": "difficulty_stats",
+      "label": "Planner statistics by map class",
+      "path": "artifacts/planning_benchmarks/offline-validation-analysis-v1/by_difficulty_statistics.csv",
+      "query": {
+        "engine": "DuckDB",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/offline-validation-analysis-v1/by_difficulty_statistics.csv', header = true);",
+        "description": "Read the reviewed planner statistics for each of six map classes.",
+        "executed_at": "2026-07-31T01:57:38.296979+00:00",
+        "tables_used": [
+          "artifacts/planning_benchmarks/offline-validation-analysis-v1/by_difficulty_statistics.csv"
+        ],
+        "filters": [
+          "benchmark_id = uav2d-v1",
+          "split = validation",
+          "60 fixed maps; 10 maps in each of six classes",
+          "time limit = 1 second; objective-evaluation limit = 2,000",
+          "deterministic planners run once per map",
+          "stochastic planners and offline AFL-UAV run five shared seeds per map"
+        ],
+        "metric_definitions": [
+          "Feasible rate = trusted hard-validator feasible runs / all runs for the planner.",
+          "Map solved rate = maps with at least one feasible run / 60 Validation maps.",
+          "Median feasible cost uses only paths accepted by the shared PathEvaluator and hard validator.",
+          "Uncertainty intervals are 95% percentile intervals from 2,000 map-cluster bootstrap replicates.",
+          "Paired win rate uses per-map median feasible cost; ties contribute one half to the displayed half-tie win rate."
+        ]
+      }
+    },
+    {
+      "id": "stability_stats",
+      "label": "Shared-seed stability statistics",
+      "path": "artifacts/planning_benchmarks/offline-validation-analysis-v1/seed_stability.csv",
+      "query": {
+        "engine": "DuckDB",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/offline-validation-analysis-v1/seed_stability.csv', header = true);",
+        "description": "Read the reviewed five-seed stability statistics by planner.",
+        "executed_at": "2026-07-31T01:57:38.296979+00:00",
+        "tables_used": [
+          "artifacts/planning_benchmarks/offline-validation-analysis-v1/seed_stability.csv"
+        ],
+        "filters": [
+          "benchmark_id = uav2d-v1",
+          "split = validation",
+          "60 fixed maps; 10 maps in each of six classes",
+          "time limit = 1 second; objective-evaluation limit = 2,000",
+          "deterministic planners run once per map",
+          "stochastic planners and offline AFL-UAV run five shared seeds per map"
+        ],
+        "metric_definitions": [
+          "Feasible rate = trusted hard-validator feasible runs / all runs for the planner.",
+          "Map solved rate = maps with at least one feasible run / 60 Validation maps.",
+          "Median feasible cost uses only paths accepted by the shared PathEvaluator and hard validator.",
+          "Uncertainty intervals are 95% percentile intervals from 2,000 map-cluster bootstrap replicates.",
+          "Paired win rate uses per-map median feasible cost; ties contribute one half to the displayed half-tie win rate."
+        ]
+      }
+    },
+    {
+      "id": "failure_stats",
+      "label": "Planner termination-status counts",
+      "path": "artifacts/planning_benchmarks/offline-validation-analysis-v1/failure_status.csv",
+      "query": {
+        "engine": "DuckDB",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('artifacts/planning_benchmarks/offline-validation-analysis-v1/failure_status.csv', header = true);",
+        "description": "Read the reviewed termination-status counts by planner.",
+        "executed_at": "2026-07-31T01:57:38.296979+00:00",
+        "tables_used": [
+          "artifacts/planning_benchmarks/offline-validation-analysis-v1/failure_status.csv"
+        ],
+        "filters": [
+          "benchmark_id = uav2d-v1",
+          "split = validation",
+          "60 fixed maps; 10 maps in each of six classes",
+          "time limit = 1 second; objective-evaluation limit = 2,000",
+          "deterministic planners run once per map",
+          "stochastic planners and offline AFL-UAV run five shared seeds per map"
+        ],
+        "metric_definitions": [
+          "Feasible rate = trusted hard-validator feasible runs / all runs for the planner.",
+          "Map solved rate = maps with at least one feasible run / 60 Validation maps.",
+          "Median feasible cost uses only paths accepted by the shared PathEvaluator and hard validator.",
+          "Uncertainty intervals are 95% percentile intervals from 2,000 map-cluster bootstrap replicates.",
+          "Paired win rate uses per-map median feasible cost; ties contribute one half to the displayed half-tie win rate."
+        ]
+      }
+    }
+  ]
+}

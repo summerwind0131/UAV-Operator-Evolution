@@ -1,0 +1,35 @@
+{
+  "analysis_id": "evolutionary-afl-uav-experiments-analysis-v1",
+  "generated_at_utc": "2026-08-16T16:57:23.548910+00:00",
+  "output_hashes": {
+    "analysis_summary.json": "949df17ce7c9ebc15cda07e1fc4fdfb3980856963a579d778ba742997b838977",
+    "arm_statistics.csv": "651da8362aa8b7d4b13fe60dc52f7e5f6d79f781d40cf6430568edc14450ebc8",
+    "operator_diagnostics.csv": "d3c64b893bbc5d9e0eb6b491c10ca14a4e7c008a996a406ddd01f4f0aadd46c1",
+    "paired_map_details.csv": "635ed27bcb7ec1e808e2893798add18557ad1b6637db194810b5ef869bf3f6ce",
+    "paired_vs_full.csv": "6eb4d791a0f580a0243bd1098d013b39120b19f9e4540130266150eed55bf131",
+    "rooms_maze_comparison.csv": "f952f895a70678e423cc3b0916f6ea859edfb3c8d2717a88af01a0d16fa0e8a2",
+    "sensitivity_summary.csv": "c2526813e1e5ae802747f505bdfa953bc159a4d1c2c90db0b699779e0be022fc",
+    "validation_audit.json": "b4795ff32963d10c2368a4499c9a377aec2a9ce93eb34136615d52300fc87158"
+  },
+  "source_input_hashes": {
+    "artifacts\\planning_benchmarks\\deepseek-v4pro-strict-validation-v2\\benchmark_metadata.json": "612502cecfbb9fc8465b898270b264bf44ef963c298a4f1db482dd5c07ed7126",
+    "artifacts\\planning_benchmarks\\deepseek-v4pro-strict-validation-v2\\benchmark_paths.jsonl": "d8b8c607caeadfce34838c9cfd580728fb66e02d5d5ecc946a0bc70b0057b71d",
+    "artifacts\\planning_benchmarks\\deepseek-v4pro-strict-validation-v2\\benchmark_runs.csv": "1644be1c83fe07e3d226c44295c8687dafe7d3dcc36ee7a2b67a6269c97b6c5a",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-ablation-validation-v1\\benchmark_metadata.json": "28f19611c9271e5834b54394bb68564877bc7b30f275d4b34cd0642409274e32",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-ablation-validation-v1\\benchmark_paths.jsonl": "c29c67d6b36ae70256f0f7461abfafe8a32bb961c6d841de338ee2ac0496f860",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-ablation-validation-v1\\benchmark_runs.csv": "dfe910cb9f837ff447e7489ec8c8eb1d6f8dc61a53e4729402e424638a566644",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-sensitivity-algorithm-validation-v1\\benchmark_metadata.json": "2e5fa46d192f1b26f18576a436386082a653c609f3928cfe6aa270dfdb0e1a1d",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-sensitivity-algorithm-validation-v1\\benchmark_paths.jsonl": "b423828e18ad94e2d0a30f8b68b528d2b00b6151969d775ef7f9f587acda147c",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-sensitivity-algorithm-validation-v1\\benchmark_runs.csv": "4a06b32e0426a292c6532df88747a35fba851ae7b47380fb226c14a698d24ac0",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-sensitivity-time025-validation-v1\\benchmark_metadata.json": "82024ff2a00a8d80c06eacc687497b9bd3ec6ad95b7da19b0c36505c1a484e82",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-sensitivity-time025-validation-v1\\benchmark_paths.jsonl": "0a4c697d2f49c0694c112d29c65894da8a54c632f985ee95db597227b52b66ab",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-sensitivity-time025-validation-v1\\benchmark_runs.csv": "f95096433a76d40404f9721b9bf6cca29e23f5ad3563740970b3cf32dd8fd126",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-sensitivity-time050-validation-v1\\benchmark_metadata.json": "5358ce9dc3b941f0507ba27e43ae460822856c0dc204bcccb8c90387fb485608",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-sensitivity-time050-validation-v1\\benchmark_paths.jsonl": "30d70bfa82757bc4c6a97f67dd81d12cecda1de0178c436ac1f065f457dad55d",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-sensitivity-time050-validation-v1\\benchmark_runs.csv": "5828836d7bac99c390b01418e5aca84fecf7fea9919c04799ade312ff25f1684",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-validation-v1\\benchmark_metadata.json": "19d7fd97a946259c891f2f8ddbf711e45a473b91f87b634bee61efdcb9b905d2",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-validation-v1\\benchmark_paths.jsonl": "b6a508d19dbb9864b94834d0d23b991169acd72c93ff41b59c504de545083c53",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-validation-v1\\benchmark_runs.csv": "24ebf769748a50ac96a5cc4a57e82e665bb2c824999aeca858db31835aea32cc"
+  },
+  "status": "passed_with_caveats"
+}

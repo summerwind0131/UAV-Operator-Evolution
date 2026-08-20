@@ -1,0 +1,26 @@
+planner_key,planner_label,status,records,record_share
+astar,A*,success,57,0.95
+astar,A*,timeout,3,0.05
+aco_acor,ACO/ACOR,success,235,0.783333333
+aco_acor,ACO/ACOR,timeout,65,0.216666667
+afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",success,300,1.0
+afl_uav:offline_v3,AFL-UAV (offline v3 control),success,300,1.0
+de,DE,success,237,0.79
+de,DE,timeout,62,0.206666667
+de,DE,no_path,1,0.003333333
+dijkstra,Dijkstra,success,43,0.716666667
+dijkstra,Dijkstra,timeout,17,0.283333333
+ga,GA,success,240,0.8
+ga,GA,timeout,59,0.196666667
+ga,GA,no_path,1,0.003333333
+prm,PRM,success,265,0.883333333
+prm,PRM,no_path,35,0.116666667
+pso,PSO,success,239,0.796666667
+pso,PSO,timeout,61,0.203333333
+rrt,RRT,success,293,0.976666667
+rrt,RRT,no_path,7,0.023333333
+rrt_star,RRT*,success,279,0.93
+rrt_star,RRT*,timeout,14,0.046666667
+rrt_star,RRT*,no_path,7,0.023333333
+theta_star,Theta*,success,58,0.966666667
+theta_star,Theta*,timeout,2,0.033333333

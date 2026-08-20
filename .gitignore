@@ -8,6 +8,8 @@ tmp/
 build/
 dist/
 data/generated/**/*.json
+data/benchmarks/uav2d-hidden-test-v2/
+data/benchmarks/uav2d-hidden-test-v3/
 artifacts/results/**
 artifacts/figures/**
 !data/generated/.gitkeep

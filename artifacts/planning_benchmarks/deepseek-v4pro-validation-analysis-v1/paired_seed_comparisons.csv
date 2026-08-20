@@ -1,0 +1,9 @@
+candidate,baseline,paired_runs,both_feasible_runs,candidate_only_feasible_runs,baseline_only_feasible_runs,wins,ties,losses,strict_win_rate_on_both_feasible,median_cost_delta
+afl_uav:deepseek_v4pro,afl_uav:offline_v3,300,300,0,0,22,38,240,0.073333333,0.697644795
+afl_uav:deepseek_v4pro,rrt_star,300,293,7,0,112,45,136,0.38225256,0.0
+afl_uav:deepseek_v4pro,rrt,300,293,7,0,200,45,48,0.682593857,-1.623805777
+afl_uav:deepseek_v4pro,ga,300,282,18,0,115,45,122,0.407801418,0.0
+afl_uav:deepseek_v4pro,pso,300,281,19,0,126,45,110,0.448398577,0.0
+afl_uav:deepseek_v4pro,de,300,269,31,0,153,45,71,0.568773234,-0.281079776
+afl_uav:deepseek_v4pro,prm,300,265,35,0,163,45,57,0.61509434,-1.52032059
+afl_uav:deepseek_v4pro,aco_acor,300,268,32,0,149,45,74,0.555970149,-0.251634761

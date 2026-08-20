@@ -1,0 +1,71 @@
+dataset,experiment_group,arm_id,label,operator,attempts,structure_changes,structure_change_rate,accepted_offspring_all_operators,unique_candidates_all_operators,median_archive_unique_paths,interpretation
+full_v1,reference,deepseek_v4pro_evo,完整 Evolutionary AFL-UAV v1,crossover,62980,57974,0.9205144490314385,102173,102473,8.0,structure_change_rate_is_not_cost_improvement_rate
+full_v1,reference,deepseek_v4pro_evo,完整 Evolutionary AFL-UAV v1,delete,52331,36199,0.6917314784735625,102173,102473,8.0,structure_change_rate_is_not_cost_improvement_rate
+full_v1,reference,deepseek_v4pro_evo,完整 Evolutionary AFL-UAV v1,insert,52723,52723,1.0,102173,102473,8.0,structure_change_rate_is_not_cost_improvement_rate
+full_v1,reference,deepseek_v4pro_evo,完整 Evolutionary AFL-UAV v1,move,52454,50350,0.9598886643535288,102173,102473,8.0,structure_change_rate_is_not_cost_improvement_rate
+full_v1,reference,deepseek_v4pro_evo,完整 Evolutionary AFL-UAV v1,swap,52255,20711,0.39634484738302556,102173,102473,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_fixed_length,固定长度种群,crossover,74811,22650,0.3027629626659181,48680,48980,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_fixed_length,固定长度种群,delete,74069,0,0.0,48680,48980,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_fixed_length,固定长度种群,insert,74056,0,0.0,48680,48980,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_fixed_length,固定长度种群,move,74698,58111,0.7779458620043375,48680,48980,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_fixed_length,固定长度种群,swap,74221,1065,0.0143490386817747,48680,48980,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_move_only,仅移动航点,crossover,0,0,,74584,74884,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_move_only,仅移动航点,delete,133004,0,0.0,74584,74884,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_move_only,仅移动航点,insert,133178,0,0.0,74584,74884,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_move_only,仅移动航点,move,134125,115676,0.8624492078285182,74584,74884,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_move_only,仅移动航点,swap,133158,0,0.0,74584,74884,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_crossover,去掉交叉,crossover,0,0,,92453,92753,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_crossover,去掉交叉,delete,57839,30938,0.5348985978319127,92453,92753,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_crossover,去掉交叉,insert,58629,58629,1.0,92453,92753,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_crossover,去掉交叉,move,58372,55230,0.9461728225861714,92453,92753,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_crossover,去掉交叉,swap,57756,8732,0.15118775538472193,92453,92753,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,crossover,82661,75946,0.9187645927341793,128613,128913,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,delete,66697,41277,0.6188734125972682,128613,128913,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,insert,67480,67480,1.0,128613,128913,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,move,67426,64159,0.9515468810251239,128613,128913,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_qd_archive,去掉质量—多样性档案,swap,66838,26011,0.3891648463448936,128613,128913,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,crossover,55845,51395,0.920315158026681,92119,92419,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,delete,46849,32628,0.6964502977651604,92119,92419,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,insert,47266,47266,1.0,92119,92419,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,move,47021,45156,0.9603368707598733,92119,92419,8.0,structure_change_rate_is_not_cost_improvement_rate
+ablation,ablation,evo_no_rooms_strategy,去掉 rooms_maze 专用策略,swap,46813,18704,0.39954713434302436,92119,92419,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,crossover,69694,65311,0.9371107986340288,113594,113894,12.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,delete,57212,38573,0.6742117038383556,113594,113894,12.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,insert,57845,57845,1.0,113594,113894,12.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,move,57582,55559,0.9648674933138828,113594,113894,12.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_archive_12,精英档案 12,swap,57368,22735,0.39630107376934876,113594,113894,12.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,crossover,73662,66082,0.897097553691184,115377,115677,4.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,delete,60113,39852,0.6629514414519322,115377,115677,4.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,insert,60509,60509,1.0,115377,115677,4.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,move,60527,57645,0.9523848860838965,115377,115677,4.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_archive_4,精英档案 4,swap,60205,22577,0.375002076239515,115377,115677,4.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,crossover,54647,50789,0.9294014310026167,91967,92267,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,delete,45988,31807,0.6916369487692442,91967,92267,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,insert,46253,46253,1.0,91967,92267,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,move,46185,44586,0.9653783696005197,91967,92267,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_generations_12,进化代数 12,swap,45920,18235,0.39710365853658536,91967,92267,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,crossover,32591,30513,0.9362400662759658,60162,60462,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,delete,29102,20828,0.715689643323483,60162,60462,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,insert,29234,29234,1.0,60162,60462,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,move,29142,28360,0.9731658774277675,60162,60462,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_generations_6,进化代数 6,swap,29036,11613,0.3999517839922854,60162,60462,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,crossover,47042,42562,0.9047659538284937,74643,74943,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,delete,37815,24785,0.65542774031469,74643,74943,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,insert,38613,38613,1.0,74643,74943,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,move,38396,36851,0.9597614334826544,74643,74943,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_population_16,种群 16,swap,37861,14333,0.37856897599112543,74643,74943,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,crossover,62630,57602,0.9197189845122146,99712,100012,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,delete,50778,33812,0.6658789239434401,99712,100012,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,insert,51403,51403,1.0,99712,100012,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,move,51299,49343,0.9618706017661163,99712,100012,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_algorithm,sensitivity,evo_population_24,种群 24,swap,50976,19649,0.3854559008160703,99712,100012,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,crossover,3874,3441,0.8882292204439856,13181,13481,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,delete,6028,4438,0.7362309223623092,13181,13481,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,insert,6135,6135,1.0,13181,13481,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,move,6081,5861,0.9638217398454202,13181,13481,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_time_025,sensitivity,evo_time_025,时间预算 0.25 秒,swap,6082,2352,0.38671489641565276,13181,13481,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,crossover,20951,19039,0.9087394396448857,40418,40718,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,delete,19983,14333,0.7172596707201121,40418,40718,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,insert,20186,20186,1.0,40418,40718,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,move,20062,19347,0.9643604825042369,40418,40718,8.0,structure_change_rate_is_not_cost_improvement_rate
+sensitivity_time_050,sensitivity,evo_time_050,时间预算 0.5 秒,swap,19952,7763,0.3890838011226945,40418,40718,8.0,structure_change_rate_is_not_cost_improvement_rate

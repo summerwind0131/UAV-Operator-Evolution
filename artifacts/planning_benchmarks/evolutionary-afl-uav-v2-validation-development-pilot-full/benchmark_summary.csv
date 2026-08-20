@@ -1,0 +1,8 @@
+planner,arm_id,map_class,runs,feasible_runs,feasible_rate,timeout_rate,budget_exhausted_rate,median_total_cost_feasible,iqr_total_cost_feasible,median_runtime_seconds
+evolutionary_afl_uav,evolutionary_afl_uav_v2_full,all,36,36,1.0,0.0,0.0,118.32460348615915,13.0152008039598,0.879098100002011
+evolutionary_afl_uav,evolutionary_afl_uav_v2_full,clustered,6,6,1.0,0.0,0.0,113.64359688680656,6.271952000114467,0.8847056000013254
+evolutionary_afl_uav,evolutionary_afl_uav_v2_full,corridor,6,6,1.0,0.0,0.0,300.54625445756994,13.236674240699074,0.8960741499977303
+evolutionary_afl_uav,evolutionary_afl_uav_v2_full,dense,6,6,1.0,0.0,0.0,120.02319736670539,2.581498793401664,0.8786598000006052
+evolutionary_afl_uav,evolutionary_afl_uav_v2_full,mixed,6,6,1.0,0.0,0.0,108.25914149770335,2.4635513599307046,0.8725250499992399
+evolutionary_afl_uav,evolutionary_afl_uav_v2_full,rooms_maze,6,6,1.0,0.0,0.0,124.24587586061575,0.8920368080033398,0.8849980500053789
+evolutionary_afl_uav,evolutionary_afl_uav_v2_full,sparse,6,6,1.0,0.0,0.0,114.6891866257958,6.617729436541779,0.6082849999984319

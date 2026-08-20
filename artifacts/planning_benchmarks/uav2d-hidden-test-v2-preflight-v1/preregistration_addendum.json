@@ -1,0 +1,142 @@
+{
+  "addendum_id": "ab1e83123806d7924b5439e02fea1ff6f837af03684d5249eddf34676380b3b6",
+  "analysis_contract": {
+    "analyzer_sha256": "28dde741888d369c23497eeb4fbe5210966c5a6fa828260bcd8eaa007932303b",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 2026081702,
+    "diversity": "unique feasible path hashes and within-map cost IQR",
+    "holm_family": [
+      "H3",
+      "H4"
+    ],
+    "paired": "per-map lexicographic feasibility then median shared-seed cost",
+    "post_result_changes_allowed": false,
+    "ranking": "trusted feasible rate, then median trusted feasible cost",
+    "records": 6960,
+    "rooms_maze": "same frozen metrics on rooms_maze subset",
+    "timeouts": "status timeout OR elapsed >= 1.0 seconds; always infeasible"
+  },
+  "base_preregistration_id": "8d8dcbb568f25a5fd9da74afbe865c5576ce585e25fc37da36662ad1787c3c99",
+  "base_preregistration_sha256": "9aeff34a81a5c695a2d104677d01690c8bd9c931cf4d729c349576dea1fb237d",
+  "benchmark_id": "uav2d-hidden-test-v2",
+  "commitments": {
+    "api_calls": 0,
+    "base_receipt_overwritten": false,
+    "future_protocol_changes_require_new_addendum": true,
+    "hidden_test_planner_executions": 0,
+    "hidden_test_results_seen": false
+  },
+  "created_at_utc": "2026-08-17T02:13:24.309532+00:00",
+  "dependencies": {
+    "PyYAML": "6.0.1",
+    "numpy": "1.26.4",
+    "pydantic": "2.13.4"
+  },
+  "execution_contract": {
+    "arm_checkpointing": "complete-arm atomic receipt; partial arms fail closed",
+    "config_path": "configs/uav_hidden_test_v2_execution_v1.yaml",
+    "config_sha256": "19e041281532fdc6114db7f1641518e79bf57354489e01c3df9a71d1efedfed6",
+    "expected_records": 6960,
+    "max_objective_evaluations": 2000,
+    "objective_weights": {
+      "collision": 1000.0,
+      "length": 1.0,
+      "risk": 10.0,
+      "smoothness": 5.0,
+      "waypoint": 0.5
+    },
+    "seed_artifact": "artifacts/planning_benchmarks/afl_uav_artifacts/deepseek-v4pro-frozen-strict-v2/artifact.json",
+    "stochastic_repetitions": 5,
+    "time_limit_seconds": 1.0
+  },
+  "frozen_tool_hashes": {
+    "analyzer": {
+      "path": "src/uav_operator_evolution/planning_benchmarks/final_evaluation_audit.py",
+      "sha256": "28dde741888d369c23497eeb4fbe5210966c5a6fa828260bcd8eaa007932303b"
+    },
+    "audit_entry": {
+      "path": "scripts/audit_hidden_test_v2_results.py",
+      "sha256": "4f5a1a187a267b26474447543420b0d7a43e25cdda5e9e9a08514ee61f045e75"
+    },
+    "benchmark_runner": {
+      "path": "src/uav_operator_evolution/planning_benchmarks/runner.py",
+      "sha256": "b29bcc1fee4cf1931cc94920373b2fef6fb25e30e97b0e238286af9bdf84ce48"
+    },
+    "execution_entry": {
+      "path": "scripts/run_authorized_hidden_test_v2.py",
+      "sha256": "0ae8388858693b9f8f15054bc7a4e54545c9119a7f7712c30bfa15df68b06b88"
+    },
+    "executor": {
+      "path": "src/uav_operator_evolution/planning_benchmarks/final_evaluation_executor.py",
+      "sha256": "51849cce96d061620fb31480c88d4b60a2ed9220f3846e58064a601058061079"
+    },
+    "opening_entry": {
+      "path": "scripts/open_hidden_test_v2.py",
+      "sha256": "e732d96cdedb0429f681b0f68d87cf014083544eab290c76b0fc4315d86afbac"
+    },
+    "preflight_entry": {
+      "path": "scripts/preflight_hidden_test_v2.py",
+      "sha256": "29e9337f26ad9071678846bfd5d2f6b84059db4bcbf2639383147ca708392464"
+    },
+    "protocol_common": {
+      "path": "src/uav_operator_evolution/planning_benchmarks/final_evaluation_common.py",
+      "sha256": "8a802f774c62a309f98157ac8de1cd81b589c51860f06b0c2a782df8452397fd"
+    }
+  },
+  "host": {
+    "hostname": "LAPTOP-6C3CNSPJ",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "preflight_evidence": {
+    "arms": [
+      "dijkstra",
+      "astar",
+      "theta_star",
+      "rrt",
+      "rrt_star",
+      "prm",
+      "ga",
+      "pso",
+      "de",
+      "aco_acor",
+      "frozen_afl_uav",
+      "evolutionary_afl_uav_v1",
+      "evo_no_rooms_strategy",
+      "evo_fixed_length"
+    ],
+    "audit_receipt_sha256": "12da678fe08f1235af1a63a3bbb7341c7d7e7f481f58a3432cab4852c300108b",
+    "dataset": "uav2d-v1 validation; one map per each of six classes",
+    "execution_receipt_sha256": "d907839d9350dc2005b79a32a40fd4791a64a597fe5b92eb7a179ea475b4aa84",
+    "hidden_test_map_json_read": false,
+    "planned_interruption_after_arms": 5,
+    "pytest_junit_sha256": "c585ee60607af179f113f7a0bd9c45845a22cd9002b2426de57a299587183ce7",
+    "pytest_summary": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 3,
+      "tests": 250
+    },
+    "records": 150,
+    "resumed_completed_arms": [
+      "dijkstra",
+      "astar",
+      "theta_star",
+      "rrt",
+      "rrt_star"
+    ]
+  },
+  "protocol_changes": {
+    "benchmark_runner": {
+      "authorized_entry_sha256": "b29bcc1fee4cf1931cc94920373b2fef6fb25e30e97b0e238286af9bdf84ce48",
+      "change": "Retain the default Test restriction and SEALED guard; accept only a private capability issued by the receipt-gated final entry.",
+      "path": "src/uav_operator_evolution/planning_benchmarks/runner.py",
+      "previous_sha256": "7f28c8142dae4d9d4a37054c24de606b2daf82918f10d0b2290730add5970f6f"
+    },
+    "dataset_changed": false,
+    "hypotheses_or_statistics_changed": false,
+    "method_or_parameters_changed": false
+  },
+  "reason": "Disclose the dedicated authorization capability, explicit objective/execution configuration, resumable arm checkpoints, and frozen statistical auditor. No hidden-test result existed or was read when this addendum was made.",
+  "schema_version": "uav2d-preregistration-addendum-v1",
+  "status": "frozen_before_final_results"
+}

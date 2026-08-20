@@ -1,0 +1,986 @@
+{
+  "arm_statistics": {
+    "aco_acor": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.5
+        ],
+        "map_success_rate": [
+          0.0,
+          0.5
+        ],
+        "median_cost": [
+          112.42820595928538,
+          112.42820595928538
+        ]
+      },
+      "iqr_trusted_cost": 0.6315932298050626,
+      "map_success_rate": 0.16666666666666666,
+      "maps": 6,
+      "median_elapsed_seconds": 0.10020164999878034,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": 112.42820595928538,
+      "runs": 12,
+      "successful_maps": 1,
+      "timeouts_as_failures": 10,
+      "trusted_feasible_rate": 0.16666666666666666,
+      "trusted_feasible_runs": 2
+    },
+    "astar": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.3333333333333333,
+          1.0
+        ],
+        "map_success_rate": [
+          0.3333333333333333,
+          1.0
+        ],
+        "median_cost": [
+          109.4909171776687,
+          119.72709701099143
+        ]
+      },
+      "iqr_trusted_cost": 7.893306772467753,
+      "map_success_rate": 0.6666666666666666,
+      "maps": 6,
+      "median_elapsed_seconds": 0.04164370000216877,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": 114.93649645028296,
+      "runs": 6,
+      "successful_maps": 4,
+      "timeouts_as_failures": 2,
+      "trusted_feasible_rate": 0.6666666666666666,
+      "trusted_feasible_runs": 4
+    },
+    "de": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.5
+        ],
+        "map_success_rate": [
+          0.0,
+          0.5
+        ],
+        "median_cost": [
+          112.42820595928538,
+          112.42820595928538
+        ]
+      },
+      "iqr_trusted_cost": 0.6315932298050626,
+      "map_success_rate": 0.16666666666666666,
+      "maps": 6,
+      "median_elapsed_seconds": 0.1002014500045334,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": 112.42820595928538,
+      "runs": 12,
+      "successful_maps": 1,
+      "timeouts_as_failures": 10,
+      "trusted_feasible_rate": 0.16666666666666666,
+      "trusted_feasible_runs": 2
+    },
+    "dijkstra": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.6666666666666666
+        ],
+        "map_success_rate": [
+          0.0,
+          0.6666666666666666
+        ],
+        "median_cost": [
+          109.4909171776687,
+          111.38032190752492
+        ]
+      },
+      "iqr_trusted_cost": 0.944702364928105,
+      "map_success_rate": 0.3333333333333333,
+      "maps": 6,
+      "median_elapsed_seconds": 0.10007074999884935,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": 110.43561954259681,
+      "runs": 6,
+      "successful_maps": 2,
+      "timeouts_as_failures": 4,
+      "trusted_feasible_rate": 0.3333333333333333,
+      "trusted_feasible_runs": 2
+    },
+    "evo_fixed_length": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 6,
+      "median_elapsed_seconds": 0.12529449999783537,
+      "median_objective_evaluations": 50.0,
+      "median_trusted_cost": null,
+      "runs": 12,
+      "successful_maps": 0,
+      "timeouts_as_failures": 12,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "evo_no_rooms_strategy": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 6,
+      "median_elapsed_seconds": 0.13090749999901163,
+      "median_objective_evaluations": 50.0,
+      "median_trusted_cost": null,
+      "runs": 12,
+      "successful_maps": 0,
+      "timeouts_as_failures": 12,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "evolutionary_afl_uav_v1": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 6,
+      "median_elapsed_seconds": 0.1277217999959248,
+      "median_objective_evaluations": 50.0,
+      "median_trusted_cost": null,
+      "runs": 12,
+      "successful_maps": 0,
+      "timeouts_as_failures": 12,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "frozen_afl_uav": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 6,
+      "median_elapsed_seconds": 0.1420414999993227,
+      "median_objective_evaluations": 50.0,
+      "median_trusted_cost": null,
+      "runs": 12,
+      "successful_maps": 0,
+      "timeouts_as_failures": 12,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "ga": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.5
+        ],
+        "map_success_rate": [
+          0.0,
+          0.5
+        ],
+        "median_cost": [
+          112.42820595928538,
+          112.42820595928538
+        ]
+      },
+      "iqr_trusted_cost": 0.6315932298050626,
+      "map_success_rate": 0.16666666666666666,
+      "maps": 6,
+      "median_elapsed_seconds": 0.10021454999878188,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": 112.42820595928538,
+      "runs": 12,
+      "successful_maps": 1,
+      "timeouts_as_failures": 10,
+      "trusted_feasible_rate": 0.16666666666666666,
+      "trusted_feasible_runs": 2
+    },
+    "prm": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.3333333333333333,
+          1.0
+        ],
+        "map_success_rate": [
+          0.3333333333333333,
+          1.0
+        ],
+        "median_cost": [
+          109.4909171776687,
+          127.75892495469627
+        ]
+      },
+      "iqr_trusted_cost": 16.53507938028659,
+      "map_success_rate": 0.6666666666666666,
+      "maps": 6,
+      "median_elapsed_seconds": 0.06910970000171801,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": 118.86660132912309,
+      "runs": 12,
+      "successful_maps": 4,
+      "timeouts_as_failures": 4,
+      "trusted_feasible_rate": 0.6666666666666666,
+      "trusted_feasible_runs": 8
+    },
+    "pso": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.5
+        ],
+        "map_success_rate": [
+          0.0,
+          0.5
+        ],
+        "median_cost": [
+          112.42820595928538,
+          112.42820595928538
+        ]
+      },
+      "iqr_trusted_cost": 0.6315932298050626,
+      "map_success_rate": 0.16666666666666666,
+      "maps": 6,
+      "median_elapsed_seconds": 0.1002486500001396,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": 112.42820595928538,
+      "runs": 12,
+      "successful_maps": 1,
+      "timeouts_as_failures": 10,
+      "trusted_feasible_rate": 0.16666666666666666,
+      "trusted_feasible_runs": 2
+    },
+    "rrt": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          1.0,
+          1.0
+        ],
+        "map_success_rate": [
+          1.0,
+          1.0
+        ],
+        "median_cost": [
+          110.61003778177489,
+          233.77472497974674
+        ]
+      },
+      "iqr_trusted_cost": 23.76543736271421,
+      "map_success_rate": 1.0,
+      "maps": 6,
+      "median_elapsed_seconds": 0.005215199998929165,
+      "median_objective_evaluations": 1.0,
+      "median_trusted_cost": 123.24291405203249,
+      "runs": 12,
+      "successful_maps": 6,
+      "timeouts_as_failures": 0,
+      "trusted_feasible_rate": 1.0,
+      "trusted_feasible_runs": 12
+    },
+    "rrt_star": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.08333333333333333,
+          0.75
+        ],
+        "map_success_rate": [
+          0.16666666666666666,
+          0.8333333333333334
+        ],
+        "median_cost": [
+          109.4909171776687,
+          120.39356868103116
+        ]
+      },
+      "iqr_trusted_cost": 2.042377171309596,
+      "map_success_rate": 0.5,
+      "maps": 6,
+      "median_elapsed_seconds": 0.10005775000172434,
+      "median_objective_evaluations": 14.0,
+      "median_trusted_cost": 111.49668394376059,
+      "runs": 12,
+      "successful_maps": 3,
+      "timeouts_as_failures": 7,
+      "trusted_feasible_rate": 0.4166666666666667,
+      "trusted_feasible_runs": 5
+    },
+    "theta_star": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.5,
+          1.0
+        ],
+        "map_success_rate": [
+          0.5,
+          1.0
+        ],
+        "median_cost": [
+          109.4909171776687,
+          328.57659746199596
+        ]
+      },
+      "iqr_trusted_cost": 8.308661281064147,
+      "map_success_rate": 0.8333333333333334,
+      "maps": 6,
+      "median_elapsed_seconds": 0.033209749999514315,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": 117.78038895584551,
+      "runs": 6,
+      "successful_maps": 5,
+      "timeouts_as_failures": 1,
+      "trusted_feasible_rate": 0.8333333333333334,
+      "trusted_feasible_runs": 5
+    }
+  },
+  "arms": 14,
+  "audit_content_id": "eb357c6b82b289556fff2e67f86780402c9979d6c5abf3aaf21afcd253b7ce79",
+  "created_at_utc": "2026-08-17T02:13:24.149620+00:00",
+  "hypothesis_tests": {
+    "H1_evo_vs_frozen_afl": {
+      "both_feasible_maps": 0,
+      "comparator": "frozen_afl_uav",
+      "half_tie_win_rate": 0.5,
+      "half_tie_win_rate_bootstrap_95_ci": [
+        0.5,
+        0.5
+      ],
+      "losses": 0,
+      "maps": 6,
+      "primary": "evolutionary_afl_uav_v1",
+      "ties": 6,
+      "two_sided_exact_sign_p": 1.0,
+      "wins": 0
+    },
+    "H2a_evo_vs_astar": {
+      "both_feasible_maps": 0,
+      "comparator": "astar",
+      "half_tie_win_rate": 0.16666666666666666,
+      "half_tie_win_rate_bootstrap_95_ci": [
+        0.0,
+        0.3333333333333333
+      ],
+      "losses": 4,
+      "maps": 6,
+      "primary": "evolutionary_afl_uav_v1",
+      "ties": 2,
+      "two_sided_exact_sign_p": 0.125,
+      "wins": 0
+    },
+    "H2b_evo_vs_theta_star": {
+      "both_feasible_maps": 0,
+      "comparator": "theta_star",
+      "half_tie_win_rate": 0.08333333333333333,
+      "half_tie_win_rate_bootstrap_95_ci": [
+        0.0,
+        0.25
+      ],
+      "losses": 5,
+      "maps": 6,
+      "primary": "evolutionary_afl_uav_v1",
+      "ties": 1,
+      "two_sided_exact_sign_p": 0.0625,
+      "wins": 0
+    },
+    "H3_rooms_evo_vs_no_rooms_strategy": {
+      "both_feasible_maps": 0,
+      "comparator": "evo_no_rooms_strategy",
+      "half_tie_win_rate": 0.5,
+      "half_tie_win_rate_bootstrap_95_ci": [
+        0.5,
+        0.5
+      ],
+      "holm_adjusted_p_secondary_family": 1.0,
+      "losses": 0,
+      "maps": 1,
+      "primary": "evolutionary_afl_uav_v1",
+      "ties": 1,
+      "two_sided_exact_sign_p": 1.0,
+      "wins": 0
+    },
+    "H4_rooms_evo_vs_fixed_length": {
+      "both_feasible_maps": 0,
+      "comparator": "evo_fixed_length",
+      "half_tie_win_rate": 0.5,
+      "half_tie_win_rate_bootstrap_95_ci": [
+        0.5,
+        0.5
+      ],
+      "holm_adjusted_p_secondary_family": 1.0,
+      "losses": 0,
+      "maps": 1,
+      "primary": "evolutionary_afl_uav_v1",
+      "ties": 1,
+      "two_sided_exact_sign_p": 1.0,
+      "wins": 0
+    }
+  },
+  "mode": "preflight",
+  "path_diversity": {
+    "aco_acor": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 0.3333333333333333,
+      "median_unique_feasible_path_hashes_per_map": 0.0,
+      "median_within_map_cost_iqr": 0.6315932298050626
+    },
+    "astar": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 0.6666666666666666,
+      "median_unique_feasible_path_hashes_per_map": 1.0,
+      "median_within_map_cost_iqr": null
+    },
+    "de": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 0.3333333333333333,
+      "median_unique_feasible_path_hashes_per_map": 0.0,
+      "median_within_map_cost_iqr": 0.6315932298050626
+    },
+    "dijkstra": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 0.3333333333333333,
+      "median_unique_feasible_path_hashes_per_map": 0.0,
+      "median_within_map_cost_iqr": null
+    },
+    "evo_fixed_length": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 0.0,
+      "median_unique_feasible_path_hashes_per_map": 0.0,
+      "median_within_map_cost_iqr": null
+    },
+    "evo_no_rooms_strategy": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 0.0,
+      "median_unique_feasible_path_hashes_per_map": 0.0,
+      "median_within_map_cost_iqr": null
+    },
+    "evolutionary_afl_uav_v1": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 0.0,
+      "median_unique_feasible_path_hashes_per_map": 0.0,
+      "median_within_map_cost_iqr": null
+    },
+    "frozen_afl_uav": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 0.0,
+      "median_unique_feasible_path_hashes_per_map": 0.0,
+      "median_within_map_cost_iqr": null
+    },
+    "ga": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 0.3333333333333333,
+      "median_unique_feasible_path_hashes_per_map": 0.0,
+      "median_within_map_cost_iqr": 0.6315932298050626
+    },
+    "prm": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 1.1666666666666667,
+      "median_unique_feasible_path_hashes_per_map": 1.5,
+      "median_within_map_cost_iqr": 0.5210407719178818
+    },
+    "pso": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 0.3333333333333333,
+      "median_unique_feasible_path_hashes_per_map": 0.0,
+      "median_within_map_cost_iqr": 0.6315932298050626
+    },
+    "rrt": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 1.8333333333333333,
+      "median_unique_feasible_path_hashes_per_map": 2.0,
+      "median_within_map_cost_iqr": 2.8678384037409828
+    },
+    "rrt_star": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 0.6666666666666666,
+      "median_unique_feasible_path_hashes_per_map": 0.5,
+      "median_within_map_cost_iqr": 0.009152601304421637
+    },
+    "theta_star": {
+      "maps": 6,
+      "mean_unique_feasible_path_hashes_per_map": 0.8333333333333334,
+      "median_unique_feasible_path_hashes_per_map": 1.0,
+      "median_within_map_cost_iqr": null
+    }
+  },
+  "ranking": [
+    {
+      "arm_id": "rrt",
+      "median_trusted_cost": 123.24291405203249,
+      "rank": 1,
+      "trusted_feasible_rate": 1.0
+    },
+    {
+      "arm_id": "theta_star",
+      "median_trusted_cost": 117.78038895584551,
+      "rank": 2,
+      "trusted_feasible_rate": 0.8333333333333334
+    },
+    {
+      "arm_id": "astar",
+      "median_trusted_cost": 114.93649645028296,
+      "rank": 3,
+      "trusted_feasible_rate": 0.6666666666666666
+    },
+    {
+      "arm_id": "prm",
+      "median_trusted_cost": 118.86660132912309,
+      "rank": 4,
+      "trusted_feasible_rate": 0.6666666666666666
+    },
+    {
+      "arm_id": "rrt_star",
+      "median_trusted_cost": 111.49668394376059,
+      "rank": 5,
+      "trusted_feasible_rate": 0.4166666666666667
+    },
+    {
+      "arm_id": "dijkstra",
+      "median_trusted_cost": 110.43561954259681,
+      "rank": 6,
+      "trusted_feasible_rate": 0.3333333333333333
+    },
+    {
+      "arm_id": "aco_acor",
+      "median_trusted_cost": 112.42820595928538,
+      "rank": 7,
+      "trusted_feasible_rate": 0.16666666666666666
+    },
+    {
+      "arm_id": "de",
+      "median_trusted_cost": 112.42820595928538,
+      "rank": 8,
+      "trusted_feasible_rate": 0.16666666666666666
+    },
+    {
+      "arm_id": "ga",
+      "median_trusted_cost": 112.42820595928538,
+      "rank": 9,
+      "trusted_feasible_rate": 0.16666666666666666
+    },
+    {
+      "arm_id": "pso",
+      "median_trusted_cost": 112.42820595928538,
+      "rank": 10,
+      "trusted_feasible_rate": 0.16666666666666666
+    },
+    {
+      "arm_id": "evo_fixed_length",
+      "median_trusted_cost": null,
+      "rank": 11,
+      "trusted_feasible_rate": 0.0
+    },
+    {
+      "arm_id": "evo_no_rooms_strategy",
+      "median_trusted_cost": null,
+      "rank": 12,
+      "trusted_feasible_rate": 0.0
+    },
+    {
+      "arm_id": "evolutionary_afl_uav_v1",
+      "median_trusted_cost": null,
+      "rank": 13,
+      "trusted_feasible_rate": 0.0
+    },
+    {
+      "arm_id": "frozen_afl_uav",
+      "median_trusted_cost": null,
+      "rank": 14,
+      "trusted_feasible_rate": 0.0
+    }
+  ],
+  "ranking_rule": "trusted feasible rate descending, then trusted feasible cost median ascending",
+  "records": 150,
+  "rooms_maze_statistics": {
+    "aco_acor": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.10021209999831626,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": null,
+      "runs": 2,
+      "successful_maps": 0,
+      "timeouts_as_failures": 2,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "astar": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.10009019999415614,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": null,
+      "runs": 1,
+      "successful_maps": 0,
+      "timeouts_as_failures": 1,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "de": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.10021694999886677,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": null,
+      "runs": 2,
+      "successful_maps": 0,
+      "timeouts_as_failures": 2,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "dijkstra": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.10014580000279238,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": null,
+      "runs": 1,
+      "successful_maps": 0,
+      "timeouts_as_failures": 1,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "evo_fixed_length": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.122012050000194,
+      "median_objective_evaluations": 50.0,
+      "median_trusted_cost": null,
+      "runs": 2,
+      "successful_maps": 0,
+      "timeouts_as_failures": 2,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "evo_no_rooms_strategy": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.1326012499994249,
+      "median_objective_evaluations": 50.0,
+      "median_trusted_cost": null,
+      "runs": 2,
+      "successful_maps": 0,
+      "timeouts_as_failures": 2,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "evolutionary_afl_uav_v1": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.12995569999839063,
+      "median_objective_evaluations": 50.0,
+      "median_trusted_cost": null,
+      "runs": 2,
+      "successful_maps": 0,
+      "timeouts_as_failures": 2,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "frozen_afl_uav": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.14152520000061486,
+      "median_objective_evaluations": 50.0,
+      "median_trusted_cost": null,
+      "runs": 2,
+      "successful_maps": 0,
+      "timeouts_as_failures": 2,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "ga": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.10035574999710661,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": null,
+      "runs": 2,
+      "successful_maps": 0,
+      "timeouts_as_failures": 2,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "prm": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.10022285000013653,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": null,
+      "runs": 2,
+      "successful_maps": 0,
+      "timeouts_as_failures": 2,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "pso": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.10022199999730219,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": null,
+      "runs": 2,
+      "successful_maps": 0,
+      "timeouts_as_failures": 2,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "rrt": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          1.0,
+          1.0
+        ],
+        "map_success_rate": [
+          1.0,
+          1.0
+        ],
+        "median_cost": [
+          139.38610038242356,
+          139.38610038242356
+        ]
+      },
+      "iqr_trusted_cost": 7.636345910532384,
+      "map_success_rate": 1.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.041887699997460004,
+      "median_objective_evaluations": 1.0,
+      "median_trusted_cost": 139.38610038242356,
+      "runs": 2,
+      "successful_maps": 1,
+      "timeouts_as_failures": 0,
+      "trusted_feasible_rate": 1.0,
+      "trusted_feasible_runs": 2
+    },
+    "rrt_star": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.10019904999717255,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": null,
+      "runs": 2,
+      "successful_maps": 0,
+      "timeouts_as_failures": 2,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    },
+    "theta_star": {
+      "bootstrap_95_ci": {
+        "feasible_rate": [
+          0.0,
+          0.0
+        ],
+        "map_success_rate": [
+          0.0,
+          0.0
+        ],
+        "median_cost": null
+      },
+      "iqr_trusted_cost": null,
+      "map_success_rate": 0.0,
+      "maps": 1,
+      "median_elapsed_seconds": 0.10013789999356959,
+      "median_objective_evaluations": 0.0,
+      "median_trusted_cost": null,
+      "runs": 1,
+      "successful_maps": 0,
+      "timeouts_as_failures": 1,
+      "trusted_feasible_rate": 0.0,
+      "trusted_feasible_runs": 0
+    }
+  },
+  "schema_version": "uav2d-final-statistical-audit-v1",
+  "statistical_contract": {
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 2026081702,
+    "bootstrap_unit": "map_id",
+    "confidence_level": 0.95,
+    "exact_test": "two-sided paired sign test excluding ties",
+    "holm_family": [
+      "H3",
+      "H4"
+    ],
+    "paired_aggregation": "median feasible cost over shared seeds, feasibility lexicographically first",
+    "post_result_changes_allowed": false,
+    "tie_tolerance": 1e-09
+  },
+  "status": "passed",
+  "timeouts_counted_as_failures": 106,
+  "unique_records": 150
+}

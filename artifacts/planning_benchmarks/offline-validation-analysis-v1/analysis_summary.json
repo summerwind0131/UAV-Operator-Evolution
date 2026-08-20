@@ -1,0 +1,65 @@
+{
+  "analysis_id": "offline-validation-analysis-v1",
+  "generated_at_utc": "2026-07-31T01:57:38.295075+00:00",
+  "contract": {
+    "status": "passed",
+    "expected_records": 2580,
+    "actual_records": 2580,
+    "unique_record_keys": 2580,
+    "unique_maps": 60,
+    "planner_record_counts": {
+      "aco_acor": 300,
+      "afl_uav": 300,
+      "astar": 60,
+      "de": 300,
+      "dijkstra": 60,
+      "ga": 300,
+      "prm": 300,
+      "pso": 300,
+      "rrt": 300,
+      "rrt_star": 300,
+      "theta_star": 60
+    },
+    "maps_per_class": {
+      "clustered": 10,
+      "corridor": 10,
+      "dense": 10,
+      "mixed": 10,
+      "rooms_maze": 10,
+      "sparse": 10
+    },
+    "manifest_hash": "1f980c2697f521d4e5b92ff596452ce8f2bc2874885d9b789288c790b71b1517",
+    "config_hash": "0f4dd8267a127495782f04e4ba5ed366829ece79d4d2886df79354ed819b8472",
+    "budget": {
+      "max_objective_evaluations": 2000,
+      "time_limit_seconds": 1.0
+    },
+    "shared_stochastic_seed_sets": true,
+    "research_claim_eligible": false,
+    "errors": []
+  },
+  "bootstrap": {
+    "unit": "map_id",
+    "replicates": 2000,
+    "seed": 20260731,
+    "interval": "percentile_95"
+  },
+  "ranking_rule": "feasible_rate descending, then median trusted feasible cost ascending",
+  "top_ranked_planner": {
+    "planner": "afl_uav",
+    "planner_label": "AFL-UAV (offline v3)",
+    "feasible_rate": 1.0,
+    "median_feasible_cost": 117.38960885361432
+  },
+  "offline_afl_uav": {
+    "arm_id": "offline_v3",
+    "feasible_rate": 1.0,
+    "map_solved_rate": 1.0,
+    "median_feasible_cost": 117.38960885361432,
+    "research_claim_eligible": false
+  },
+  "input_files": {
+    "artifacts/planning_benchmarks/offline-traditional-validation-v1/benchmark_runs.csv": "ded657e3e04b0951c91596e226ad72b628c8bd5db69b90ebed180ee3e5563200",
+    "artifacts/planning_benchmarks/afl-uav-offline-v3-validation-v1/benchmark_runs.csv": "dbe71c1a5ab960743c59d2c7638279806694f67ecf02b9b6311104bf6eac8c10"
+  }
+}

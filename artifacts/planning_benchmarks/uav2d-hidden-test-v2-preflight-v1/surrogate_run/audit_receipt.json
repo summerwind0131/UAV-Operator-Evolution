@@ -1,0 +1,14 @@
+{
+  "audit_content_id": "eb357c6b82b289556fff2e67f86780402c9979d6c5abf3aaf21afcd253b7ce79",
+  "audit_receipt_id": "aea27a8caa192eaf21cb61a1becc64bb2470783e467bc706fe71a28dba43c858",
+  "audit_report_sha256": "ca0f8950d234a614442cc8354fafa7bc066efc839aa2f3ded734decb6320e189",
+  "audit_summary_sha256": "54abdcd03ae7a03c55bc5961fd589640fe70cc11ca94f659dec7abf9da54445c",
+  "benchmark_paths_sha256": "659969307922d60cde6525ca89908c51baf871a4325563ed60c716169e038ffa",
+  "benchmark_runs_sha256": "b757e66ab8ced86e14447e7e4f1ca0a71643b55e3955ce257cea1ab194628ae4",
+  "mode": "preflight",
+  "normalized_runs_sha256": "7896b866bad6261e2982a50f9a92f9cd87bee02c88053aaac5774e39632aa283",
+  "records": 150,
+  "schema_version": "uav2d-final-audit-receipt-v1",
+  "status": "passed",
+  "unique_records": 150
+}

@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "expected_records": 2880,
+  "actual_records": 2880,
+  "unique_record_keys": 2880,
+  "unique_maps": 60,
+  "maps_per_class": {
+    "clustered": 10,
+    "corridor": 10,
+    "dense": 10,
+    "mixed": 10,
+    "rooms_maze": 10,
+    "sparse": 10
+  },
+  "planner_record_counts": {
+    "aco_acor": 300,
+    "afl_uav:deepseek_v4pro_strict": 300,
+    "afl_uav:offline_v3": 300,
+    "astar": 60,
+    "de": 300,
+    "dijkstra": 60,
+    "ga": 300,
+    "prm": 300,
+    "pso": 300,
+    "rrt": 300,
+    "rrt_star": 300,
+    "theta_star": 60
+  },
+  "all_sources_validation_only": true,
+  "shared_stochastic_seed_sets": true,
+  "budget": {
+    "max_objective_evaluations": 2000,
+    "time_limit_seconds": 1.0
+  },
+  "path_records": {
+    "status": "passed",
+    "path_records": 300,
+    "unique_path_record_keys": 300,
+    "hash_mismatches": 0,
+    "missing_feasible_paths": 0,
+    "errors": []
+  },
+  "errors": []
+}

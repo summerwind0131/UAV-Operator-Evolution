@@ -1,0 +1,13 @@
+benchmark_id,split,map_id,difficulty,layout_subtype,planner,arm_id,execution_arm,repetition,seed,status,feasible,research_claim_eligible,total_cost,path_length,collision_penalty,smoothness_penalty,risk_penalty,waypoint_penalty,minimum_clearance,elapsed_seconds,objective_evaluations,collision_checks,node_expansions,waypoint_count,path_hash
+uav2d-v1,validation,validation-000-sparse-c9b13b3f28,sparse,,de,de,de,0,8249202589874209703,budget_exhausted,True,True,111.79661272948032,111.27594835397917,0.0,0.004132875100227954,0.0,1.0,4.817088520761318,0.04452510000010079,50,1357,131,3,f0d5215d651c0f3d8c671d29b5c7d0831b71cfaadb4ff8f1ef339754a843a796
+uav2d-v1,validation,validation-000-sparse-c9b13b3f28,sparse,,de,de,de,1,6698812940302318537,budget_exhausted,True,True,113.05979918909043,112.42709628859409,0.0,0.026540580099267005,0.0,1.0,2.482511526268371,0.03906760000018039,50,1349,131,3,f47637330a14ea315b3aae36eeabf7f73a58bae2b79f93243ec52e79bdbbeb6d
+uav2d-v1,validation,validation-001-dense-4ac25c8680,dense,,de,de,de,0,6757636237068732453,timeout,False,True,,,,,,,,0.10014840000008007,0,3069,333,0,
+uav2d-v1,validation,validation-001-dense-4ac25c8680,dense,,de,de,de,1,3252108226838188536,timeout,False,True,,,,,,,,0.10021019999999226,0,3089,335,0,
+uav2d-v1,validation,validation-002-corridor-284a55aaca,corridor,,de,de,de,0,5362845052859609046,timeout,False,True,,,,,,,,0.10058350000008431,0,708,72,0,
+uav2d-v1,validation,validation-002-corridor-284a55aaca,corridor,,de,de,de,1,7360471006831642330,timeout,False,True,,,,,,,,0.10030989999995654,0,746,76,0,
+uav2d-v1,validation,validation-003-clustered-4b46b12691,clustered,,de,de,de,0,3524643159876721459,timeout,False,True,,,,,,,,0.1001470999999583,0,3204,352,0,
+uav2d-v1,validation,validation-003-clustered-4b46b12691,clustered,,de,de,de,1,6978008142587463802,timeout,False,True,,,,,,,,0.10035659999994095,0,2873,316,0,
+uav2d-v1,validation,validation-004-rooms_maze-33155f70ac,rooms_maze,rooms,de,de,de,0,3935919481748349634,timeout,False,True,,,,,,,,0.10027370000011615,0,380,31,0,
+uav2d-v1,validation,validation-004-rooms_maze-33155f70ac,rooms_maze,rooms,de,de,de,1,4726172634894757892,timeout,False,True,,,,,,,,0.1003854999999021,0,413,35,0,
+uav2d-v1,validation,validation-005-mixed-00e28968ec,mixed,,de,de,de,0,1569715470615523740,timeout,False,True,,,,,,,,0.101113899999973,29,1,0,0,
+uav2d-v1,validation,validation-005-mixed-00e28968ec,mixed,,de,de,de,1,1771557660178545610,timeout,False,True,,,,,,,,0.1038492000000133,31,1,0,0,

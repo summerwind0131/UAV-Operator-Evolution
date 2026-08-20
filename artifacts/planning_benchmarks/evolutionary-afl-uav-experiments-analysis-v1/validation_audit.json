@@ -1,0 +1,192 @@
+{
+  "datasets": [
+    {
+      "actual_rows": 300,
+      "arms": [
+        "deepseek_v4pro_evo"
+      ],
+      "dataset": "full_v1",
+      "effective_timeout_records": 0,
+      "errors": [],
+      "expected_rows": 300,
+      "legacy_success_beyond_boundary": 0,
+      "legacy_success_keys": [],
+      "max_elapsed_seconds": 0.9481277999984741,
+      "max_objective_evaluations": 737,
+      "nonzero_llm_call_records": 0,
+      "path_hash_mismatches": 0,
+      "path_records": 300,
+      "raw_timeout_records": 0,
+      "rows_per_arm": {
+        "deepseek_v4pro_evo": 300
+      },
+      "status": "passed",
+      "time_limit_seconds": 1.0,
+      "unique_record_keys": 300,
+      "validation_only": true,
+      "warnings": []
+    },
+    {
+      "actual_rows": 300,
+      "arms": [
+        "deepseek_v4pro_strict"
+      ],
+      "dataset": "frozen_afl",
+      "effective_timeout_records": 0,
+      "errors": [],
+      "expected_rows": 300,
+      "legacy_success_beyond_boundary": 0,
+      "legacy_success_keys": [],
+      "max_elapsed_seconds": 0.22516889999678824,
+      "max_objective_evaluations": 257,
+      "nonzero_llm_call_records": 0,
+      "path_hash_mismatches": 0,
+      "path_records": 300,
+      "raw_timeout_records": 0,
+      "rows_per_arm": {
+        "deepseek_v4pro_strict": 300
+      },
+      "status": "passed",
+      "time_limit_seconds": 1.0,
+      "unique_record_keys": 300,
+      "validation_only": true,
+      "warnings": []
+    },
+    {
+      "actual_rows": 1500,
+      "arms": [
+        "evo_fixed_length",
+        "evo_move_only",
+        "evo_no_crossover",
+        "evo_no_qd_archive",
+        "evo_no_rooms_strategy"
+      ],
+      "dataset": "ablation",
+      "effective_timeout_records": 3,
+      "errors": [],
+      "expected_rows": 1500,
+      "legacy_success_beyond_boundary": 2,
+      "legacy_success_keys": [
+        {
+          "arm_id": "evo_no_rooms_strategy",
+          "map_id": "validation-059-mixed-e6df613ff4",
+          "seed": 2433688421190366437
+        },
+        {
+          "arm_id": "evo_fixed_length",
+          "map_id": "validation-059-mixed-e6df613ff4",
+          "seed": 8895214919871684002
+        }
+      ],
+      "max_elapsed_seconds": 1.0678363999977591,
+      "max_objective_evaluations": 737,
+      "nonzero_llm_call_records": 0,
+      "path_hash_mismatches": 0,
+      "path_records": 1500,
+      "raw_timeout_records": 1,
+      "rows_per_arm": {
+        "evo_fixed_length": 300,
+        "evo_move_only": 300,
+        "evo_no_crossover": 300,
+        "evo_no_qd_archive": 300,
+        "evo_no_rooms_strategy": 300
+      },
+      "status": "passed_with_warnings",
+      "time_limit_seconds": 1.0,
+      "unique_record_keys": 1500,
+      "validation_only": true,
+      "warnings": [
+        "2 legacy success labels crossed the wall-clock boundary; analysis reclassifies them as effective timeouts"
+      ]
+    },
+    {
+      "actual_rows": 1800,
+      "arms": [
+        "evo_archive_12",
+        "evo_archive_4",
+        "evo_generations_12",
+        "evo_generations_6",
+        "evo_population_16",
+        "evo_population_24"
+      ],
+      "dataset": "sensitivity_algorithm",
+      "effective_timeout_records": 0,
+      "errors": [],
+      "expected_rows": 1800,
+      "legacy_success_beyond_boundary": 0,
+      "legacy_success_keys": [],
+      "max_elapsed_seconds": 0.9632595000002766,
+      "max_objective_evaluations": 737,
+      "nonzero_llm_call_records": 0,
+      "path_hash_mismatches": 0,
+      "path_records": 1800,
+      "raw_timeout_records": 0,
+      "rows_per_arm": {
+        "evo_archive_12": 300,
+        "evo_archive_4": 300,
+        "evo_generations_12": 300,
+        "evo_generations_6": 300,
+        "evo_population_16": 300,
+        "evo_population_24": 300
+      },
+      "status": "passed",
+      "time_limit_seconds": 1.0,
+      "unique_record_keys": 1800,
+      "validation_only": true,
+      "warnings": []
+    },
+    {
+      "actual_rows": 300,
+      "arms": [
+        "evo_time_025"
+      ],
+      "dataset": "sensitivity_time_025",
+      "effective_timeout_records": 1,
+      "errors": [],
+      "expected_rows": 300,
+      "legacy_success_beyond_boundary": 0,
+      "legacy_success_keys": [],
+      "max_elapsed_seconds": 0.254844500002946,
+      "max_objective_evaluations": 353,
+      "nonzero_llm_call_records": 0,
+      "path_hash_mismatches": 0,
+      "path_records": 300,
+      "raw_timeout_records": 1,
+      "rows_per_arm": {
+        "evo_time_025": 300
+      },
+      "status": "passed",
+      "time_limit_seconds": 0.25,
+      "unique_record_keys": 300,
+      "validation_only": true,
+      "warnings": []
+    },
+    {
+      "actual_rows": 300,
+      "arms": [
+        "evo_time_050"
+      ],
+      "dataset": "sensitivity_time_050",
+      "effective_timeout_records": 0,
+      "errors": [],
+      "expected_rows": 300,
+      "legacy_success_beyond_boundary": 0,
+      "legacy_success_keys": [],
+      "max_elapsed_seconds": 0.45925589999751537,
+      "max_objective_evaluations": 356,
+      "nonzero_llm_call_records": 0,
+      "path_hash_mismatches": 0,
+      "path_records": 300,
+      "raw_timeout_records": 0,
+      "rows_per_arm": {
+        "evo_time_050": 300
+      },
+      "status": "passed",
+      "time_limit_seconds": 0.5,
+      "unique_record_keys": 300,
+      "validation_only": true,
+      "warnings": []
+    }
+  ],
+  "status": "passed_with_caveats"
+}

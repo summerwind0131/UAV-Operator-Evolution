@@ -1,0 +1,11 @@
+{
+  "analysis_id": "evolutionary-afl-uav-validation-analysis-v1",
+  "files": {
+    "analysis_summary.json": "f3dd444d2096565e66eac1e9a5790fa24944c3cc3bf724c8f37dac5b33b0b880",
+    "by_difficulty_comparison.csv": "76f7aa1c0e3b0d67c52c8f71af23f8d0d0a2e3fe9a12de90559426bd38ba1a59",
+    "paired_map_comparison.csv": "fc41af81d5877d066e41463497045adc1c4076f75d0b1fdda36e747ac91fe012",
+    "paired_seed_comparison.csv": "12056767fbe1a7c056381741f0b19b846c8ab5aaa4df855fa01e9ace092259bd",
+    "validation_audit.json": "6c6d1d4beeeb89f9bca3038eb2fbf34083af79308a68c8c9d60b562364e697d5"
+  },
+  "status": "passed"
+}

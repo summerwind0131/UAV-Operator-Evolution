@@ -1,0 +1,162 @@
+{
+  "analysis_id": "evolutionary-afl-uav-validation-analysis-v1",
+  "confidence": "ready_to_share_with_experimental_caveats",
+  "contract": {
+    "actual_records": 300,
+    "all_feasible": true,
+    "all_validation_only": true,
+    "errors": [],
+    "exact_frozen_map_seed_alignment": true,
+    "expected_records": 300,
+    "max_elapsed_seconds": 0.9481277999984741,
+    "max_objective_evaluations": 737,
+    "rows_per_difficulty": {
+      "clustered": 50,
+      "corridor": 50,
+      "dense": 50,
+      "mixed": 50,
+      "rooms_maze": 50,
+      "sparse": 50
+    },
+    "status": "passed",
+    "unique_maps": 60,
+    "unique_record_keys": 300
+  },
+  "evolutionary_afl_uav": {
+    "cost_q1": 112.29190111509895,
+    "cost_q3": 152.3734891855562,
+    "feasible_rate": 1.0,
+    "feasible_runs": 300,
+    "maps": 60,
+    "maps_with_multiple_final_paths": 54,
+    "max_elapsed_seconds": 0.9481277999984741,
+    "max_objective_evaluations": 737,
+    "median_cost": 117.36331026215021,
+    "median_elapsed_seconds": 0.9032575000001088,
+    "median_objective_evaluations": 396.5,
+    "median_unique_final_paths_per_map": 5.0,
+    "research_claim_eligible": true,
+    "runs": 300
+  },
+  "generated_at_utc": "2026-08-16T15:44:33.515222+00:00",
+  "inputs": {
+    "artifacts\\planning_benchmarks\\deepseek-v4pro-strict-validation-v2\\benchmark_runs.csv": "1644be1c83fe07e3d226c44295c8687dafe7d3dcc36ee7a2b67a6269c97b6c5a",
+    "artifacts\\planning_benchmarks\\evolutionary-afl-uav-validation-v1\\benchmark_runs.csv": "24ebf769748a50ac96a5cc4a57e82e665bb2c824999aeca858db31835aea32cc",
+    "artifacts\\planning_benchmarks\\offline-traditional-validation-v1\\benchmark_runs.csv": "ded657e3e04b0951c91596e226ad72b628c8bd5db69b90ebed180ee3e5563200"
+  },
+  "methodology": {
+    "deterministic_comparison": "per-map median Evolutionary cost versus one deterministic result",
+    "frozen_comparison": "exact map and shared seed; primary headline uses per-map median",
+    "ranking": "feasible rate first, then trusted feasible total cost",
+    "tie_tolerance": 1e-09,
+    "uncertainty": "cluster bootstrap over map_id, 2000 replicates, seed 20260816"
+  },
+  "objective_component_tradeoffs_vs_frozen": {
+    "path_length": {
+      "improved": 177,
+      "median_delta": -0.05876041974000401,
+      "paired_runs": 300,
+      "q1_delta": -0.7003731947412604,
+      "q3_delta": 0.25879620904193246,
+      "tied": 36,
+      "worsened": 87
+    },
+    "risk_penalty": {
+      "improved": 100,
+      "median_delta": 0.0,
+      "paired_runs": 300,
+      "q1_delta": -1.5315218046377455,
+      "q3_delta": 0.0,
+      "tied": 200,
+      "worsened": 0
+    },
+    "smoothness_penalty": {
+      "improved": 164,
+      "median_delta": -0.0001144502529107634,
+      "paired_runs": 300,
+      "q1_delta": -0.0303791860141742,
+      "q3_delta": 0.00716988236600645,
+      "tied": 36,
+      "worsened": 100
+    },
+    "waypoint_penalty": {
+      "improved": 77,
+      "median_delta": 0.0,
+      "paired_runs": 300,
+      "q1_delta": -1.0,
+      "q3_delta": 0.0,
+      "tied": 164,
+      "worsened": 59
+    }
+  },
+  "operator_and_path_diagnostics": {
+    "errors": [],
+    "final_cost_mismatches": 0,
+    "hash_mismatches": 0,
+    "median_archive_unique_paths": 8.0,
+    "median_relative_improvement": 0.012198967307460909,
+    "median_unique_candidates_evaluated": 331.5,
+    "nonzero_llm_call_records": 0,
+    "operator_attempts": {
+      "crossover": 62980,
+      "delete": 52331,
+      "insert": 52723,
+      "move": 52454,
+      "swap": 52255
+    },
+    "operator_successes": {
+      "crossover": 57974,
+      "delete": 36199,
+      "insert": 52723,
+      "move": 50350,
+      "swap": 20711
+    },
+    "path_records": 300,
+    "runs_improved_over_seed": 264,
+    "status": "passed"
+  },
+  "scope": "uav2d-v1 Validation only; Test was not read",
+  "vs_astar": {
+    "baseline": "astar",
+    "baseline_only_feasible_maps": 0,
+    "both_feasible_maps": 57,
+    "candidate_only_feasible_maps": 3,
+    "half_tie_win_rate": 0.9035087719298246,
+    "losses": 2,
+    "maps": 60,
+    "median_cost_delta": -0.7248869740298858,
+    "strict_win_rate": 0.8421052631578947,
+    "ties": 7,
+    "wins": 48
+  },
+  "vs_frozen_afl_uav": {
+    "both_feasible_maps": 60,
+    "cluster_bootstrap_replicates": 2000,
+    "half_tie_win_rate": 0.9416666666666667,
+    "half_tie_win_rate_ci_high": 0.9833333333333333,
+    "half_tie_win_rate_ci_low": 0.9,
+    "losses": 0,
+    "median_delta_ci_high": -0.7305424436925776,
+    "median_delta_ci_low": -3.605067341842351,
+    "median_map_cost_delta": -1.567490893647168,
+    "median_relative_map_improvement": 0.012494963694746081,
+    "paired_maps": 60,
+    "paired_seed_records": 300,
+    "strict_win_rate": 0.8833333333333333,
+    "ties": 7,
+    "wins": 53
+  },
+  "vs_theta_star": {
+    "baseline": "theta_star",
+    "baseline_only_feasible_maps": 0,
+    "both_feasible_maps": 58,
+    "candidate_only_feasible_maps": 2,
+    "half_tie_win_rate": 0.8879310344827587,
+    "losses": 3,
+    "maps": 60,
+    "median_cost_delta": -0.6495962048444497,
+    "strict_win_rate": 0.8275862068965517,
+    "ties": 7,
+    "wins": 48
+  }
+}

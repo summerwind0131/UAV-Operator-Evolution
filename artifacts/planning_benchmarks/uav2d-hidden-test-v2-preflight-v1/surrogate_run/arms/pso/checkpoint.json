@@ -1,0 +1,10 @@
+{
+  "arm_id": "pso",
+  "benchmark_metadata_sha256": "6f2494c7d1bfd78cdeb04066f5dda08a7580cab37cae470d32ad1f22003ab61c",
+  "benchmark_paths_sha256": "7c02d05227301a9c416722c5a4fd326fcedb8e3a2379f6b75c3fa3527b8192d4",
+  "benchmark_runs_sha256": "c9b85f5e6aa6021881ada696ba0802a16471c7a433c681a52902c1630c52291c",
+  "plan_id": "8f3c16ec10f0180b3bcdda19ad1e7e0f59588ba19f7e70950a664d6878d43f47",
+  "rows": 12,
+  "schema_version": "uav2d-final-arm-checkpoint-v1",
+  "status": "complete"
+}

@@ -1,0 +1,8 @@
+planner,arm_id,map_class,runs,feasible_runs,feasible_rate,timeout_rate,budget_exhausted_rate,median_total_cost_feasible,iqr_total_cost_feasible,median_runtime_seconds
+aco_acor,aco_acor,all,12,5,0.4166666666666667,0.5,0.5,111.79661272948032,3.568882011421721,0.07727709999994659
+aco_acor,aco_acor,clustered,2,1,0.5,0.0,1.0,125.54022411804287,0.0,0.05189014999996289
+aco_acor,aco_acor,corridor,2,0,0.0,1.0,0.0,,,0.10007385000005797
+aco_acor,aco_acor,dense,2,0,0.0,1.0,0.0,,,0.10012059999996836
+aco_acor,aco_acor,mixed,2,2,1.0,0.0,1.0,109.4909171776687,0.0,0.049327700000048935
+aco_acor,aco_acor,rooms_maze,2,0,0.0,1.0,0.0,,,0.10007410000002892
+aco_acor,aco_acor,sparse,2,2,1.0,0.0,1.0,112.42820595928538,0.6315932298050626,0.03948284999989937

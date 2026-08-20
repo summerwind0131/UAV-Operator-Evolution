@@ -1,0 +1,39 @@
+{
+  "arm_ids": [
+    "dijkstra",
+    "astar",
+    "theta_star",
+    "rrt",
+    "rrt_star",
+    "prm",
+    "ga",
+    "pso",
+    "de",
+    "aco_acor",
+    "frozen_afl_uav",
+    "evolutionary_afl_uav_v1",
+    "evo_no_rooms_strategy",
+    "evo_fixed_length"
+  ],
+  "config_hash": "a83cdfe17d113f601987326c21b1a5ae0bcca518c4eddada20ed4167d1df46b2",
+  "expected_maps": 120,
+  "expected_records": 6960,
+  "maps_per_class": null,
+  "max_objective_evaluations": 2000,
+  "method_artifact_id": "cf5d90443f61b182281071268ca3b8bc4275a2ae782bc1c7d9b6c2cef90823f3",
+  "mode": "final",
+  "plan_id": "8da50c4196337441638a85abb0ca0ad782dec47dadd85c16592237251428029d",
+  "protocol_identity": {
+    "addendum_id": "ab1e83123806d7924b5439e02fea1ff6f837af03684d5249eddf34676380b3b6",
+    "opening_id": "e569d34d03272dd3debd23a0ea4b5331d1bb2a1631915c9dbaa54ed34611b76b",
+    "preflight_receipt_id": "f5c1a62a0443198206556ae30ef8097d8767e377f49187365b84df585a6797b4",
+    "preregistration_id": "8d8dcbb568f25a5fd9da74afbe865c5576ce585e25fc37da36662ad1787c3c99",
+    "seed_schedule_sha256": "d0240fa261e8a34d14f7b01828eea5ed2bb039b590ebeb1451fa8b1eea7ac995"
+  },
+  "protocol_sha256": "ac98eae7e76dbacefc86810231b60817ad59432eb1f5fb61866a786be1fbcbe8",
+  "schema_version": "uav2d-final-execution-plan-v1",
+  "seed_artifact_id": "d384eac99d8a1f5df9d544ff1c3adf2ef9838c04930809f140b18dcc5f34f455",
+  "split": "test",
+  "stochastic_repetitions": 5,
+  "time_limit_seconds": 1.0
+}

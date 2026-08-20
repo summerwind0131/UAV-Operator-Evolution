@@ -1,0 +1,23 @@
+candidate_planner_key,planner,planner_label,baseline,baseline_label,maps_compared,both_feasible_maps,candidate_only_feasible_maps,baseline_only_feasible_maps,wins,ties,losses,strict_win_rate,half_tie_win_rate,half_tie_win_rate_ci_low,half_tie_win_rate_ci_high,median_cost_delta
+afl_uav:offline_v3,afl_uav,AFL-UAV (offline v3 control),astar,A*,60,57,3,0,40,11,6,0.701754386,0.798245614,0.710526316,0.885964912,-0.441155656
+theta_star,theta_star,Theta*,astar,A*,60,57,1,0,25,22,10,0.438596491,0.631578947,0.535087719,0.728070175,0.0
+dijkstra,dijkstra,Dijkstra,astar,A*,60,43,0,14,18,16,9,0.418604651,0.604651163,0.488372093,0.709302326,0.0
+rrt_star,rrt_star,RRT*,astar,A*,60,57,3,0,28,9,20,0.49122807,0.570175439,0.455921053,0.684429825,0.0
+afl_uav:deepseek_v4pro,afl_uav,AFL-UAV (DeepSeek V4 Pro),astar,A*,60,57,3,0,25,11,21,0.438596491,0.535087719,0.421052632,0.649122807,0.0
+ga,ga,GA,astar,A*,60,57,0,0,24,9,24,0.421052632,0.5,0.385745614,0.622807018,0.0
+pso,pso,PSO,astar,A*,60,57,0,0,23,9,25,0.403508772,0.48245614,0.368421053,0.605263158,0.0
+de,de,DE,astar,A*,60,55,0,2,21,9,25,0.381818182,0.463636364,0.354318182,0.590909091,0.0
+aco_acor,aco_acor,ACO/ACOR,astar,A*,60,56,0,1,21,9,26,0.375,0.455357143,0.339285714,0.571428571,0.0
+rrt,rrt,RRT,astar,A*,60,57,3,0,15,9,33,0.263157895,0.342105263,0.236842105,0.447368421,0.9159581
+prm,prm,PRM,astar,A*,60,56,3,1,14,9,33,0.25,0.330357143,0.223214286,0.446428571,1.080804337
+afl_uav:offline_v3,afl_uav,AFL-UAV (offline v3 control),theta_star,Theta*,60,58,2,0,38,11,9,0.655172414,0.75,0.655172414,0.844827586,-0.344457776
+ga,ga,GA,theta_star,Theta*,60,57,0,1,26,9,22,0.456140351,0.535087719,0.412280702,0.657894737,0.0
+rrt_star,rrt_star,RRT*,theta_star,Theta*,60,58,2,0,26,9,23,0.448275862,0.525862069,0.396551724,0.646551724,0.0
+dijkstra,dijkstra,Dijkstra,theta_star,Theta*,60,43,0,15,12,21,10,0.279069767,0.523255814,0.418604651,0.639534884,0.0
+pso,pso,PSO,theta_star,Theta*,60,57,0,1,25,9,23,0.438596491,0.51754386,0.394736842,0.631578947,0.0
+afl_uav:deepseek_v4pro,afl_uav,AFL-UAV (DeepSeek V4 Pro),theta_star,Theta*,60,58,2,0,22,12,24,0.379310345,0.482758621,0.370689655,0.595043103,0.0
+de,de,DE,theta_star,Theta*,60,55,0,3,21,9,25,0.381818182,0.463636364,0.354318182,0.590909091,0.0
+aco_acor,aco_acor,ACO/ACOR,theta_star,Theta*,60,56,0,2,21,9,26,0.375,0.455357143,0.339285714,0.580357143,0.0
+astar,astar,A*,theta_star,Theta*,60,57,0,1,10,22,25,0.175438596,0.368421053,0.280701754,0.464912281,0.0
+prm,prm,PRM,theta_star,Theta*,60,57,2,1,14,9,34,0.245614035,0.324561404,0.219298246,0.438596491,1.099413123
+rrt,rrt,RRT,theta_star,Theta*,60,58,2,0,11,9,38,0.189655172,0.267241379,0.172413793,0.370689655,0.98415018

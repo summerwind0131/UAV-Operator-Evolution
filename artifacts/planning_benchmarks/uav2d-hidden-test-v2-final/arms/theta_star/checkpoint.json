@@ -1,0 +1,10 @@
+{
+  "arm_id": "theta_star",
+  "benchmark_metadata_sha256": "aee2fed4323be4ff58a20dfa8535accae06e32def5e24609342063b3c345f429",
+  "benchmark_paths_sha256": "29b5ca971d0fcca1e41f4afa93a7d98538d99fe29ee4dbaec460b95778eeed24",
+  "benchmark_runs_sha256": "399b9db791ac51f36b23467dc34d50ccbc9740edce13966c10aed7d3f3e685a7",
+  "plan_id": "8da50c4196337441638a85abb0ca0ad782dec47dadd85c16592237251428029d",
+  "rows": 120,
+  "schema_version": "uav2d-final-arm-checkpoint-v1",
+  "status": "complete"
+}

@@ -1,0 +1,17 @@
+{
+  "artifact_sha256": "cb0e5b33d2149875831f21886cc032c35af8adf3f9bdd5ff53106e5907a16d87",
+  "counts": {
+    "blocks": 20,
+    "charts": 2,
+    "html": 0,
+    "metrics": 3,
+    "tables": 4
+  },
+  "report_sha256": "e48eb82e0dafe5e03adc2c2038f5f13a45d3c42204240590c4a8d435057f93b6",
+  "stages": {
+    "package": "passed",
+    "validation": "passed",
+    "verification": "structural_only"
+  },
+  "verification_caveat": "No compatible Chromium headless-shell was available. Exact payload equality, required runtime roots, and semantic fallback passed; enhanced-reader source interaction and viewport QA were not verified."
+}

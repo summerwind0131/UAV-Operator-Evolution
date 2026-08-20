@@ -1,0 +1,168 @@
+{
+  "analysis_id": "deepseek-v4pro-strict-validation-analysis-v2",
+  "generated_at_utc": "2026-08-13T05:32:38.381662+00:00",
+  "scope": "uav2d-v1 Validation only; Test was not read",
+  "confidence": "ready_to_share_with_experimental_caveats",
+  "contract": {
+    "status": "passed",
+    "expected_records": 2880,
+    "actual_records": 2880,
+    "unique_record_keys": 2880,
+    "unique_maps": 60,
+    "maps_per_class": {
+      "clustered": 10,
+      "corridor": 10,
+      "dense": 10,
+      "mixed": 10,
+      "rooms_maze": 10,
+      "sparse": 10
+    },
+    "planner_record_counts": {
+      "aco_acor": 300,
+      "afl_uav:deepseek_v4pro_strict": 300,
+      "afl_uav:offline_v3": 300,
+      "astar": 60,
+      "de": 300,
+      "dijkstra": 60,
+      "ga": 300,
+      "prm": 300,
+      "pso": 300,
+      "rrt": 300,
+      "rrt_star": 300,
+      "theta_star": 60
+    },
+    "all_sources_validation_only": true,
+    "shared_stochastic_seed_sets": true,
+    "budget": {
+      "max_objective_evaluations": 2000,
+      "time_limit_seconds": 1.0
+    },
+    "path_records": {
+      "status": "passed",
+      "path_records": 300,
+      "unique_path_record_keys": 300,
+      "hash_mismatches": 0,
+      "missing_feasible_paths": 0,
+      "errors": []
+    },
+    "errors": []
+  },
+  "deepseek_v4pro_strict": {
+    "runs": 300,
+    "maps": 60,
+    "feasible_runs": 300,
+    "feasible_rate": 1.0,
+    "maps_solved": 60,
+    "map_solved_rate": 1.0,
+    "maps_all_five_seeds_feasible": 60,
+    "median_feasible_cost": 120.81000405269464,
+    "cost_q1": 113.99786437619917,
+    "cost_q3": 219.1125783407498,
+    "median_elapsed_seconds": 0.1506724000028043,
+    "median_objective_evaluations": 257.0,
+    "max_objective_evaluations": 257,
+    "median_unique_paths_per_map": 1.0,
+    "median_within_map_cost_iqr": 0.0,
+    "p90_within_map_cost_iqr": 0.0,
+    "research_claim_eligible": true
+  },
+  "paired_map_median_vs_astar": {
+    "candidate_planner_key": "afl_uav:deepseek_v4pro_strict",
+    "planner": "afl_uav",
+    "planner_label": "AFL-UAV (DeepSeek V4 Pro, strict)",
+    "baseline_label": "A*",
+    "maps_compared": 60,
+    "both_feasible_maps": 57,
+    "candidate_only_feasible_maps": 3,
+    "baseline_only_feasible_maps": 0,
+    "wins": 24,
+    "ties": 12,
+    "losses": 21,
+    "strict_win_rate": 0.42105263157894735,
+    "half_tie_win_rate": 0.5263157894736842,
+    "half_tie_win_rate_ci_low": 0.41228070175438597,
+    "half_tie_win_rate_ci_high": 0.6403508771929824,
+    "median_cost_delta": 0.0
+  },
+  "paired_map_median_vs_theta_star": {
+    "candidate_planner_key": "afl_uav:deepseek_v4pro_strict",
+    "planner": "afl_uav",
+    "planner_label": "AFL-UAV (DeepSeek V4 Pro, strict)",
+    "baseline_label": "Theta*",
+    "maps_compared": 60,
+    "both_feasible_maps": 58,
+    "candidate_only_feasible_maps": 2,
+    "baseline_only_feasible_maps": 0,
+    "wins": 23,
+    "ties": 13,
+    "losses": 22,
+    "strict_win_rate": 0.39655172413793105,
+    "half_tie_win_rate": 0.5086206896551724,
+    "half_tie_win_rate_ci_low": 0.39655172413793105,
+    "half_tie_win_rate_ci_high": 0.6293103448275862,
+    "median_cost_delta": 0.0
+  },
+  "generation_usage_all_attempts": {
+    "deduplication_key": "provider response_id",
+    "candidate_audit_files": 31,
+    "generation_logical_calls": 387,
+    "generation_http_attempts": 412,
+    "generation_retries": 25,
+    "generation_input_tokens": 1486581,
+    "generation_output_tokens": 474691,
+    "generation_total_tokens": 1961272,
+    "generation_provider_latency_ms": 5552623.925400032,
+    "minimal_probe": {
+      "input_tokens": 90,
+      "output_tokens": 5,
+      "total_tokens": 95,
+      "logical_calls": 1,
+      "http_attempts": 1,
+      "retries": 0,
+      "latency_ms": 3157.0
+    },
+    "all_live_calls_including_probe": 388,
+    "all_input_tokens_including_probe": 1486671,
+    "all_output_tokens_including_probe": 474696,
+    "all_total_tokens_including_probe": 1961367,
+    "estimated_generation_cost_usd": 1.059643905,
+    "estimated_probe_cost_usd": 4.35e-05,
+    "estimated_all_live_cost_usd": 1.059687405,
+    "price_assumption_usd_per_million_tokens": {
+      "input": 0.435,
+      "output": 0.87,
+      "source": "https://api-docs.deepseek.com/quick_start/pricing/"
+    }
+  },
+  "frozen_artifact_generation": {
+    "input_tokens": 175408,
+    "logical_calls": 43,
+    "output_tokens": 48733,
+    "retries": 0,
+    "total_tokens": 224141,
+    "estimated_cost_usd": 0.11870019,
+    "human_review": {
+      "approved_source_hash": "302c960bea87e7e621caae2bb132302519841c81c7add292d9e58cb7f6809c4c",
+      "decision": "approved_for_restricted_qualification",
+      "llm_judgment_hash": "f157c542b9fbaf358be07e796929b180e96c77a6c2fd912d12d3aa0b66370054",
+      "overrode_llm_judgment": true,
+      "rationale": [
+        "Complete AST policy and deterministic solver contract passed.",
+        "The final LLM judgment mixed valid checks with source-contradicted findings; human review resolved those findings against the authoritative contract.",
+        "Approval is restricted to CLI smoke and six fixed Train qualification maps; the shared trusted evaluator remains authoritative."
+      ],
+      "reviewer": "delegated_human_review_by_codex"
+    }
+  },
+  "methodology": {
+    "ranking": "feasible rate first, then median trusted feasible cost",
+    "paired_deterministic_baselines": "one median DeepSeek cost per map versus the deterministic baseline result on that map",
+    "paired_stochastic_baselines": "exact map and shared seed",
+    "uncertainty": "cluster bootstrap over map_id, 2000 replicates, seed 20260731"
+  },
+  "inputs": {
+    "artifacts/planning_benchmarks/offline-traditional-validation-v1/benchmark_runs.csv": "ded657e3e04b0951c91596e226ad72b628c8bd5db69b90ebed180ee3e5563200",
+    "artifacts/planning_benchmarks/afl-uav-offline-v3-validation-v1/benchmark_runs.csv": "dbe71c1a5ab960743c59d2c7638279806694f67ecf02b9b6311104bf6eac8c10",
+    "artifacts/planning_benchmarks/deepseek-v4pro-strict-validation-v2/benchmark_runs.csv": "1644be1c83fe07e3d226c44295c8687dafe7d3dcc36ee7a2b67a6269c97b6c5a"
+  }
+}

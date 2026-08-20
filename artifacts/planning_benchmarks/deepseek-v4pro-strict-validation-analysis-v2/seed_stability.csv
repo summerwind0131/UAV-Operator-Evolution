@@ -1,0 +1,10 @@
+planner,planner_key,planner_label,maps,mean_within_map_feasible_rate,fully_feasible_maps,never_feasible_maps,median_unique_feasible_paths,median_within_map_cost_iqr,p90_within_map_cost_iqr
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",60,1.0,60,0,1.0,0.0,0.0
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),60,1.0,60,0,5.0,0.153599245,0.878709756
+rrt_star,rrt_star,RRT*,60,0.976666667,57,0,5.0,0.648218144,18.046295642
+rrt,rrt,RRT,60,0.976666667,57,0,5.0,2.840961351,54.43045721
+ga,ga,GA,60,0.94,55,3,5.0,0.292148125,7.515325998
+pso,pso,PSO,60,0.936666667,55,3,5.0,0.838449434,11.858176921
+de,de,DE,60,0.896666667,52,5,5.0,3.376732342,24.898742119
+aco_acor,aco_acor,ACO/ACOR,60,0.893333333,53,4,5.0,1.95553049,30.399942272
+prm,prm,PRM,60,0.883333333,44,1,5.0,4.166312285,37.855651789

@@ -1,0 +1,1 @@
+{"status": "success", "path": [[94.53860051844649, 92.08012131732343], [12.0, 42.0], [5.7902973049562325, 11.757343500714363]], "initial_cost": 129.2147917813057, "best_cost": 128.2601174298906, "iterations": 256, "seed": 6089091225300531269, "objective_evaluations": 257, "collision_checks": 6327, "node_expansions": 864}

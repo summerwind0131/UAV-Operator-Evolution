@@ -1,0 +1,10 @@
+{
+  "arm_id": "rrt_star",
+  "benchmark_metadata_sha256": "95ac806442240a51d7d4079dc7471a04547488820cba91190020bd5198f4634b",
+  "benchmark_paths_sha256": "fb77f9625e2beb1f017c464dc48a4917648cf1429934874cccfa401d51777de9",
+  "benchmark_runs_sha256": "9560542d9442c31da9e4d27307e0ece2eb0e1938d72fc22de089e7fe4cd01553",
+  "plan_id": "8da50c4196337441638a85abb0ca0ad782dec47dadd85c16592237251428029d",
+  "rows": 600,
+  "schema_version": "uav2d-final-arm-checkpoint-v1",
+  "status": "complete"
+}

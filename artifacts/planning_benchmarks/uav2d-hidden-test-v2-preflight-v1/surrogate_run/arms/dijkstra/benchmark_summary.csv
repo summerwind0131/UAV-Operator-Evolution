@@ -1,0 +1,8 @@
+planner,arm_id,map_class,runs,feasible_runs,feasible_rate,timeout_rate,budget_exhausted_rate,median_total_cost_feasible,iqr_total_cost_feasible,median_runtime_seconds
+dijkstra,dijkstra,all,6,2,0.3333333333333333,0.6666666666666666,0.0,110.43561954259681,0.944702364928105,0.10007074999884935
+dijkstra,dijkstra,clustered,1,0,0.0,1.0,0.0,,,0.10008039999956964
+dijkstra,dijkstra,corridor,1,0,0.0,1.0,0.0,,,0.10006109999812907
+dijkstra,dijkstra,dense,1,0,0.0,1.0,0.0,,,0.10008489999745507
+dijkstra,dijkstra,mixed,1,1,1.0,0.0,0.0,109.4909171776687,0.0,9.590000263415277e-05
+dijkstra,dijkstra,rooms_maze,1,0,0.0,1.0,0.0,,,0.10014580000279238
+dijkstra,dijkstra,sparse,1,1,1.0,0.0,0.0,111.38032190752492,0.0,0.08597130000271136

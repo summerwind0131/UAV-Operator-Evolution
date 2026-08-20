@@ -1,0 +1,106 @@
+{
+  "paired_comparisons": [],
+  "ranking": [
+    {
+      "arm_id": "rrt",
+      "feasible_rate": 0.965,
+      "median_total_cost_feasible": 129.94170543328244,
+      "planner": "rrt",
+      "rank": 1
+    }
+  ],
+  "ranking_rule": "descending feasible_rate, then ascending median unified total cost among feasible paths",
+  "statistics": [
+    {
+      "arm_id": "rrt",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 0.965,
+      "feasible_runs": 579,
+      "iqr_total_cost_feasible": 182.30910782389532,
+      "map_class": "all",
+      "median_runtime_seconds": 0.020782200004759943,
+      "median_total_cost_feasible": 129.94170543328244,
+      "planner": "rrt",
+      "runs": 600,
+      "timeout_rate": 0.0
+    },
+    {
+      "arm_id": "rrt",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 100,
+      "iqr_total_cost_feasible": 14.46748607627464,
+      "map_class": "clustered",
+      "median_runtime_seconds": 0.010540400002355454,
+      "median_total_cost_feasible": 122.98471015057106,
+      "planner": "rrt",
+      "runs": 100,
+      "timeout_rate": 0.0
+    },
+    {
+      "arm_id": "rrt",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 100,
+      "iqr_total_cost_feasible": 26.593392848338965,
+      "map_class": "corridor",
+      "median_runtime_seconds": 0.03815964999739663,
+      "median_total_cost_feasible": 344.7914733466309,
+      "planner": "rrt",
+      "runs": 100,
+      "timeout_rate": 0.0
+    },
+    {
+      "arm_id": "rrt",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 100,
+      "iqr_total_cost_feasible": 10.130370318615093,
+      "map_class": "dense",
+      "median_runtime_seconds": 0.013100700001814403,
+      "median_total_cost_feasible": 121.60839971150011,
+      "planner": "rrt",
+      "runs": 100,
+      "timeout_rate": 0.0
+    },
+    {
+      "arm_id": "rrt",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 100,
+      "iqr_total_cost_feasible": 141.12929252430155,
+      "map_class": "mixed",
+      "median_runtime_seconds": 0.03071685000031721,
+      "median_total_cost_feasible": 169.98801532410926,
+      "planner": "rrt",
+      "runs": 100,
+      "timeout_rate": 0.0
+    },
+    {
+      "arm_id": "rrt",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 0.79,
+      "feasible_runs": 79,
+      "iqr_total_cost_feasible": 35.86849137315963,
+      "map_class": "rooms_maze",
+      "median_runtime_seconds": 0.17078105000109645,
+      "median_total_cost_feasible": 142.22273275486094,
+      "planner": "rrt",
+      "runs": 100,
+      "timeout_rate": 0.0
+    },
+    {
+      "arm_id": "rrt",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 100,
+      "iqr_total_cost_feasible": 10.076814080312701,
+      "map_class": "sparse",
+      "median_runtime_seconds": 0.005717649997677654,
+      "median_total_cost_feasible": 117.8163053282803,
+      "planner": "rrt",
+      "runs": 100,
+      "timeout_rate": 0.0
+    }
+  ]
+}

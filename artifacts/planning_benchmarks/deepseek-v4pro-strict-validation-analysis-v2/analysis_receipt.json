@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "output_dir": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\deepseek-v4pro-strict-validation-analysis-v2",
+  "records": 2880,
+  "maps": 60,
+  "planners_or_arms": 12,
+  "files": {
+    "analysis_receipt.json": "363964c21e65a56e0fc5d5778749ff65e06a4d14cb8f684496861964f3d532d6",
+    "analysis_summary.json": "a5bdbc1886fb05f2570e9e6595dd45e5621c7c2c4cf3c010f19a935246bd09f0",
+    "by_difficulty_statistics.csv": "e0fb4da50067b1b91a9fca9afd162f26e4c17a6339a74accbd1a9b73193ca869",
+    "failure_status.csv": "82168ad4ff98b18a5ea737187f8b244d37906e1e29a6a62d0410b6e6d9fe3e40",
+    "generation_usage.json": "abbac74542ca4a91b703b52985e0c00e43bc6ef3bfb4d8e98c8b0af2a44fe134",
+    "overall_statistics.csv": "f444efad38207fe1480e0e5385c143bacc0da2b1f4ad2bc7cac2d708fec23212",
+    "paired_difficulty_comparisons.csv": "c8e000bc00fd9cf4a168b25258d661bd36e36a0dbcb1b129a1b5241c5ff493b3",
+    "paired_map_comparisons.csv": "4b2771a5daa1703e68d9fc085a58680a65c1b688448fec20baff14865d95655a",
+    "paired_seed_comparisons.csv": "8c7b8f90f03d0f4c5dcb601ff75f865ffa61a1a8c9a4a0a5a1add6871ddc1e95",
+    "per_map_statistics.csv": "fe78c5e4b7624054b46bae3af36e5e94ad0257d69fa8321d870159e091540609",
+    "seed_stability.csv": "30c05ee69ee7e5579a5f924b60985e9e37a9e85f4441a495fcdacde2e0807a17",
+    "seed_stability_per_map.csv": "73a51c04e1d5ce02685e9893fd0bd892902bb1244952f4e611b256c921bd2156",
+    "validation_audit.json": "f97aa41c0166dc9d632cfd12f92d976ca2a3e36d3cbbcdbac34178cc43eb136f",
+    "validation_runs.csv": "698fe9e4c1322adec90908f9cfc3ff5ea4a97083ed6639c6dd66b4c1125f1a95"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "actual_records": 600,
+  "afl_generation_summary": {
+    "artifacts": 0,
+    "generation_success_rate": null,
+    "logical_calls": 0,
+    "provider_latency_ms": 0,
+    "successful_artifacts": 0,
+    "total_tokens": 0
+  },
+  "afl_uav_artifact": null,
+  "afl_uav_artifacts": [],
+  "algorithm_parameters": {
+    "aco_label": "aco_acor",
+    "afl_uav_iteration_limit": 256,
+    "evolutionary_afl_uav": {},
+    "grid_resolution": 2.0,
+    "population_max_generations": 20,
+    "population_size": 32,
+    "prm_neighbor_count": 10,
+    "prm_sample_count": 180,
+    "rrt_goal_bias": 0.1,
+    "rrt_max_samples": 1000,
+    "rrt_step_size": 4.0,
+    "waypoint_count": 10
+  },
+  "benchmark_id": "uav2d-hidden-test-v2",
+  "budget": {
+    "max_objective_evaluations": 2000,
+    "time_limit_seconds": 1.0
+  },
+  "config_hash": "a83cdfe17d113f601987326c21b1a5ae0bcca518c4eddada20ed4167d1df46b2",
+  "created_at_utc": "2026-08-17T02:32:50.938776+00:00",
+  "dependencies": {
+    "PyYAML": "6.0.1",
+    "numpy": "1.26.4",
+    "pydantic": "2.13.4"
+  },
+  "expected_records": 600,
+  "final_evaluation_authorization": {
+    "benchmark_id": "uav2d-hidden-test-v2",
+    "opening_id": "e569d34d03272dd3debd23a0ea4b5331d1bb2a1631915c9dbaa54ed34611b76b",
+    "preregistration_id": "8d8dcbb568f25a5fd9da74afbe865c5576ce585e25fc37da36662ad1787c3c99"
+  },
+  "host": {
+    "hostname": "LAPTOP-6C3CNSPJ",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:03:56) [MSC v.1929 64 bit (AMD64)]"
+  },
+  "manifest_hash": "ebfb307652363aae4537c0efae8891cbf08fd433b89018b9b9585529408237ac",
+  "manifest_path": "D:\\CodingLife\\Agent\\agnet_uav\\data\\benchmarks\\uav2d-hidden-test-v2\\manifest.json",
+  "objective": {
+    "collision": 1000.0,
+    "length": 1.0,
+    "risk": 10.0,
+    "smoothness": 5.0,
+    "waypoint": 0.5
+  },
+  "overrides": {
+    "max_objective_evaluations": 2000,
+    "planners": [
+      "prm"
+    ],
+    "repetitions": 5,
+    "time_limit_seconds": 1.0
+  },
+  "record_key_hash": "ea703792ccad1614c8ff58d6b541226700499c646af73fa08e2ae4db4be3eea8",
+  "run_id": "final-05-prm",
+  "selected_maps": 120,
+  "selected_planners": [
+    "prm"
+  ],
+  "split": "test",
+  "stochastic_repetitions": 5
+}

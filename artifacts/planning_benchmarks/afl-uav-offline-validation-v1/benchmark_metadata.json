@@ -1,0 +1,69 @@
+{
+  "actual_records": 300,
+  "afl_uav_artifact": {
+    "artifact_id": "73146ff559f4e7d04e88bb2311132da7c52cf709c27ec4750df7a6bdc57e2230",
+    "generated_from_map_id": "train-000-sparse-c4b92a431b",
+    "generated_from_split": "train",
+    "model": null,
+    "provider": "mock",
+    "research_claim_eligible": false,
+    "solver_cli_contract": "afl-uav-solver-cli-v2",
+    "solver_hash": "404cc5a97955cf95430ee20b825ad95839b817c49f2be241b982558421933cd0"
+  },
+  "algorithm_parameters": {
+    "aco_label": "aco_acor",
+    "afl_uav_iteration_limit": 256,
+    "grid_resolution": 2.0,
+    "population_max_generations": 20,
+    "population_size": 32,
+    "prm_neighbor_count": 10,
+    "prm_sample_count": 180,
+    "rrt_goal_bias": 0.1,
+    "rrt_max_samples": 1000,
+    "rrt_step_size": 4.0,
+    "waypoint_count": 10
+  },
+  "benchmark_id": "uav2d-v1",
+  "budget": {
+    "max_objective_evaluations": 2000,
+    "time_limit_seconds": 1.0
+  },
+  "config_hash": "0f4dd8267a127495782f04e4ba5ed366829ece79d4d2886df79354ed819b8472",
+  "created_at_utc": "2026-07-28T08:15:12.405552+00:00",
+  "dependencies": {
+    "PyYAML": "6.0.1",
+    "numpy": "1.26.4",
+    "pydantic": "2.13.4"
+  },
+  "expected_records": 300,
+  "host": {
+    "hostname": "LAPTOP-6C3CNSPJ",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:03:56) [MSC v.1929 64 bit (AMD64)]"
+  },
+  "manifest_hash": "1f980c2697f521d4e5b92ff596452ce8f2bc2874885d9b789288c790b71b1517",
+  "manifest_path": "D:\\CodingLife\\Agent\\agnet_uav\\data\\benchmarks\\uav2d-v1\\manifest.json",
+  "objective": {
+    "collision": 1000.0,
+    "length": 1.0,
+    "risk": 10.0,
+    "smoothness": 5.0,
+    "waypoint": 0.5
+  },
+  "overrides": {
+    "afl_artifact_path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\afl_uav_artifacts\\afl-uav-offline-v1",
+    "planners": [
+      "afl_uav"
+    ],
+    "repetitions": 5
+  },
+  "record_key_hash": "90e060185aad59a0f90c50b7825d0b491802dde515e51e1fd4bbb75fcf03120e",
+  "run_id": "afl-uav-offline-validation-v1",
+  "selected_maps": 60,
+  "selected_planners": [
+    "afl_uav"
+  ],
+  "split": "validation",
+  "stochastic_repetitions": 5
+}

@@ -1,0 +1,112 @@
+{
+  "actual_records": 138,
+  "api_calls": 0,
+  "arms": [
+    "dijkstra",
+    "astar",
+    "theta_star",
+    "rrt",
+    "rrt_star",
+    "prm",
+    "ga",
+    "pso",
+    "de",
+    "aco_acor",
+    "frozen_afl_uav",
+    "evolutionary_afl_uav_v1",
+    "evolutionary_afl_uav_v2"
+  ],
+  "audit_receipt_sha256": "3006e457205671ff30f2c618ff5c8a58a4ed894928fbfef517a10601b904604a",
+  "benchmark_id": "uav2d-hidden-test-v3",
+  "completed_at_utc": "2026-08-17T15:01:03.037397+00:00",
+  "dependencies": {
+    "PyYAML": "6.0.1",
+    "numpy": "1.26.4",
+    "pydantic": "2.13.4"
+  },
+  "execution_receipt_sha256": "a458ff4d4660e7e204fa058f527196e04d84719f316a734e4cce3d8e3446fd96",
+  "expected_records": 138,
+  "frozen_tool_hashes": {
+    "analyzer": {
+      "path": "src/uav_operator_evolution/planning_benchmarks/final_evaluation_v3_audit.py",
+      "sha256": "f805e9267140f9a792eec6be7836de7d0cd5eb801d2a2de7a2a52d99da1f44db"
+    },
+    "audit_entry": {
+      "path": "scripts/audit_hidden_test_v3_results.py",
+      "sha256": "58d9bfe059081d8791102339ea17f88ac4da031551c7defbc485066bdf1c8e1a"
+    },
+    "benchmark_runner": {
+      "path": "src/uav_operator_evolution/planning_benchmarks/runner.py",
+      "sha256": "b29bcc1fee4cf1931cc94920373b2fef6fb25e30e97b0e238286af9bdf84ce48"
+    },
+    "execution_entry": {
+      "path": "scripts/run_authorized_hidden_test_v3.py",
+      "sha256": "21d20b75850af18e1527f49990f1875f40c683ecbeb4a14b0dae4e4ac55e5dec"
+    },
+    "executor": {
+      "path": "src/uav_operator_evolution/planning_benchmarks/final_evaluation_v3_executor.py",
+      "sha256": "78addd9ef433f4b9818aabb6ff5e3956c24042db3e634a8143221be74fe2a4e0"
+    },
+    "opening_entry": {
+      "path": "scripts/open_hidden_test_v3.py",
+      "sha256": "b5386071fbaef924342dad51c81d950c7bf0d05bb027983cf7af11fcdcae4e1a"
+    },
+    "preflight_entry": {
+      "path": "scripts/preflight_hidden_test_v3.py",
+      "sha256": "1862353f2e67ab83932763d0cdbe598855cf85d8ebdf3569fa5e2e0f675123fa"
+    },
+    "protocol_common": {
+      "path": "src/uav_operator_evolution/planning_benchmarks/final_evaluation_v3_common.py",
+      "sha256": "86109d10402d2a17fa8830845b58b6d4734bc299c05bd5ece4729a6bdee45c4d"
+    }
+  },
+  "hidden_test_map_json_read": false,
+  "hidden_test_planner_executions": 0,
+  "hidden_test_results_seen": false,
+  "host": {
+    "hostname": "LAPTOP-6C3CNSPJ",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "maps": 6,
+  "planned_interruption": {
+    "completed_arms": 4,
+    "hidden_test_maps_read": false,
+    "newly_completed_arms": [
+      "dijkstra",
+      "astar",
+      "theta_star",
+      "rrt"
+    ],
+    "plan_id": "1533c7b9483b0801783d59b40ad9c6f2acd6729216683ecc1534f560b7c6f5a1",
+    "resumed_arms": [],
+    "status": "checkpointed"
+  },
+  "preflight_receipt_id": "d8219d50f1592d22508dee50ccf83a792fa4f25f843c1dd9609ff0705b4a3346",
+  "preregistration_id": "e2f583f74349f356e7cb7718d02e0b8775245c6ff3b2af73a0262508b4585d99",
+  "preregistration_sha256": "ff976bdc936c41776ebe9a4f03a206e46c69a3ce81873d902d7f2335c8217144",
+  "resume": {
+    "newly_completed_arms": [
+      "rrt_star",
+      "prm",
+      "ga",
+      "pso",
+      "de",
+      "aco_acor",
+      "frozen_afl_uav",
+      "evolutionary_afl_uav_v1",
+      "evolutionary_afl_uav_v2"
+    ],
+    "resumed_arms": [
+      "dijkstra",
+      "astar",
+      "theta_star",
+      "rrt"
+    ]
+  },
+  "schema_version": "uav2d-final-preflight-receipt-v3",
+  "sealed_marker_preserved": true,
+  "split": "validation",
+  "status": "passed",
+  "surrogate_dataset": "uav2d-v1",
+  "unique_records": 138
+}

@@ -1,0 +1,10 @@
+{
+  "arm_id": "ga",
+  "benchmark_metadata_sha256": "98a2f54fab117954099fb23fe3cbe720f7a273b5bdf7d394f55b54fc862233d7",
+  "benchmark_paths_sha256": "ae2b7290cdd4b5c5b542d79dce82f935289fc449c08ee9dff30ff871783ba30c",
+  "benchmark_runs_sha256": "49c471e65ddd100f1f64f70acf94eadae9e90977e8576f641033d2945423983e",
+  "plan_id": "cac5e3a3c96b00a672fb3d856b1fa9f33483cd54b99b7314a7b6bb9cc995d03c",
+  "rows": 600,
+  "schema_version": "uav2d-final-arm-checkpoint-v3",
+  "status": "complete"
+}

@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "output_dir": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\offline-validation-analysis-v1",
+  "record_count": 2580,
+  "planner_count": 11,
+  "map_count": 60,
+  "files": {
+    "runs": {
+      "path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\offline-validation-analysis-v1\\offline_validation_runs.csv",
+      "sha256": "1f01cefcd2c4643ea469d9a3a6685eddc2b5bf1a85bd9cd1712678ca62ed8a4e"
+    },
+    "overall": {
+      "path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\offline-validation-analysis-v1\\overall_statistics.csv",
+      "sha256": "4323a935743c643cc48bb0da87211a99e81dad7d4302c02a7c52d02199dce43c"
+    },
+    "by_difficulty": {
+      "path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\offline-validation-analysis-v1\\by_difficulty_statistics.csv",
+      "sha256": "c225c534cf260943363e3ca011080c75777257670e575ec700ec3e06d7645782"
+    },
+    "per_map": {
+      "path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\offline-validation-analysis-v1\\per_map_statistics.csv",
+      "sha256": "fc0ca0ef922b3fc36ca3f0e5d9be41dcc7a7e0c04322417a326e9f7d39ec6bf7"
+    },
+    "paired": {
+      "path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\offline-validation-analysis-v1\\paired_comparisons.csv",
+      "sha256": "428f40e41229ee204b52c8f938b12d97423c90fcb3ba7ea29169157dc7ed31fa"
+    },
+    "stability": {
+      "path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\offline-validation-analysis-v1\\seed_stability.csv",
+      "sha256": "599360bf27685002cf9ba83e135424f81696b5082e61a4f117d2badcd72afe67"
+    },
+    "stability_per_map": {
+      "path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\offline-validation-analysis-v1\\seed_stability_per_map.csv",
+      "sha256": "737e628246b7839e431e2c080f1d763cdb89b6590a8be1b0f5ddfad3316ceb91"
+    },
+    "failure_status": {
+      "path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\offline-validation-analysis-v1\\failure_status.csv",
+      "sha256": "4d672b2acf999c1224737afc2805ea45fb173b81a7fbf58d59324388e6bf62de"
+    },
+    "audit": {
+      "path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\offline-validation-analysis-v1\\validation_audit.json",
+      "sha256": "abdb77b3fcef7de70c7cea830941cbf43ff1195822e9404e93425f26134a725f"
+    },
+    "summary": {
+      "path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\offline-validation-analysis-v1\\analysis_summary.json",
+      "sha256": "a981f0091bbaae8615e569d3734ebc658f87a6f373d2d42cb064ebc79e324451"
+    },
+    "artifact": {
+      "path": "D:\\CodingLife\\Agent\\agnet_uav\\artifacts\\planning_benchmarks\\offline-validation-analysis-v1\\report_artifact.json",
+      "sha256": "4a1e27576379372732c8dc5463b4ed9aafe3dab379fd917510b88be0581cc819"
+    }
+  }
+}

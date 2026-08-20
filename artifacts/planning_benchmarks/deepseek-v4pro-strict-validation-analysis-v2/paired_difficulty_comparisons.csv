@@ -1,0 +1,13 @@
+difficulty,baseline,maps,both_feasible_maps,candidate_only_feasible_maps,baseline_only_feasible_maps,wins,ties,losses,median_cost_delta
+clustered,astar,10,10,0,0,2,2,6,0.066780866
+clustered,theta_star,10,10,0,0,2,2,6,0.305379067
+corridor,astar,10,10,0,0,10,0,0,-20.781227159
+corridor,theta_star,10,10,0,0,10,0,0,-15.403946434
+dense,astar,10,10,0,0,4,1,5,0.018566969
+dense,theta_star,10,10,0,0,3,2,5,0.076928635
+mixed,astar,10,10,0,0,4,3,3,0.0
+mixed,theta_star,10,10,0,0,4,3,3,0.0
+rooms_maze,astar,10,7,3,0,1,0,6,2.482375028
+rooms_maze,theta_star,10,8,2,0,1,0,7,2.158813733
+sparse,astar,10,10,0,0,3,6,1,0.0
+sparse,theta_star,10,10,0,0,3,6,1,0.0

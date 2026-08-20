@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e714192e7b25a3ba467236b79f95ddc035e64c5ac4f589028d295c6f162f828f",
+  "files": {
+    "artifact.json": "d19ec40b3a0867135bfc989ac6d57a118570d1bb9ecb2e16977c31946899d781",
+    "evolutionary_afl_uav_v2_candidate.yaml": "3e395c06e7af785f07b4ba1830202e939d3b2ce4d62227cfd5cc7891207779fd",
+    "evolutionary_afl_uav_v2_freeze.yaml": "f85edd778741075e5b7a50bd95d3fbca634ac860200fdcbfdf7699ee52373934",
+    "evolutionary_afl_v2.py": "081e9b2a876332696d61df778fa25b6f1916a8684b2dc58a56863539bcea76d4",
+    "pytest.xml": "cbe11ca3ff28ce77238dd6572ca58ab8ba029f69438e41cce68be00c0f1e425b"
+  },
+  "freeze_receipt_id": "f58cabfd3d13002362ad430a60268c0cca0dbe982170a7846dc7e947a2d4b1a9",
+  "method_id": "evolutionary-afl-uav-v2",
+  "research_claim_eligible": true,
+  "schema_version": "evolutionary-afl-method-freeze-receipt-v2",
+  "status": "passed"
+}

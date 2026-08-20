@@ -1,0 +1,8 @@
+planner,arm_id,map_class,runs,feasible_runs,feasible_rate,timeout_rate,budget_exhausted_rate,median_total_cost_feasible,iqr_total_cost_feasible,median_runtime_seconds
+rrt_star,rrt_star,all,12,8,0.6666666666666666,0.8333333333333334,0.0,115.08302656046556,9.896558244588945,0.10013115000003836
+rrt_star,rrt_star,clustered,2,2,1.0,1.0,0.0,120.4635186799305,2.124399516296606,0.1001432499999737
+rrt_star,rrt_star,corridor,2,0,0.0,1.0,0.0,,,0.10017544999993788
+rrt_star,rrt_star,dense,2,2,1.0,1.0,0.0,123.39746588332872,3.0038972022975656,0.10013115000003836
+rrt_star,rrt_star,mixed,2,2,1.0,0.0,0.0,109.4909171776687,0.0,0.00036965000003874593
+rrt_star,rrt_star,rooms_maze,2,0,0.0,1.0,0.0,,,0.10021990000007008
+rrt_star,rrt_star,sparse,2,2,1.0,1.0,0.0,111.69537932586462,0.13155463143259283,0.10022814999990715

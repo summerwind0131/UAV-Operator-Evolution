@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "expected_records": 2580,
+  "actual_records": 2580,
+  "unique_record_keys": 2580,
+  "unique_maps": 60,
+  "planner_record_counts": {
+    "aco_acor": 300,
+    "afl_uav": 300,
+    "astar": 60,
+    "de": 300,
+    "dijkstra": 60,
+    "ga": 300,
+    "prm": 300,
+    "pso": 300,
+    "rrt": 300,
+    "rrt_star": 300,
+    "theta_star": 60
+  },
+  "maps_per_class": {
+    "clustered": 10,
+    "corridor": 10,
+    "dense": 10,
+    "mixed": 10,
+    "rooms_maze": 10,
+    "sparse": 10
+  },
+  "manifest_hash": "1f980c2697f521d4e5b92ff596452ce8f2bc2874885d9b789288c790b71b1517",
+  "config_hash": "0f4dd8267a127495782f04e4ba5ed366829ece79d4d2886df79354ed819b8472",
+  "budget": {
+    "max_objective_evaluations": 2000,
+    "time_limit_seconds": 1.0
+  },
+  "shared_stochastic_seed_sets": true,
+  "research_claim_eligible": false,
+  "errors": []
+}

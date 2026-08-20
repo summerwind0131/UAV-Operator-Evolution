@@ -1,0 +1,10 @@
+{
+  "arm_id": "evo_no_rooms_strategy",
+  "benchmark_metadata_sha256": "7e9975341ee1088324fd443aaaf0d1b2661d101066272e05fd05906c8140c35b",
+  "benchmark_paths_sha256": "91698aa0a0a1993fd45bc25026b287e3b6a0dfa60f5af30d51836687b9b60a22",
+  "benchmark_runs_sha256": "f5c6ee1d506d5e5744a1f8b9b93c30f9dfa643695965e0c0651871a5df9c4e01",
+  "plan_id": "8da50c4196337441638a85abb0ca0ad782dec47dadd85c16592237251428029d",
+  "rows": 600,
+  "schema_version": "uav2d-final-arm-checkpoint-v1",
+  "status": "complete"
+}

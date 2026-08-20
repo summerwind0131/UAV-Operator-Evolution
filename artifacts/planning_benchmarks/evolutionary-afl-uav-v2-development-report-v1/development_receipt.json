@@ -1,0 +1,33 @@
+{
+  "schema_version": "evolutionary-afl-uav-v2-development-receipt-v1",
+  "status": "development_only_not_frozen",
+  "selected_variant": "reliability_only",
+  "api_calls": 0,
+  "hidden_test_v2_accessed": false,
+  "research_claim_eligible": false,
+  "validation": {
+    "run_id": "evolutionary-afl-uav-v2-validation-development-guarded-reliability-full",
+    "records": 300,
+    "unique_records": 300,
+    "trusted_feasible_records": 300,
+    "timeouts": 0,
+    "median_trusted_cost": 117.4609782593749,
+    "rooms_maze_median_trusted_cost": 123.90356997953202,
+    "minimum_finalization_reserve_seconds": 0.13430349998816382,
+    "median_finalization_reserve_seconds": 0.17842910000035772
+  },
+  "v1_validation_reference": {
+    "trusted_feasible_records": 300,
+    "timeouts": 0,
+    "median_trusted_cost": 117.36331026215021,
+    "rooms_maze_median_trusted_cost": 123.69615109037726
+  },
+  "hashes": {
+    "frozen_v1_source_sha256": "79f0a085a0f26b246d2f1e0d0bc1ac7e8a6288b34dd0fbc8f29bc9387e1a7d4f",
+    "v2_source_sha256": "081e9b2a876332696d61df778fa25b6f1916a8684b2dc58a56863539bcea76d4",
+    "candidate_config_sha256": "3e395c06e7af785f07b4ba1830202e939d3b2ce4d62227cfd5cc7891207779fd",
+    "benchmark_runs_csv_sha256": "b089509fb6639bb1ec833d504ee6e9d13981c2910531423b4e83f607acfd7b29",
+    "comparison_json_sha256": "a751fd8d47d25e82268bb67b4ed14ebb34627d153aba90e5b37f58107fbb67df"
+  },
+  "next_step": "independent review, then freeze v2 before preregistering a new Hidden Test-v3"
+}

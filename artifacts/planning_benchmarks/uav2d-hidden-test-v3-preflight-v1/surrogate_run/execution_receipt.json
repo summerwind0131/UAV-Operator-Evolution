@@ -1,0 +1,46 @@
+{
+  "api_calls": 0,
+  "arm_ids": [
+    "dijkstra",
+    "astar",
+    "theta_star",
+    "rrt",
+    "rrt_star",
+    "prm",
+    "ga",
+    "pso",
+    "de",
+    "aco_acor",
+    "frozen_afl_uav",
+    "evolutionary_afl_uav_v1",
+    "evolutionary_afl_uav_v2"
+  ],
+  "benchmark_paths_sha256": "c6726783cde518b0ba53419994590f05a306ec7dc223216d6bef37a905f129d6",
+  "benchmark_runs_sha256": "25c130655865e0a0b0ce40355ef1645382389f55b02f9b68d9a35d57ef9ed619",
+  "completed_at_utc": "2026-08-17T15:01:01.533481+00:00",
+  "execution_receipt_id": "b352d44ced1b5ed934de82b3052993bdbc561758dc779b49fbf290cd691180ab",
+  "hidden_test_maps_read": false,
+  "mode": "preflight",
+  "newly_completed_arms": [
+    "rrt_star",
+    "prm",
+    "ga",
+    "pso",
+    "de",
+    "aco_acor",
+    "frozen_afl_uav",
+    "evolutionary_afl_uav_v1",
+    "evolutionary_afl_uav_v2"
+  ],
+  "plan_id": "1533c7b9483b0801783d59b40ad9c6f2acd6729216683ecc1534f560b7c6f5a1",
+  "records": 138,
+  "resumed_arms": [
+    "dijkstra",
+    "astar",
+    "theta_star",
+    "rrt"
+  ],
+  "schema_version": "uav2d-final-execution-receipt-v3",
+  "status": "complete",
+  "unique_records": 138
+}

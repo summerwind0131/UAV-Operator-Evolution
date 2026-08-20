@@ -1,0 +1,10 @@
+{
+  "arm_id": "frozen_afl_uav",
+  "benchmark_metadata_sha256": "5e9e343e7c0d6fa227d288fcc712a098cefccb6dd94b17728db0125d94ab015f",
+  "benchmark_paths_sha256": "d45410ee166360a552fdade53ec022e7d9a2bb8fcedc1ec48acc3984316627e6",
+  "benchmark_runs_sha256": "4497f9344cc0da760cbefa5bde4099d621acbf976c1d168de1be51ef39613222",
+  "plan_id": "cac5e3a3c96b00a672fb3d856b1fa9f33483cd54b99b7314a7b6bb9cc995d03c",
+  "rows": 600,
+  "schema_version": "uav2d-final-arm-checkpoint-v3",
+  "status": "complete"
+}

@@ -1,0 +1,1 @@
+{"best_cost": 109.78100646293456, "collision_checks": 3027, "initial_cost": 109.78100646293456, "iterations": 100, "node_expansions": 0, "objective_evaluations": 101, "path": [[88.57170161507123, 89.34262041790069], [8.891060118909662, 13.825306172920715]], "requested_iterations": 100, "seed": 4777667852038180138, "status": "success"}

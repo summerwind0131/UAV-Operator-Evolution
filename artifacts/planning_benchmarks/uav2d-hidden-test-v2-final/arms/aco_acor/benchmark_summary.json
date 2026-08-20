@@ -1,0 +1,106 @@
+{
+  "paired_comparisons": [],
+  "ranking": [
+    {
+      "arm_id": "aco_acor",
+      "feasible_rate": 0.7933333333333333,
+      "median_total_cost_feasible": 133.25698108320893,
+      "planner": "aco_acor",
+      "rank": 1
+    }
+  ],
+  "ranking_rule": "descending feasible_rate, then ascending median unified total cost among feasible paths",
+  "statistics": [
+    {
+      "arm_id": "aco_acor",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 0.7933333333333333,
+      "feasible_runs": 476,
+      "iqr_total_cost_feasible": 174.8250623142734,
+      "map_class": "all",
+      "median_runtime_seconds": 0.8227862499988987,
+      "median_total_cost_feasible": 133.25698108320893,
+      "planner": "aco_acor",
+      "runs": 600,
+      "timeout_rate": 0.5
+    },
+    {
+      "arm_id": "aco_acor",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 100,
+      "iqr_total_cost_feasible": 30.611676953326295,
+      "map_class": "clustered",
+      "median_runtime_seconds": 0.4549284999957308,
+      "median_total_cost_feasible": 123.23187491541297,
+      "planner": "aco_acor",
+      "runs": 100,
+      "timeout_rate": 0.0
+    },
+    {
+      "arm_id": "aco_acor",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 100,
+      "iqr_total_cost_feasible": 18.14845149941624,
+      "map_class": "corridor",
+      "median_runtime_seconds": 1.0010667499991541,
+      "median_total_cost_feasible": 340.05828262298854,
+      "planner": "aco_acor",
+      "runs": 100,
+      "timeout_rate": 1.0
+    },
+    {
+      "arm_id": "aco_acor",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 100,
+      "iqr_total_cost_feasible": 17.375073999102014,
+      "map_class": "dense",
+      "median_runtime_seconds": 0.5124483500003407,
+      "median_total_cost_feasible": 120.7897166294668,
+      "planner": "aco_acor",
+      "runs": 100,
+      "timeout_rate": 0.0
+    },
+    {
+      "arm_id": "aco_acor",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 0.76,
+      "feasible_runs": 76,
+      "iqr_total_cost_feasible": 124.87966046599645,
+      "map_class": "mixed",
+      "median_runtime_seconds": 1.001030500003253,
+      "median_total_cost_feasible": 180.67935782753602,
+      "planner": "aco_acor",
+      "runs": 100,
+      "timeout_rate": 1.0
+    },
+    {
+      "arm_id": "aco_acor",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 0.0,
+      "feasible_runs": 0,
+      "iqr_total_cost_feasible": null,
+      "map_class": "rooms_maze",
+      "median_runtime_seconds": 1.0004203999997117,
+      "median_total_cost_feasible": null,
+      "planner": "aco_acor",
+      "runs": 100,
+      "timeout_rate": 1.0
+    },
+    {
+      "arm_id": "aco_acor",
+      "budget_exhausted_rate": 0.0,
+      "feasible_rate": 1.0,
+      "feasible_runs": 100,
+      "iqr_total_cost_feasible": 13.337612513109676,
+      "map_class": "sparse",
+      "median_runtime_seconds": 0.2966559499982395,
+      "median_total_cost_feasible": 117.69579104533895,
+      "planner": "aco_acor",
+      "runs": 100,
+      "timeout_rate": 0.0
+    }
+  ]
+}

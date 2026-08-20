@@ -1,0 +1,36 @@
+{
+  "arm_ids": [
+    "dijkstra",
+    "astar",
+    "theta_star",
+    "rrt",
+    "rrt_star",
+    "prm",
+    "ga",
+    "pso",
+    "de",
+    "aco_acor",
+    "frozen_afl_uav",
+    "evolutionary_afl_uav_v1",
+    "evolutionary_afl_uav_v2"
+  ],
+  "config_hash": "0f4dd8267a127495782f04e4ba5ed366829ece79d4d2886df79354ed819b8472",
+  "expected_maps": 6,
+  "expected_records": 138,
+  "maps_per_class": 1,
+  "max_objective_evaluations": 50,
+  "mode": "preflight",
+  "plan_id": "1533c7b9483b0801783d59b40ad9c6f2acd6729216683ecc1534f560b7c6f5a1",
+  "protocol_identity": {
+    "preregistration_id": "e2f583f74349f356e7cb7718d02e0b8775245c6ff3b2af73a0262508b4585d99",
+    "surrogate_dataset": "uav2d-v1/validation"
+  },
+  "protocol_sha256": "7bc250d77aa8826ae1e5999b3589f28b68697abd8d4d1129154ecf72092c1f8f",
+  "schema_version": "uav2d-final-execution-plan-v3",
+  "seed_artifact_id": "d384eac99d8a1f5df9d544ff1c3adf2ef9838c04930809f140b18dcc5f34f455",
+  "split": "validation",
+  "stochastic_repetitions": 2,
+  "time_limit_seconds": 0.1,
+  "v1_artifact_id": "cf5d90443f61b182281071268ca3b8bc4275a2ae782bc1c7d9b6c2cef90823f3",
+  "v2_artifact_id": "e714192e7b25a3ba467236b79f95ddc035e64c5ac4f589028d295c6f162f828f"
+}

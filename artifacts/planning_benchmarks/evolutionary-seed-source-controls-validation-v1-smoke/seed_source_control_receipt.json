@@ -1,0 +1,65 @@
+{
+  "api_calls": 0,
+  "arms": {
+    "evolutionary_afl_uav_v1": {
+      "seed_source": "afl_uav_deepseek_v4_pro"
+    },
+    "evolutionary_astar_seed": {
+      "seed_source": "astar"
+    },
+    "evolutionary_handcrafted_destroy_repair_seed": {
+      "seed_source": "handcrafted_destroy_repair"
+    },
+    "evolutionary_theta_seed": {
+      "seed_source": "theta_star"
+    }
+  },
+  "control_source_sha256": "76f3a3af190bdfce7f6b2013e3b066392f31679080227213c5efda6ff1644ea0",
+  "created_at_utc": "2026-08-19T15:00:41.017523+00:00",
+  "expected_records": 24,
+  "experiment_config_sha256": "45143ccbeec717256538f4bf95146145ee0e48236df05bed82b30be2e015c6ea",
+  "experiment_id": "evolutionary-seed-source-controls-v1",
+  "frozen_hashes": {
+    "afl_seed_artifact_sha256": "c4e83cc5fc589e50144fdc6df3d409e436edb36197ff2b1e663e13a83bd7a8fd",
+    "current_v1_core_sha256": "79f0a085a0f26b246d2f1e0d0bc1ac7e8a6288b34dd0fbc8f29bc9387e1a7d4f",
+    "frozen_method_artifact_sha256": "596d80ba5c80168b1eb8dc5b98d30e65d5bd141dab0d3567101300fd20186551",
+    "frozen_v1_copy_sha256": "79f0a085a0f26b246d2f1e0d0bc1ac7e8a6288b34dd0fbc8f29bc9387e1a7d4f",
+    "shared_method_identity_hash": "b0d45bc01681b94e5eb0faf034f6b76fc4f498186a2fe5b799112a51d0edb7f5"
+  },
+  "hidden_test_access": false,
+  "receipt_id": "628db1c8d24d62f9e6d7e14880c73c82cad884e98c06bd998025dfed90fcd861",
+  "records": 24,
+  "result_hashes": {
+    "benchmark_metadata.json": "ca015d7c737fe6ab2e75e7d95b0d77bbc01c9eb9872b0ab828d665a928e0e94a",
+    "benchmark_paths.jsonl": "617cf7425067845376dbc836a46c45478bb2a3c43aff6ad9efa0db33b17ddd85",
+    "benchmark_runs.csv": "a8f820f818e19905c21064d84c42a649563bf355863546aae486cae9a16ffb86",
+    "benchmark_summary.json": "bf2a22d0393ba558e6dd1d68a7859477e24413b573d2762519f1795a2a56ddd0"
+  },
+  "schema_version": "evolutionary-seed-source-controls-receipt-v1",
+  "shared_evolution_layer": {
+    "archive_size": 8,
+    "base_iteration_limit": 64,
+    "crossover_probability": 0.4,
+    "extra_mutation_probability": 0.3,
+    "grid_resolution": 2.0,
+    "manual_seed_time_fraction": 0.18,
+    "max_generations": 20,
+    "max_waypoints": 64,
+    "population_size": 32
+  },
+  "shared_methods_inherited_verbatim": [
+    "plan",
+    "_generation_cap",
+    "_initialize_population",
+    "_apply_operator",
+    "_mutate_insert",
+    "_mutate_delete",
+    "_mutate_move",
+    "_mutate_swap",
+    "_crossover",
+    "_update_archive",
+    "_select_survivors",
+    "_select_parent"
+  ],
+  "split": "validation"
+}

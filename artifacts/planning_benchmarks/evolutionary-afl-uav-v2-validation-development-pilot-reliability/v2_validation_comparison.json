@@ -1,0 +1,114 @@
+{
+  "api_calls": 0,
+  "hidden_test_v2_accessed": false,
+  "maps_per_class": 2,
+  "next_step": "iterate only on Train/Validation; freeze v2 before creating a new hidden Test-v3",
+  "repetitions": 3,
+  "research_claim_eligible": false,
+  "rooms_maze": {
+    "v1": {
+      "iqr_trusted_cost": 1.0244928189120088,
+      "map_success_rate": 1.0,
+      "maps": 2,
+      "median_trusted_cost": 123.68127259976853,
+      "runs": 6,
+      "timeouts": 0,
+      "trusted_feasible_rate": 1.0,
+      "trusted_feasible_runs": 6
+    },
+    "v2": {
+      "iqr_trusted_cost": 1.0244928189120088,
+      "map_success_rate": 1.0,
+      "maps": 2,
+      "median_trusted_cost": 123.68127259976853,
+      "runs": 6,
+      "timeouts": 0,
+      "trusted_feasible_rate": 1.0,
+      "trusted_feasible_runs": 6
+    }
+  },
+  "schema_version": "evolutionary-afl-uav-v2-validation-comparison-v1",
+  "split": "validation",
+  "status": "development_only",
+  "v1": {
+    "iqr_trusted_cost": 12.369198358425024,
+    "map_success_rate": 1.0,
+    "maps": 12,
+    "median_trusted_cost": 118.37221405704423,
+    "runs": 36,
+    "timeouts": 0,
+    "trusted_feasible_rate": 1.0,
+    "trusted_feasible_runs": 36
+  },
+  "v1_source_sha256": "79f0a085a0f26b246d2f1e0d0bc1ac7e8a6288b34dd0fbc8f29bc9387e1a7d4f",
+  "v2": {
+    "iqr_trusted_cost": 12.369198358425024,
+    "map_success_rate": 1.0,
+    "maps": 12,
+    "median_trusted_cost": 118.23279692436826,
+    "runs": 36,
+    "timeouts": 0,
+    "trusted_feasible_rate": 1.0,
+    "trusted_feasible_runs": 36
+  },
+  "v2_diagnostics": {
+    "maximum_portals_detected": 0,
+    "median_finalization_reserve_seconds": 0.12309675000142306,
+    "minimum_finalization_reserve_seconds": 0.07601589999831049,
+    "population_source_totals": {
+      "afl": 1152,
+      "astar": 0,
+      "prm": 0,
+      "redistributed": 0,
+      "theta_star": 0,
+      "topology": 0
+    },
+    "portfolio_status_counts": {
+      "astar:disabled": 36,
+      "prm:disabled": 36,
+      "theta_star:disabled": 36,
+      "topology:disabled": 36
+    }
+  },
+  "v2_source_sha256": "80e91189b9af1580a5c5b0c997f45e80d4ff9ef7f75cc657e816700fbbe37443",
+  "v2_vs_v1_paired": {
+    "by_class": {
+      "clustered": {
+        "losses": 1,
+        "ties": 1,
+        "wins": 0
+      },
+      "corridor": {
+        "losses": 1,
+        "ties": 1,
+        "wins": 0
+      },
+      "dense": {
+        "losses": 0,
+        "ties": 1,
+        "wins": 1
+      },
+      "mixed": {
+        "losses": 0,
+        "ties": 2,
+        "wins": 0
+      },
+      "rooms_maze": {
+        "losses": 0,
+        "ties": 2,
+        "wins": 0
+      },
+      "sparse": {
+        "losses": 0,
+        "ties": 2,
+        "wins": 0
+      }
+    },
+    "half_tie_win_rate": 0.4583333333333333,
+    "losses": 2,
+    "maps": 12,
+    "ties": 9,
+    "wins": 1
+  },
+  "variant": "reliability_only"
+}

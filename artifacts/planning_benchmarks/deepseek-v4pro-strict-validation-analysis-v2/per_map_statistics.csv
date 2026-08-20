@@ -1,0 +1,721 @@
+planner,planner_key,planner_label,map_id,difficulty,map_feasible,feasible_repetitions,repetitions,median_feasible_cost,median_elapsed_seconds
+aco_acor,aco_acor,ACO/ACOR,validation-000-sparse-c9b13b3f28,sparse,True,5,5,112.443125427,0.0996881
+aco_acor,aco_acor,ACO/ACOR,validation-001-dense-4ac25c8680,dense,True,5,5,145.180404025,0.2144035
+aco_acor,aco_acor,ACO/ACOR,validation-002-corridor-284a55aaca,corridor,True,5,5,302.930428325,0.8465752
+aco_acor,aco_acor,ACO/ACOR,validation-003-clustered-4b46b12691,clustered,True,5,5,150.960022363,0.2069077
+aco_acor,aco_acor,ACO/ACOR,validation-004-rooms_maze-33155f70ac,rooms_maze,True,1,5,153.204363972,1.0005118
+aco_acor,aco_acor,ACO/ACOR,validation-005-mixed-00e28968ec,mixed,True,5,5,109.490917178,0.6236387
+aco_acor,aco_acor,ACO/ACOR,validation-006-sparse-1d6c6d46f9,sparse,True,5,5,117.998051344,0.0741758
+aco_acor,aco_acor,ACO/ACOR,validation-007-dense-c2a9dc256c,dense,True,5,5,139.128888499,0.1713723
+aco_acor,aco_acor,ACO/ACOR,validation-008-corridor-642e33974b,corridor,True,5,5,345.307513546,0.7930711
+aco_acor,aco_acor,ACO/ACOR,validation-009-clustered-aab5c1fb46,clustered,True,5,5,117.903659974,0.1905282
+aco_acor,aco_acor,ACO/ACOR,validation-010-rooms_maze-3771cb0a3e,rooms_maze,False,0,5,,1.0014348
+aco_acor,aco_acor,ACO/ACOR,validation-011-mixed-931865136a,mixed,True,5,5,107.027365818,0.5343538
+aco_acor,aco_acor,ACO/ACOR,validation-012-sparse-84a3f67668,sparse,True,5,5,111.209964878,0.075621
+aco_acor,aco_acor,ACO/ACOR,validation-013-dense-7cf63ca81c,dense,True,5,5,114.311904743,0.1653571
+aco_acor,aco_acor,ACO/ACOR,validation-014-corridor-b987c1ce01,corridor,True,5,5,307.865052885,0.640708
+aco_acor,aco_acor,ACO/ACOR,validation-015-clustered-7a28d3fa10,clustered,True,5,5,117.255939327,0.1851415
+aco_acor,aco_acor,ACO/ACOR,validation-016-rooms_maze-65e65f49ba,rooms_maze,True,5,5,154.149208752,1.0006762
+aco_acor,aco_acor,ACO/ACOR,validation-017-mixed-bcc0e50136,mixed,True,5,5,139.571091593,1.0002921
+aco_acor,aco_acor,ACO/ACOR,validation-018-sparse-51b59abcbc,sparse,True,5,5,108.555759373,0.0908199
+aco_acor,aco_acor,ACO/ACOR,validation-019-dense-0d2d8d4b61,dense,True,5,5,114.122243247,0.138819
+aco_acor,aco_acor,ACO/ACOR,validation-020-corridor-dbe81a0f5a,corridor,True,5,5,313.799247158,0.5933428
+aco_acor,aco_acor,ACO/ACOR,validation-021-clustered-ad956c8c39,clustered,True,5,5,125.306656498,0.16492
+aco_acor,aco_acor,ACO/ACOR,validation-022-rooms_maze-2c4283538b,rooms_maze,False,0,5,,1.000228
+aco_acor,aco_acor,ACO/ACOR,validation-023-mixed-76d07dc752,mixed,True,5,5,354.51568591,0.6479294
+aco_acor,aco_acor,ACO/ACOR,validation-024-sparse-e4d54aacbe,sparse,True,5,5,166.156923441,0.0725909
+aco_acor,aco_acor,ACO/ACOR,validation-025-dense-a74eae0372,dense,True,5,5,157.30024024,0.1508275
+aco_acor,aco_acor,ACO/ACOR,validation-026-corridor-df1d0dc19b,corridor,True,5,5,319.541262995,0.8182159
+aco_acor,aco_acor,ACO/ACOR,validation-027-clustered-01a4b58761,clustered,True,5,5,118.086309577,0.1901541
+aco_acor,aco_acor,ACO/ACOR,validation-028-rooms_maze-59383c2cf3,rooms_maze,True,1,5,182.46743845,1.0010561
+aco_acor,aco_acor,ACO/ACOR,validation-029-mixed-8e82fede1f,mixed,True,5,5,306.813819976,1.0007753
+aco_acor,aco_acor,ACO/ACOR,validation-030-sparse-d1867552b7,sparse,True,5,5,113.031746124,0.1083274
+aco_acor,aco_acor,ACO/ACOR,validation-031-dense-50fc319e8f,dense,True,5,5,141.36926737,0.2996965
+aco_acor,aco_acor,ACO/ACOR,validation-032-corridor-694b95bbde,corridor,True,5,5,302.909193145,0.7965043
+aco_acor,aco_acor,ACO/ACOR,validation-033-clustered-efa513c067,clustered,True,5,5,113.890715827,0.1216927
+aco_acor,aco_acor,ACO/ACOR,validation-034-rooms_maze-406be3359c,rooms_maze,False,0,5,,1.0001852
+aco_acor,aco_acor,ACO/ACOR,validation-035-mixed-bdf8d13953,mixed,True,5,5,172.973608401,1.0004646
+aco_acor,aco_acor,ACO/ACOR,validation-036-sparse-15569042ff,sparse,True,5,5,108.974837519,0.0777768
+aco_acor,aco_acor,ACO/ACOR,validation-037-dense-1ff936311d,dense,True,5,5,119.355412094,0.1607643
+aco_acor,aco_acor,ACO/ACOR,validation-038-corridor-bd65fd5653,corridor,True,5,5,312.340176446,0.660949
+aco_acor,aco_acor,ACO/ACOR,validation-039-clustered-40f8a3e6f8,clustered,True,5,5,112.875473407,0.1379416
+aco_acor,aco_acor,ACO/ACOR,validation-040-rooms_maze-17442270fd,rooms_maze,True,1,5,272.451976349,1.0007946
+aco_acor,aco_acor,ACO/ACOR,validation-041-mixed-91571ccd4c,mixed,True,5,5,121.615300574,0.7595842
+aco_acor,aco_acor,ACO/ACOR,validation-042-sparse-096a0e75a7,sparse,True,5,5,107.376963334,0.0767502
+aco_acor,aco_acor,ACO/ACOR,validation-043-dense-29be9c710e,dense,True,5,5,127.52346206,0.1885783
+aco_acor,aco_acor,ACO/ACOR,validation-044-corridor-bf5b53b60d,corridor,True,5,5,302.194956396,0.8723712
+aco_acor,aco_acor,ACO/ACOR,validation-045-clustered-49fd97b5bf,clustered,True,5,5,118.602259775,0.2064476
+aco_acor,aco_acor,ACO/ACOR,validation-046-rooms_maze-0d89099427,rooms_maze,False,0,5,,1.0001413
+aco_acor,aco_acor,ACO/ACOR,validation-047-mixed-09023a351a,mixed,True,5,5,143.097512921,1.0002194
+aco_acor,aco_acor,ACO/ACOR,validation-048-sparse-9fb3e608e2,sparse,True,5,5,113.624727763,0.0787108
+aco_acor,aco_acor,ACO/ACOR,validation-049-dense-e3515336bb,dense,True,5,5,110.531958578,0.1425203
+aco_acor,aco_acor,ACO/ACOR,validation-050-corridor-02cfde4dab,corridor,True,5,5,321.601562565,0.5958698
+aco_acor,aco_acor,ACO/ACOR,validation-051-clustered-306e6ea262,clustered,True,5,5,205.747401294,0.1115883
+aco_acor,aco_acor,ACO/ACOR,validation-052-rooms_maze-72038f7d90,rooms_maze,True,5,5,118.725469201,1.0005491
+aco_acor,aco_acor,ACO/ACOR,validation-053-mixed-91ecbe1d72,mixed,True,5,5,177.612970727,0.8042336
+aco_acor,aco_acor,ACO/ACOR,validation-054-sparse-a789cc6b3a,sparse,True,5,5,109.173074802,0.1061863
+aco_acor,aco_acor,ACO/ACOR,validation-055-dense-ea424cfd6d,dense,True,5,5,180.243753759,0.226058
+aco_acor,aco_acor,ACO/ACOR,validation-056-corridor-5d206c9670,corridor,True,5,5,324.482894477,0.6921819
+aco_acor,aco_acor,ACO/ACOR,validation-057-clustered-235c9a4685,clustered,True,5,5,119.391265944,0.1674285
+aco_acor,aco_acor,ACO/ACOR,validation-058-rooms_maze-d092d61788,rooms_maze,True,5,5,118.320671386,1.0013428
+aco_acor,aco_acor,ACO/ACOR,validation-059-mixed-e6df613ff4,mixed,True,5,5,123.749993295,0.7006519
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-000-sparse-c9b13b3f28,sparse,True,5,5,111.380321908,0.1111378
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-001-dense-4ac25c8680,dense,True,5,5,120.139662144,0.1461256
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-002-corridor-284a55aaca,corridor,True,5,5,312.812515402,0.1292631
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-003-clustered-4b46b12691,clustered,True,5,5,118.50560213,0.1765115
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-004-rooms_maze-33155f70ac,rooms_maze,True,5,5,125.566769443,0.1672115
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-005-mixed-00e28968ec,mixed,True,5,5,109.490917178,0.140461
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-006-sparse-1d6c6d46f9,sparse,True,5,5,117.998051344,0.1386538
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-007-dense-c2a9dc256c,dense,True,5,5,123.792950577,0.1688086
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-008-corridor-642e33974b,corridor,True,5,5,337.396925729,0.1487871
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-009-clustered-aab5c1fb46,clustered,True,5,5,110.571208727,0.1551079
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-010-rooms_maze-3771cb0a3e,rooms_maze,True,5,5,125.205471435,0.1534989
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-011-mixed-931865136a,mixed,True,5,5,107.027365818,0.1296228
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-012-sparse-84a3f67668,sparse,True,5,5,111.116625024,0.1339615
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-013-dense-7cf63ca81c,dense,True,5,5,113.045445327,0.1671859
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-014-corridor-b987c1ce01,corridor,True,5,5,336.293331764,0.1436574
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-015-clustered-7a28d3fa10,clustered,True,5,5,114.786030043,0.1674966
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-016-rooms_maze-65e65f49ba,rooms_maze,True,5,5,126.296970569,0.1709555
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-017-mixed-bcc0e50136,mixed,True,5,5,151.536996746,0.1664201
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-018-sparse-51b59abcbc,sparse,True,5,5,108.555759373,0.1257161
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-019-dense-0d2d8d4b61,dense,True,5,5,114.122243247,0.1390628
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-020-corridor-dbe81a0f5a,corridor,True,5,5,336.488686641,0.1444895
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-021-clustered-ad956c8c39,clustered,True,5,5,117.682406667,0.1680821
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-022-rooms_maze-2c4283538b,rooms_maze,True,5,5,141.640696119,0.1608002
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-023-mixed-76d07dc752,mixed,True,5,5,364.236912542,0.1585793
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-024-sparse-e4d54aacbe,sparse,True,5,5,166.156923441,0.1277907
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-025-dense-a74eae0372,dense,True,5,5,332.282663141,0.1625785
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-026-corridor-df1d0dc19b,corridor,True,5,5,332.004837853,0.1396568
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-027-clustered-01a4b58761,clustered,True,5,5,115.649394454,0.1509823
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-028-rooms_maze-59383c2cf3,rooms_maze,True,5,5,125.033599466,0.1678862
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-029-mixed-8e82fede1f,mixed,True,5,5,272.242055526,0.1567957
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-030-sparse-d1867552b7,sparse,True,5,5,109.862042472,0.1485062
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-031-dense-50fc319e8f,dense,True,5,5,121.480345962,0.1914561
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-032-corridor-694b95bbde,corridor,True,5,5,318.179791944,0.1382676
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-033-clustered-efa513c067,clustered,True,5,5,114.254843769,0.1435925
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-034-rooms_maze-406be3359c,rooms_maze,True,5,5,347.315867896,0.211973
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-035-mixed-bdf8d13953,mixed,True,5,5,154.681723523,0.1776148
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-036-sparse-15569042ff,sparse,True,5,5,108.978499939,0.1352651
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-037-dense-1ff936311d,dense,True,5,5,115.883857709,0.163962
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-038-corridor-bd65fd5653,corridor,True,5,5,309.474873423,0.1514544
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-039-clustered-40f8a3e6f8,clustered,True,5,5,112.63372677,0.1433251
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-040-rooms_maze-17442270fd,rooms_maze,True,5,5,142.584092239,0.1710939
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-041-mixed-91571ccd4c,mixed,True,5,5,259.208109481,0.1667957
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-042-sparse-096a0e75a7,sparse,True,5,5,109.482290658,0.1380177
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-043-dense-29be9c710e,dense,True,5,5,118.167480937,0.1781847
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-044-corridor-bf5b53b60d,corridor,True,5,5,306.621032149,0.1557249
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-045-clustered-49fd97b5bf,clustered,True,5,5,118.651095926,0.1463038
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-046-rooms_maze-0d89099427,rooms_maze,True,5,5,154.799537358,0.2024909
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-047-mixed-09023a351a,mixed,True,5,5,117.979712342,0.1576059
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-048-sparse-9fb3e608e2,sparse,True,5,5,113.624727763,0.133157
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-049-dense-e3515336bb,dense,True,5,5,111.407075345,0.1433789
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-050-corridor-02cfde4dab,corridor,True,5,5,333.899180025,0.1330901
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-051-clustered-306e6ea262,clustered,True,5,5,205.747401294,0.1383069
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-052-rooms_maze-72038f7d90,rooms_maze,True,5,5,114.158404525,0.1442314
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-053-mixed-91ecbe1d72,mixed,True,5,5,177.612970727,0.1392591
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-054-sparse-a789cc6b3a,sparse,True,5,5,108.860846207,0.1371037
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-055-dense-ea424cfd6d,dense,True,5,5,121.802970937,0.1773444
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-056-corridor-5d206c9670,corridor,True,5,5,310.037834408,0.1371562
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-057-clustered-235c9a4685,clustered,True,5,5,107.732393694,0.1480626
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-058-rooms_maze-d092d61788,rooms_maze,True,5,5,117.226225034,0.1581036
+afl_uav,afl_uav:deepseek_v4pro_strict,"AFL-UAV (DeepSeek V4 Pro, strict)",validation-059-mixed-e6df613ff4,mixed,True,5,5,118.175643105,0.1626613
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-000-sparse-c9b13b3f28,sparse,True,5,5,111.380321908,0.2224275
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-001-dense-4ac25c8680,dense,True,5,5,119.103839384,0.3483347
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-002-corridor-284a55aaca,corridor,True,5,5,292.892902218,0.2395485
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-003-clustered-4b46b12691,clustered,True,5,5,117.272482261,0.3641822
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-004-rooms_maze-33155f70ac,rooms_maze,True,5,5,124.921875705,0.3016786
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-005-mixed-00e28968ec,mixed,True,5,5,109.490917178,0.2583196
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-006-sparse-1d6c6d46f9,sparse,True,5,5,117.998051344,0.211671
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-007-dense-c2a9dc256c,dense,True,5,5,121.604628759,0.3197352
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-008-corridor-642e33974b,corridor,True,5,5,301.303661185,0.2485889
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-009-clustered-aab5c1fb46,clustered,True,5,5,110.546959845,0.3413222
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-010-rooms_maze-3771cb0a3e,rooms_maze,True,5,5,125.205471435,0.3747964
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-011-mixed-931865136a,mixed,True,5,5,107.027365818,0.27093
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-012-sparse-84a3f67668,sparse,True,5,5,111.108186726,0.2509788
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-013-dense-7cf63ca81c,dense,True,5,5,112.597547858,0.3498696
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-014-corridor-b987c1ce01,corridor,True,5,5,297.114577122,0.2410866
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-015-clustered-7a28d3fa10,clustered,True,5,5,114.009618786,0.3682551
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-016-rooms_maze-65e65f49ba,rooms_maze,True,5,5,116.710549169,0.2902144
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-017-mixed-bcc0e50136,mixed,True,5,5,113.44683073,0.3165523
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-018-sparse-51b59abcbc,sparse,True,5,5,108.555759373,0.1976035
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-019-dense-0d2d8d4b61,dense,True,5,5,114.122243247,0.3189213
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-020-corridor-dbe81a0f5a,corridor,True,5,5,298.482877905,0.2387369
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-021-clustered-ad956c8c39,clustered,True,5,5,117.361505001,0.3661799
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-022-rooms_maze-2c4283538b,rooms_maze,True,5,5,140.442817946,0.396039
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-023-mixed-76d07dc752,mixed,True,5,5,125.308435813,0.2848374
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-024-sparse-e4d54aacbe,sparse,True,5,5,109.53048272,0.1410792
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-025-dense-a74eae0372,dense,True,5,5,120.465463245,0.3022817
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-026-corridor-df1d0dc19b,corridor,True,5,5,298.426739762,0.2689193
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-027-clustered-01a4b58761,clustered,True,5,5,113.823337996,0.3133905
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-028-rooms_maze-59383c2cf3,rooms_maze,True,5,5,122.292264171,0.2948168
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-029-mixed-8e82fede1f,mixed,True,5,5,143.174924676,0.3226134
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-030-sparse-d1867552b7,sparse,True,5,5,109.859526905,0.2516473
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-031-dense-50fc319e8f,dense,True,5,5,121.642393935,0.4204895
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-032-corridor-694b95bbde,corridor,True,5,5,291.311158608,0.2445055
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-033-clustered-efa513c067,clustered,True,5,5,113.794988108,0.313985
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-034-rooms_maze-406be3359c,rooms_maze,True,5,5,180.603067235,0.4436163
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-035-mixed-bdf8d13953,mixed,True,5,5,124.040175635,0.4219839
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-036-sparse-15569042ff,sparse,True,5,5,108.978499939,0.2680841
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-037-dense-1ff936311d,dense,True,5,5,115.700670392,0.3456028
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-038-corridor-bd65fd5653,corridor,True,5,5,296.643037877,0.2558465
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-039-clustered-40f8a3e6f8,clustered,True,5,5,112.272548879,0.3573254
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-040-rooms_maze-17442270fd,rooms_maze,True,5,5,141.205613237,0.363185
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-041-mixed-91571ccd4c,mixed,True,5,5,112.474303579,0.3160599
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-042-sparse-096a0e75a7,sparse,True,5,5,107.357866395,0.2398601
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-043-dense-29be9c710e,dense,True,5,5,117.219934355,0.3726331
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-044-corridor-bf5b53b60d,corridor,True,5,5,294.816803227,0.2427545
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-045-clustered-49fd97b5bf,clustered,True,5,5,118.10354941,0.3428803
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-046-rooms_maze-0d89099427,rooms_maze,True,5,5,154.195171698,0.4200832
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-047-mixed-09023a351a,mixed,True,5,5,118.95499574,0.3683267
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-048-sparse-9fb3e608e2,sparse,True,5,5,113.624727763,0.2257402
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-049-dense-e3515336bb,dense,True,5,5,110.490443704,0.3259673
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-050-corridor-02cfde4dab,corridor,True,5,5,296.959554672,0.2340266
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-051-clustered-306e6ea262,clustered,True,5,5,113.266861965,0.1962071
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-052-rooms_maze-72038f7d90,rooms_maze,True,5,5,114.05608917,0.2702537
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-053-mixed-91ecbe1d72,mixed,True,5,5,103.091807523,0.183334
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-054-sparse-a789cc6b3a,sparse,True,5,5,108.825690051,0.2314988
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-055-dense-ea424cfd6d,dense,True,5,5,118.528203602,0.4270436
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-056-corridor-5d206c9670,corridor,True,5,5,297.746960299,0.236209
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-057-clustered-235c9a4685,clustered,True,5,5,107.732393694,0.3366932
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-058-rooms_maze-d092d61788,rooms_maze,True,5,5,115.420676027,0.3281002
+afl_uav,afl_uav:offline_v3,AFL-UAV (offline v3 control),validation-059-mixed-e6df613ff4,mixed,True,5,5,117.931629665,0.3016428
+astar,astar,A*,validation-000-sparse-c9b13b3f28,sparse,True,1,1,111.380321908,0.0075335
+astar,astar,A*,validation-001-dense-4ac25c8680,dense,True,1,1,119.727097011,0.0567359
+astar,astar,A*,validation-002-corridor-284a55aaca,corridor,True,1,1,335.822756727,0.2526176
+astar,astar,A*,validation-003-clustered-4b46b12691,clustered,True,1,1,118.492670993,0.039699
+astar,astar,A*,validation-004-rooms_maze-33155f70ac,rooms_maze,True,1,1,125.218994656,0.6490574
+astar,astar,A*,validation-005-mixed-00e28968ec,mixed,True,1,1,109.490917178,9.45e-05
+astar,astar,A*,validation-006-sparse-1d6c6d46f9,sparse,True,1,1,117.998051344,1.25e-05
+astar,astar,A*,validation-007-dense-c2a9dc256c,dense,True,1,1,122.045784415,0.0120452
+astar,astar,A*,validation-008-corridor-642e33974b,corridor,True,1,1,346.212332736,0.2160931
+astar,astar,A*,validation-009-clustered-aab5c1fb46,clustered,True,1,1,113.474217278,0.0361201
+astar,astar,A*,validation-010-rooms_maze-3771cb0a3e,rooms_maze,True,1,1,125.194798444,0.5683468
+astar,astar,A*,validation-011-mixed-931865136a,mixed,True,1,1,107.027365818,6.28e-05
+astar,astar,A*,validation-012-sparse-84a3f67668,sparse,True,1,1,111.534968098,0.0022473
+astar,astar,A*,validation-013-dense-7cf63ca81c,dense,True,1,1,113.058109156,0.037264
+astar,astar,A*,validation-014-corridor-b987c1ce01,corridor,True,1,1,366.414389929,0.2258111
+astar,astar,A*,validation-015-clustered-7a28d3fa10,clustered,True,1,1,114.009618786,0.0579822
+astar,astar,A*,validation-016-rooms_maze-65e65f49ba,rooms_maze,True,1,1,122.775284713,0.4092347
+astar,astar,A*,validation-017-mixed-bcc0e50136,mixed,True,1,1,162.76612067,0.2156213
+astar,astar,A*,validation-018-sparse-51b59abcbc,sparse,True,1,1,108.555759373,1.41e-05
+astar,astar,A*,validation-019-dense-0d2d8d4b61,dense,True,1,1,114.122243247,2.19e-05
+astar,astar,A*,validation-020-corridor-dbe81a0f5a,corridor,True,1,1,360.192817101,0.1350063
+astar,astar,A*,validation-021-clustered-ad956c8c39,clustered,True,1,1,117.417712706,0.0447047
+astar,astar,A*,validation-022-rooms_maze-2c4283538b,rooms_maze,False,0,1,,1.0002413
+astar,astar,A*,validation-023-mixed-76d07dc752,mixed,True,1,1,354.92777981,0.1541944
+astar,astar,A*,validation-024-sparse-e4d54aacbe,sparse,True,1,1,166.156923441,1.28e-05
+astar,astar,A*,validation-025-dense-a74eae0372,dense,True,1,1,346.916058977,0.0274298
+astar,astar,A*,validation-026-corridor-df1d0dc19b,corridor,True,1,1,342.667160776,0.1861257
+astar,astar,A*,validation-027-clustered-01a4b58761,clustered,True,1,1,113.823337996,0.0235401
+astar,astar,A*,validation-028-rooms_maze-59383c2cf3,rooms_maze,True,1,1,120.627894948,0.2032383
+astar,astar,A*,validation-029-mixed-8e82fede1f,mixed,True,1,1,280.360559016,0.224564
+astar,astar,A*,validation-030-sparse-d1867552b7,sparse,True,1,1,110.051213376,0.0233679
+astar,astar,A*,validation-031-dense-50fc319e8f,dense,True,1,1,125.825864166,0.1041639
+astar,astar,A*,validation-032-corridor-694b95bbde,corridor,True,1,1,342.107698347,0.2547208
+astar,astar,A*,validation-033-clustered-efa513c067,clustered,True,1,1,114.134213175,0.006792
+astar,astar,A*,validation-034-rooms_maze-406be3359c,rooms_maze,False,0,1,,1.0001568
+astar,astar,A*,validation-035-mixed-bdf8d13953,mixed,True,1,1,123.882959071,0.6911995
+astar,astar,A*,validation-036-sparse-15569042ff,sparse,True,1,1,108.978499939,0.0107608
+astar,astar,A*,validation-037-dense-1ff936311d,dense,True,1,1,115.84672377,0.0207801
+astar,astar,A*,validation-038-corridor-bd65fd5653,corridor,True,1,1,326.411324026,0.2004939
+astar,astar,A*,validation-039-clustered-40f8a3e6f8,clustered,True,1,1,112.913837817,0.0229128
+astar,astar,A*,validation-040-rooms_maze-17442270fd,rooms_maze,True,1,1,140.101717212,0.6134949
+astar,astar,A*,validation-041-mixed-91571ccd4c,mixed,True,1,1,265.449686192,0.1556584
+astar,astar,A*,validation-042-sparse-096a0e75a7,sparse,True,1,1,107.411639789,0.0053923
+astar,astar,A*,validation-043-dense-29be9c710e,dense,True,1,1,118.403254532,0.0496958
+astar,astar,A*,validation-044-corridor-bf5b53b60d,corridor,True,1,1,320.774977124,0.2458611
+astar,astar,A*,validation-045-clustered-49fd97b5bf,clustered,True,1,1,118.323650803,0.0487408
+astar,astar,A*,validation-046-rooms_maze-0d89099427,rooms_maze,False,0,1,,1.0005859
+astar,astar,A*,validation-047-mixed-09023a351a,mixed,True,1,1,119.302295503,0.3261228
+astar,astar,A*,validation-048-sparse-9fb3e608e2,sparse,True,1,1,113.624727763,1.51e-05
+astar,astar,A*,validation-049-dense-e3515336bb,dense,True,1,1,110.538956965,0.0148939
+astar,astar,A*,validation-050-corridor-02cfde4dab,corridor,True,1,1,352.451393017,0.1489601
+astar,astar,A*,validation-051-clustered-306e6ea262,clustered,True,1,1,205.747401294,1.78e-05
+astar,astar,A*,validation-052-rooms_maze-72038f7d90,rooms_maze,True,1,1,114.343151151,0.2358177
+astar,astar,A*,validation-053-mixed-91ecbe1d72,mixed,True,1,1,177.612970727,8.88e-05
+astar,astar,A*,validation-054-sparse-a789cc6b3a,sparse,True,1,1,109.541911826,0.0090206
+astar,astar,A*,validation-055-dense-ea424cfd6d,dense,True,1,1,119.811615267,0.0294532
+astar,astar,A*,validation-056-corridor-5d206c9670,corridor,True,1,1,353.425977687,0.2066642
+astar,astar,A*,validation-057-clustered-235c9a4685,clustered,True,1,1,107.732393694,0.0230414
+astar,astar,A*,validation-058-rooms_maze-d092d61788,rooms_maze,True,1,1,113.843577379,0.7340455
+astar,astar,A*,validation-059-mixed-e6df613ff4,mixed,True,1,1,117.610620744,0.398507
+de,de,DE,validation-000-sparse-c9b13b3f28,sparse,True,5,5,112.145960131,0.1047024
+de,de,DE,validation-001-dense-4ac25c8680,dense,True,5,5,143.917558429,0.2172351
+de,de,DE,validation-002-corridor-284a55aaca,corridor,True,5,5,310.267067778,0.8951692
+de,de,DE,validation-003-clustered-4b46b12691,clustered,True,5,5,123.206349574,0.2088315
+de,de,DE,validation-004-rooms_maze-33155f70ac,rooms_maze,True,2,5,190.840379425,1.0004507
+de,de,DE,validation-005-mixed-00e28968ec,mixed,True,5,5,109.490917178,0.6340923
+de,de,DE,validation-006-sparse-1d6c6d46f9,sparse,True,5,5,117.998051344,0.0759456
+de,de,DE,validation-007-dense-c2a9dc256c,dense,True,5,5,131.974271009,0.1562072
+de,de,DE,validation-008-corridor-642e33974b,corridor,True,5,5,321.304781832,0.8526356
+de,de,DE,validation-009-clustered-aab5c1fb46,clustered,True,5,5,116.675345488,0.1829429
+de,de,DE,validation-010-rooms_maze-3771cb0a3e,rooms_maze,False,0,5,,1.0015004
+de,de,DE,validation-011-mixed-931865136a,mixed,True,5,5,107.027365818,0.4207047
+de,de,DE,validation-012-sparse-84a3f67668,sparse,True,5,5,111.209964878,0.0768115
+de,de,DE,validation-013-dense-7cf63ca81c,dense,True,5,5,114.311904743,0.1673914
+de,de,DE,validation-014-corridor-b987c1ce01,corridor,True,5,5,307.597757609,0.7049039
+de,de,DE,validation-015-clustered-7a28d3fa10,clustered,True,5,5,118.408831778,0.1890476
+de,de,DE,validation-016-rooms_maze-65e65f49ba,rooms_maze,True,5,5,157.081737744,1.0010148
+de,de,DE,validation-017-mixed-bcc0e50136,mixed,True,5,5,139.883805512,1.0006173
+de,de,DE,validation-018-sparse-51b59abcbc,sparse,True,5,5,108.555759373,0.0915309
+de,de,DE,validation-019-dense-0d2d8d4b61,dense,True,5,5,114.122243247,0.1431815
+de,de,DE,validation-020-corridor-dbe81a0f5a,corridor,True,5,5,341.689446604,0.6208516
+de,de,DE,validation-021-clustered-ad956c8c39,clustered,True,5,5,123.593984513,0.1673072
+de,de,DE,validation-022-rooms_maze-2c4283538b,rooms_maze,False,0,5,,1.0001953
+de,de,DE,validation-023-mixed-76d07dc752,mixed,True,5,5,354.51568591,0.6566819
+de,de,DE,validation-024-sparse-e4d54aacbe,sparse,True,5,5,166.156923441,0.076484
+de,de,DE,validation-025-dense-a74eae0372,dense,True,5,5,312.70081859,0.1547578
+de,de,DE,validation-026-corridor-df1d0dc19b,corridor,True,5,5,315.139640418,0.6671844
+de,de,DE,validation-027-clustered-01a4b58761,clustered,True,5,5,121.425997536,0.1879775
+de,de,DE,validation-028-rooms_maze-59383c2cf3,rooms_maze,True,3,5,207.025389509,1.0008298
+de,de,DE,validation-029-mixed-8e82fede1f,mixed,True,5,5,320.581288087,0.9592595
+de,de,DE,validation-030-sparse-d1867552b7,sparse,True,5,5,111.869089564,0.1303589
+de,de,DE,validation-031-dense-50fc319e8f,dense,True,5,5,143.938088996,0.2989239
+de,de,DE,validation-032-corridor-694b95bbde,corridor,True,5,5,316.450952516,0.8635568
+de,de,DE,validation-033-clustered-efa513c067,clustered,True,5,5,113.890715827,0.1237596
+de,de,DE,validation-034-rooms_maze-406be3359c,rooms_maze,False,0,5,,1.0001948
+de,de,DE,validation-035-mixed-bdf8d13953,mixed,True,5,5,178.052341083,1.0006613
+de,de,DE,validation-036-sparse-15569042ff,sparse,True,5,5,108.974837519,0.0797619
+de,de,DE,validation-037-dense-1ff936311d,dense,True,5,5,118.904333933,0.1639471
+de,de,DE,validation-038-corridor-bd65fd5653,corridor,True,5,5,312.340176446,0.6899743
+de,de,DE,validation-039-clustered-40f8a3e6f8,clustered,True,5,5,112.875473407,0.1405603
+de,de,DE,validation-040-rooms_maze-17442270fd,rooms_maze,False,0,5,,1.0005812
+de,de,DE,validation-041-mixed-91571ccd4c,mixed,True,5,5,121.967335757,0.7695843
+de,de,DE,validation-042-sparse-096a0e75a7,sparse,True,5,5,107.376963334,0.0789232
+de,de,DE,validation-043-dense-29be9c710e,dense,True,5,5,139.525787716,0.1921639
+de,de,DE,validation-044-corridor-bf5b53b60d,corridor,True,5,5,308.245522596,0.9173817
+de,de,DE,validation-045-clustered-49fd97b5bf,clustered,True,5,5,118.602259775,0.1927889
+de,de,DE,validation-046-rooms_maze-0d89099427,rooms_maze,False,0,5,,1.0001888
+de,de,DE,validation-047-mixed-09023a351a,mixed,True,5,5,133.068288851,0.9826831
+de,de,DE,validation-048-sparse-9fb3e608e2,sparse,True,5,5,113.624727763,0.0819895
+de,de,DE,validation-049-dense-e3515336bb,dense,True,5,5,110.531958578,0.1390285
+de,de,DE,validation-050-corridor-02cfde4dab,corridor,True,5,5,318.209105818,0.6392685
+de,de,DE,validation-051-clustered-306e6ea262,clustered,True,5,5,205.747401294,0.1131919
+de,de,DE,validation-052-rooms_maze-72038f7d90,rooms_maze,True,5,5,118.725469201,1.0008073
+de,de,DE,validation-053-mixed-91ecbe1d72,mixed,True,5,5,177.612970727,0.8554445
+de,de,DE,validation-054-sparse-a789cc6b3a,sparse,True,5,5,109.173074802,0.1069534
+de,de,DE,validation-055-dense-ea424cfd6d,dense,True,4,5,155.397621819,0.2246771
+de,de,DE,validation-056-corridor-5d206c9670,corridor,True,5,5,313.570128016,0.77015
+de,de,DE,validation-057-clustered-235c9a4685,clustered,True,5,5,116.284005966,0.17037
+de,de,DE,validation-058-rooms_maze-d092d61788,rooms_maze,True,5,5,118.320671386,1.0017218
+de,de,DE,validation-059-mixed-e6df613ff4,mixed,True,5,5,123.905168146,0.7100889
+dijkstra,dijkstra,Dijkstra,validation-000-sparse-c9b13b3f28,sparse,True,1,1,111.380321908,0.1092672
+dijkstra,dijkstra,Dijkstra,validation-001-dense-4ac25c8680,dense,True,1,1,119.688983189,0.2375812
+dijkstra,dijkstra,Dijkstra,validation-002-corridor-284a55aaca,corridor,True,1,1,325.803203829,0.9256631
+dijkstra,dijkstra,Dijkstra,validation-003-clustered-4b46b12691,clustered,True,1,1,117.780388956,0.262066
+dijkstra,dijkstra,Dijkstra,validation-004-rooms_maze-33155f70ac,rooms_maze,False,0,1,,1.0001145
+dijkstra,dijkstra,Dijkstra,validation-005-mixed-00e28968ec,mixed,True,1,1,109.490917178,0.0001023
+dijkstra,dijkstra,Dijkstra,validation-006-sparse-1d6c6d46f9,sparse,True,1,1,117.998051344,1.93e-05
+dijkstra,dijkstra,Dijkstra,validation-007-dense-c2a9dc256c,dense,True,1,1,122.508453839,0.1940723
+dijkstra,dijkstra,Dijkstra,validation-008-corridor-642e33974b,corridor,False,0,1,,1.0001961
+dijkstra,dijkstra,Dijkstra,validation-009-clustered-aab5c1fb46,clustered,True,1,1,113.36687755,0.1809063
+dijkstra,dijkstra,Dijkstra,validation-010-rooms_maze-3771cb0a3e,rooms_maze,False,0,1,,1.0001323
+dijkstra,dijkstra,Dijkstra,validation-011-mixed-931865136a,mixed,True,1,1,107.027365818,7.1e-05
+dijkstra,dijkstra,Dijkstra,validation-012-sparse-84a3f67668,sparse,True,1,1,111.13359968,0.1178335
+dijkstra,dijkstra,Dijkstra,validation-013-dense-7cf63ca81c,dense,True,1,1,113.077595551,0.2063913
+dijkstra,dijkstra,Dijkstra,validation-014-corridor-b987c1ce01,corridor,True,1,1,340.350059543,0.9136534
+dijkstra,dijkstra,Dijkstra,validation-015-clustered-7a28d3fa10,clustered,True,1,1,114.009618786,0.1884731
+dijkstra,dijkstra,Dijkstra,validation-016-rooms_maze-65e65f49ba,rooms_maze,True,1,1,122.949639539,0.9442801
+dijkstra,dijkstra,Dijkstra,validation-017-mixed-bcc0e50136,mixed,False,0,1,,1.0002137
+dijkstra,dijkstra,Dijkstra,validation-018-sparse-51b59abcbc,sparse,True,1,1,108.555759373,2.2e-05
+dijkstra,dijkstra,Dijkstra,validation-019-dense-0d2d8d4b61,dense,True,1,1,114.122243247,3.3e-05
+dijkstra,dijkstra,Dijkstra,validation-020-corridor-dbe81a0f5a,corridor,True,1,1,342.595406237,0.7661052
+dijkstra,dijkstra,Dijkstra,validation-021-clustered-ad956c8c39,clustered,True,1,1,118.230658505,0.2548527
+dijkstra,dijkstra,Dijkstra,validation-022-rooms_maze-2c4283538b,rooms_maze,False,0,1,,1.0001186
+dijkstra,dijkstra,Dijkstra,validation-023-mixed-76d07dc752,mixed,False,0,1,,1.0001283
+dijkstra,dijkstra,Dijkstra,validation-024-sparse-e4d54aacbe,sparse,True,1,1,166.156923441,1.86e-05
+dijkstra,dijkstra,Dijkstra,validation-025-dense-a74eae0372,dense,True,1,1,338.112771279,0.1809355
+dijkstra,dijkstra,Dijkstra,validation-026-corridor-df1d0dc19b,corridor,True,1,1,340.670366619,0.8412927
+dijkstra,dijkstra,Dijkstra,validation-027-clustered-01a4b58761,clustered,True,1,1,114.056853367,0.1898635
+dijkstra,dijkstra,Dijkstra,validation-028-rooms_maze-59383c2cf3,rooms_maze,False,0,1,,1.0012159
+dijkstra,dijkstra,Dijkstra,validation-029-mixed-8e82fede1f,mixed,False,0,1,,1.0002223
+dijkstra,dijkstra,Dijkstra,validation-030-sparse-d1867552b7,sparse,True,1,1,110.051213376,0.1173205
+dijkstra,dijkstra,Dijkstra,validation-031-dense-50fc319e8f,dense,True,1,1,124.540110765,0.2596387
+dijkstra,dijkstra,Dijkstra,validation-032-corridor-694b95bbde,corridor,False,0,1,,1.0001543
+dijkstra,dijkstra,Dijkstra,validation-033-clustered-efa513c067,clustered,True,1,1,113.827004101,0.1904879
+dijkstra,dijkstra,Dijkstra,validation-034-rooms_maze-406be3359c,rooms_maze,False,0,1,,1.0002328
+dijkstra,dijkstra,Dijkstra,validation-035-mixed-bdf8d13953,mixed,False,0,1,,1.0014881
+dijkstra,dijkstra,Dijkstra,validation-036-sparse-15569042ff,sparse,True,1,1,108.978499939,0.0887954
+dijkstra,dijkstra,Dijkstra,validation-037-dense-1ff936311d,dense,True,1,1,115.725169841,0.2294067
+dijkstra,dijkstra,Dijkstra,validation-038-corridor-bd65fd5653,corridor,True,1,1,323.512141567,0.7832052
+dijkstra,dijkstra,Dijkstra,validation-039-clustered-40f8a3e6f8,clustered,True,1,1,113.007297788,0.1845323
+dijkstra,dijkstra,Dijkstra,validation-040-rooms_maze-17442270fd,rooms_maze,True,1,1,139.88271908,0.9370684
+dijkstra,dijkstra,Dijkstra,validation-041-mixed-91571ccd4c,mixed,False,0,1,,1.0001729
+dijkstra,dijkstra,Dijkstra,validation-042-sparse-096a0e75a7,sparse,True,1,1,107.411639789,0.0997887
+dijkstra,dijkstra,Dijkstra,validation-043-dense-29be9c710e,dense,True,1,1,117.634916414,0.2279447
+dijkstra,dijkstra,Dijkstra,validation-044-corridor-bf5b53b60d,corridor,True,1,1,320.774977124,0.7982898
+dijkstra,dijkstra,Dijkstra,validation-045-clustered-49fd97b5bf,clustered,True,1,1,118.377599225,0.1961289
+dijkstra,dijkstra,Dijkstra,validation-046-rooms_maze-0d89099427,rooms_maze,False,0,1,,1.0001041
+dijkstra,dijkstra,Dijkstra,validation-047-mixed-09023a351a,mixed,False,0,1,,1.0002479
+dijkstra,dijkstra,Dijkstra,validation-048-sparse-9fb3e608e2,sparse,True,1,1,113.624727763,2.13e-05
+dijkstra,dijkstra,Dijkstra,validation-049-dense-e3515336bb,dense,True,1,1,110.548997748,0.1999575
+dijkstra,dijkstra,Dijkstra,validation-050-corridor-02cfde4dab,corridor,True,1,1,348.942990832,0.8608767
+dijkstra,dijkstra,Dijkstra,validation-051-clustered-306e6ea262,clustered,True,1,1,205.747401294,2.98e-05
+dijkstra,dijkstra,Dijkstra,validation-052-rooms_maze-72038f7d90,rooms_maze,True,1,1,113.96244578,0.9325948
+dijkstra,dijkstra,Dijkstra,validation-053-mixed-91ecbe1d72,mixed,True,1,1,177.612970727,9.88e-05
+dijkstra,dijkstra,Dijkstra,validation-054-sparse-a789cc6b3a,sparse,True,1,1,108.993659313,0.1180011
+dijkstra,dijkstra,Dijkstra,validation-055-dense-ea424cfd6d,dense,True,1,1,119.843281316,0.295477
+dijkstra,dijkstra,Dijkstra,validation-056-corridor-5d206c9670,corridor,False,0,1,,1.0002962
+dijkstra,dijkstra,Dijkstra,validation-057-clustered-235c9a4685,clustered,True,1,1,107.732393694,0.1856072
+dijkstra,dijkstra,Dijkstra,validation-058-rooms_maze-d092d61788,rooms_maze,False,0,1,,1.0006752
+dijkstra,dijkstra,Dijkstra,validation-059-mixed-e6df613ff4,mixed,False,0,1,,1.0002106
+ga,ga,GA,validation-000-sparse-c9b13b3f28,sparse,True,5,5,111.54705409,0.0924774
+ga,ga,GA,validation-001-dense-4ac25c8680,dense,True,5,5,120.415426344,0.1837109
+ga,ga,GA,validation-002-corridor-284a55aaca,corridor,True,5,5,292.890335176,0.7897784
+ga,ga,GA,validation-003-clustered-4b46b12691,clustered,True,5,5,118.713948255,0.2054691
+ga,ga,GA,validation-004-rooms_maze-33155f70ac,rooms_maze,True,5,5,133.27536447,1.000855
+ga,ga,GA,validation-005-mixed-00e28968ec,mixed,True,5,5,109.490917178,0.6230111
+ga,ga,GA,validation-006-sparse-1d6c6d46f9,sparse,True,5,5,117.998051344,0.0679825
+ga,ga,GA,validation-007-dense-c2a9dc256c,dense,True,5,5,123.277263754,0.1303341
+ga,ga,GA,validation-008-corridor-642e33974b,corridor,True,5,5,332.731935766,0.8317458
+ga,ga,GA,validation-009-clustered-aab5c1fb46,clustered,True,5,5,114.229618075,0.1686092
+ga,ga,GA,validation-010-rooms_maze-3771cb0a3e,rooms_maze,True,3,5,137.924704178,1.0008275
+ga,ga,GA,validation-011-mixed-931865136a,mixed,True,5,5,107.027365818,0.4057648
+ga,ga,GA,validation-012-sparse-84a3f67668,sparse,True,5,5,111.209964878,0.0853209
+ga,ga,GA,validation-013-dense-7cf63ca81c,dense,True,5,5,113.518812202,0.16118
+ga,ga,GA,validation-014-corridor-b987c1ce01,corridor,True,5,5,303.983388807,0.6837208
+ga,ga,GA,validation-015-clustered-7a28d3fa10,clustered,True,5,5,115.14642609,0.1794102
+ga,ga,GA,validation-016-rooms_maze-65e65f49ba,rooms_maze,True,5,5,121.303975085,1.0010895
+ga,ga,GA,validation-017-mixed-bcc0e50136,mixed,True,5,5,118.654289319,1.000343
+ga,ga,GA,validation-018-sparse-51b59abcbc,sparse,True,5,5,108.555759373,0.0824505
+ga,ga,GA,validation-019-dense-0d2d8d4b61,dense,True,5,5,114.122243247,0.1444465
+ga,ga,GA,validation-020-corridor-dbe81a0f5a,corridor,True,5,5,313.0145636,0.6163735
+ga,ga,GA,validation-021-clustered-ad956c8c39,clustered,True,5,5,117.564439648,0.159303
+ga,ga,GA,validation-022-rooms_maze-2c4283538b,rooms_maze,False,0,5,,1.0001892
+ga,ga,GA,validation-023-mixed-76d07dc752,mixed,True,5,5,362.906802708,0.6595259
+ga,ga,GA,validation-024-sparse-e4d54aacbe,sparse,True,5,5,166.156923441,0.0679696
+ga,ga,GA,validation-025-dense-a74eae0372,dense,True,5,5,323.669257407,0.1437966
+ga,ga,GA,validation-026-corridor-df1d0dc19b,corridor,True,5,5,297.563052523,0.6634035
+ga,ga,GA,validation-027-clustered-01a4b58761,clustered,True,5,5,114.39000347,0.1675383
+ga,ga,GA,validation-028-rooms_maze-59383c2cf3,rooms_maze,True,5,5,125.586220568,1.0015074
+ga,ga,GA,validation-029-mixed-8e82fede1f,mixed,True,5,5,274.513165172,0.9578699
+ga,ga,GA,validation-030-sparse-d1867552b7,sparse,True,5,5,110.615838496,0.1011285
+ga,ga,GA,validation-031-dense-50fc319e8f,dense,True,5,5,126.682317538,0.2643574
+ga,ga,GA,validation-032-corridor-694b95bbde,corridor,True,5,5,291.580319069,0.8733838
+ga,ga,GA,validation-033-clustered-efa513c067,clustered,True,5,5,113.890715827,0.1151845
+ga,ga,GA,validation-034-rooms_maze-406be3359c,rooms_maze,False,0,5,,1.0002427
+ga,ga,GA,validation-035-mixed-bdf8d13953,mixed,True,5,5,131.653364863,1.0005076
+ga,ga,GA,validation-036-sparse-15569042ff,sparse,True,5,5,108.974837519,0.0714362
+ga,ga,GA,validation-037-dense-1ff936311d,dense,True,5,5,115.925336261,0.1549122
+ga,ga,GA,validation-038-corridor-bd65fd5653,corridor,True,5,5,296.581192389,0.6857503
+ga,ga,GA,validation-039-clustered-40f8a3e6f8,clustered,True,5,5,112.875473407,0.1331809
+ga,ga,GA,validation-040-rooms_maze-17442270fd,rooms_maze,True,5,5,156.289021185,1.0006064
+ga,ga,GA,validation-041-mixed-91571ccd4c,mixed,True,5,5,120.150145405,0.763663
+ga,ga,GA,validation-042-sparse-096a0e75a7,sparse,True,5,5,107.376963334,0.0725274
+ga,ga,GA,validation-043-dense-29be9c710e,dense,True,5,5,119.655463655,0.1831117
+ga,ga,GA,validation-044-corridor-bf5b53b60d,corridor,True,5,5,294.510576576,0.7285501
+ga,ga,GA,validation-045-clustered-49fd97b5bf,clustered,True,5,5,118.602259775,0.1881514
+ga,ga,GA,validation-046-rooms_maze-0d89099427,rooms_maze,False,0,5,,1.0002425
+ga,ga,GA,validation-047-mixed-09023a351a,mixed,True,5,5,117.937064176,0.9511318
+ga,ga,GA,validation-048-sparse-9fb3e608e2,sparse,True,5,5,113.624727763,0.1040724
+ga,ga,GA,validation-049-dense-e3515336bb,dense,True,5,5,110.531958578,0.1321339
+ga,ga,GA,validation-050-corridor-02cfde4dab,corridor,True,5,5,296.936012186,0.6332497
+ga,ga,GA,validation-051-clustered-306e6ea262,clustered,True,5,5,205.747401294,0.1049746
+ga,ga,GA,validation-052-rooms_maze-72038f7d90,rooms_maze,True,5,5,118.725469201,1.0006001
+ga,ga,GA,validation-053-mixed-91ecbe1d72,mixed,True,5,5,177.612970727,0.7912657
+ga,ga,GA,validation-054-sparse-a789cc6b3a,sparse,True,5,5,108.890072766,0.0727597
+ga,ga,GA,validation-055-dense-ea424cfd6d,dense,True,4,5,119.236772097,0.2122359
+ga,ga,GA,validation-056-corridor-5d206c9670,corridor,True,5,5,304.804070848,0.7520087
+ga,ga,GA,validation-057-clustered-235c9a4685,clustered,True,5,5,108.87351441,0.1477373
+ga,ga,GA,validation-058-rooms_maze-d092d61788,rooms_maze,True,5,5,118.320671386,1.0021784
+ga,ga,GA,validation-059-mixed-e6df613ff4,mixed,True,5,5,117.992521054,0.8745688
+prm,prm,PRM,validation-000-sparse-c9b13b3f28,sparse,True,5,5,111.85090584,0.0231064
+prm,prm,PRM,validation-001-dense-4ac25c8680,dense,True,5,5,128.041782227,0.0274405
+prm,prm,PRM,validation-002-corridor-284a55aaca,corridor,True,4,5,303.470825366,0.0924256
+prm,prm,PRM,validation-003-clustered-4b46b12691,clustered,True,5,5,128.73223722,0.0344236
+prm,prm,PRM,validation-004-rooms_maze-33155f70ac,rooms_maze,True,3,5,135.420981226,0.1926892
+prm,prm,PRM,validation-005-mixed-00e28968ec,mixed,True,5,5,109.490917178,8.49e-05
+prm,prm,PRM,validation-006-sparse-1d6c6d46f9,sparse,True,5,5,117.998051344,9.9e-06
+prm,prm,PRM,validation-007-dense-c2a9dc256c,dense,True,5,5,130.695230254,0.0366001
+prm,prm,PRM,validation-008-corridor-642e33974b,corridor,True,3,5,348.901494426,0.095325
+prm,prm,PRM,validation-009-clustered-aab5c1fb46,clustered,True,5,5,112.253044586,0.0288963
+prm,prm,PRM,validation-010-rooms_maze-3771cb0a3e,rooms_maze,True,3,5,137.018873927,0.2468192
+prm,prm,PRM,validation-011-mixed-931865136a,mixed,True,5,5,107.027365818,5.63e-05
+prm,prm,PRM,validation-012-sparse-84a3f67668,sparse,True,5,5,111.353688627,0.0227417
+prm,prm,PRM,validation-013-dense-7cf63ca81c,dense,True,5,5,114.576230841,0.0298462
+prm,prm,PRM,validation-014-corridor-b987c1ce01,corridor,True,4,5,323.37798259,0.0863259
+prm,prm,PRM,validation-015-clustered-7a28d3fa10,clustered,True,5,5,119.90044794,0.0243187
+prm,prm,PRM,validation-016-rooms_maze-65e65f49ba,rooms_maze,True,2,5,129.361548511,0.1444172
+prm,prm,PRM,validation-017-mixed-bcc0e50136,mixed,True,5,5,158.279334182,0.1207761
+prm,prm,PRM,validation-018-sparse-51b59abcbc,sparse,True,5,5,108.555759373,1.1e-05
+prm,prm,PRM,validation-019-dense-0d2d8d4b61,dense,True,5,5,114.122243247,1.85e-05
+prm,prm,PRM,validation-020-corridor-dbe81a0f5a,corridor,True,5,5,339.139870897,0.0782683
+prm,prm,PRM,validation-021-clustered-ad956c8c39,clustered,True,5,5,120.84299538,0.0251782
+prm,prm,PRM,validation-022-rooms_maze-2c4283538b,rooms_maze,True,2,5,154.062748542,0.2399857
+prm,prm,PRM,validation-023-mixed-76d07dc752,mixed,True,5,5,363.643394437,0.0861866
+prm,prm,PRM,validation-024-sparse-e4d54aacbe,sparse,True,5,5,166.156923441,1.02e-05
+prm,prm,PRM,validation-025-dense-a74eae0372,dense,True,5,5,319.885572276,0.0231481
+prm,prm,PRM,validation-026-corridor-df1d0dc19b,corridor,True,3,5,315.167160489,0.0763993
+prm,prm,PRM,validation-027-clustered-01a4b58761,clustered,True,5,5,121.499643938,0.0320647
+prm,prm,PRM,validation-028-rooms_maze-59383c2cf3,rooms_maze,True,3,5,123.975251817,0.1924856
+prm,prm,PRM,validation-029-mixed-8e82fede1f,mixed,True,5,5,311.798994842,0.1198221
+prm,prm,PRM,validation-030-sparse-d1867552b7,sparse,True,5,5,112.110888858,0.0216261
+prm,prm,PRM,validation-031-dense-50fc319e8f,dense,True,5,5,130.060328514,0.0348065
+prm,prm,PRM,validation-032-corridor-694b95bbde,corridor,True,5,5,314.638885347,0.0967403
+prm,prm,PRM,validation-033-clustered-efa513c067,clustered,True,5,5,115.070943882,0.0241169
+prm,prm,PRM,validation-034-rooms_maze-406be3359c,rooms_maze,True,3,5,372.825283318,0.2454183
+prm,prm,PRM,validation-035-mixed-bdf8d13953,mixed,True,5,5,129.410418734,0.1294439
+prm,prm,PRM,validation-036-sparse-15569042ff,sparse,True,5,5,111.221485078,0.0170871
+prm,prm,PRM,validation-037-dense-1ff936311d,dense,True,5,5,116.594807975,0.0271991
+prm,prm,PRM,validation-038-corridor-bd65fd5653,corridor,True,5,5,316.522379786,0.0771342
+prm,prm,PRM,validation-039-clustered-40f8a3e6f8,clustered,True,5,5,118.510039181,0.0235195
+prm,prm,PRM,validation-040-rooms_maze-17442270fd,rooms_maze,False,0,5,,0.1456331
+prm,prm,PRM,validation-041-mixed-91571ccd4c,mixed,True,5,5,249.501548812,0.095781
+prm,prm,PRM,validation-042-sparse-096a0e75a7,sparse,True,5,5,110.282296192,0.0176881
+prm,prm,PRM,validation-043-dense-29be9c710e,dense,True,5,5,121.380371579,0.0272698
+prm,prm,PRM,validation-044-corridor-bf5b53b60d,corridor,True,5,5,306.481531552,0.0777113
+prm,prm,PRM,validation-045-clustered-49fd97b5bf,clustered,True,5,5,121.157992826,0.023292
+prm,prm,PRM,validation-046-rooms_maze-0d89099427,rooms_maze,True,3,5,166.198961305,0.3160142
+prm,prm,PRM,validation-047-mixed-09023a351a,mixed,True,5,5,120.52717347,0.0978495
+prm,prm,PRM,validation-048-sparse-9fb3e608e2,sparse,True,5,5,113.624727763,1.13e-05
+prm,prm,PRM,validation-049-dense-e3515336bb,dense,True,5,5,110.887161507,0.0254765
+prm,prm,PRM,validation-050-corridor-02cfde4dab,corridor,True,5,5,335.380894935,0.0787667
+prm,prm,PRM,validation-051-clustered-306e6ea262,clustered,True,5,5,205.747401294,1.43e-05
+prm,prm,PRM,validation-052-rooms_maze-72038f7d90,rooms_maze,True,3,5,114.441770258,0.144039
+prm,prm,PRM,validation-053-mixed-91ecbe1d72,mixed,True,5,5,177.612970727,8.55e-05
+prm,prm,PRM,validation-054-sparse-a789cc6b3a,sparse,True,5,5,114.811397351,0.0174989
+prm,prm,PRM,validation-055-dense-ea424cfd6d,dense,True,4,5,139.340830107,0.032617
+prm,prm,PRM,validation-056-corridor-5d206c9670,corridor,True,4,5,327.498076304,0.0892251
+prm,prm,PRM,validation-057-clustered-235c9a4685,clustered,True,5,5,118.023180757,0.0240504
+prm,prm,PRM,validation-058-rooms_maze-d092d61788,rooms_maze,True,1,5,116.564686981,0.2950171
+prm,prm,PRM,validation-059-mixed-e6df613ff4,mixed,True,5,5,121.413904026,0.0859227
+pso,pso,PSO,validation-000-sparse-c9b13b3f28,sparse,True,5,5,111.512963794,0.0734394
+pso,pso,PSO,validation-001-dense-4ac25c8680,dense,True,5,5,120.330233464,0.1762307
+pso,pso,PSO,validation-002-corridor-284a55aaca,corridor,True,5,5,297.180635023,0.8454096
+pso,pso,PSO,validation-003-clustered-4b46b12691,clustered,True,5,5,117.649281692,0.193943
+pso,pso,PSO,validation-004-rooms_maze-33155f70ac,rooms_maze,True,5,5,135.099717356,1.0007777
+pso,pso,PSO,validation-005-mixed-00e28968ec,mixed,True,5,5,109.490917178,0.6133584
+pso,pso,PSO,validation-006-sparse-1d6c6d46f9,sparse,True,5,5,117.998051344,0.0545651
+pso,pso,PSO,validation-007-dense-c2a9dc256c,dense,True,5,5,123.450554145,0.1179198
+pso,pso,PSO,validation-008-corridor-642e33974b,corridor,True,5,5,320.650812561,0.7795916
+pso,pso,PSO,validation-009-clustered-aab5c1fb46,clustered,True,5,5,114.725481062,0.1637831
+pso,pso,PSO,validation-010-rooms_maze-3771cb0a3e,rooms_maze,True,3,5,137.155325345,1.0010491
+pso,pso,PSO,validation-011-mixed-931865136a,mixed,True,5,5,107.027365818,0.3937671
+pso,pso,PSO,validation-012-sparse-84a3f67668,sparse,True,5,5,111.209964878,0.0568631
+pso,pso,PSO,validation-013-dense-7cf63ca81c,dense,True,5,5,113.409862364,0.1864739
+pso,pso,PSO,validation-014-corridor-b987c1ce01,corridor,True,5,5,310.15721774,0.6753213
+pso,pso,PSO,validation-015-clustered-7a28d3fa10,clustered,True,5,5,115.381526151,0.1674156
+pso,pso,PSO,validation-016-rooms_maze-65e65f49ba,rooms_maze,True,5,5,124.503807684,1.0012665
+pso,pso,PSO,validation-017-mixed-bcc0e50136,mixed,True,5,5,129.182269139,0.9975481
+pso,pso,PSO,validation-018-sparse-51b59abcbc,sparse,True,5,5,108.555759373,0.0668274
+pso,pso,PSO,validation-019-dense-0d2d8d4b61,dense,True,5,5,114.122243247,0.1209129
+pso,pso,PSO,validation-020-corridor-dbe81a0f5a,corridor,True,5,5,302.358376581,0.6033491
+pso,pso,PSO,validation-021-clustered-ad956c8c39,clustered,True,5,5,118.150296012,0.1483697
+pso,pso,PSO,validation-022-rooms_maze-2c4283538b,rooms_maze,False,0,5,,1.0002527
+pso,pso,PSO,validation-023-mixed-76d07dc752,mixed,True,5,5,360.238136055,0.6394932
+pso,pso,PSO,validation-024-sparse-e4d54aacbe,sparse,True,5,5,166.156923441,0.0544229
+pso,pso,PSO,validation-025-dense-a74eae0372,dense,True,5,5,307.009686955,0.1317437
+pso,pso,PSO,validation-026-corridor-df1d0dc19b,corridor,True,5,5,300.823760137,0.6504026
+pso,pso,PSO,validation-027-clustered-01a4b58761,clustered,True,5,5,114.197261107,0.1541604
+pso,pso,PSO,validation-028-rooms_maze-59383c2cf3,rooms_maze,True,5,5,125.217247429,1.0012478
+pso,pso,PSO,validation-029-mixed-8e82fede1f,mixed,True,5,5,274.811290214,1.0006799
+pso,pso,PSO,validation-030-sparse-d1867552b7,sparse,True,5,5,110.512046407,0.1048743
+pso,pso,PSO,validation-031-dense-50fc319e8f,dense,True,5,5,126.533054074,0.2542747
+pso,pso,PSO,validation-032-corridor-694b95bbde,corridor,True,5,5,298.396231149,0.8248612
+pso,pso,PSO,validation-033-clustered-efa513c067,clustered,True,5,5,113.890715827,0.1035867
+pso,pso,PSO,validation-034-rooms_maze-406be3359c,rooms_maze,False,0,5,,1.0002093
+pso,pso,PSO,validation-035-mixed-bdf8d13953,mixed,True,5,5,140.229457527,1.0003142
+pso,pso,PSO,validation-036-sparse-15569042ff,sparse,True,5,5,108.974837519,0.059471
+pso,pso,PSO,validation-037-dense-1ff936311d,dense,True,5,5,116.443633081,0.1441108
+pso,pso,PSO,validation-038-corridor-bd65fd5653,corridor,True,5,5,299.741023462,0.6706602
+pso,pso,PSO,validation-039-clustered-40f8a3e6f8,clustered,True,5,5,112.875473407,0.1192083
+pso,pso,PSO,validation-040-rooms_maze-17442270fd,rooms_maze,True,3,5,153.085476849,1.0008674
+pso,pso,PSO,validation-041-mixed-91571ccd4c,mixed,True,5,5,198.490553336,0.7493554
+pso,pso,PSO,validation-042-sparse-096a0e75a7,sparse,True,5,5,107.376963334,0.0591406
+pso,pso,PSO,validation-043-dense-29be9c710e,dense,True,5,5,119.655027483,0.1708107
+pso,pso,PSO,validation-044-corridor-bf5b53b60d,corridor,True,5,5,295.207245255,0.7290529
+pso,pso,PSO,validation-045-clustered-49fd97b5bf,clustered,True,5,5,118.602259775,0.1760612
+pso,pso,PSO,validation-046-rooms_maze-0d89099427,rooms_maze,False,0,5,,1.0002463
+pso,pso,PSO,validation-047-mixed-09023a351a,mixed,True,5,5,120.574770056,0.9378444
+pso,pso,PSO,validation-048-sparse-9fb3e608e2,sparse,True,5,5,113.624727763,0.0819407
+pso,pso,PSO,validation-049-dense-e3515336bb,dense,True,5,5,110.531958578,0.1291656
+pso,pso,PSO,validation-050-corridor-02cfde4dab,corridor,True,5,5,300.688848158,0.6728283
+pso,pso,PSO,validation-051-clustered-306e6ea262,clustered,True,5,5,205.747401294,0.0930849
+pso,pso,PSO,validation-052-rooms_maze-72038f7d90,rooms_maze,True,5,5,118.725469201,1.0005689
+pso,pso,PSO,validation-053-mixed-91ecbe1d72,mixed,True,5,5,177.612970727,0.8008466
+pso,pso,PSO,validation-054-sparse-a789cc6b3a,sparse,True,5,5,108.855852368,0.0727517
+pso,pso,PSO,validation-055-dense-ea424cfd6d,dense,True,5,5,119.394331119,0.1774188
+pso,pso,PSO,validation-056-corridor-5d206c9670,corridor,True,5,5,302.887421052,0.6948801
+pso,pso,PSO,validation-057-clustered-235c9a4685,clustered,True,5,5,108.695851691,0.1424342
+pso,pso,PSO,validation-058-rooms_maze-d092d61788,rooms_maze,True,5,5,118.320671386,1.0031977
+pso,pso,PSO,validation-059-mixed-e6df613ff4,mixed,True,5,5,120.338372243,0.6901255
+rrt,rrt,RRT,validation-000-sparse-c9b13b3f28,sparse,True,5,5,111.757416279,0.0039671
+rrt,rrt,RRT,validation-001-dense-4ac25c8680,dense,True,5,5,130.948005783,0.0082687
+rrt,rrt,RRT,validation-002-corridor-284a55aaca,corridor,True,5,5,320.527003667,0.0232564
+rrt,rrt,RRT,validation-003-clustered-4b46b12691,clustered,True,5,5,123.919794531,0.00715
+rrt,rrt,RRT,validation-004-rooms_maze-33155f70ac,rooms_maze,True,4,5,140.769283077,0.071443
+rrt,rrt,RRT,validation-005-mixed-00e28968ec,mixed,True,5,5,109.490917178,8.48e-05
+rrt,rrt,RRT,validation-006-sparse-1d6c6d46f9,sparse,True,5,5,117.998051344,1.06e-05
+rrt,rrt,RRT,validation-007-dense-c2a9dc256c,dense,True,5,5,130.442958332,0.0059238
+rrt,rrt,RRT,validation-008-corridor-642e33974b,corridor,True,5,5,343.729064021,0.0144322
+rrt,rrt,RRT,validation-009-clustered-aab5c1fb46,clustered,True,5,5,115.508643576,0.002768
+rrt,rrt,RRT,validation-010-rooms_maze-3771cb0a3e,rooms_maze,True,5,5,127.344601038,0.0428674
+rrt,rrt,RRT,validation-011-mixed-931865136a,mixed,True,5,5,107.027365818,5.68e-05
+rrt,rrt,RRT,validation-012-sparse-84a3f67668,sparse,True,5,5,111.352633234,0.001417
+rrt,rrt,RRT,validation-013-dense-7cf63ca81c,dense,True,5,5,115.751875033,0.0037888
+rrt,rrt,RRT,validation-014-corridor-b987c1ce01,corridor,True,5,5,349.052535206,0.0136679
+rrt,rrt,RRT,validation-015-clustered-7a28d3fa10,clustered,True,5,5,115.978048421,0.0054416
+rrt,rrt,RRT,validation-016-rooms_maze-65e65f49ba,rooms_maze,True,5,5,123.591594827,0.0222995
+rrt,rrt,RRT,validation-017-mixed-bcc0e50136,mixed,True,5,5,366.09528617,0.0134398
+rrt,rrt,RRT,validation-018-sparse-51b59abcbc,sparse,True,5,5,108.555759373,1.1e-05
+rrt,rrt,RRT,validation-019-dense-0d2d8d4b61,dense,True,5,5,114.122243247,1.83e-05
+rrt,rrt,RRT,validation-020-corridor-dbe81a0f5a,corridor,True,5,5,370.66235743,0.0082573
+rrt,rrt,RRT,validation-021-clustered-ad956c8c39,clustered,True,5,5,119.043108098,0.0034685
+rrt,rrt,RRT,validation-022-rooms_maze-2c4283538b,rooms_maze,True,3,5,144.403304672,0.0727018
+rrt,rrt,RRT,validation-023-mixed-76d07dc752,mixed,True,5,5,358.745740881,0.013383
+rrt,rrt,RRT,validation-024-sparse-e4d54aacbe,sparse,True,5,5,166.156923441,1.03e-05
+rrt,rrt,RRT,validation-025-dense-a74eae0372,dense,True,5,5,339.048972269,0.0032539
+rrt,rrt,RRT,validation-026-corridor-df1d0dc19b,corridor,True,5,5,323.384820429,0.0186426
+rrt,rrt,RRT,validation-027-clustered-01a4b58761,clustered,True,5,5,124.575646833,0.0032079
+rrt,rrt,RRT,validation-028-rooms_maze-59383c2cf3,rooms_maze,True,5,5,123.846561338,0.0344252
+rrt,rrt,RRT,validation-029-mixed-8e82fede1f,mixed,True,5,5,298.021909692,0.0171855
+rrt,rrt,RRT,validation-030-sparse-d1867552b7,sparse,True,5,5,110.967171476,0.0042601
+rrt,rrt,RRT,validation-031-dense-50fc319e8f,dense,True,5,5,130.890220345,0.0126943
+rrt,rrt,RRT,validation-032-corridor-694b95bbde,corridor,True,5,5,339.270246153,0.0175285
+rrt,rrt,RRT,validation-033-clustered-efa513c067,clustered,True,5,5,114.014381869,0.0025968
+rrt,rrt,RRT,validation-034-rooms_maze-406be3359c,rooms_maze,True,5,5,349.236127651,0.1361888
+rrt,rrt,RRT,validation-035-mixed-bdf8d13953,mixed,True,5,5,169.117695885,0.0334704
+rrt,rrt,RRT,validation-036-sparse-15569042ff,sparse,True,5,5,110.030842199,0.0014653
+rrt,rrt,RRT,validation-037-dense-1ff936311d,dense,True,5,5,117.142480218,0.0030688
+rrt,rrt,RRT,validation-038-corridor-bd65fd5653,corridor,True,5,5,321.869138927,0.018666
+rrt,rrt,RRT,validation-039-clustered-40f8a3e6f8,clustered,True,5,5,112.368490784,0.0033311
+rrt,rrt,RRT,validation-040-rooms_maze-17442270fd,rooms_maze,True,1,5,169.969079321,0.0911906
+rrt,rrt,RRT,validation-041-mixed-91571ccd4c,mixed,True,5,5,257.533151165,0.0123665
+rrt,rrt,RRT,validation-042-sparse-096a0e75a7,sparse,True,5,5,109.678008312,0.0024611
+rrt,rrt,RRT,validation-043-dense-29be9c710e,dense,True,5,5,126.769063741,0.0114728
+rrt,rrt,RRT,validation-044-corridor-bf5b53b60d,corridor,True,5,5,303.655740967,0.018294
+rrt,rrt,RRT,validation-045-clustered-49fd97b5bf,clustered,True,5,5,217.718677839,0.0056231
+rrt,rrt,RRT,validation-046-rooms_maze-0d89099427,rooms_maze,True,5,5,165.059340939,0.1646186
+rrt,rrt,RRT,validation-047-mixed-09023a351a,mixed,True,5,5,395.677062993,0.0186415
+rrt,rrt,RRT,validation-048-sparse-9fb3e608e2,sparse,True,5,5,113.624727763,1.15e-05
+rrt,rrt,RRT,validation-049-dense-e3515336bb,dense,True,5,5,111.098329079,0.0044904
+rrt,rrt,RRT,validation-050-corridor-02cfde4dab,corridor,True,5,5,346.556841577,0.0195943
+rrt,rrt,RRT,validation-051-clustered-306e6ea262,clustered,True,5,5,205.747401294,1.46e-05
+rrt,rrt,RRT,validation-052-rooms_maze-72038f7d90,rooms_maze,True,5,5,114.251427632,0.0135381
+rrt,rrt,RRT,validation-053-mixed-91ecbe1d72,mixed,True,5,5,177.612970727,8.55e-05
+rrt,rrt,RRT,validation-054-sparse-a789cc6b3a,sparse,True,5,5,109.825777661,0.0037676
+rrt,rrt,RRT,validation-055-dense-ea424cfd6d,dense,True,5,5,127.371022854,0.0055937
+rrt,rrt,RRT,validation-056-corridor-5d206c9670,corridor,True,5,5,345.136241175,0.0178642
+rrt,rrt,RRT,validation-057-clustered-235c9a4685,clustered,True,5,5,114.201451992,0.0030771
+rrt,rrt,RRT,validation-058-rooms_maze-d092d61788,rooms_maze,True,5,5,115.454838091,0.0360509
+rrt,rrt,RRT,validation-059-mixed-e6df613ff4,mixed,True,5,5,360.250452659,0.0170403
+rrt_star,rrt_star,RRT*,validation-000-sparse-c9b13b3f28,sparse,True,5,5,111.483247521,0.2301034
+rrt_star,rrt_star,RRT*,validation-001-dense-4ac25c8680,dense,True,5,5,120.393937115,0.2694364
+rrt_star,rrt_star,RRT*,validation-002-corridor-284a55aaca,corridor,True,5,5,308.881720944,0.4821142
+rrt_star,rrt_star,RRT*,validation-003-clustered-4b46b12691,clustered,True,5,5,121.671832852,0.2593407
+rrt_star,rrt_star,RRT*,validation-004-rooms_maze-33155f70ac,rooms_maze,True,4,5,124.939982284,0.5742407
+rrt_star,rrt_star,RRT*,validation-005-mixed-00e28968ec,mixed,True,5,5,109.490917178,8.49e-05
+rrt_star,rrt_star,RRT*,validation-006-sparse-1d6c6d46f9,sparse,True,5,5,117.998051344,9.8e-06
+rrt_star,rrt_star,RRT*,validation-007-dense-c2a9dc256c,dense,True,5,5,122.772546388,0.2293106
+rrt_star,rrt_star,RRT*,validation-008-corridor-642e33974b,corridor,True,5,5,327.310610077,0.5515042
+rrt_star,rrt_star,RRT*,validation-009-clustered-aab5c1fb46,clustered,True,5,5,111.159442491,0.2271223
+rrt_star,rrt_star,RRT*,validation-010-rooms_maze-3771cb0a3e,rooms_maze,True,5,5,126.112131245,1.0002121
+rrt_star,rrt_star,RRT*,validation-011-mixed-931865136a,mixed,True,5,5,107.027365818,5.65e-05
+rrt_star,rrt_star,RRT*,validation-012-sparse-84a3f67668,sparse,True,5,5,111.13271968,0.1824359
+rrt_star,rrt_star,RRT*,validation-013-dense-7cf63ca81c,dense,True,5,5,112.769823707,0.2569777
+rrt_star,rrt_star,RRT*,validation-014-corridor-b987c1ce01,corridor,True,5,5,328.703186987,0.4938023
+rrt_star,rrt_star,RRT*,validation-015-clustered-7a28d3fa10,clustered,True,5,5,114.563053753,0.1919185
+rrt_star,rrt_star,RRT*,validation-016-rooms_maze-65e65f49ba,rooms_maze,True,5,5,138.544882087,0.6871643
+rrt_star,rrt_star,RRT*,validation-017-mixed-bcc0e50136,mixed,True,5,5,153.375104156,0.7286935
+rrt_star,rrt_star,RRT*,validation-018-sparse-51b59abcbc,sparse,True,5,5,108.555759373,1.08e-05
+rrt_star,rrt_star,RRT*,validation-019-dense-0d2d8d4b61,dense,True,5,5,114.122243247,1.85e-05
+rrt_star,rrt_star,RRT*,validation-020-corridor-dbe81a0f5a,corridor,True,5,5,324.438628755,0.4702148
+rrt_star,rrt_star,RRT*,validation-021-clustered-ad956c8c39,clustered,True,5,5,117.513862237,0.2191058
+rrt_star,rrt_star,RRT*,validation-022-rooms_maze-2c4283538b,rooms_maze,True,3,5,139.831045677,0.937912
+rrt_star,rrt_star,RRT*,validation-023-mixed-76d07dc752,mixed,True,5,5,279.28413801,0.5666315
+rrt_star,rrt_star,RRT*,validation-024-sparse-e4d54aacbe,sparse,True,5,5,166.156923441,1.06e-05
+rrt_star,rrt_star,RRT*,validation-025-dense-a74eae0372,dense,True,5,5,234.366070926,0.1985688
+rrt_star,rrt_star,RRT*,validation-026-corridor-df1d0dc19b,corridor,True,5,5,320.105949471,0.4055592
+rrt_star,rrt_star,RRT*,validation-027-clustered-01a4b58761,clustered,True,5,5,114.54142915,0.2633239
+rrt_star,rrt_star,RRT*,validation-028-rooms_maze-59383c2cf3,rooms_maze,True,5,5,120.590056742,0.5661568
+rrt_star,rrt_star,RRT*,validation-029-mixed-8e82fede1f,mixed,True,5,5,277.306766154,0.7317857
+rrt_star,rrt_star,RRT*,validation-030-sparse-d1867552b7,sparse,True,5,5,110.254436035,0.1997801
+rrt_star,rrt_star,RRT*,validation-031-dense-50fc319e8f,dense,True,5,5,123.15471373,0.2670288
+rrt_star,rrt_star,RRT*,validation-032-corridor-694b95bbde,corridor,True,5,5,320.469160389,0.5790914
+rrt_star,rrt_star,RRT*,validation-033-clustered-efa513c067,clustered,True,5,5,113.81281483,0.2014931
+rrt_star,rrt_star,RRT*,validation-034-rooms_maze-406be3359c,rooms_maze,True,5,5,327.012110846,0.9651056
+rrt_star,rrt_star,RRT*,validation-035-mixed-bdf8d13953,mixed,True,5,5,125.636037367,0.794919
+rrt_star,rrt_star,RRT*,validation-036-sparse-15569042ff,sparse,True,5,5,109.075465486,0.1879042
+rrt_star,rrt_star,RRT*,validation-037-dense-1ff936311d,dense,True,5,5,115.995237456,0.2238277
+rrt_star,rrt_star,RRT*,validation-038-corridor-bd65fd5653,corridor,True,5,5,317.736980299,0.3911064
+rrt_star,rrt_star,RRT*,validation-039-clustered-40f8a3e6f8,clustered,True,5,5,112.319963804,0.1947221
+rrt_star,rrt_star,RRT*,validation-040-rooms_maze-17442270fd,rooms_maze,True,1,5,144.289392354,0.2622458
+rrt_star,rrt_star,RRT*,validation-041-mixed-91571ccd4c,mixed,True,5,5,120.928656638,0.5745126
+rrt_star,rrt_star,RRT*,validation-042-sparse-096a0e75a7,sparse,True,5,5,107.549933823,0.1848637
+rrt_star,rrt_star,RRT*,validation-043-dense-29be9c710e,dense,True,5,5,118.261681692,0.2047529
+rrt_star,rrt_star,RRT*,validation-044-corridor-bf5b53b60d,corridor,True,5,5,308.66622204,0.3933567
+rrt_star,rrt_star,RRT*,validation-045-clustered-49fd97b5bf,clustered,True,5,5,118.473063634,0.2549885
+rrt_star,rrt_star,RRT*,validation-046-rooms_maze-0d89099427,rooms_maze,True,5,5,155.550633986,0.9814554
+rrt_star,rrt_star,RRT*,validation-047-mixed-09023a351a,mixed,True,5,5,119.125674308,0.6793569
+rrt_star,rrt_star,RRT*,validation-048-sparse-9fb3e608e2,sparse,True,5,5,113.624727763,1.14e-05
+rrt_star,rrt_star,RRT*,validation-049-dense-e3515336bb,dense,True,5,5,110.814775573,0.1886692
+rrt_star,rrt_star,RRT*,validation-050-corridor-02cfde4dab,corridor,True,5,5,319.156908467,0.3931386
+rrt_star,rrt_star,RRT*,validation-051-clustered-306e6ea262,clustered,True,5,5,205.747401294,1.4e-05
+rrt_star,rrt_star,RRT*,validation-052-rooms_maze-72038f7d90,rooms_maze,True,5,5,114.075983552,0.4283611
+rrt_star,rrt_star,RRT*,validation-053-mixed-91ecbe1d72,mixed,True,5,5,177.612970727,8.56e-05
+rrt_star,rrt_star,RRT*,validation-054-sparse-a789cc6b3a,sparse,True,5,5,109.097707989,0.2293988
+rrt_star,rrt_star,RRT*,validation-055-dense-ea424cfd6d,dense,True,5,5,119.524489675,0.3102667
+rrt_star,rrt_star,RRT*,validation-056-corridor-5d206c9670,corridor,True,5,5,315.020933322,0.5716616
+rrt_star,rrt_star,RRT*,validation-057-clustered-235c9a4685,clustered,True,5,5,113.632504024,0.2128042
+rrt_star,rrt_star,RRT*,validation-058-rooms_maze-d092d61788,rooms_maze,True,5,5,114.12111497,1.0001107
+rrt_star,rrt_star,RRT*,validation-059-mixed-e6df613ff4,mixed,True,5,5,119.129441294,0.5341843
+theta_star,theta_star,Theta*,validation-000-sparse-c9b13b3f28,sparse,True,1,1,111.380321908,0.005742
+theta_star,theta_star,Theta*,validation-001-dense-4ac25c8680,dense,True,1,1,119.688983189,0.0403623
+theta_star,theta_star,Theta*,validation-002-corridor-284a55aaca,corridor,True,1,1,328.576597462,0.1161341
+theta_star,theta_star,Theta*,validation-003-clustered-4b46b12691,clustered,True,1,1,117.780388956,0.033996
+theta_star,theta_star,Theta*,validation-004-rooms_maze-33155f70ac,rooms_maze,True,1,1,123.590152916,0.4515234
+theta_star,theta_star,Theta*,validation-005-mixed-00e28968ec,mixed,True,1,1,109.490917178,8.75e-05
+theta_star,theta_star,Theta*,validation-006-sparse-1d6c6d46f9,sparse,True,1,1,117.998051344,1.21e-05
+theta_star,theta_star,Theta*,validation-007-dense-c2a9dc256c,dense,True,1,1,121.830333098,0.0088899
+theta_star,theta_star,Theta*,validation-008-corridor-642e33974b,corridor,True,1,1,349.557212042,0.109784
+theta_star,theta_star,Theta*,validation-009-clustered-aab5c1fb46,clustered,True,1,1,111.111702746,0.0108632
+theta_star,theta_star,Theta*,validation-010-rooms_maze-3771cb0a3e,rooms_maze,True,1,1,125.125700578,0.3914943
+theta_star,theta_star,Theta*,validation-011-mixed-931865136a,mixed,True,1,1,107.027365818,7.05e-05
+theta_star,theta_star,Theta*,validation-012-sparse-84a3f67668,sparse,True,1,1,111.306758955,0.0054955
+theta_star,theta_star,Theta*,validation-013-dense-7cf63ca81c,dense,True,1,1,113.060759072,0.0167839
+theta_star,theta_star,Theta*,validation-014-corridor-b987c1ce01,corridor,True,1,1,340.350059543,0.1314134
+theta_star,theta_star,Theta*,validation-015-clustered-7a28d3fa10,clustered,True,1,1,114.009618786,0.043599
+theta_star,theta_star,Theta*,validation-016-rooms_maze-65e65f49ba,rooms_maze,True,1,1,122.712407703,0.2299463
+theta_star,theta_star,Theta*,validation-017-mixed-bcc0e50136,mixed,True,1,1,153.816905533,0.1662312
+theta_star,theta_star,Theta*,validation-018-sparse-51b59abcbc,sparse,True,1,1,108.555759373,2.11e-05
+theta_star,theta_star,Theta*,validation-019-dense-0d2d8d4b61,dense,True,1,1,114.122243247,2e-05
+theta_star,theta_star,Theta*,validation-020-corridor-dbe81a0f5a,corridor,True,1,1,359.551606646,0.0788067
+theta_star,theta_star,Theta*,validation-021-clustered-ad956c8c39,clustered,True,1,1,116.945442636,0.0238214
+theta_star,theta_star,Theta*,validation-022-rooms_maze-2c4283538b,rooms_maze,True,1,1,139.299685179,0.970549
+theta_star,theta_star,Theta*,validation-023-mixed-76d07dc752,mixed,True,1,1,354.485803999,0.0600091
+theta_star,theta_star,Theta*,validation-024-sparse-e4d54aacbe,sparse,True,1,1,166.156923441,1.19e-05
+theta_star,theta_star,Theta*,validation-025-dense-a74eae0372,dense,True,1,1,351.825695342,0.0122739
+theta_star,theta_star,Theta*,validation-026-corridor-df1d0dc19b,corridor,True,1,1,342.667160776,0.0730869
+theta_star,theta_star,Theta*,validation-027-clustered-01a4b58761,clustered,True,1,1,113.823337996,0.0146456
+theta_star,theta_star,Theta*,validation-028-rooms_maze-59383c2cf3,rooms_maze,True,1,1,120.627894948,0.1938692
+theta_star,theta_star,Theta*,validation-029-mixed-8e82fede1f,mixed,True,1,1,280.360559016,0.0960896
+theta_star,theta_star,Theta*,validation-030-sparse-d1867552b7,sparse,True,1,1,110.051213376,0.0167813
+theta_star,theta_star,Theta*,validation-031-dense-50fc319e8f,dense,True,1,1,121.480345962,0.0781367
+theta_star,theta_star,Theta*,validation-032-corridor-694b95bbde,corridor,True,1,1,345.56165951,0.1115013
+theta_star,theta_star,Theta*,validation-033-clustered-efa513c067,clustered,True,1,1,113.971530758,0.0095193
+theta_star,theta_star,Theta*,validation-034-rooms_maze-406be3359c,rooms_maze,False,0,1,,1.0002625
+theta_star,theta_star,Theta*,validation-035-mixed-bdf8d13953,mixed,True,1,1,123.963709278,0.4710765
+theta_star,theta_star,Theta*,validation-036-sparse-15569042ff,sparse,True,1,1,108.978499939,0.0027588
+theta_star,theta_star,Theta*,validation-037-dense-1ff936311d,dense,True,1,1,115.730000439,0.0133048
+theta_star,theta_star,Theta*,validation-038-corridor-bd65fd5653,corridor,True,1,1,326.411324026,0.1074084
+theta_star,theta_star,Theta*,validation-039-clustered-40f8a3e6f8,clustered,True,1,1,113.007297788,0.017614
+theta_star,theta_star,Theta*,validation-040-rooms_maze-17442270fd,rooms_maze,True,1,1,140.101717212,0.6243978
+theta_star,theta_star,Theta*,validation-041-mixed-91571ccd4c,mixed,True,1,1,257.131025202,0.2303493
+theta_star,theta_star,Theta*,validation-042-sparse-096a0e75a7,sparse,True,1,1,108.62342245,0.0036712
+theta_star,theta_star,Theta*,validation-043-dense-29be9c710e,dense,True,1,1,118.416284522,0.0395352
+theta_star,theta_star,Theta*,validation-044-corridor-bf5b53b60d,corridor,True,1,1,320.774977124,0.109695
+theta_star,theta_star,Theta*,validation-045-clustered-49fd97b5bf,clustered,True,1,1,118.323650803,0.0201069
+theta_star,theta_star,Theta*,validation-046-rooms_maze-0d89099427,rooms_maze,False,0,1,,1.0001887
+theta_star,theta_star,Theta*,validation-047-mixed-09023a351a,mixed,True,1,1,118.150833009,0.1350564
+theta_star,theta_star,Theta*,validation-048-sparse-9fb3e608e2,sparse,True,1,1,113.624727763,1.35e-05
+theta_star,theta_star,Theta*,validation-049-dense-e3515336bb,dense,True,1,1,110.537669692,0.0100356
+theta_star,theta_star,Theta*,validation-050-corridor-02cfde4dab,corridor,True,1,1,348.942990832,0.0883684
+theta_star,theta_star,Theta*,validation-051-clustered-306e6ea262,clustered,True,1,1,205.747401294,1.63e-05
+theta_star,theta_star,Theta*,validation-052-rooms_maze-72038f7d90,rooms_maze,True,1,1,114.133985078,0.1553378
+theta_star,theta_star,Theta*,validation-053-mixed-91ecbe1d72,mixed,True,1,1,177.612970727,8.71e-05
+theta_star,theta_star,Theta*,validation-054-sparse-a789cc6b3a,sparse,True,1,1,108.993659313,0.0145332
+theta_star,theta_star,Theta*,validation-055-dense-ea424cfd6d,dense,True,1,1,119.741789432,0.0151006
+theta_star,theta_star,Theta*,validation-056-corridor-5d206c9670,corridor,True,1,1,338.353128186,0.1296982
+theta_star,theta_star,Theta*,validation-057-clustered-235c9a4685,clustered,True,1,1,107.732393694,0.0108898
+theta_star,theta_star,Theta*,validation-058-rooms_maze-d092d61788,rooms_maze,True,1,1,118.916266107,0.257712
+theta_star,theta_star,Theta*,validation-059-mixed-e6df613ff4,mixed,True,1,1,536.520432197,0.3030147
