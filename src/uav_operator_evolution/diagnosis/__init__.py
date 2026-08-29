@@ -8,6 +8,7 @@ from .diagnoser import (
     SequentialSynergy,
     compute_sequential_synergies,
 )
+from .features import UAV_FEATURE_CATALOG
 
 __all__ = [
     "CounterfactualEvaluator",
@@ -17,4 +18,5 @@ __all__ = [
     "OperatorProfile",
     "SequentialSynergy",
     "compute_sequential_synergies",
+    "UAV_FEATURE_CATALOG",
 ]

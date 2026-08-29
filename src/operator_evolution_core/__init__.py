@@ -31,6 +31,15 @@ from .search import (
     SearchStep,
     SimulatedAnnealingAcceptance,
 )
+from .trajectory import OperatorTrace, TrajectoryRecorder, compute_delayed_rewards
+from .diagnosis import (
+    Diagnoser,
+    FeatureCatalog,
+    OperatorDiagnoser,
+    OperatorProfile,
+    SequentialSynergy,
+    compute_sequential_synergies,
+)
 
 __all__ = [
     "DatasetSplit",
@@ -55,4 +64,13 @@ __all__ = [
     "SearchResult",
     "SearchStep",
     "SimulatedAnnealingAcceptance",
+    "Diagnoser",
+    "FeatureCatalog",
+    "OperatorDiagnoser",
+    "OperatorProfile",
+    "OperatorTrace",
+    "SequentialSynergy",
+    "TrajectoryRecorder",
+    "compute_delayed_rewards",
+    "compute_sequential_synergies",
 ]

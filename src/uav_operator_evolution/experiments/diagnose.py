@@ -9,6 +9,7 @@ import numpy as np
 
 from ..config import ExperimentConfig
 from ..diagnosis.diagnoser import OperatorDiagnoser
+from ..diagnosis.features import UAV_FEATURE_CATALOG
 from ..memory import MechanismMemory
 from ..operators.catalog import manual_operator_specs
 from ..trajectory import OperatorTrace, TrajectoryRecorder
@@ -70,6 +71,7 @@ def run_diagnosis_workflow(
     diagnoser = OperatorDiagnoser(
         minimum_context_samples=1,
         representative_cases=config.diagnostics.representative_cases,
+        feature_catalog=UAV_FEATURE_CATALOG,
     )
     global_profiles = diagnoser.diagnose(annotated)
     group_names = [
@@ -86,7 +88,8 @@ def run_diagnosis_workflow(
         grouped[group] = OperatorDiagnoser(
             minimum_context_samples=config.diagnostics.minimum_context_samples,
             representative_cases=config.diagnostics.representative_cases,
-        ).diagnose(annotated, group_by=f"context.analysis.{group}")
+            feature_catalog=UAV_FEATURE_CATALOG,
+        ).diagnose(annotated, group_by=group)
     synergies = diagnoser.analyze_synergies(
         annotated,
         min_samples=config.diagnostics.minimum_context_samples,

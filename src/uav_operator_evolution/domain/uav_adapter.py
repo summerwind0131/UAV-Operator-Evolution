@@ -15,7 +15,7 @@ from operator_evolution_core.contracts import (
     SearchContextView,
 )
 
-from ..environment.environment import Environment2D
+from ..environment.environment import Environment2D, extract_environment_features
 from ..operators.base import copied_path
 from ..path.evaluator import PathEvaluator
 from ..path.features import extract_path_features
@@ -174,6 +174,12 @@ class UAVTraceEncoder:
             "collision_count": int(native.collision_count),
             "minimum_clearance": float(native.minimum_clearance),
         }
+
+    def instance_features(self, instance: Environment2D) -> dict[str, JsonValue]:
+        """Encode UAV map features while keeping them outside the core."""
+
+        features = extract_environment_features(instance).model_dump(mode="json")
+        return _json_mapping(features)
 
 
 class UAVDomainAdapter(DomainAdapter[Environment2D, Path]):

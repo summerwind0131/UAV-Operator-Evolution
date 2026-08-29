@@ -30,6 +30,7 @@ from ..agents.research_agent import (
 from ..agents.tools import AgentBudget as ResearchAgentBudget
 from ..config import ExperimentConfig
 from ..diagnosis.diagnoser import OperatorDiagnoser
+from ..diagnosis.features import UAV_FEATURE_CATALOG
 from ..environment.environment import Environment2D
 from ..memory import MechanismMemory
 from ..operators.base import PathOperator
@@ -173,6 +174,7 @@ class OperatorEvolutionManager:
                 diagnoser = OperatorDiagnoser(
                     minimum_context_samples=1,
                     representative_cases=self.config.diagnostics.representative_cases,
+                    feature_catalog=UAV_FEATURE_CATALOG,
                 )
                 profiles = diagnoser.diagnose(traces)
                 synergies = diagnoser.analyze_synergies(

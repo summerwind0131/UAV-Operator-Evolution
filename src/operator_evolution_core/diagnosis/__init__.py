@@ -1,17 +1,20 @@
-"""Compatibility imports for domain-independent operator diagnostics."""
+"""Domain-independent operator profiling and sequence diagnostics."""
 
-from operator_evolution_core.diagnosis.diagnoser import (
+from .diagnoser import (
     Diagnoser,
     OperatorDiagnoser,
     OperatorProfile,
     SequentialSynergy,
     compute_sequential_synergies,
 )
+from .features import FeatureCatalog
 
 __all__ = [
     "Diagnoser",
+    "FeatureCatalog",
     "OperatorDiagnoser",
     "OperatorProfile",
     "SequentialSynergy",
     "compute_sequential_synergies",
 ]
+

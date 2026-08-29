@@ -33,7 +33,6 @@ from uav_operator_evolution.path import (
 )
 from uav_operator_evolution.reproducibility import stable_hash
 from uav_operator_evolution.search import SearchContext, SearchExecutor
-from uav_operator_evolution.search.executor import _state_snapshot
 
 
 def _environment() -> Environment2D:
@@ -54,6 +53,27 @@ def _environment() -> Environment2D:
         difficulty="mixed",
         seed=20260820,
     )
+
+
+def _legacy_state_snapshot(path, path_features, search_features, evaluation):
+    """Frozen Step-2 payload used to prove the new encoder is identical."""
+
+    return {
+        "path": [list(point) for point in path],
+        "path_features": path_features,
+        "search_features": search_features,
+        "objective": float(evaluation.total_cost),
+        "objective_components": {
+            "path_length": float(evaluation.path_length),
+            "collision_penalty": float(evaluation.collision_penalty),
+            "smoothness_penalty": float(evaluation.smoothness_penalty),
+            "risk_penalty": float(evaluation.risk_penalty),
+            "waypoint_penalty": float(evaluation.waypoint_penalty),
+        },
+        "feasible": bool(evaluation.feasible),
+        "collision_count": int(evaluation.collision_count),
+        "minimum_clearance": float(evaluation.minimum_clearance),
+    }
 
 
 def _weights() -> ObjectiveWeights:
@@ -189,7 +209,7 @@ def test_trace_snapshot_matches_existing_uav_payload_field_for_field() -> None:
         environment,
         evaluator=native_evaluator,
     ).model_dump(mode="json")
-    expected = _state_snapshot(
+    expected = _legacy_state_snapshot(
         path,
         legacy_features,
         context.as_features(),

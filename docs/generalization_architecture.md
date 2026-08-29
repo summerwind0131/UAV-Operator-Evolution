@@ -426,9 +426,18 @@ python -m pytest tests/test_core_contracts.py tests/test_uav_contract_adapters.p
 
 ### Step 4：分离 trace core 与 UAV snapshot
 
+状态：已完成（2026-08-29）。
+
 - `OperatorTrace`、recorder 和延迟收益保持在通用层。
 - 将 recorder 接到 Step 2 已建立的 UAV trace encoder，并在对照通过后删除重复的 `_state_snapshot`；环境特征也移入领域层。
 - 第一阶段继续写出所有现有兼容字段，保证历史分析脚本不变。
+
+实现记录：
+
+- 通用 trace、SQLite/JSONL recorder、延迟奖励、operator profile、上下文诊断和 sequence synergy 已迁入 `operator_evolution_core`；core 源码不导入 UAV 类型。
+- `OperatorTrace(instance_id=...)` 通过兼容字段 `map_id` 持久化，现有 SQLite schema、索引、payload JSON 与读取顺序不迁移。
+- UAV 路径、目标分项、碰撞、clearance、地图特征与领域 feature catalog 保留在 UAV 层；三态 snapshot 统一由 `UAVTraceEncoder` 生成。
+- 旧 `uav_operator_evolution.trajectory` 与 diagnoser 导入路径返回同一个 core 类型；Step 0 trace identity 和完整回归通过：`298 passed, 3 skipped`。
 
 ### Step 5：泛化候选验证接缝
 

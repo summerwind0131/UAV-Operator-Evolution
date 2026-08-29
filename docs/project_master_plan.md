@@ -13,7 +13,7 @@
 | Step 2：完整 UAV `DomainAdapter` | 已完成 | `eda6987`，标签 `phase1-step2` |
 | Hidden Test-v2 最终评价收口 | 已完成 | `a8be8f6`、`uav2d-hidden-test-v2-final-v1`、GitHub Release |
 | Step 3：通用搜索内核 | 已完成 | `39a835b` + UAV routing commit；shadow/RNG identity 全绿 |
-| Step 4：通用轨迹、诊断与 UAV snapshot | 未开始 | SQLite、JSONL、identity projection 保持一致 |
+| Step 4：通用轨迹、诊断与 UAV snapshot | 已完成 | core trace/recorder/diagnoser；SQLite、JSONL、identity 保持一致 |
 | Step 5：通用候选验证与确定性策略 | 未开始 | UAV retention 逐字段一致，性能与确定性测试分离 |
 | Step 6：通用提案信封与领域 IR | 未开始 | UAV 旧 hash 兼容，领域/版本不匹配 fail-closed |
 | Step 7：通用演化管理器依赖注入 | 未开始 | UAV 全套 golden、CLI、Agent 和 benchmark 验收 |
@@ -60,6 +60,8 @@
 - 独立提交：`feat: add domain-independent search kernel`、`refactor: route UAV search through generic kernel`。
 
 ### 3.3 Step 4：通用轨迹、诊断与 UAV snapshot
+
+状态：已完成。`OperatorTrace`、SQLite/JSONL recorder、延迟奖励、operator diagnoser 和 feature catalog 已归属 core；UAV 旧模块为身份相同的兼容导入。core API 接受 `instance_id`，序列化与 SQLite 继续使用 `map_id` v1 别名。UAV `SearchExecutor` 通过 `UAVTraceEncoder` 生成三态 snapshot，Step 0 identity 不变；当前完整测试为 `298 passed, 3 skipped`。
 
 - core 拥有通用 before/candidate/accepted 三态 trace、奖励、上下文、谱系和 recorder；领域 encoder 负责解、实例及领域特征。
 - 接入现有 `UAVTraceEncoder`，路径、地图、碰撞、clearance 和目标分项保留在 UAV 层。
@@ -188,3 +190,4 @@
 | 2026-08-17 | Hidden Test-v2 审计 | audit receipt `6789dc49…` | `passed`；冻结 v1 不再重跑或调参 |
 | 2026-08-29 | Hidden Test-v2 收口 | `a8be8f6`，`uav2d-hidden-test-v2-final-v1` | 222 文件确定性归档，SHA-256 `06551f6d…cc30c`；Release 已发布；`291 passed, 3 skipped` |
 | 2026-08-29 | Step 3 通用搜索内核 | `39a835b` + UAV routing commit | 逐步 operator/solution/evaluation/acceptance/temperature/stagnation 与最终 RNG shadow 一致；`295 passed, 3 skipped` |
+| 2026-08-29 | Step 4 通用轨迹与诊断 | `refactor: separate core traces from UAV snapshots` | `instance_id`/`map_id` 无迁移兼容，UAV encoder snapshot 与旧 payload identity 一致；`298 passed, 3 skipped` |

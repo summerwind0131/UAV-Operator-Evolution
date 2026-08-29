@@ -16,12 +16,14 @@ from operator_evolution_core.search import (
     SearchStep as CoreSearchStep,
 )
 
-from ..domain.adapters import objective_to_evaluation_result
-from ..domain.uav_adapter import UAVDomainAdapter
-from ..environment.environment import Environment2D, extract_environment_features
+from ..domain.adapters import (
+    evaluation_result_to_objective,
+    objective_to_evaluation_result,
+)
+from ..domain.uav_adapter import UAVDomainAdapter, UAVTraceEncoder
+from ..environment.environment import Environment2D
 from ..operators.base import OperatorResult, PathOperator, copied_path
 from ..path.evaluator import PathEvaluator
-from ..path.features import extract_path_features
 from ..path.models import EvaluationResult, Path
 from .acceptance import SimulatedAnnealingAcceptance
 from .context import SearchContext
@@ -146,6 +148,10 @@ class SearchExecutor:
             start_temperature_ratio=temperature_start_ratio,
             end_temperature_ratio=temperature_end_ratio,
         )
+        self.domain_adapter = UAVDomainAdapter(
+            self.evaluator,
+            initializer_grid_resolution=self.initializer_grid_resolution,
+        )
         self.recorder = recorder
 
     def run(
@@ -167,10 +173,7 @@ class SearchExecutor:
         """
 
         active_recorder = recorder if recorder is not None else self.recorder
-        adapter = UAVDomainAdapter(
-            self.evaluator,
-            initializer_grid_resolution=self.initializer_grid_resolution,
-        )
+        adapter = self.domain_adapter
         facades = tuple(UAVSearchOperatorFacade(operator) for operator in self.operators)
         kernel = GenericSearchKernel(
             adapter=adapter,
@@ -284,39 +287,35 @@ class SearchExecutor:
     ) -> None:
         from ..trajectory.models import OperatorTrace
 
-        path_features_before = _model_mapping(
-            extract_path_features(step.path_before, environment, evaluator=self.evaluator)
-        )
-        path_features_after = _model_mapping(
-            extract_path_features(step.candidate_path, environment, evaluator=self.evaluator)
-        )
-        path_features_accepted = _model_mapping(
-            extract_path_features(step.current_path_after, environment, evaluator=self.evaluator)
-        )
-        environment_features = _model_mapping(extract_environment_features(environment))
-        search_features_before = step.context_before.as_features()
-        search_features_after = step.context_after.as_features()
-        before_components = _evaluation_components(step.evaluation_before)
-        candidate_components = _evaluation_components(step.candidate_evaluation)
-        accepted_components = _evaluation_components(step.current_evaluation_after)
-        before_state = _state_snapshot(
+        encoder = self.domain_adapter.trace_encoder
+        if not isinstance(encoder, UAVTraceEncoder):
+            raise TypeError("UAV SearchExecutor requires a UAVTraceEncoder")
+        before_state = encoder.snapshot(
             step.path_before,
-            path_features_before,
-            search_features_before,
-            step.evaluation_before,
+            environment,
+            evaluation_result_to_objective(step.evaluation_before),
+            step.context_before,
         )
-        candidate_state = _state_snapshot(
+        candidate_state = encoder.snapshot(
             step.candidate_path,
-            path_features_after,
-            search_features_after,
-            step.candidate_evaluation,
+            environment,
+            evaluation_result_to_objective(step.candidate_evaluation),
+            step.context_after,
         )
-        accepted_state = _state_snapshot(
+        accepted_state = encoder.snapshot(
             step.current_path_after,
-            path_features_accepted,
-            search_features_after,
-            step.current_evaluation_after,
+            environment,
+            evaluation_result_to_objective(step.current_evaluation_after),
+            step.context_after,
         )
+        environment_features = encoder.instance_features(environment)
+        path_features_before = dict(before_state["path_features"])
+        path_features_after = dict(candidate_state["path_features"])
+        search_features_before = dict(before_state["search_features"])
+        search_features_after = dict(candidate_state["search_features"])
+        before_components = dict(before_state["objective_components"])
+        candidate_components = dict(candidate_state["objective_components"])
+        accepted_components = dict(accepted_state["objective_components"])
         delta = float(step.candidate_evaluation.total_cost - step.evaluation_before.total_cost)
         if not step.operator_result.success:
             acceptance_reason = "operator_failed"
@@ -400,16 +399,6 @@ class SearchExecutor:
         recorder.record(trace)
 
 
-def _model_mapping(value: object) -> dict[str, Any]:
-    if hasattr(value, "model_dump"):
-        return dict(value.model_dump(mode="json"))
-    if hasattr(value, "__dict__"):
-        return {key: _json_value(item) for key, item in vars(value).items()}
-    if isinstance(value, Mapping):
-        return {str(key): _json_value(item) for key, item in value.items()}
-    raise TypeError(f"feature extractor returned unsupported type: {type(value).__name__}")
-
-
 def _json_value(value: Any) -> Any:
     if isinstance(value, np.generic):
         return value.item()
@@ -418,33 +407,3 @@ def _json_value(value: Any) -> Any:
     if isinstance(value, (list, tuple)):
         return [_json_value(item) for item in value]
     return value
-
-
-def _evaluation_components(evaluation: EvaluationResult) -> dict[str, float]:
-    return {
-        "path_length": float(evaluation.path_length),
-        "collision_penalty": float(evaluation.collision_penalty),
-        "smoothness_penalty": float(evaluation.smoothness_penalty),
-        "risk_penalty": float(evaluation.risk_penalty),
-        "waypoint_penalty": float(evaluation.waypoint_penalty),
-    }
-
-
-def _state_snapshot(
-    path: Path,
-    path_features: Mapping[str, Any],
-    search_features: Mapping[str, Any],
-    evaluation: EvaluationResult,
-) -> dict[str, Any]:
-    """Build one canonical JSON state for the trajectory recorder."""
-
-    return {
-        "path": [list(point) for point in path],
-        "path_features": _json_value(path_features),
-        "search_features": _json_value(search_features),
-        "objective": float(evaluation.total_cost),
-        "objective_components": _evaluation_components(evaluation),
-        "feasible": bool(evaluation.feasible),
-        "collision_count": int(evaluation.collision_count),
-        "minimum_clearance": float(evaluation.minimum_clearance),
-    }
