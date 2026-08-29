@@ -15,7 +15,7 @@
 | Step 3：通用搜索内核 | 已完成 | `39a835b` + UAV routing commit；shadow/RNG identity 全绿 |
 | Step 4：通用轨迹、诊断与 UAV snapshot | 已完成 | core trace/recorder/diagnoser；SQLite、JSONL、identity 保持一致 |
 | Step 5：通用候选验证与确定性策略 | 已完成 | UAV retention 逐字段一致；`deterministic-v2` 与隔离性能任务已建立 |
-| Step 6：通用提案信封与领域 IR | 未开始 | UAV 旧 hash 兼容，领域/版本不匹配 fail-closed |
+| Step 6：通用提案信封与领域 IR | 已完成 | `proposal-envelope-v1`、`UAVDomainKit`、旧 hash 兼容与 fail-closed 已验收 |
 | Step 7：通用演化管理器依赖注入 | 未开始 | UAV 全套 golden、CLI、Agent 和 benchmark 验收 |
 | JSSP 第二领域验证 | 未开始 | 同一 core 完成搜索、轨迹、诊断、验证和候选生命周期 |
 | 三仓拆分与 core `0.1.0` | 未开始 | 三仓 CI、GitHub prerelease、固定 commit/hash receipt |
@@ -84,6 +84,8 @@
 - 独立提交：`refactor: generalize paired candidate validation`。
 
 ### 3.5 Step 6：通用提案信封与领域 IR
+
+状态：已完成。core 新增 content-addressed `CandidateProposalEnvelope`、typed `ProposalBudgetDeclaration` 与 `DomainKit` 协议；UAV 层提供 `uav-v1` kit，统一负责 IR 解析、能力目录、编译、smoke、能力使用统计、拓扑/行为指纹及静态安全评分。旧 proposal/bundle 不新增序列化字段，读取时由兼容属性隐式绑定 `uav-path-planning-2d/uav-v1`；固定旧 bundle hash 为 `b0b45eb5…ed0d`，旧 proposal hash 为 `1b1af302…c533`。domain/version 不匹配、hash 篡改和非白名单执行载荷均 fail-closed；完整默认回归为 `307 passed, 3 skipped, 1 deselected`。
 
 - 新增 `CandidateProposalEnvelope`：`candidate_id`、`domain_id`、`ir_version`、父代、证据引用、设计理由、预算声明和 typed payload。
 - 新增 `DomainKit`：IR 解析、capability catalog、schema 校验、编译、smoke、能力使用统计、拓扑指纹和行为指纹。
@@ -194,3 +196,4 @@
 | 2026-08-29 | Step 3 通用搜索内核 | `39a835b` + UAV routing commit | 逐步 operator/solution/evaluation/acceptance/temperature/stagnation 与最终 RNG shadow 一致；`295 passed, 3 skipped` |
 | 2026-08-29 | Step 4 通用轨迹与诊断 | `refactor: separate core traces from UAV snapshots` | `instance_id`/`map_id` 无迁移兼容，UAV encoder snapshot 与旧 payload identity 一致；`298 passed, 3 skipped` |
 | 2026-08-29 | Step 5 通用候选验证 | `refactor: generalize paired candidate validation` | CRN/ABBA/bootstrap/retention/slot replacement 已进入 core；UAV legacy 与 deterministic-v2 分离；默认 `302 passed, 3 skipped, 1 deselected`，性能 `1 passed` |
+| 2026-08-29 | Step 6 提案信封与领域 IR | `refactor: separate proposal envelope from UAV IR` | `proposal-envelope-v1` 与 `UAVDomainKit` 完成；旧 bundle/proposal hash 冻结，错域/错版本/篡改 fail-closed；`307 passed, 3 skipped, 1 deselected` |

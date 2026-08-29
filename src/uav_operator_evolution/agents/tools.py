@@ -7,24 +7,22 @@ candidate-validation tool.
 
 from __future__ import annotations
 
-import json
-import math
 import time
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from typing import Any, Literal, Protocol
 
-import numpy as np
 from pydantic import BaseModel, ConfigDict, Field
 
-from ..environment import Environment2D
+from operator_evolution_core.proposal import (
+    DomainKit,
+    ensure_domain_compatibility,
+)
+
+from ..domain.uav_kit import UAVDomainKit, UAVSmokeFixture
 from ..memory import MechanismMemory
 from ..operators.compiler import OperatorCompiler
-from ..operators.specs import OperatorSpec
-from ..path import PathEvaluator
-from ..path.models import ObjectiveWeights, Path
 from ..reproducibility import canonical_json
-from ..search.context import SearchContext
 from .evidence import OperatorEvidenceBundle
 
 
@@ -111,7 +109,7 @@ class EmptyToolInput(AgentToolModel):
 
 
 class OperatorSpecInput(AgentToolModel):
-    operator_spec: OperatorSpec
+    operator_spec: Any
 
 
 class ToolExecutionResult(AgentToolModel):
@@ -129,19 +127,36 @@ class ToolAuditSink(Protocol):
     def __call__(self, result: ToolExecutionResult, arguments: Mapping[str, Any]) -> None: ...
 
 
-@dataclass(slots=True, frozen=True)
-class SmokeTestFixture:
-    environment: Environment2D
-    path: Path
-    seeds: tuple[int, ...] = (0, 1, 2)
+SmokeTestFixture = UAVSmokeFixture
 
 
 @dataclass(slots=True)
 class AgentToolContext:
-    bundle: OperatorEvidenceBundle
-    compiler: OperatorCompiler
+    bundle: OperatorEvidenceBundle | Any
+    compiler: OperatorCompiler | None = None
     memory: MechanismMemory | None = None
-    smoke_fixture: SmokeTestFixture | None = None
+    smoke_fixture: Any | None = None
+    domain_kit: DomainKit[Any, Any, Any] | None = None
+
+    def __post_init__(self) -> None:
+        if self.domain_kit is None:
+            self.domain_kit = UAVDomainKit(self.compiler)
+        self.refresh_legacy_compiler_adapter()
+        ensure_domain_compatibility(
+            self.domain_kit,
+            self.bundle,
+            allow_legacy_unversioned=True,
+        )
+
+    def refresh_legacy_compiler_adapter(self) -> None:
+        """Honor the historical mutable ``compiler`` field at the facade."""
+
+        if (
+            self.compiler is not None
+            and isinstance(self.domain_kit, UAVDomainKit)
+            and self.domain_kit.compiler is not self.compiler
+        ):
+            self.domain_kit = UAVDomainKit(self.compiler)
 
 
 @dataclass(slots=True, frozen=True)
@@ -186,6 +201,7 @@ class AgentToolDispatcher:
         max_result_chars: int = 12_000,
         tool_timeout_ms: float = 1_000.0,
     ) -> None:
+        context.refresh_legacy_compiler_adapter()
         self.context = context
         self.budget = budget
         self.audit_sink = audit_sink
@@ -341,7 +357,13 @@ class AgentToolDispatcher:
 
     def _primitives(self, query: AgentToolModel) -> dict[str, Any]:
         assert isinstance(query, EmptyToolInput)
-        return {"allowed_primitives": self.context.bundle.allowed_primitives}
+        assert self.context.domain_kit is not None
+        return {
+            "allowed_primitives": {
+                key: list(values)
+                for key, values in self.context.domain_kit.capability_catalog().items()
+            }
+        }
 
     def _parent_spec(self, query: AgentToolModel) -> dict[str, Any]:
         assert isinstance(query, OperatorIdInput)
@@ -351,15 +373,19 @@ class AgentToolDispatcher:
         )
         if spec is None:
             raise KeyError(f"operator is not a parent in this evidence bundle: {query.operator_id}")
-        return {"operator_spec": spec.model_dump(mode="json")}
+        assert self.context.domain_kit is not None
+        parsed = self.context.domain_kit.parse_ir(spec)
+        return {"operator_spec": self.context.domain_kit.serialize_ir(parsed)}
 
     def _compile(self, query: AgentToolModel) -> dict[str, Any]:
         assert isinstance(query, OperatorSpecInput)
-        compiled = self.context.compiler.compile(query.operator_spec)
+        assert self.context.domain_kit is not None
+        ir = self.context.domain_kit.parse_ir(query.operator_spec)
+        self.context.domain_kit.compile(ir)
         return {
             "compiled": True,
-            "operator_name": compiled.name,
-            "parent_operators": list(compiled.parent_operator_ids),
+            "operator_name": self.context.domain_kit.ir_name(ir),
+            "parent_operators": list(self.context.domain_kit.ir_parent_ids(ir)),
         }
 
     def _smoke(self, query: AgentToolModel) -> dict[str, Any]:
@@ -367,43 +393,13 @@ class AgentToolDispatcher:
         fixture = self.context.smoke_fixture
         if fixture is None:
             raise RuntimeError("smoke fixture unavailable")
-        compiled = self.context.compiler.compile(query.operator_spec)
-        original = list(fixture.path)
-        evaluator = PathEvaluator(ObjectiveWeights())
-        evaluation = evaluator.evaluate(original, fixture.environment)
-        context = SearchContext(
-            iteration=0,
-            max_iterations=1,
-            current_evaluation=evaluation,
-            best_evaluation=evaluation,
+        assert self.context.domain_kit is not None
+        ir = self.context.domain_kit.parse_ir(query.operator_spec)
+        report = self.context.domain_kit.smoke(ir, fixture)
+        return report.model_dump(
+            mode="json",
+            exclude={"domain_id", "ir_version"},
         )
-        failures: list[str] = []
-        successes = 0
-        for seed in fixture.seeds:
-            path_argument = list(original)
-            result = compiled.apply(
-                path_argument,
-                fixture.environment,
-                np.random.default_rng(seed),
-                context,
-            )
-            candidate = list(result.path)
-            if path_argument != original:
-                failures.append(f"seed {seed}: input mutation")
-            if not 2 <= len(candidate) <= compiled.limits.max_waypoints:
-                failures.append(f"seed {seed}: invalid waypoint count")
-            elif candidate[0] != original[0] or candidate[-1] != original[-1]:
-                failures.append(f"seed {seed}: endpoint changed")
-            if any(not math.isfinite(float(value)) for point in candidate for value in point):
-                failures.append(f"seed {seed}: non-finite coordinate")
-            if result.success:
-                successes += 1
-        return {
-            "smoke_passed": not failures,
-            "seeds_tested": len(fixture.seeds),
-            "successful_calls": successes,
-            "failures": failures,
-        }
 
 
 __all__ = [

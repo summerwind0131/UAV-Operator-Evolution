@@ -9,8 +9,13 @@ from __future__ import annotations
 from collections.abc import Iterable, Mapping
 from typing import Any, Literal
 
-from ..operators.specs import OperatorSpec, allowed_primitive_names
-from ..reproducibility import stable_hash
+from operator_evolution_core.proposal import (
+    DomainKit,
+    ensure_domain_compatibility,
+    flattened_capabilities,
+)
+
+from ..domain.uav_kit import UAVDomainKit
 from .designer_base import OperatorProposal
 from .design_models import DiagnosisClaim, OperatorReview
 
@@ -60,99 +65,78 @@ def _bundle_evidence_ids(bundle: Any) -> frozenset[str]:
     return frozenset(identifiers)
 
 
-def _bundle_parent_specs(bundle: Any) -> dict[str, OperatorSpec]:
+def _bundle_parent_specs(
+    bundle: Any,
+    domain_kit: DomainKit[Any, Any, Any],
+) -> dict[str, Any]:
     raw = _value(bundle, "parent_specs", {}) or {}
     if isinstance(raw, Mapping):
         items = raw.items()
     else:
         items = ((_value(spec, "name", ""), spec) for spec in raw)
-    result: dict[str, OperatorSpec] = {}
+    result: dict[str, Any] = {}
     for name, value in items:
         try:
-            spec = value if isinstance(value, OperatorSpec) else OperatorSpec.model_validate(value)
+            spec = domain_kit.parse_ir(value)
         except Exception:
             continue
-        result[str(name or spec.name)] = spec
+        result[str(name or domain_kit.ir_name(spec))] = spec
     return result
 
 
-def _bundle_allowed_primitives(bundle: Any) -> frozenset[str]:
-    flat = getattr(bundle, "allowed_primitive_names", None)
-    if callable(flat):
-        flat = flat()
-    if flat is not None:
-        return frozenset(str(value) for value in flat)
-
+def _bundle_allowed_primitives(
+    bundle: Any,
+    domain_kit: DomainKit[Any, Any, Any],
+) -> frozenset[str]:
+    expected = flattened_capabilities(domain_kit)
     raw = _value(bundle, "allowed_primitives", None)
     if isinstance(raw, Mapping):
-        return frozenset(str(name) for names in raw.values() for name in names)
-    if raw:
-        return frozenset(str(name) for name in raw)
-    # Compatibility for small hand-built bundles; production bundles carry an
-    # explicit catalog copied from the same authoritative DSL module.
-    return frozenset(allowed_primitive_names())
+        supplied = frozenset(
+            str(name) for names in raw.values() for name in names
+        )
+        if supplied != expected:
+            raise ProposalValidationError(
+                ["evidence capability catalog does not match DomainKit"]
+            )
+    elif raw:
+        supplied = frozenset(str(name) for name in raw)
+        if supplied != expected:
+            raise ProposalValidationError(
+                ["evidence capability catalog does not match DomainKit"]
+            )
+    return expected
 
 
-def used_primitive_names(spec: OperatorSpec) -> tuple[str, ...]:
+def used_primitive_names(
+    spec: Any,
+    domain_kit: DomainKit[Any, Any, Any] | None = None,
+) -> tuple[str, ...]:
     """Return all primitive ``kind`` values referenced by a spec."""
 
-    result = [spec.selection_strategy.kind]
-    result.extend(step.kind for step in spec.transformations)
-    if spec.repair_strategy is not None:
-        result.append(spec.repair_strategy.kind)
-        result.extend(step.kind for step in spec.repair_strategy.transformations)
-    if spec.fallback_strategy is not None:
-        result.append(spec.fallback_strategy.kind)
-    return tuple(result)
+    kit = domain_kit or UAVDomainKit()
+    return kit.capability_usage(kit.parse_ir(spec))
 
 
-def _condition_topology(condition: Any) -> dict[str, Any] | None:
-    if condition is None:
-        return None
-    return {"feature": condition.feature, "operator": condition.operator}
-
-
-def topology_payload(spec: OperatorSpec) -> dict[str, Any]:
+def topology_payload(
+    spec: Any,
+    domain_kit: DomainKit[Any, Any, Any] | None = None,
+) -> dict[str, Any]:
     """Return structural shape while deliberately excluding tuned values."""
 
-    repair = spec.repair_strategy
-    return {
-        "conditions": [_condition_topology(condition) for condition in spec.applicability_conditions],
-        "selection": spec.selection_strategy.kind,
-        "transformations": [
-            {"kind": step.kind, "when": _condition_topology(step.when)}
-            for step in spec.transformations
-        ],
-        "repair": None
-        if repair is None
-        else {
-            "kind": repair.kind,
-            "transformations": [
-                {"kind": step.kind, "when": _condition_topology(step.when)}
-                for step in repair.transformations
-            ],
-        },
-        "fallback": None if spec.fallback_strategy is None else spec.fallback_strategy.kind,
-    }
+    kit = domain_kit or UAVDomainKit()
+    parsed = kit.parse_ir(spec)
+    payload = getattr(kit, "topology_payload", None)
+    if not callable(payload):
+        raise TypeError("DomainKit does not expose a topology payload projection")
+    return payload(parsed)
 
 
-def topology_fingerprint(spec: OperatorSpec) -> str:
-    return stable_hash(topology_payload(spec))
-
-
-def _behavior_payload(spec: OperatorSpec) -> dict[str, Any]:
-    """Strip prose/lineage metadata but retain every executable DSL value."""
-
-    payload = spec.model_dump(mode="json")
-    for field in (
-        "name",
-        "description",
-        "parent_operators",
-        "expected_mechanism",
-        "target_failure_modes",
-    ):
-        payload.pop(field, None)
-    return payload
+def topology_fingerprint(
+    spec: Any,
+    domain_kit: DomainKit[Any, Any, Any] | None = None,
+) -> str:
+    kit = domain_kit or UAVDomainKit()
+    return kit.topology_fingerprint(kit.parse_ir(spec))
 
 
 def _diagnosis_claims(proposal: OperatorProposal) -> tuple[DiagnosisClaim, ...]:
@@ -175,6 +159,12 @@ class ProposalValidator:
     SAFETY_THRESHOLD = 0.80
     TESTABILITY_THRESHOLD = 0.60
 
+    def __init__(
+        self,
+        domain_kit: DomainKit[Any, Any, Any] | None = None,
+    ) -> None:
+        self.domain_kit = domain_kit or UAVDomainKit()
+
     def validate(
         self,
         proposal: OperatorProposal,
@@ -189,10 +179,21 @@ class ProposalValidator:
         """
 
         errors: list[str] = []
-        spec = proposal.spec
-        parent_specs = _bundle_parent_specs(bundle)
+        ensure_domain_compatibility(
+            self.domain_kit,
+            bundle,
+            allow_legacy_unversioned=True,
+        )
+        ensure_domain_compatibility(
+            self.domain_kit,
+            proposal,
+            allow_legacy_unversioned=True,
+        )
+        spec = self.domain_kit.parse_ir(proposal.spec)
+        parent_specs = _bundle_parent_specs(bundle, self.domain_kit)
         evidence_ids = _bundle_evidence_ids(bundle)
-        allowed_primitives = _bundle_allowed_primitives(bundle)
+        allowed_primitives = _bundle_allowed_primitives(bundle, self.domain_kit)
+        parent_ids = self.domain_kit.ir_parent_ids(spec)
 
         if proposal.diagnosis is None:
             errors.append("structured diagnosis is required")
@@ -210,17 +211,19 @@ class ProposalValidator:
         if missing_ids:
             errors.append(f"unknown evidence IDs: {missing_ids}")
 
-        if not spec.parent_operators:
+        if not parent_ids:
             errors.append("operator_spec must declare at least one parent operator")
-        unknown_parents = sorted(set(spec.parent_operators) - set(parent_specs))
+        unknown_parents = sorted(set(parent_ids) - set(parent_specs))
         if unknown_parents:
             errors.append(f"unknown parent operators: {unknown_parents}")
         if proposal.diagnosis is not None and (
-            proposal.diagnosis.parent_operator not in spec.parent_operators
+            proposal.diagnosis.parent_operator not in parent_ids
         ):
             errors.append("diagnosis parent_operator must be one of operator_spec.parent_operators")
 
-        unknown_primitives = sorted(set(used_primitive_names(spec)) - allowed_primitives)
+        unknown_primitives = sorted(
+            set(self.domain_kit.capability_usage(spec)) - allowed_primitives
+        )
         if unknown_primitives:
             errors.append(f"non-whitelisted primitives: {unknown_primitives}")
 
@@ -234,17 +237,23 @@ class ProposalValidator:
             elif not (set(proposal.hypothesis.evidence_ids) & failure_claims[target]):
                 errors.append("target failure hypothesis must cite evidence from its diagnosis claim")
 
-        declared_parents = [parent_specs[name] for name in spec.parent_operators if name in parent_specs]
-        candidate_behavior = _behavior_payload(spec)
-        if any(candidate_behavior == _behavior_payload(parent) for parent in declared_parents):
+        declared_parents = [
+            parent_specs[name] for name in parent_ids if name in parent_specs
+        ]
+        candidate_behavior = self.domain_kit.behavior_fingerprint(spec)
+        if any(
+            candidate_behavior == self.domain_kit.behavior_fingerprint(parent)
+            for parent in declared_parents
+        ):
             errors.append("rename-only or metadata-only proposals are not accepted")
 
         if errors:
             raise ProposalValidationError(errors)
 
-        fingerprint = topology_fingerprint(spec)
+        fingerprint = self.domain_kit.topology_fingerprint(spec)
         parameter_variant = any(
-            fingerprint == topology_fingerprint(parent) for parent in declared_parents
+            fingerprint == self.domain_kit.topology_fingerprint(parent)
+            for parent in declared_parents
         )
         lineage_relation = "parameter_variant" if parameter_variant else "structural_variant"
         novelty_score = 0.35 if parameter_variant else 0.85
@@ -263,11 +272,7 @@ class ProposalValidator:
         else:
             evidence_alignment = 0.0
 
-        fallback_safe = (
-            spec.fallback_strategy is not None
-            and spec.fallback_strategy.kind == "rollback_on_failure"
-        )
-        safety_score = 1.0 if fallback_safe else 0.8
+        safety_score = self.domain_kit.static_safety_score(spec)
         testability_score = 1.0 if (
             proposal.expected_advantages
             and proposal.hypothesis is not None

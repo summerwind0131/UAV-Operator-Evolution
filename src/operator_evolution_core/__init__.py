@@ -53,6 +53,14 @@ from .validation import (
     paired_bootstrap_ci,
     replace_population_slot,
 )
+from .proposal import (
+    CandidateProposalEnvelope,
+    DomainCompatibilityError,
+    DomainKit,
+    DomainSmokeReport,
+    ProposalBudgetDeclaration,
+    ensure_domain_compatibility,
+)
 
 __all__ = [
     "DatasetSplit",
@@ -97,4 +105,10 @@ __all__ = [
     "decide_retention",
     "paired_bootstrap_ci",
     "replace_population_slot",
+    "CandidateProposalEnvelope",
+    "DomainCompatibilityError",
+    "DomainKit",
+    "DomainSmokeReport",
+    "ProposalBudgetDeclaration",
+    "ensure_domain_compatibility",
 ]

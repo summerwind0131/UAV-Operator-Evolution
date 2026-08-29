@@ -626,9 +626,10 @@ def _default_diagnosis(user_payload: Any) -> dict[str, Any]:
 
 
 def _default_proposal(user_payload: Any) -> dict[str, Any]:
-    from ..operators.specs import OperatorSpec
+    from ..domain.uav_kit import UAVDomainKit
     from .design_models import DiagnosisReport
 
+    domain_kit = UAVDomainKit()
     root, bundle = _payload_bundle(user_payload)
     design_role = str(root.get("design_role", ""))
     multi_role = design_role in {"exploitation_designer", "exploration_designer"}
@@ -636,7 +637,7 @@ def _default_proposal(user_payload: Any) -> dict[str, Any]:
     parents = bundle.get("parent_specs", [])
     if not isinstance(parents, list) or not parents:
         raise ValueError("mock OperatorProposal requires at least one parent spec")
-    parent = OperatorSpec.model_validate(parents[0])
+    parent = domain_kit.parse_ir(parents[0])
     diagnosis = DiagnosisReport.model_validate(_default_diagnosis(user_payload))
     failure_claim = diagnosis.failure_modes[0] if diagnosis.failure_modes else None
     # Carry the diagnosis evidence through to the proposal, not merely the
@@ -749,7 +750,7 @@ def _default_proposal(user_payload: Any) -> dict[str, Any]:
         else "Preserve the parent move while adding bounded smoothing and rollback protection."
     )
     specification["target_failure_modes"] = [target_failure] if target_failure else []
-    validated_spec = OperatorSpec.model_validate(specification)
+    validated_spec = domain_kit.parse_ir(specification)
 
     hypothesis: dict[str, Any] | None = None
     if failure_claim is not None:
@@ -778,7 +779,7 @@ def _default_proposal(user_payload: Any) -> dict[str, Any]:
             "evidence_ids": failure_evidence_ids,
         }
     return {
-        "operator_spec": validated_spec.model_dump(mode="json"),
+        "operator_spec": domain_kit.serialize_ir(validated_spec),
         "design_rationale": (
             "The exploration role tries a distinct bounded detour grounded in the shared diagnosis."
             if exploration

@@ -457,9 +457,19 @@ python -m pytest tests/test_core_contracts.py tests/test_uav_contract_adapters.p
 
 ### Step 6：分离通用提案信封与 UAV IR
 
+状态：已完成（2026-08-29）。
+
 - EvidenceBundle 从 adapter 读取父 spec 与 capability catalog。
 - ProposalValidator 通过 domain plugin 计算 primitive 使用、行为指纹和拓扑指纹。
 - 现有 UAV 提案 JSON、bundle hash 与审计字段在阶段一保持稳定。
+
+实现记录：
+
+- `operator_evolution_core.proposal` 定义 `proposal-envelope-v1`、typed budget declaration、`DomainKit`、通用 smoke report 和显式 domain compatibility gate；核心不导入任何 UAV IR 或类型。
+- `UAVDomainKit` 独占 `uav-v1` 的 `OperatorSpec` 解析、primitive catalog、可信 compiler、bounded smoke、能力使用统计、拓扑/行为指纹和静态安全投影；不提供任意 Python 或万能 DSL 接口。
+- Evidence Builder、Proposal Validator、Agent Tool Dispatcher、mock provider 和 design orchestrator 的领域解析/编译/smoke 路径均通过 kit；旧 `compiler=` 工具上下文只作为兼容 facade，进入 dispatcher 前转换为 kit。
+- 新 envelope 的 hash 覆盖 schema、domain、IR version、候选/父代/evidence、设计理由、预算和 typed payload；内容篡改会拒绝读取。错 domain 或错 IR version 在调用领域能力前 fail-closed。
+- 旧 UAV bundle/proposal JSON 不序列化 domain/version，兼容属性将其隐式解释为 `uav-path-planning-2d/uav-v1`；冻结 hash 分别为 `b0b45eb5…ed0d` 与 `1b1af302…c533`。完整默认回归：`307 passed, 3 skipped, 1 deselected`。
 
 ### Step 7：改造演化编排依赖注入
 

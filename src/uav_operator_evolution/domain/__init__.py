@@ -8,6 +8,7 @@ from .adapters import (
     evaluation_result_to_objective,
     objective_to_evaluation_result,
 )
+from .uav_kit import UAVDomainKit, UAVSmokeFixture, UAV_IR_VERSION
 from .uav_adapter import (
     UAVDomainAdapter,
     UAVObjectiveEvaluator,
@@ -21,6 +22,9 @@ from .uav_adapter import (
 __all__ = [
     "UAV_DOMAIN_ID",
     "UAVDomainAdapter",
+    "UAVDomainKit",
+    "UAVSmokeFixture",
+    "UAV_IR_VERSION",
     "UAV_OBJECTIVE_ADAPTER_VERSION",
     "UAVObjectiveEvaluator",
     "UAVPathCodec",

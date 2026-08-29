@@ -2,10 +2,18 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from typing import Any, Protocol, runtime_checkable
 
 from pydantic import AliasChoices, BaseModel, ConfigDict, Field
 
+from operator_evolution_core.proposal import (
+    CandidateProposalEnvelope,
+    ProposalBudgetDeclaration,
+)
+
+from ..domain.adapters import UAV_DOMAIN_ID
+from ..domain.uav_kit import UAV_IR_VERSION
 from ..operators.specs import OperatorSpec
 from .design_models import DesignHypothesis, DiagnosisReport
 
@@ -52,6 +60,40 @@ class OperatorProposal(BaseModel):
         """Phase-8 alias while preserving ``potential_risks`` callers."""
 
         return self.potential_risks
+
+    @property
+    def domain_id(self) -> str:
+        """Implicit binding for legacy UAV proposal JSON."""
+
+        return UAV_DOMAIN_ID
+
+    @property
+    def ir_version(self) -> str:
+        """Implicit binding for legacy proposals without serialized metadata."""
+
+        return UAV_IR_VERSION
+
+    def to_envelope(
+        self,
+        candidate_id: str,
+        budget_declaration: ProposalBudgetDeclaration
+        | Mapping[str, int | float],
+    ) -> CandidateProposalEnvelope[OperatorSpec]:
+        budget = (
+            budget_declaration
+            if isinstance(budget_declaration, ProposalBudgetDeclaration)
+            else ProposalBudgetDeclaration(limits=dict(budget_declaration))
+        )
+        return CandidateProposalEnvelope[OperatorSpec](
+            candidate_id=candidate_id,
+            domain_id=self.domain_id,
+            ir_version=self.ir_version,
+            parent_ids=list(self.spec.parent_operators),
+            evidence_refs=list(self.used_evidence_ids),
+            design_rationale=self.design_rationale,
+            budget_declaration=budget,
+            payload=self.spec,
+        )
 
 
 @runtime_checkable

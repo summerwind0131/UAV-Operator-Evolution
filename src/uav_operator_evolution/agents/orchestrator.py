@@ -16,6 +16,9 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 
+from operator_evolution_core.proposal import DomainKit, ensure_domain_compatibility
+
+from ..domain.uav_kit import UAVDomainKit
 from ..environment import Environment2D
 from ..evolution.candidate_validator import FixedBudgetCandidateValidator
 from ..evolution.validation import ValidationReport
@@ -183,10 +186,21 @@ class OperatorDesignOrchestrator:
         heuristic_designer: HeuristicDesigner | None = None,
         audit_store: AgentAuditStore | None = None,
         recorder: TrajectoryRecorder | None = None,
+        domain_kit: DomainKit[Any, Any, Any] | None = None,
     ) -> None:
         self.evidence_builder = evidence_builder
         self.proposal_validator = proposal_validator
         self.compiler = compiler
+        self.domain_kit = domain_kit or UAVDomainKit(compiler)
+        for component in (evidence_builder, proposal_validator):
+            component_kit = getattr(component, "domain_kit", None)
+            if component_kit is not None and (
+                component_kit.domain_id != self.domain_kit.domain_id
+                or component_kit.ir_version != self.domain_kit.ir_version
+            ):
+                raise ValueError(
+                    "orchestrator components must use the same domain and IR version"
+                )
         self.candidate_validator = candidate_validator
         self.memory = memory
         self.registry = registry
@@ -356,7 +370,26 @@ class OperatorDesignOrchestrator:
                 raise _Rejected("review", concerns)
 
             try:
-                compiled_operator = self.compiler.compile(proposal.spec)
+                proposal_envelope = proposal.to_envelope(
+                    candidate_id,
+                    {
+                        "candidate_specs": request.design_budget.max_candidate_specs,
+                        "validation_instances": len(request.validation_environments),
+                        "smoke_seeds": 3,
+                    },
+                )
+                ensure_domain_compatibility(self.domain_kit, proposal_envelope)
+                self.domain_kit.parse_ir(proposal_envelope.payload)
+            except Exception as exc:
+                raise _Rejected(
+                    "proposal_envelope",
+                    f"proposal envelope validation failed: {type(exc).__name__}: {exc}",
+                ) from exc
+
+            try:
+                compiled_operator = self.domain_kit.compile(
+                    self.domain_kit.parse_ir(proposal.spec)
+                )
             except Exception as exc:
                 raise _Rejected("compile", f"operator compilation failed: {type(exc).__name__}: {exc}") from exc
             if drafts[candidate_id].final_status == CandidateStatus.REVIEWED:
@@ -543,7 +576,9 @@ class OperatorDesignOrchestrator:
         specs = {spec.name: spec for spec in bundle.parent_specs}
         for parent in request.parent_operator_ids:
             if not any(str(operator.name) == parent for operator in population):
-                population.append(self.compiler.compile(specs[parent]))
+                population.append(
+                    self.domain_kit.compile(self.domain_kit.parse_ir(specs[parent]))
+                )
         if not any(str(operator.name) == request.parent_operator_ids[0] for operator in population):
             raise ValueError("primary parent is absent from validation population")
         return population
@@ -633,7 +668,7 @@ class OperatorDesignOrchestrator:
         )
         context = AgentToolContext(
             bundle=bundle,
-            compiler=self.compiler,
+            domain_kit=self.domain_kit,
             memory=self.memory,
             smoke_fixture=SmokeTestFixture(
                 environment=request.smoke_environment,

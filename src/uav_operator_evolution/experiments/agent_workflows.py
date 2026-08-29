@@ -67,6 +67,7 @@ from ..agents.tools import (
     ToolExecutionResult,
 )
 from ..config import ExperimentConfig
+from ..domain.uav_kit import UAVDomainKit
 from ..environment import Environment2D
 from ..evolution.candidate_validator import FixedBudgetCandidateValidator
 from ..memory import MechanismMemory
@@ -764,7 +765,7 @@ def run_agent_workflow(
         )
         context = AgentToolContext(
             bundle=bundle,
-            compiler=compiler,
+            domain_kit=UAVDomainKit(compiler),
             memory=memory,
             smoke_fixture=SmokeTestFixture(
                 smoke_environment,
@@ -1742,7 +1743,7 @@ def run_agent_ablations_workflow(
             agent_result = agent_backend.run(
                 AgentToolContext(
                     bundle=bundle,
-                    compiler=compiler,
+                    domain_kit=UAVDomainKit(compiler),
                     memory=memory,
                     smoke_fixture=SmokeTestFixture(
                         available_train[0],
@@ -1791,7 +1792,7 @@ def run_agent_ablations_workflow(
             multi_result = multi_backend.run(
                 AgentToolContext(
                     bundle=bundle,
-                    compiler=compiler,
+                    domain_kit=UAVDomainKit(compiler),
                     memory=memory,
                     smoke_fixture=SmokeTestFixture(
                         available_train[0],

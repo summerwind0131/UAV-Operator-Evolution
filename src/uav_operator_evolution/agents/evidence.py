@@ -9,11 +9,13 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
+from operator_evolution_core.proposal import DomainKit, ensure_domain_compatibility
+
 from ..diagnosis.counterfactual import CounterfactualResult
+from ..domain.uav_kit import UAVDomainKit, UAV_IR_VERSION
 from ..memory import MechanismMemory
-from ..operators.catalog import manual_operator_specs
 from ..operators.registry import OperatorRegistry
-from ..operators.specs import OperatorSpec, primitive_catalog
+from ..operators.specs import OperatorSpec
 from ..reproducibility import canonical_json, stable_hash
 from ..trajectory import OperatorTrace, TrajectoryRecorder
 
@@ -125,6 +127,18 @@ class OperatorEvidenceBundle(EvidenceModel):
     design_budget: DesignBudget = Field(default_factory=DesignBudget)
     limitations: list[str] = Field(default_factory=list)
 
+    @property
+    def domain_id(self) -> str:
+        """Implicit binding for pre-envelope UAV artifacts (not serialized)."""
+
+        return UAVDomainKit.domain_id
+
+    @property
+    def ir_version(self) -> str:
+        """Implicit ``uav-v1`` binding without changing legacy bundle hashes."""
+
+        return UAV_IR_VERSION
+
     @model_validator(mode="after")
     def canonicalize_and_hash(self) -> "OperatorEvidenceBundle":
         self.parent_specs.sort(key=lambda item: item.name)
@@ -233,6 +247,7 @@ class EvidenceBundleBuilder:
         *,
         recorder: TrajectoryRecorder | None = None,
         minimum_reliable_samples: int = 3,
+        domain_kit: DomainKit[Any, Any, Any] | None = None,
     ) -> None:
         if minimum_reliable_samples < 1:
             raise ValueError("minimum_reliable_samples must be positive")
@@ -240,7 +255,7 @@ class EvidenceBundleBuilder:
         self.registry = registry
         self.recorder = recorder
         self.minimum_reliable_samples = int(minimum_reliable_samples)
-        self._manual_specs = manual_operator_specs()
+        self.domain_kit = domain_kit or UAVDomainKit()
 
     def build(
         self,
@@ -299,9 +314,17 @@ class EvidenceBundleBuilder:
             representative_success_cases=success_cases,
             representative_failure_cases=failure_cases,
             existing_operator_names=sorted(existing),
-            allowed_primitives={key: list(values) for key, values in primitive_catalog().items()},
+            allowed_primitives={
+                key: list(values)
+                for key, values in self.domain_kit.capability_catalog().items()
+            },
             design_budget=budget,
             limitations=limitations,
+        )
+        ensure_domain_compatibility(
+            self.domain_kit,
+            bundle,
+            allow_legacy_unversioned=True,
         )
         if len(canonical_json(bundle.model_dump(mode="json"))) > budget.max_bundle_chars:
             raise ValueError("canonical evidence bundle exceeds max_bundle_chars")
@@ -312,12 +335,13 @@ class EvidenceBundleBuilder:
             operator = self.registry.get(operator_id)
             spec = getattr(operator, "spec", None)
             if spec is not None:
-                return spec if isinstance(spec, OperatorSpec) else OperatorSpec.model_validate(spec)
+                return self.domain_kit.parse_ir(spec)
         mechanism = self.memory.get_mechanism(operator_id)
         if mechanism is not None and mechanism.definition:
-            return OperatorSpec.model_validate(mechanism.definition)
-        if operator_id in self._manual_specs:
-            return self._manual_specs[operator_id]
+            return self.domain_kit.parse_ir(mechanism.definition)
+        builtin = self.domain_kit.builtin_ir(operator_id)
+        if builtin is not None:
+            return builtin
         raise KeyError(f"operator specification not found: {operator_id}")
 
     def _resolve_profiles(
