@@ -53,3 +53,5 @@
 - `artifacts/planning_benchmarks/uav2d-hidden-test-v2-final/audit_report.md`
 
 大体积原始结果保持在 Git 忽略目录中，由规范化发布包及 SHA-256 固化，不直接写入 Git 历史。
+
+发布包：<https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/uav2d-hidden-test-v2-final-v1>；归档 SHA-256：`06551f6d94b1420caf4f2c4cd209c9e6cb3025d1b20af6f28fbfc6568cdcc30c`。

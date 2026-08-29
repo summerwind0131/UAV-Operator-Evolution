@@ -11,7 +11,7 @@
 | Step 0：领域边界与 golden characterization | 已完成 | `d44545f`，完整基线 `290 passed, 3 skipped` |
 | Step 1：`InstanceRef`、`ObjectiveEvaluation` 与 UAV 纯适配 | 已完成 | `d44545f` |
 | Step 2：完整 UAV `DomainAdapter` | 已完成 | `eda6987`，标签 `phase1-step2` |
-| Hidden Test-v2 最终评价收口 | 进行中 | 结果已执行且审计通过；等待报告、归档、Release artifact 与最终标签 |
+| Hidden Test-v2 最终评价收口 | 已完成 | `a8be8f6`、`uav2d-hidden-test-v2-final-v1`、GitHub Release |
 | Step 3：通用搜索内核 | 未开始 | UAV shadow comparison 与 RNG identity 全绿 |
 | Step 4：通用轨迹、诊断与 UAV snapshot | 未开始 | SQLite、JSONL、identity projection 保持一致 |
 | Step 5：通用候选验证与确定性策略 | 未开始 | UAV retention 逐字段一致，性能与确定性测试分离 |
@@ -37,6 +37,8 @@
 ## 3. 第一阶段：完成 UAV 零行为通用化
 
 ### 3.1 当前检查点与 Hidden Test-v2 收口
+
+状态：已完成。发布页：<https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/uav2d-hidden-test-v2-final-v1>；当前完整测试为 `291 passed, 3 skipped`。
 
 - 推送 `d44545f` 和 `eda6987`，以 `phase1-step2` 建立检查点。
 - 只核验既有 Hidden Test-v2 opening、execution、audit receipt 和 6,960 条唯一记录；终测已经完成，不再打开或重跑。
@@ -182,4 +184,4 @@
 | 2026-08-20 | Step 2 | `eda6987` | 完整 UAV `DomainAdapter` 完成 |
 | 2026-08-17 | Hidden Test-v2 执行 | execution receipt `d5ddb565…` | 6,960/6,960 唯一记录，0 API 调用 |
 | 2026-08-17 | Hidden Test-v2 审计 | audit receipt `6789dc49…` | `passed`；冻结 v1 不再重跑或调参 |
-
+| 2026-08-29 | Hidden Test-v2 收口 | `a8be8f6`，`uav2d-hidden-test-v2-final-v1` | 222 文件确定性归档，SHA-256 `06551f6d…cc30c`；Release 已发布；`291 passed, 3 skipped` |

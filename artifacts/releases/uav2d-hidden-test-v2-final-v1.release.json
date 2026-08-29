@@ -1,0 +1,22 @@
+{
+  "archive_asset": {
+    "asset_id": 535027679,
+    "digest": "sha256:06551f6d94b1420caf4f2c4cd209c9e6cb3025d1b20af6f28fbfc6568cdcc30c",
+    "name": "uav2d-hidden-test-v2-final-v1.tar.gz",
+    "size_bytes": 5022107,
+    "url": "https://github.com/summerwind0131/UAV-Operator-Evolution/releases/download/uav2d-hidden-test-v2-final-v1/uav2d-hidden-test-v2-final-v1.tar.gz"
+  },
+  "checksum_asset": {
+    "asset_id": 535027736,
+    "digest": "sha256:704c1a76413270936edeac2adf312856f2b426eaed1fe16bd92421bf2e6e179a",
+    "name": "uav2d-hidden-test-v2-final-v1.tar.gz.sha256",
+    "size_bytes": 103,
+    "url": "https://github.com/summerwind0131/UAV-Operator-Evolution/releases/download/uav2d-hidden-test-v2-final-v1/uav2d-hidden-test-v2-final-v1.tar.gz.sha256"
+  },
+  "published_at_utc": "2026-08-29T09:27:43Z",
+  "release_url": "https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/uav2d-hidden-test-v2-final-v1",
+  "schema_version": "github-release-receipt-v1",
+  "status": "published",
+  "tag": "uav2d-hidden-test-v2-final-v1",
+  "target_commit": "a8be8f6a97f8b56722ca62d7f75ef4ab21563e85"
+}

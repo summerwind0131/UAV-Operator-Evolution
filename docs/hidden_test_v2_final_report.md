@@ -5,6 +5,8 @@
 审计矩阵：6,960 条预注册记录，6,960 条唯一结果  
 审计规则：超时计失败；先按可行率、再按可信可行成本排序
 
+规范化归档及校验文件见 [GitHub Release](https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/uav2d-hidden-test-v2-final-v1)。归档 SHA-256 为 `06551f6d94b1420caf4f2c4cd209c9e6cb3025d1b20af6f28fbfc6568cdcc30c`。
+
 ## 1. 主要结论
 
 Evolutionary AFL-UAV v1 在配对成本比较中表现出明确优势，但其可信可行率为 `0.9967`，低于 frozen AFL-UAV 和去 rooms 策略的 `1.0000`，也低于固定长度消融的 `0.9983`。因此在预注册的可行性优先排名中，v1 位列第 4，不能只根据更低成本宣称总体胜出。
