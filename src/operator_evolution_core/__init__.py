@@ -18,6 +18,19 @@ from .contracts import (
     SolutionGuard,
     TraceEncoder,
 )
+from .search import (
+    AcceptancePolicy,
+    BlockRandomRoundRobinScheduler,
+    GenericSearchKernel,
+    OperatorOutcome,
+    OperatorScheduler,
+    SearchBudget,
+    SearchContext,
+    SearchOperator,
+    SearchResult,
+    SearchStep,
+    SimulatedAnnealingAcceptance,
+)
 
 __all__ = [
     "DatasetSplit",
@@ -31,4 +44,15 @@ __all__ = [
     "SolutionCodec",
     "SolutionGuard",
     "TraceEncoder",
+    "AcceptancePolicy",
+    "BlockRandomRoundRobinScheduler",
+    "GenericSearchKernel",
+    "OperatorOutcome",
+    "OperatorScheduler",
+    "SearchBudget",
+    "SearchContext",
+    "SearchOperator",
+    "SearchResult",
+    "SearchStep",
+    "SimulatedAnnealingAcceptance",
 ]
