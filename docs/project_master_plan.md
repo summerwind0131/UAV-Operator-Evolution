@@ -1,0 +1,185 @@
+# Trajectory-Informed Operator Evolution 项目总体实施计划
+
+状态：实施中  
+计划基线日期：2026-08-29  
+研究主线：从 UAV 单领域实现提炼通用核心，以 JSSP 验证通用性，再开展机制级双向迁移
+
+## 1. 里程碑总览
+
+| 里程碑 | 状态 | 检查点 / 完成门 |
+| --- | --- | --- |
+| Step 0：领域边界与 golden characterization | 已完成 | `d44545f`，完整基线 `290 passed, 3 skipped` |
+| Step 1：`InstanceRef`、`ObjectiveEvaluation` 与 UAV 纯适配 | 已完成 | `d44545f` |
+| Step 2：完整 UAV `DomainAdapter` | 已完成 | `eda6987`，标签 `phase1-step2` |
+| Hidden Test-v2 最终评价收口 | 进行中 | 结果已执行且审计通过；等待报告、归档、Release artifact 与最终标签 |
+| Step 3：通用搜索内核 | 未开始 | UAV shadow comparison 与 RNG identity 全绿 |
+| Step 4：通用轨迹、诊断与 UAV snapshot | 未开始 | SQLite、JSONL、identity projection 保持一致 |
+| Step 5：通用候选验证与确定性策略 | 未开始 | UAV retention 逐字段一致，性能与确定性测试分离 |
+| Step 6：通用提案信封与领域 IR | 未开始 | UAV 旧 hash 兼容，领域/版本不匹配 fail-closed |
+| Step 7：通用演化管理器依赖注入 | 未开始 | UAV 全套 golden、CLI、Agent 和 benchmark 验收 |
+| JSSP 第二领域验证 | 未开始 | 同一 core 完成搜索、轨迹、诊断、验证和候选生命周期 |
+| 三仓拆分与 core `0.1.0` | 未开始 | 三仓 CI、GitHub prerelease、固定 commit/hash receipt |
+| UAV↔JSSP 机制迁移 | 未开始 | 双向三臂实验、封存测试、统计与复现包 |
+
+本文件是项目的唯一总体路线图。每次里程碑完成后更新状态、提交、测试结果和 artifact receipt；历史实验和 frozen artifact 不得覆盖。
+
+## 2. 总体路线与实施顺序
+
+1. 固化 Step 0–2 和已经完成的 UAV Hidden Test-v2。
+2. 完成通用化第一阶段 Step 3–7，要求 UAV 行为与结果不变。
+3. 在当前仓库接入 JSSP，以结构明显不同的离散约束问题验证核心。
+4. 验收后拆成三个独立仓库并发布 core `0.1.0` GitHub prerelease。
+5. 开展 UAV↔JSSP 双向机制迁移研究。
+6. 形成最终技术报告、复现包和版本化研究结论。
+
+每个 Step 单独提交。定向测试、完整测试、`git diff --check` 和工作树审计通过后再推送。
+
+## 3. 第一阶段：完成 UAV 零行为通用化
+
+### 3.1 当前检查点与 Hidden Test-v2 收口
+
+- 推送 `d44545f` 和 `eda6987`，以 `phase1-step2` 建立检查点。
+- 只核验既有 Hidden Test-v2 opening、execution、audit receipt 和 6,960 条唯一记录；终测已经完成，不再打开或重跑。
+- 修正仍写着 `sealed_unrun` 的过期文档，提交审计报告、摘要和 receipt。
+- 对大体积原始结果生成规范化压缩包及 SHA-256，作为 GitHub Release artifact 保存，不将原始大文件直接加入 Git 历史。
+- 正式报告预注册结果：Evolutionary AFL-UAV v1 具有成本优势但可行率退化，两个关键消融产生负结果；禁止根据结果修改或重新评价 v1。
+- 创建不可变标签 `uav2d-hidden-test-v2-final-v1`。
+
+### 3.2 Step 3：通用搜索内核
+
+- 在 core 定义泛型 `SearchContext`、`OperatorOutcome`、`SearchOperator`、`SearchStep`、`SearchResult`、搜索预算及调度接口。
+- 实现只依赖 `DomainAdapter`、operator、scheduler 和 acceptance policy 的通用搜索循环。
+- UAV operator facade 将现有 `PathOperator/OperatorResult` 映射到通用协议；现有 `SearchExecutor` 构造参数、返回类型和导入路径保持不变。
+- 原样保留四个 RNG 子流的生成顺序、seed 范围和消耗次数。
+- 新旧循环做逐步 shadow comparison：operator ID、候选/当前/最优解 hash、目标分项、接受决定、温度、停滞状态、最终 RNG 状态均一致；仅排除墙钟时间。
+- shadow 全绿后让 UAV `SearchExecutor` 调用通用内核，再删除重复旧循环。
+- 独立提交：`feat: add domain-independent search kernel`、`refactor: route UAV search through generic kernel`。
+
+### 3.3 Step 4：通用轨迹、诊断与 UAV snapshot
+
+- core 拥有通用 before/candidate/accepted 三态 trace、奖励、上下文、谱系和 recorder；领域 encoder 负责解、实例及领域特征。
+- 接入现有 `UAVTraceEncoder`，路径、地图、碰撞、clearance 和目标分项保留在 UAV 层。
+- core API 使用 `instance_id`；当前 SQLite 的 `map_id` 物理列作为 v1 兼容别名继续保留，不做破坏性 schema migration。
+- 迁移延迟奖励和通用 diagnoser 逻辑；UAV 特征分组通过 feature catalog 注册。
+- 新旧 SQLite 行、JSONL 和 identity projection 必须完全一致，时间戳、墙钟和绝对路径除外。
+- 独立提交：`refactor: separate core traces from UAV snapshots`。
+
+### 3.4 Step 5：通用候选验证与确定性策略
+
+- 抽出通用 paired outcome、CRN seed schedule、ABBA timing、bootstrap、retention gate 和 population slot replacement。
+- 通用 validator 只接收 validation instances、adapter、operator population 和固定预算；API 不允许传入完整 split 字典。
+- UAV `FixedBudgetCandidateValidator` 保留为兼容 facade，旧 retention 结果逐字段一致。
+- 引入版本化 `FitnessPolicy`：
+  - `uav-legacy-v1` 保持现有 runtime rank 行为，确保历史结果不变。
+  - `deterministic-v2` 用于 JSSP 和后续研究；墙钟只报告和做性能 guard，不参与父代排序或单独触发保留。
+- 将单次 1 秒墙钟测试从默认确定性套件拆出，改为隔离性能任务、多次运行和中位数判定；默认测试使用可注入时钟或评价预算。
+- 独立提交：`refactor: generalize paired candidate validation`。
+
+### 3.5 Step 6：通用提案信封与领域 IR
+
+- 新增 `CandidateProposalEnvelope`：`candidate_id`、`domain_id`、`ir_version`、父代、证据引用、设计理由、预算声明和 typed payload。
+- 新增 `DomainKit`：IR 解析、capability catalog、schema 校验、编译、smoke、能力使用统计、拓扑指纹和行为指纹。
+- `UAVDomainKit` 包装现有 `OperatorSpec`、compiler、primitive catalog 和 smoke fixture；UAV IR 固定为 `uav-v1`。
+- 新 envelope 使用 `proposal-envelope-v1` hash；旧 UAV JSON 和 EvidenceBundle hash 通过兼容投影保持原值，读取旧 artifact 时隐式补入 `uav-v1`。
+- Agent、Evidence Builder、Proposal Validator 和工具 dispatcher 只能通过 `DomainKit` 访问领域能力；domain/version 不匹配时 fail-closed。
+- 不建立万能 DSL，也不开放任意 Python 执行。
+- 独立提交：`refactor: separate proposal envelope from UAV IR`。
+
+### 3.6 Step 7：通用演化管理器依赖注入
+
+- 通用 manager 注入 `DomainAdapter`、`DomainKit`、population factory、candidate validator、designer/orchestrator 和 artifact sink。
+- 默认构造仍自动装配 UAV 组件，现有 CLI、YAML 和 `OperatorEvolutionManager(config)` 调用保持有效。
+- train、validation、test 使用显式能力对象隔离；test 只能在 population 冻结后打开。
+- 运行 Step 0 golden characterization、完整 CLI smoke、Agent/Mock Multi-Agent、candidate validation 和规划 benchmark preflight。
+- 同一 Windows/Python 环境要求 identity projection 精确相同；关键路径中位性能退化不得超过 5%。
+- 创建 `uav-generalization-phase1-v1` 标签；此时第一阶段才算结束。
+
+## 4. 第二阶段：JSSP 领域验证
+
+### 4.1 数据、模型与确定性调度
+
+- 先在当前仓库建立 `jssp_operator_evolution` 领域包，验证完成后再拆库。
+- 训练集为 60 个固定合成实例：`6×6`、`10×10`、`20×15` 各 20 个，主 seed `20260823`；每个 job 的机器顺序为 RNG permutation，加工时间为 `[1,99]` 整数。
+- validation/test 来自 OR-Library `jobshop1` 的 82 个经典实例。规范化后按 `(来源族、jobs、machines、content_hash)` 排序，偶数位置进入 validation、奇数位置进入 test，固定 41/41；所有 split 做 content-hash 去重。
+- 保存原始来源、MIT 许可、下载 URL 和 SHA-256。来源说明：<https://people.brunel.ac.uk/~mastjjb/jeb/orlib/jobshopinfo.html>；法律说明：<https://people.brunel.ac.uk/~mastjjb/jeb/orlib/legal.html>。
+- population 冻结前，访问 guard 必须拒绝读取 test manifest。
+
+### 4.2 JSSP `DomainAdapter`
+
+- `JobShopInstance` 保存工序、机器数、来源和内容 hash。
+- `JobShopSolution` 使用 operation-based job-ID sequence；确定性 schedule builder 按 job precedence 和机器最早可用时间解码，不依赖外部求解器。
+- `ObjectiveEvaluation.scalar_cost = makespan`；分项包含 makespan、机器总空闲、关键路径长度，违规项包含 multiplicity 和未调度工序。
+- guard 检查长度、job multiplicity、job 范围和有限性；codec 提供规范 JSON、clone 和稳定 hash。
+- features 包含 critical-path ratio、瓶颈机器利用率、负载不平衡、critical block、operation displacement 和相对初始解改进率。
+- trace encoder 使用与 UAV 相同的通用三态 recorder。
+
+### 4.3 JSSP operator population 与 `jssp-v1` IR
+
+- 固定八槽 P0：随机相邻交换、随机双点交换、有界插入、有界反转、critical-block 相邻交换、critical-block 端点交换、瓶颈 block 插入、高 idle-gap relocation。
+- typed IR 将 selector、transform、repair 分开；所有参数有静态上下界，循环有硬上限。
+- 变换保持 job multiplicity；异常、非法结果或超时统一安全 no-op。
+- compiler 只能组合白名单 primitive；输入不可变、同 seed 确定性、有限时间和结构合法是硬门。
+- sanity baseline 固定为随机 sequence、SPT dispatch 和 adjacent-swap hill climbing。
+
+### 4.4 JSSP 完整流水线与验收
+
+- smoke 使用 64 次搜索调用、2 代×2 候选；正式配置复用 UAV 的 400/240/400 调用和 3 代×3 候选×8 槽预算。
+- validation 决定 retention；test 只比较冻结后的 P0/Pn。
+- 报告 makespan、可行率、运行时间、有效调用率、接受率；有可靠 best-known 来源时额外报告 gap。
+- 至少完成一个离线完整演化 smoke 和一个固定预算配对候选验证。
+- core 源码不得导入 UAV 或 JSSP 类型；两个领域使用同一搜索、trace、diagnoser、memory、validation 和 candidate lifecycle。
+- 创建 `cross-domain-core-qualification-v1` 标签。
+
+## 5. 三仓拆分与 core `0.1.0` 发布
+
+### 5.1 独立仓库职责
+
+- `trajectory-operator-evolution`：通用协议、搜索、轨迹、诊断、memory、审计、提案信封、验证统计及 adapter contract kit。
+- `UAV-Operator-Evolution`：UAV adapter、IR/compiler、环境、benchmark、AFL-UAV 和研究 artifact。
+- `JSSP-Operator-Evolution`：JSSP adapter、IR/compiler、数据 manifest、baseline 和实验。
+
+### 5.2 拆分与发布流程
+
+- 在临时 clone 中用 history-preserving path filter 拆分；原仓库先打标签和备份，不对原 `.git` 做破坏性重写。
+- core CI 覆盖 Python 3.11/3.12、Windows/Linux、wheel/sdist build、contract suite；两个领域 CI 使用同一 core commit。
+- 发布 GitHub prerelease `trajectory-operator-evolution v0.1.0`，附 wheel、sdist、SHA-256、API 文档和迁移说明，不发布 PyPI。
+- UAV/JSSP 通过 PEP 508 Git URL 固定到 core `v0.1.0` 对应的不可变 commit SHA；release receipt 同时记录 tag、commit 和 wheel hash。
+
+## 6. 第三阶段：UAV↔JSSP 双向机制迁移
+
+### 6.1 机制协议与安全边界
+
+- core 新增 `MechanismRecordV1`：来源领域、`repair/diversify/intensify/rollback` 标签、触发上下文、预期效果、失败模式、证据引用和 provenance hash。
+- 跨领域只传递机制记录，不传 selector、primitive、IR、程序或领域特征原值；目标领域必须重新设计，并由自己的 compiler/validation gate 判定是否合法。
+
+### 6.2 预注册实验设计
+
+- 每个方向设置三臂：从零设计、同领域迁移、跨领域迁移。
+- 每臂使用 10 个相同 master seeds、相同搜索/候选/Agent 预算；机制检索固定 top-4，依次按上下文相似度、证据强度、mechanism ID 决胜。
+- 机制库只由独立 bank seeds 的 train/validation 运行建立，不含 test 结果。
+- 默认使用确定性 heuristic/Mock Agent；真实远程 Provider 不属于完成门，未来加入时必须另行预注册。
+- JSSP 最终比较使用已封存的 41 个 test instances。
+- UAV 新建独立 `uav2d-transfer-v1`：120 张地图、六类各 20 张，并与所有旧 train/validation/test/Hidden Test-v2 按 content、terminal、obstacle-layout、geometry 和 seed 全部去重；population 冻结前保持 sealed。
+- UAV 与 JSSP 最终评价比较 P0、从零、同领域、跨领域四组；每组使用相同 10-seed schedule。
+- 使用实例级配对结果、95% bootstrap CI、Holm 多重比较校正；先比较可行率，再比较可行成本/makespan。
+- 负迁移、零效果和失败上下文与正结果同等报告。完成不要求跨领域臂必胜，只要求实验有效、可复现且结论不夸大。
+- 创建 `mechanism-transfer-v1` 标签和跨三仓复现包。
+
+## 7. 持续测试、交付与默认边界
+
+- Phase 1 每一步持续要求 UAV golden identity、旧 API、SQLite/JSONL、bundle/spec hash、审计顺序和 retention 决定不变。
+- adapter contract suite 统一检查 clone 隔离、规范 JSON/hash、结构 guard、有限数值、异常 no-op、RNG 确定性和 test-split 隔离。
+- 性能测试与确定性正确性测试分开；性能使用隔离进程、多次运行和中位数，不由单次 1 秒墙钟决定整套 CI。
+- 所有研究运行保存 config、manifest、seed schedule、依赖、代码 commit、artifact hash、receipt、原始结果和分析版本。
+- 不覆盖历史实验或 frozen artifact；不可避免的协议变更使用新 schema/version/addendum。
+- 本计划不包含三维 UAV、动力学、移动障碍、真实飞控、动态 JSSP、机器故障、多目标 Pareto 或任意生成代码执行；这些只作为后续独立项目。
+
+## 8. 实施日志
+
+| 日期 | 里程碑 | 提交 / receipt | 测试与备注 |
+| --- | --- | --- | --- |
+| 2026-08-20 | Step 0–1 | `d44545f` | 领域协议与 UAV 纯适配完成 |
+| 2026-08-20 | Step 2 | `eda6987` | 完整 UAV `DomainAdapter` 完成 |
+| 2026-08-17 | Hidden Test-v2 执行 | execution receipt `d5ddb565…` | 6,960/6,960 唯一记录，0 API 调用 |
+| 2026-08-17 | Hidden Test-v2 审计 | audit receipt `6789dc49…` | `passed`；冻结 v1 不再重跑或调参 |
+

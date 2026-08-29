@@ -1,0 +1,23 @@
+{
+  "archive_name": "uav2d-hidden-test-v2-final-v1.tar.gz",
+  "archive_sha256": "06551f6d94b1420caf4f2c4cd209c9e6cb3025d1b20af6f28fbfc6568cdcc30c",
+  "archive_size_bytes": 5022107,
+  "audit_receipt_id": "6789dc4901faab1cccdc8af38668fdb09a2357c403f50eb1492810631e2ab838",
+  "audit_report_markdown_sha256": "7f842573982d92d412e83467459f0ab0d549099bcf1a6a34debdc53396ed40f5",
+  "audit_report_sha256": "93fb31bf94dee61d05cf26b8fc0532a1a2aacaad66bbcf66cc3f5b79bdafedc8",
+  "audit_summary_sha256": "6aaabca2123f241999e7ef8999c56a2a1a042eb976e19047ea0fa034921ad46a",
+  "benchmark_paths_sha256": "93a250c3a4884e8b65545014a1592f61dc15a9bc106bd42045cfae94c93413fc",
+  "benchmark_runs_sha256": "f76b5d21e281cab03097e10963c1522a3b46bc0056a4a85a534c0a32a54ef835",
+  "execution_receipt_id": "d5ddb5658846940f3b95b7b894dc304f5e03d0e536e4d0d8d9235661c48e4a46",
+  "included_files": 222,
+  "normalized_runs_sha256": "3d45dce0c88a494fb22616beda0eb2356ccbc64490f0ae60941faa0bceb8afa2",
+  "opening_id": "e569d34d03272dd3debd23a0ea4b5331d1bb2a1631915c9dbaa54ed34611b76b",
+  "preregistration_id": "8d8dcbb568f25a5fd9da74afbe865c5576ce585e25fc37da36662ad1787c3c99",
+  "release_id": "uav2d-hidden-test-v2-final-v1",
+  "schema_version": "uav2d-hidden-test-v2-release-receipt-v1",
+  "source_roots": [
+    "data/benchmarks/uav2d-hidden-test-v2",
+    "artifacts/planning_benchmarks/uav2d-hidden-test-v2-final"
+  ],
+  "status": "packaged"
+}

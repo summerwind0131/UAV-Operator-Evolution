@@ -12,6 +12,8 @@ data/benchmarks/uav2d-hidden-test-v2/
 data/benchmarks/uav2d-hidden-test-v3/
 artifacts/results/**
 artifacts/figures/**
+artifacts/releases/*.tar.gz
+artifacts/releases/*.sha256
 !data/generated/.gitkeep
 !artifacts/results/.gitkeep
 !artifacts/figures/.gitkeep

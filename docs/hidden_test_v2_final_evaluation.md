@@ -1,60 +1,27 @@
-# Hidden Test-v2 final-evaluation protocol
+# Hidden Test-v2 final-evaluation protocol and closure
 
-The final evaluation is implemented but remains unopened and unrun.  The base
-preregistration is immutable; the disclosed addendum records the dedicated
-authorization entry, exact execution configuration, runner change, executor
-hash, analyzer hash, and Validation-only preflight evidence.
+The one-time final evaluation was explicitly authorized, executed, and audited on 2026-08-17. The base preregistration and disclosed addendum remain immutable. This document records the closed protocol state; it is not an instruction to reopen or rerun the test.
 
-## Current sealed state
+## Immutable protocol chain
 
 - Base preregistration ID: `8d8dcbb568f25a5fd9da74afbe865c5576ce585e25fc37da36662ad1787c3c99`
 - Addendum ID: `ab1e83123806d7924b5439e02fea1ff6f837af03684d5249eddf34676380b3b6`
 - Preflight receipt ID: `f5c1a62a0443198206556ae30ef8097d8767e377f49187365b84df585a6797b4`
-- `data/benchmarks/uav2d-hidden-test-v2/SEALED.json` is present.
-- No opening receipt or final-results directory exists.
+- Opening receipt ID: `e569d34d03272dd3debd23a0ea4b5331d1bb2a1631915c9dbaa54ed34611b76b`
+- Execution receipt ID: `d5ddb5658846940f3b95b7b894dc304f5e03d0e536e4d0d8d9235661c48e4a46`
+- Audit receipt ID: `6789dc4901faab1cccdc8af38668fdb09a2357c403f50eb1492810631e2ab838`
+- Final status: `completed_audited`
 
-The generic benchmark command remains unable to run AFL-UAV or Evolutionary
-AFL-UAV on a Test split.  The dedicated runner also refuses immediately while
-`SEALED.json` exists.
+The authorization phrase was `AUTHORIZE UAV2D-HIDDEN-TEST-V2 FINAL`. The opening step validated every frozen hash and map, wrote the opening receipt, and archived the lock as `SEALED.preopening.json`. No opening or planner command should be invoked again.
 
-## Preflight evidence
+## Preflight boundary
 
-The surrogate used one Validation map from each of the six map classes, never
-Hidden Test-v2 map JSON.  All 14 arms produced an exact 150-record matrix using
-a 0.10 second/50-evaluation short budget and two stochastic repetitions.  The
-first run stopped after five complete arms; the second run verified their file
-hashes, skipped them, and completed the remaining nine arms.  The report and
-receipt generator then exercised the frozen statistics code.
+The earlier surrogate preflight used one Validation map from each of six classes and never read Hidden Test-v2 map JSON. It exercised all 14 arms, checkpoint recovery, matrix integrity, merge, and frozen report generation with a short budget. Its path-quality numbers were never treated as research results.
 
-The short preflight verifies loading, budget termination, checkpoint recovery,
-record integrity, merge, and report generation.  Its path-quality numbers are
-not research results.
+## Final execution and audit
 
-## Future authorized sequence
+The dedicated runner used the exact frozen split, arms, budgets, seeds, executor and statistics implementation. All 14 arms completed. The merged matrix matched the preregistered 6,960-row seed schedule exactly, with 6,960 unique records and zero API calls.
 
-Only after an explicit user authorization should the following opening command
-be invoked.  It validates all hashes, validates every sealed map file, writes an
-opening receipt, and archives (rather than deletes) the lock marker.
+The frozen auditor treated timeouts as failures, ranked feasibility first and trusted cost second, and produced status `passed`. Raw run and path matrices, normalized rows, summary, report, execution receipt and audit receipt are content-addressed. The human-readable outcome is maintained in [`hidden_test_v2_final_report.md`](hidden_test_v2_final_report.md).
 
-```powershell
-python scripts/open_hidden_test_v2.py `
-  --preregistration-id 8d8dcbb568f25a5fd9da74afbe865c5576ce585e25fc37da36662ad1787c3c99 `
-  --authorization-phrase "AUTHORIZE UAV2D-HIDDEN-TEST-V2 FINAL"
-```
-
-The final runner has no flags for changing the split, arms, budget, seeds, or
-statistics:
-
-```powershell
-python scripts/run_authorized_hidden_test_v2.py `
-  --preregistration-id 8d8dcbb568f25a5fd9da74afbe865c5576ce585e25fc37da36662ad1787c3c99
-```
-
-It requires the matching opening receipt and exact frozen hashes.  Complete
-arms are resumable; partial or modified arm outputs are rejected.  The merged
-matrix must equal the 6,960-row seed schedule exactly before the frozen auditor
-runs.
-
-If an execution or analysis protocol change becomes unavoidable before any
-result is seen, create a new append-only preregistration addendum.  Do not edit
-the existing base receipt, addendum, or preflight receipt.
+If a future study needs another terminal evaluation, it must create a new dataset ID, preregistration, seal and population. It must not reuse Hidden Test-v2 as an adaptive validation set.
