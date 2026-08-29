@@ -3,10 +3,17 @@
 from __future__ import annotations
 
 from collections.abc import Sequence
-from dataclasses import dataclass
 from typing import Any
 
 import numpy as np
+
+from operator_evolution_core.search import SearchBudget
+from operator_evolution_core.validation import (
+    ArmMeasurement,
+    FitnessPolicy,
+    GenericPairedCandidateValidator,
+    abba_timing_order,
+)
 
 from ..config import ExperimentConfig
 from ..environment import Environment2D
@@ -18,16 +25,6 @@ from ..search.context import SearchContext
 from ..search.executor import SearchExecutor, SearchResult
 from ..trajectory import TrajectoryRecorder
 from .validation import PairedOutcome, ValidationReport, decide_retention, validate_operator_contract
-
-
-@dataclass(frozen=True, slots=True)
-class _ArmMeasurement:
-    result: SearchResult
-    total_runtime_ms: float
-    operator_runtime_ms: float
-    operator_call_count: int
-    operator_changed_call_count: int
-    operator_accepted_call_count: int
 
 
 class FixedBudgetCandidateValidator:
@@ -82,49 +79,69 @@ class FixedBudgetCandidateValidator:
             generation=generation,
             candidate_index=candidate_index,
         )
-        parent_pool = list(population)
-        candidate_pool = list(population)
-        replacement_index = next(
-            (
-                index
-                for index, operator in enumerate(candidate_pool)
-                if str(operator.name) == parent_name
-            ),
-            None,
-        )
-        if replacement_index is None:
-            contract_failures.append("parent slot not present in population")
-            return decide_retention(
-                parent_name,
-                str(candidate.name),
-                [],
-                self.config.evolution,
-                safety_passed=False,
-                safety_failures=contract_failures,
-            )
-        else:
-            candidate_pool[replacement_index] = candidate
-
-        outcomes = self.compare(
-            parent_pool,
-            candidate_pool,
+        return self._generic_validator(recorder).validate(
             validation_environments,
-            parent_name=parent_name,
+            population,
+            parent_name,
+            candidate,
             generation=generation,
             candidate_index=candidate_index,
-            recorder=recorder,
             root_run_id=root_run_id,
-        )
-        return decide_retention(
-            parent_name,
-            str(candidate.name),
-            outcomes,
-            self.config.evolution,
-            safety_passed=not contract_failures,
             safety_failures=contract_failures,
-            bootstrap_seed=derive_seed(
-                self.config.seed, "bootstrap", generation, candidate_index
+            persist_evidence=recorder is not None,
+        )
+
+    def _generic_validator(
+        self,
+        recorder: TrajectoryRecorder | None,
+    ) -> GenericPairedCandidateValidator[Environment2D, list[tuple[float, float]], PathOperator]:
+        # Lazy import avoids initializing the domain/operator/search cycle while
+        # the public evolution package itself is still importing.
+        from ..domain.uav_adapter import UAVDomainAdapter
+
+        def run_arm(
+            population: Sequence[PathOperator],
+            environment: Environment2D,
+            initial: list[tuple[float, float]],
+            seed: int,
+            target_name: str,
+            generation: int,
+            run_id: str,
+            persist_evidence: bool,
+        ) -> ArmMeasurement:
+            result, runtime_ms = self._run_arm(
+                list(population),
+                environment,
+                initial,
+                seed,
+                recorder if persist_evidence else None,
+                run_id,
+                generation,
+            )
+            return self._measurement(result, runtime_ms, target_name)
+
+        search = self.config.search
+        return GenericPairedCandidateValidator(
+            adapter=UAVDomainAdapter(
+                self.evaluator,
+                initializer_grid_resolution=self.config.maps.grid_resolution,
             ),
+            budget=SearchBudget(
+                max_iterations=search.validation_iterations,
+                recent_window=search.recent_window,
+            ),
+            retention_config=self.config.evolution,
+            master_seed=self.config.seed,
+            seed_deriver=derive_seed,
+            arm_runner=run_arm,
+            operator_id=lambda operator: str(operator.name),
+            instance_id=lambda environment: environment.map_id,
+            context_label=lambda environment: environment.difficulty,
+            runtime_repetitions=(
+                self.config.evolution.runtime_validation_repetitions
+            ),
+            fitness_policy=FitnessPolicy.UAV_LEGACY_V1,
+            specialist_contexts=frozenset({"dense", "corridor"}),
         )
 
     def contract_failures(
@@ -176,7 +193,6 @@ class FixedBudgetCandidateValidator:
         recorder: TrajectoryRecorder | None,
         root_run_id: str,
     ) -> list[PairedOutcome]:
-        outcomes: list[PairedOutcome] = []
         replacement_index = next(
             (
                 index
@@ -188,159 +204,28 @@ class FixedBudgetCandidateValidator:
         if replacement_index is None or replacement_index >= len(candidate_population):
             raise ValueError("paired populations do not contain the requested parent slot")
         candidate_name = str(candidate_population[replacement_index].name)
-        for map_index, environment in enumerate(validation_environments):
-            seed = derive_seed(
-                self.config.seed,
-                "paired",
-                "validation",
-                generation,
-                map_index,
-                environment.map_id,
-            )
-            initial = initialize_path(
-                environment, grid_resolution=self.config.maps.grid_resolution
-            )
-            run_prefix = (
-                f"{root_run_id}-validation-g{generation}-c{candidate_index}-m{map_index}"
-            )
-            parent_measurements: list[_ArmMeasurement] = []
-            candidate_measurements: list[_ArmMeasurement] = []
-            timing_order: list[str] = []
-            repetitions = self.config.evolution.runtime_validation_repetitions
-            for repetition in range(repetitions):
-                order = self._abba_order(repetition)
-                timing_order.append(order)
-                arms = (
-                    (
-                        "parent",
-                        list(parent_population),
-                        parent_name,
-                        parent_measurements,
-                    ),
-                    (
-                        "candidate",
-                        list(candidate_population),
-                        candidate_name,
-                        candidate_measurements,
-                    ),
-                )
-                if order == "candidate_first":
-                    arms = (arms[1], arms[0])
-                for arm_name, population, target_name, measurements in arms:
-                    result, runtime_ms = self._run_arm(
-                        population,
-                        environment,
-                        initial,
-                        seed,
-                        None,
-                        f"{run_prefix}-timing-r{repetition}-{arm_name}",
-                        generation,
-                    )
-                    measurements.append(
-                        self._measurement(result, runtime_ms, target_name)
-                    )
-
-            parent_result = parent_measurements[0].result
-            candidate_result = candidate_measurements[0].result
-            parent_runtime_samples = [
-                measurement.total_runtime_ms for measurement in parent_measurements
-            ]
-            candidate_runtime_samples = [
-                measurement.total_runtime_ms for measurement in candidate_measurements
-            ]
-            parent_operator_runtime_samples = [
-                measurement.operator_runtime_ms for measurement in parent_measurements
-            ]
-            candidate_operator_runtime_samples = [
-                measurement.operator_runtime_ms for measurement in candidate_measurements
-            ]
-
-            # Persist one deterministic evidence pair, but keep recorder I/O out
-            # of the repeated timing samples used by the runtime retention gate.
-            if recorder is not None:
-                self._run_arm(
-                    list(parent_population),
-                    environment,
-                    initial,
-                    seed,
-                    recorder,
-                    f"{run_prefix}-evidence-parent",
-                    generation,
-                )
-                self._run_arm(
-                    list(candidate_population),
-                    environment,
-                    initial,
-                    seed,
-                    recorder,
-                    f"{run_prefix}-evidence-candidate",
-                    generation,
-                )
-
-            outcomes.append(
-                PairedOutcome(
-                    map_id=environment.map_id,
-                    difficulty=environment.difficulty,
-                    parent_best_cost=float(parent_result.best_evaluation.total_cost),
-                    candidate_best_cost=float(candidate_result.best_evaluation.total_cost),
-                    parent_feasible=bool(parent_result.best_evaluation.feasible),
-                    candidate_feasible=bool(candidate_result.best_evaluation.feasible),
-                    parent_runtime_ms=float(np.median(parent_runtime_samples)),
-                    candidate_runtime_ms=float(np.median(candidate_runtime_samples)),
-                    runtime_repetitions=repetitions,
-                    parent_runtime_samples_ms=parent_runtime_samples,
-                    candidate_runtime_samples_ms=candidate_runtime_samples,
-                    timing_order=timing_order,
-                    parent_operator_runtime_ms=float(
-                        np.median(parent_operator_runtime_samples)
-                    ),
-                    candidate_operator_runtime_ms=float(
-                        np.median(candidate_operator_runtime_samples)
-                    ),
-                    parent_operator_runtime_samples_ms=parent_operator_runtime_samples,
-                    candidate_operator_runtime_samples_ms=candidate_operator_runtime_samples,
-                    parent_operator_call_count=sum(
-                        measurement.operator_call_count
-                        for measurement in parent_measurements
-                    ),
-                    candidate_operator_call_count=sum(
-                        measurement.operator_call_count
-                        for measurement in candidate_measurements
-                    ),
-                    parent_operator_changed_call_count=sum(
-                        measurement.operator_changed_call_count
-                        for measurement in parent_measurements
-                    ),
-                    candidate_operator_changed_call_count=sum(
-                        measurement.operator_changed_call_count
-                        for measurement in candidate_measurements
-                    ),
-                    parent_operator_accepted_call_count=sum(
-                        measurement.operator_accepted_call_count
-                        for measurement in parent_measurements
-                    ),
-                    candidate_operator_accepted_call_count=sum(
-                        measurement.operator_accepted_call_count
-                        for measurement in candidate_measurements
-                    ),
-                )
-            )
-        return outcomes
+        return self._generic_validator(recorder).compare(
+            validation_environments,
+            parent_population,
+            candidate_population,
+            parent_operator_id=parent_name,
+            candidate_operator_id=candidate_name,
+            generation=generation,
+            candidate_index=candidate_index,
+            root_run_id=root_run_id,
+            persist_evidence=recorder is not None,
+        )
 
     @staticmethod
     def _abba_order(repetition: int) -> str:
-        return (
-            "parent_first"
-            if repetition % 4 in {0, 3}
-            else "candidate_first"
-        )
+        return abba_timing_order(repetition + 1)[-1]
 
     @staticmethod
     def _measurement(
         result: SearchResult,
         total_runtime_ms: float,
         operator_name: str,
-    ) -> _ArmMeasurement:
+    ) -> ArmMeasurement:
         calls = [
             step for step in result.steps if step.operator_name == operator_name
         ]
@@ -349,8 +234,9 @@ class FixedBudgetCandidateValidator:
             and step.candidate_path != step.path_before
             for step in calls
         )
-        return _ArmMeasurement(
-            result=result,
+        return ArmMeasurement(
+            best_cost=float(result.best_evaluation.total_cost),
+            feasible=bool(result.best_evaluation.feasible),
             total_runtime_ms=total_runtime_ms,
             operator_runtime_ms=sum(step.runtime_ms for step in calls),
             operator_call_count=len(calls),

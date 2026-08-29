@@ -40,6 +40,19 @@ from .diagnosis import (
     SequentialSynergy,
     compute_sequential_synergies,
 )
+from .validation import (
+    ArmMeasurement,
+    FitnessPolicy,
+    GenericPairedCandidateValidator,
+    PairedOutcome,
+    ValidationReport,
+    abba_timing_order,
+    build_crn_seed_schedule,
+    compute_fitness,
+    decide_retention,
+    paired_bootstrap_ci,
+    replace_population_slot,
+)
 
 __all__ = [
     "DatasetSplit",
@@ -73,4 +86,15 @@ __all__ = [
     "TrajectoryRecorder",
     "compute_delayed_rewards",
     "compute_sequential_synergies",
+    "ArmMeasurement",
+    "FitnessPolicy",
+    "GenericPairedCandidateValidator",
+    "PairedOutcome",
+    "ValidationReport",
+    "abba_timing_order",
+    "build_crn_seed_schedule",
+    "compute_fitness",
+    "decide_retention",
+    "paired_bootstrap_ci",
+    "replace_population_slot",
 ]

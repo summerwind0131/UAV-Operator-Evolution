@@ -441,9 +441,19 @@ python -m pytest tests/test_core_contracts.py tests/test_uav_contract_adapters.p
 
 ### Step 5：泛化候选验证接缝
 
+状态：已完成（2026-08-29）。
+
 - 抽出 slot replacement、配对 seed、ABBA timing、outcome 统计和保留门。
 - 把初始解、实例 ID、契约 fixture 与解结构校验委托给 adapter。
 - 保持 validation/test 的数据类型隔离，不能把完整 split 字典传给 retention API。
+
+实现记录：
+
+- `operator_evolution_core.validation` 现拥有配对 outcome、CRN schedule、ABBA timing、bootstrap、retention、slot replacement、固定预算 validator 和版本化 `FitnessPolicy`；core 不包含 UAV 的上下文标签或类型。
+- 通用 validator 的公开 API 仅接收 `validation_instances` 与 operator population；初始化、实例 ID、上下文标签和执行 arm 均通过注入能力取得，不接受完整 split 字典。
+- `PairedOutcome(instance_id=..., context_label=...)` 在 UAV v1 序列化中继续输出 `map_id/difficulty`，旧报告、审计与读取代码无需迁移。
+- UAV facade 显式使用 `uav-legacy-v1` 和原 `dense/corridor` specialist contexts；`deterministic-v2` 不把墙钟加入父代排序，也不允许只凭 runtime 保留候选。
+- 原单次 1 秒边界断言已改为 5 次独立运行取中位数的 `performance` 任务；默认 pytest 排除该 marker。默认回归 `302 passed, 3 skipped, 1 deselected`，隔离性能任务 `1 passed, 11 deselected`。
 
 ### Step 6：分离通用提案信封与 UAV IR
 

@@ -33,9 +33,10 @@ package-dir = {"" = "src"}
 where = ["src"]
 
 [tool.pytest.ini_options]
-addopts = "-q"
+addopts = "-q -m 'not performance'"
 testpaths = ["tests"]
-pythonpath = ["src"]
+pythonpath = ["src", "."]
 markers = [
   "live: optional tests that contact a configured external LLM service",
+  "performance: isolated repeated wall-clock checks excluded from deterministic defaults",
 ]

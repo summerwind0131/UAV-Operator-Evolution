@@ -14,7 +14,7 @@
 | Hidden Test-v2 最终评价收口 | 已完成 | `a8be8f6`、`uav2d-hidden-test-v2-final-v1`、GitHub Release |
 | Step 3：通用搜索内核 | 已完成 | `39a835b` + UAV routing commit；shadow/RNG identity 全绿 |
 | Step 4：通用轨迹、诊断与 UAV snapshot | 已完成 | core trace/recorder/diagnoser；SQLite、JSONL、identity 保持一致 |
-| Step 5：通用候选验证与确定性策略 | 未开始 | UAV retention 逐字段一致，性能与确定性测试分离 |
+| Step 5：通用候选验证与确定性策略 | 已完成 | UAV retention 逐字段一致；`deterministic-v2` 与隔离性能任务已建立 |
 | Step 6：通用提案信封与领域 IR | 未开始 | UAV 旧 hash 兼容，领域/版本不匹配 fail-closed |
 | Step 7：通用演化管理器依赖注入 | 未开始 | UAV 全套 golden、CLI、Agent 和 benchmark 验收 |
 | JSSP 第二领域验证 | 未开始 | 同一 core 完成搜索、轨迹、诊断、验证和候选生命周期 |
@@ -71,6 +71,8 @@
 - 独立提交：`refactor: separate core traces from UAV snapshots`。
 
 ### 3.4 Step 5：通用候选验证与确定性策略
+
+状态：已完成。paired outcome、CRN seed schedule、ABBA timing、bootstrap、retention gate、slot replacement 与版本化 fitness 已归属 core；core 使用 `instance_id/context_label`，同时维持 UAV v1 的 `map_id/difficulty` 物理投影。UAV validator 与 manager 显式选择 `uav-legacy-v1`，JSSP/后续研究默认使用不按墙钟排名、也不允许 runtime-only retention 的 `deterministic-v2`。默认确定性套件为 `302 passed, 3 skipped, 1 deselected`，隔离性能任务为 `1 passed, 11 deselected`。
 
 - 抽出通用 paired outcome、CRN seed schedule、ABBA timing、bootstrap、retention gate 和 population slot replacement。
 - 通用 validator 只接收 validation instances、adapter、operator population 和固定预算；API 不允许传入完整 split 字典。
@@ -191,3 +193,4 @@
 | 2026-08-29 | Hidden Test-v2 收口 | `a8be8f6`，`uav2d-hidden-test-v2-final-v1` | 222 文件确定性归档，SHA-256 `06551f6d…cc30c`；Release 已发布；`291 passed, 3 skipped` |
 | 2026-08-29 | Step 3 通用搜索内核 | `39a835b` + UAV routing commit | 逐步 operator/solution/evaluation/acceptance/temperature/stagnation 与最终 RNG shadow 一致；`295 passed, 3 skipped` |
 | 2026-08-29 | Step 4 通用轨迹与诊断 | `refactor: separate core traces from UAV snapshots` | `instance_id`/`map_id` 无迁移兼容，UAV encoder snapshot 与旧 payload identity 一致；`298 passed, 3 skipped` |
+| 2026-08-29 | Step 5 通用候选验证 | `refactor: generalize paired candidate validation` | CRN/ABBA/bootstrap/retention/slot replacement 已进入 core；UAV legacy 与 deterministic-v2 分离；默认 `302 passed, 3 skipped, 1 deselected`，性能 `1 passed` |

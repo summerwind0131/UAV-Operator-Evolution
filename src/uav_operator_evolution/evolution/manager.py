@@ -10,6 +10,8 @@ from typing import Any, Iterable
 import numpy as np
 from pydantic import BaseModel, ConfigDict, Field
 
+from operator_evolution_core.validation import replace_population_slot
+
 from ..agents.audit import AgentAuditStore
 from ..agents.designer_base import OperatorProposal
 from ..agents.evidence import DesignBudget, EvidenceBundleBuilder
@@ -45,7 +47,7 @@ from ..reproducibility import derive_seed
 from ..search.executor import SearchExecutor, SearchResult
 from ..trajectory import TrajectoryRecorder
 from .validation import PairedOutcome, ValidationReport
-from .fitness import compute_fitness
+from .fitness import FitnessPolicy, compute_fitness
 from .candidate_validator import FixedBudgetCandidateValidator
 
 
@@ -96,13 +98,18 @@ class _Population:
     specs: dict[str, OperatorSpec]
 
     def replace(self, parent_name: str, candidate: PathOperator, spec: OperatorSpec) -> bool:
-        for index, operator in enumerate(self.operators):
-            if str(operator.name) == parent_name:
-                self.operators[index] = candidate
-                self.specs.pop(parent_name, None)
-                self.specs[str(candidate.name)] = spec
-                return True
-        return False
+        replacement = replace_population_slot(
+            self.operators,
+            parent_name,
+            candidate,
+            operator_id=lambda operator: str(operator.name),
+        )
+        if replacement is None:
+            return False
+        self.operators = list(replacement.population)
+        self.specs.pop(parent_name, None)
+        self.specs[str(candidate.name)] = spec
+        return True
 
 
 class OperatorEvolutionManager:
@@ -426,7 +433,7 @@ class OperatorEvolutionManager:
                     "runtime": float(profile.mean_runtime_ms),
                 }
             )
-        return compute_fitness(rows)
+        return compute_fitness(rows, policy=FitnessPolicy.UAV_LEGACY_V1)
 
     @staticmethod
     def _rank_parents(
