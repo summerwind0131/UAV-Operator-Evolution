@@ -16,7 +16,7 @@
 | Step 4：通用轨迹、诊断与 UAV snapshot | 已完成 | core trace/recorder/diagnoser；SQLite、JSONL、identity 保持一致 |
 | Step 5：通用候选验证与确定性策略 | 已完成 | UAV retention 逐字段一致；`deterministic-v2` 与隔离性能任务已建立 |
 | Step 6：通用提案信封与领域 IR | 已完成 | `proposal-envelope-v1`、`UAVDomainKit`、旧 hash 兼容与 fail-closed 已验收 |
-| Step 7：通用演化管理器依赖注入 | 未开始 | UAV 全套 golden、CLI、Agent 和 benchmark 验收 |
+| Step 7：通用演化管理器依赖注入 | 已完成 | split freeze、依赖注入、全套 UAV gate 与性能门通过 |
 | JSSP 第二领域验证 | 未开始 | 同一 core 完成搜索、轨迹、诊断、验证和候选生命周期 |
 | 三仓拆分与 core `0.1.0` | 未开始 | 三仓 CI、GitHub prerelease、固定 commit/hash receipt |
 | UAV↔JSSP 机制迁移 | 未开始 | 双向三臂实验、封存测试、统计与复现包 |
@@ -96,6 +96,8 @@
 - 独立提交：`refactor: separate proposal envelope from UAV IR`。
 
 ### 3.6 Step 7：通用演化管理器依赖注入
+
+状态：已完成。core 提供 `EvolutionManagerDependencies`、`PopulationSeed`、`EvolutionSplitCapabilities`、population freeze receipt、fingerprint 与 artifact sink；UAV manager 默认装配原 adapter/kit/population/validator/designer/orchestrator，同时允许整组能力注入。旧字典 split 在入口转换为显式 capability，test 只有在最终 population fingerprint 固化并由同一 split 对象签发 receipt 后才能打开。`OperatorEvolutionManager(config)`、现有 CLI/YAML 与结果模型保持有效；Step 0 golden、CLI demo、Agent/Mock Multi-Agent、candidate validation 和 planner benchmark preflight 全绿。默认回归为 `310 passed, 3 skipped, 1 deselected`；7×7 独立进程中位性能相对 `8d86411` 为 `-0.594%`，通过不超过 `+5%` 的门，receipt 位于 `artifacts/releases/uav-generalization-phase1-v1.performance.json`。
 
 - 通用 manager 注入 `DomainAdapter`、`DomainKit`、population factory、candidate validator、designer/orchestrator 和 artifact sink。
 - 默认构造仍自动装配 UAV 组件，现有 CLI、YAML 和 `OperatorEvolutionManager(config)` 调用保持有效。
@@ -197,3 +199,4 @@
 | 2026-08-29 | Step 4 通用轨迹与诊断 | `refactor: separate core traces from UAV snapshots` | `instance_id`/`map_id` 无迁移兼容，UAV encoder snapshot 与旧 payload identity 一致；`298 passed, 3 skipped` |
 | 2026-08-29 | Step 5 通用候选验证 | `refactor: generalize paired candidate validation` | CRN/ABBA/bootstrap/retention/slot replacement 已进入 core；UAV legacy 与 deterministic-v2 分离；默认 `302 passed, 3 skipped, 1 deselected`，性能 `1 passed` |
 | 2026-08-29 | Step 6 提案信封与领域 IR | `refactor: separate proposal envelope from UAV IR` | `proposal-envelope-v1` 与 `UAVDomainKit` 完成；旧 bundle/proposal hash 冻结，错域/错版本/篡改 fail-closed；`307 passed, 3 skipped, 1 deselected` |
+| 2026-08-29 | Step 7 演化管理器依赖注入 | `refactor: inject generic evolution dependencies` | population freeze 后才开放 test；UAV 全套 gate `310 passed, 3 skipped, 1 deselected`；中位性能变化 `-0.594%`，标签 `uav-generalization-phase1-v1` |

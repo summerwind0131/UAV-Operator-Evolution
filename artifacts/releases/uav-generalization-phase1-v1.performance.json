@@ -1,0 +1,45 @@
+{
+  "schema": "phase1-performance-receipt-v1",
+  "benchmark": "scripts/benchmark_phase1_manager.py",
+  "environment": {
+    "date": "2026-08-29",
+    "os": "Windows",
+    "python": "3.12",
+    "execution": "fresh process per repetition"
+  },
+  "baseline": {
+    "commit": "8d86411",
+    "repetitions": 7,
+    "samples_ms": [
+      190.5403999990085,
+      184.19420000100217,
+      183.336899999631,
+      186.98249999943073,
+      174.09199999929115,
+      187.43439999889233,
+      185.68380000033358
+    ],
+    "median_ms": 185.68380000033358
+  },
+  "candidate": {
+    "target_tag": "uav-generalization-phase1-v1",
+    "repetitions": 7,
+    "samples_ms": [
+      183.30299999979616,
+      187.9642000003514,
+      196.08960000005027,
+      176.5520999997534,
+      188.49650000083784,
+      184.58129999999073,
+      183.7809999997262
+    ],
+    "median_ms": 184.58129999999073
+  },
+  "median_change_percent": -0.5937513128990601,
+  "maximum_allowed_regression_percent": 5.0,
+  "semantics": {
+    "trace_count": 48,
+    "final_population_size": 8
+  },
+  "status": "passed"
+}

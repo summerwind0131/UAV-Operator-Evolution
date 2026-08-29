@@ -5,11 +5,18 @@ from __future__ import annotations
 import time
 from dataclasses import dataclass
 from pathlib import Path
+from collections.abc import Mapping
 from typing import Any, Iterable
 
 import numpy as np
 from pydantic import BaseModel, ConfigDict, Field
 
+from operator_evolution_core.evolution import (
+    EvolutionManagerDependencies,
+    EvolutionSplitCapabilities,
+    PopulationSeed,
+    population_fingerprint,
+)
 from operator_evolution_core.validation import replace_population_slot
 
 from ..agents.audit import AgentAuditStore
@@ -33,6 +40,8 @@ from ..agents.tools import AgentBudget as ResearchAgentBudget
 from ..config import ExperimentConfig
 from ..diagnosis.diagnoser import OperatorDiagnoser
 from ..diagnosis.features import UAV_FEATURE_CATALOG
+from ..domain.uav_adapter import UAVDomainAdapter
+from ..domain.uav_kit import UAVDomainKit
 from ..environment.environment import Environment2D
 from ..memory import MechanismMemory
 from ..operators.base import PathOperator
@@ -41,7 +50,6 @@ from ..operators.compiler import OperatorCompiler
 from ..operators.registry import OperatorRegistry, default_manual_operators
 from ..operators.specs import OperatorSpec
 from ..path.evaluator import PathEvaluator
-from ..path.initializer import initialize_path
 from ..path.models import ObjectiveWeights
 from ..reproducibility import derive_seed
 from ..search.executor import SearchExecutor, SearchResult
@@ -118,35 +126,100 @@ class OperatorEvolutionManager:
     def __init__(
         self,
         config: ExperimentConfig,
-        database_path: str | Path,
+        database_path: str | Path | None = None,
         *,
         jsonl_path: str | Path | None = None,
         designer: HeuristicDesigner | None = None,
+        dependencies: EvolutionManagerDependencies[
+            Environment2D,
+            list[tuple[float, float]],
+            PathOperator,
+            OperatorSpec,
+        ]
+        | None = None,
     ) -> None:
         self.config = config
-        self.database_path = Path(database_path)
+        self.database_path = (
+            Path(database_path)
+            if database_path is not None
+            else Path(config.output.results_dir) / "operator_evolution.sqlite"
+        )
         self.jsonl_path = Path(jsonl_path) if jsonl_path else None
-        self.designer = designer or HeuristicDesigner()
         self.compiler = OperatorCompiler(config.dsl)
         weights = ObjectiveWeights.model_validate(config.objective.model_dump())
         self.evaluator = PathEvaluator(weights)
-        self.candidate_validator = FixedBudgetCandidateValidator(config, self.evaluator)
+        if dependencies is not None and designer is not None:
+            raise ValueError("designer cannot be supplied both directly and via dependencies")
+        if dependencies is None:
+            domain_adapter = UAVDomainAdapter(
+                self.evaluator,
+                initializer_grid_resolution=config.maps.grid_resolution,
+            )
+            domain_kit = UAVDomainKit(self.compiler)
+
+            def population_factory() -> PopulationSeed[PathOperator, OperatorSpec]:
+                return PopulationSeed(
+                    operators=tuple(default_manual_operators()),
+                    ir_by_id=manual_operator_specs(),
+                )
+
+            dependencies = EvolutionManagerDependencies(
+                domain_adapter=domain_adapter,
+                domain_kit=domain_kit,
+                population_factory=population_factory,
+                candidate_validator=FixedBudgetCandidateValidator(
+                    config, self.evaluator
+                ),
+                designer=designer or HeuristicDesigner(),
+                orchestrator_factory=OperatorDesignOrchestrator,
+            )
+        self.dependencies = dependencies
+        self.domain_adapter = dependencies.domain_adapter
+        self.domain_kit = dependencies.domain_kit
+        self.designer = dependencies.designer
+        self.candidate_validator = dependencies.candidate_validator
+        self.orchestrator_factory = dependencies.orchestrator_factory
+        self.artifact_sink = dependencies.artifact_sink
+        native_evaluator = getattr(self.domain_adapter.evaluator, "native_evaluator", None)
+        if native_evaluator is not None:
+            self.evaluator = native_evaluator
+        native_compiler = getattr(self.domain_kit, "compiler", None)
+        if native_compiler is not None:
+            self.compiler = native_compiler
         self.last_population: list[PathOperator] = []
         self.initial_population: list[PathOperator] = []
 
     def run(
         self,
-        datasets: dict[str, list[Environment2D]],
+        datasets: Mapping[str, list[Environment2D]]
+        | EvolutionSplitCapabilities[Environment2D],
         run_id: str,
     ) -> EvolutionResult:
         """Run P0→P1→P2 (or configured count), then one held-out comparison."""
 
-        required = {"train", "validation", "test"}
-        if not required.issubset(datasets):
-            raise ValueError(f"datasets must contain {sorted(required)}")
-        initial_operators = default_manual_operators()
+        split_capabilities = (
+            datasets
+            if isinstance(datasets, EvolutionSplitCapabilities)
+            else EvolutionSplitCapabilities.from_mapping(datasets)
+        )
+        train_environments = list(split_capabilities.open_train())
+        validation_environments = list(split_capabilities.open_validation())
+        self.database_path.parent.mkdir(parents=True, exist_ok=True)
+        self.artifact_sink.emit(
+            "run_started",
+            {
+                "run_id": run_id,
+                "domain_id": self.domain_kit.domain_id,
+                "ir_version": self.domain_kit.ir_version,
+                "train_instances": len(train_environments),
+                "validation_instances": len(validation_environments),
+                "test_opened": False,
+            },
+        )
+        seed_population = self.dependencies.population_factory()
+        initial_operators = list(seed_population.operators)
         self.initial_population = list(initial_operators)
-        population = _Population(initial_operators, manual_operator_specs())
+        population = _Population(initial_operators, dict(seed_population.ir_by_id))
         initial_names = [str(operator.name) for operator in initial_operators]
         initial_population_snapshot = list(initial_operators)
         metrics: list[RunMetric] = []
@@ -163,7 +236,7 @@ class OperatorEvolutionManager:
                 before_names = [str(operator.name) for operator in population.operators]
                 train_metrics = self._run_population(
                     population.operators,
-                    datasets["train"],
+                    train_environments,
                     self.config.search.train_iterations,
                     recorder,
                     f"{run_id}-train-g{generation}",
@@ -224,8 +297,8 @@ class OperatorEvolutionManager:
                             population,
                             parent_name,
                             profile_payload,
-                            datasets["train"],
-                            datasets["validation"],
+                            train_environments,
+                            validation_environments,
                             generation,
                             candidate_index,
                             recorder,
@@ -261,12 +334,14 @@ class OperatorEvolutionManager:
                     )
                     proposal = base_proposal.model_copy(update={"specification": candidate_spec})
                     proposals.append(proposal)
-                    candidate = self.compiler.compile(candidate_spec)
+                    candidate = self.domain_kit.compile(
+                        self.domain_kit.parse_ir(candidate_spec)
+                    )
                     report = self._validate_candidate(
                         population.operators,
                         parent_name,
                         candidate,
-                        datasets["validation"],
+                        validation_environments,
                         generation,
                         candidate_index,
                         recorder,
@@ -325,10 +400,42 @@ class OperatorEvolutionManager:
                     )
                 )
 
+                self.artifact_sink.emit(
+                    "generation_completed",
+                    {
+                        "run_id": run_id,
+                        "generation": generation,
+                        "population_ids": after_names,
+                        "retained_candidates": list(retained_names),
+                        "test_opened": False,
+                    },
+                )
+
+            final_names = [str(operator.name) for operator in population.operators]
+            frozen_fingerprint = population_fingerprint(
+                final_names,
+                population.specs,
+                self.domain_kit,
+            )
+            freeze_receipt = split_capabilities.freeze_population(
+                final_names,
+                frozen_fingerprint,
+            )
+            self.artifact_sink.emit(
+                "population_frozen",
+                {
+                    "run_id": run_id,
+                    "population_ids": final_names,
+                    "population_fingerprint": frozen_fingerprint,
+                    "freeze_receipt_id": freeze_receipt.receipt_id,
+                    "test_opened": False,
+                },
+            )
+            test_environments = list(split_capabilities.open_test(freeze_receipt))
             test_outcomes, test_metrics = self._compare_populations(
                 initial_population_snapshot,
                 population.operators,
-                datasets["test"],
+                test_environments,
                 self.config.search.test_iterations,
                 phase="test",
                 generation=self.config.evolution.generations,
@@ -342,6 +449,18 @@ class OperatorEvolutionManager:
             trace_count = len(recorder.list_traces())
 
         self.last_population = list(population.operators)
+
+        self.artifact_sink.emit(
+            "run_completed",
+            {
+                "run_id": run_id,
+                "final_population": [
+                    str(operator.name) for operator in population.operators
+                ],
+                "test_instances": len(test_outcomes),
+                "test_opened": True,
+            },
+        )
 
         return EvolutionResult(
             run_id=run_id,
@@ -481,7 +600,7 @@ class OperatorEvolutionManager:
             train_environments, validation_environments, candidate_index
         )
         operator_registry = OperatorRegistry(population.operators)
-        proposal_validator = ProposalValidator()
+        proposal_validator = ProposalValidator(self.domain_kit)
         provider = (
             MockLLMProvider()
             if self.config.agent.provider == "mock"
@@ -556,7 +675,7 @@ class OperatorEvolutionManager:
             ),
         )
         with AgentAuditStore(self.database_path) as audit_store:
-            orchestrator = OperatorDesignOrchestrator(
+            orchestrator = self.orchestrator_factory(
                 evidence_builder=EvidenceBundleBuilder(
                     memory,
                     operator_registry,
@@ -564,6 +683,7 @@ class OperatorEvolutionManager:
                     minimum_reliable_samples=max(
                         1, self.config.diagnostics.minimum_context_samples
                     ),
+                    domain_kit=self.domain_kit,
                 ),
                 proposal_validator=proposal_validator,
                 compiler=self.compiler,
@@ -574,6 +694,7 @@ class OperatorEvolutionManager:
                 research_agent_backend=research_backend,
                 audit_store=audit_store,
                 recorder=recorder,
+                domain_kit=self.domain_kit,
             )
             result = orchestrator.run(request)
 
@@ -647,7 +768,19 @@ class OperatorEvolutionManager:
         metrics: list[RunMetric] = []
         for map_index, environment in enumerate(environments):
             seed = derive_seed(self.config.seed, "paired", phase, generation, map_index, environment.map_id)
-            initial = initialize_path(environment, grid_resolution=self.config.maps.grid_resolution)
+            initial = self.domain_adapter.initializer.initialize(
+                environment,
+                np.random.default_rng(
+                    derive_seed(
+                        self.config.seed,
+                        "paired-initial",
+                        phase,
+                        generation,
+                        map_index,
+                        environment.map_id,
+                    )
+                ),
+            )
             started = time.perf_counter()
             parent_result = self._executor(parent, iterations, recorder).run(
                 environment,

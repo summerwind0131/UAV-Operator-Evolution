@@ -13,7 +13,7 @@ Phase 1–7 实现了环境生成、固定搜索、三态轨迹、条件化诊�
 - Agent 的文字判断不能接受候选，测试集也不能参与候选保留。
 - 核心流程单进程、CPU 可运行，不依赖 GPU、网络、SciPy、ROS、PX4 或 AirSim。
 
-项目正在从 UAV 单领域实现演进为通用的 Trajectory-Informed Operator Evolution 架构。完整路线、实时里程碑状态和交付门见 [`docs/project_master_plan.md`](docs/project_master_plan.md)；通用协议与零行为变化的架构依据见 [`docs/generalization_architecture.md`](docs/generalization_architecture.md)。当前 Step 0–2 已完成，下一实现阶段是通用搜索内核。
+项目正在从 UAV 单领域实现演进为通用的 Trajectory-Informed Operator Evolution 架构。完整路线、实时里程碑状态和交付门见 [`docs/project_master_plan.md`](docs/project_master_plan.md)；通用协议与零行为变化的架构依据见 [`docs/generalization_architecture.md`](docs/generalization_architecture.md)。通用化第一阶段 Step 0–7 已完成，UAV golden identity 与旧 artifact hash 保持不变；下一阶段是在当前仓库接入 JSSP，验证同一核心能否覆盖离散排列与约束问题。
 
 ## 系统架构与数据流
 

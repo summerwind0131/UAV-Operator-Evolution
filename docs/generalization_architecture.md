@@ -473,9 +473,19 @@ python -m pytest tests/test_core_contracts.py tests/test_uav_contract_adapters.p
 
 ### Step 7：改造演化编排依赖注入
 
+状态：已完成（2026-08-29）。
+
 - `OperatorEvolutionManager` 接受 adapter、domain kit 和初始 population factory。
 - 默认构造路径仍创建 UAV 组件，现有调用方无需传新参数。
 - 只有默认 UAV 路径通过全部验收后，才允许第二领域接入。
+
+实现记录：
+
+- core 的 `EvolutionManagerDependencies` 显式组合 DomainAdapter、DomainKit、population factory、candidate validator、designer、orchestrator factory 与 artifact sink；组合时先验证 adapter/kit domain 一致。
+- `EvolutionSplitCapabilities` 分别签发 train、validation 与 test 访问；test 需要同一对象在候选生命周期结束后签发的 active `population-freeze-v1` receipt，复制或伪造同值 receipt 仍会拒绝。
+- UAV manager 将旧 split 字典立即转换为 capability，默认构造保持 `OperatorEvolutionManager(config)` 和原 CLI/YAML；注入路径与默认路径都使用相同结果、审计、memory 和 search façade。
+- Step 0 golden identity、完整 CLI demo、Agent/Mock Multi-Agent、fixed-budget candidate validation 和 planner benchmark preflight 全绿；完整默认回归为 `310 passed, 3 skipped, 1 deselected`。
+- `scripts/benchmark_phase1_manager.py` 在新进程中重复 manager 关键路径。Step 6 基线 `8d86411` 7 次中位数 `185.684 ms`，Step 7 为 `184.581 ms`，变化 `-0.594%`，通过 `+5%` 上限；receipt 已保存。
 
 ## 12. UAV 零行为变化验收标准
 
@@ -668,15 +678,15 @@ JSSP adapter 达到以下条件后，通用核心才具备独立建仓资格：
 
 ## 17. 第一阶段完成定义
 
-第一阶段只有在以下结果同时存在时才算完成：
+第一阶段以下完成门已全部满足：
 
-- 已实现并测试最小通用协议。
-- UAV DomainAdapter 覆盖初始化、评价、复制、结构校验、特征和 trace snapshot。
-- 现有 `SearchExecutor` 通过兼容 facade 调用通用循环。
-- 候选验证器的配对与统计部分不再依赖 UAV 类型。
-- UAV typed IR 明确留在领域层。
-- 全部旧测试、golden identity projection 和新增 contract tests 通过。
-- README 与迁移文档说明哪些 API 仍是实验性的。
-- 没有重写历史实验产物，也没有提前创建稳定的通用核心仓库承诺。
+- [x] 已实现并测试最小通用协议。
+- [x] UAV DomainAdapter 覆盖初始化、评价、复制、结构校验、特征和 trace snapshot。
+- [x] 现有 `SearchExecutor` 通过兼容 facade 调用通用循环。
+- [x] 候选验证器的配对与统计部分不再依赖 UAV 类型。
+- [x] UAV typed IR 明确留在领域层。
+- [x] 全部旧测试、golden identity projection 和新增 contract tests 通过。
+- [x] README 与迁移文档说明哪些 API 仍是实验性的。
+- [x] 没有重写历史实验产物，也没有提前创建稳定的通用核心仓库承诺。
 
 这一定义把“通用化”变成可以逐项验收的工程与研究过程，而不是一次目录重命名。

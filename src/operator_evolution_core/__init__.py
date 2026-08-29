@@ -61,6 +61,15 @@ from .proposal import (
     ProposalBudgetDeclaration,
     ensure_domain_compatibility,
 )
+from .evolution import (
+    EvolutionArtifactSink,
+    EvolutionManagerDependencies,
+    EvolutionSplitCapabilities,
+    NullEvolutionArtifactSink,
+    PopulationFreezeReceipt,
+    PopulationSeed,
+    population_fingerprint,
+)
 
 __all__ = [
     "DatasetSplit",
@@ -111,4 +120,11 @@ __all__ = [
     "DomainSmokeReport",
     "ProposalBudgetDeclaration",
     "ensure_domain_compatibility",
+    "EvolutionArtifactSink",
+    "EvolutionManagerDependencies",
+    "EvolutionSplitCapabilities",
+    "NullEvolutionArtifactSink",
+    "PopulationFreezeReceipt",
+    "PopulationSeed",
+    "population_fingerprint",
 ]
