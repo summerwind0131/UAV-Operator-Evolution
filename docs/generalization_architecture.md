@@ -410,10 +410,19 @@ python -m pytest tests/test_core_contracts.py tests/test_uav_contract_adapters.p
 
 ### Step 3：使搜索循环依赖协议
 
+状态：已完成（2026-08-29）。
+
 - 把通用循环提取为内部实现，现有 `SearchExecutor` 成为 UAV 兼容 facade。
 - 新旧执行路径在固定 fixtures 上做 shadow comparison。
 - 确保四个 RNG 子流的派生标签、顺序和抽样次数完全相同。
 - shadow comparison 稳定后才删除重复循环。
+
+实现记录：
+
+- `operator_evolution_core.search` 现拥有泛型 context、outcome、step/result、预算、scheduler/acceptance 协议与固定预算内核，且源码不导入 UAV 类型。
+- UAV operator 与 scheduler facade 保证原生 `PathOperator`、自定义 scheduler、`SearchContext`、`OperatorResult` 和记录器接口不变。
+- `tests/test_uav_search_kernel_shadow.py` 显式覆盖逐步 operator ID、候选/当前/最优路径 hash、全部评价分项、接受决定、温度、停滞状态和最终调用者 RNG 状态；shadow hash 为 `d26477dd9d64bc581dfa4855c1a623369626403abaf98c07d95c2d7bd5f4a820`。
+- Step 0 characterization 与完整套件通过：`295 passed, 3 skipped`。
 
 ### Step 4：分离 trace core 与 UAV snapshot
 

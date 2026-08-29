@@ -4,20 +4,35 @@ from __future__ import annotations
 
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
-from math import exp, isfinite
+from math import exp
 from time import perf_counter
 from typing import TYPE_CHECKING, Any
 
 import numpy as np
 
+from operator_evolution_core.search import (
+    GenericSearchKernel,
+    SearchBudget,
+    SearchStep as CoreSearchStep,
+)
+
+from ..domain.adapters import objective_to_evaluation_result
+from ..domain.uav_adapter import UAVDomainAdapter
 from ..environment.environment import Environment2D, extract_environment_features
-from ..operators.base import OperatorResult, PathOperator, copied_path, unchanged_result
+from ..operators.base import OperatorResult, PathOperator, copied_path
 from ..path.evaluator import PathEvaluator
 from ..path.features import extract_path_features
-from ..path.initializer import initialize_path
 from ..path.models import EvaluationResult, Path
 from .acceptance import SimulatedAnnealingAcceptance
 from .context import SearchContext
+from .core_adapter import (
+    UAVSchedulerFacade,
+    UAVSearchOperatorFacade,
+    core_context_to_uav,
+    outcome_to_uav_result,
+    sanitize_uav_operator_result,
+    validate_uav_initial_path,
+)
 from .scheduler import BlockRandomRoundRobinScheduler, OperatorScheduler
 
 if TYPE_CHECKING:
@@ -151,179 +166,70 @@ class SearchExecutor:
         mutate the executor's current solution.
         """
 
-        if not isinstance(rng, np.random.Generator):
-            raise TypeError("rng must be a numpy.random.Generator")
-        stream_seeds = rng.integers(
-            0,
-            np.iinfo(np.uint64).max,
-            size=4,
-            dtype=np.uint64,
-        )
-        initializer_rng = np.random.default_rng(stream_seeds[0])
-        scheduler_rng = np.random.default_rng(stream_seeds[1])
-        operator_seed_rng = np.random.default_rng(stream_seeds[2])
-        acceptance_rng = np.random.default_rng(stream_seeds[3])
-        source = (
-            initialize_path(
-                environment,
-                rng=initializer_rng,
-                grid_resolution=self.initializer_grid_resolution,
-            )
-            if initial_path is None
-            else initial_path
-        )
-        initial = copied_path(source)
-        self._validate_initial_path(initial, environment)
-        initial_evaluation = self.evaluator.evaluate(initial, environment)
-        current_path = copied_path(initial)
-        current_evaluation = initial_evaluation
-        best_path = copied_path(initial)
-        best_evaluation = initial_evaluation
-        cost_scale = max(abs(float(initial_evaluation.total_cost)), 1.0)
-        recent_improvements: list[float] = []
-        recent_acceptances: list[bool] = []
-        stagnation_count = 0
-        last_created_new_best = False
-        steps: list[SearchStep] = []
         active_recorder = recorder if recorder is not None else self.recorder
-        reset = getattr(self.scheduler, "reset", None)
-        if callable(reset):
-            reset()
-
-        for iteration in range(self.max_iterations):
-            context_before = SearchContext(
-                iteration=iteration,
+        adapter = UAVDomainAdapter(
+            self.evaluator,
+            initializer_grid_resolution=self.initializer_grid_resolution,
+        )
+        facades = tuple(UAVSearchOperatorFacade(operator) for operator in self.operators)
+        kernel = GenericSearchKernel(
+            adapter=adapter,
+            operators=facades,
+            scheduler=UAVSchedulerFacade(self.scheduler),
+            acceptance=self.acceptance,
+            budget=SearchBudget(
                 max_iterations=self.max_iterations,
-                current_evaluation=current_evaluation,
-                best_evaluation=best_evaluation,
-                stagnation_count=stagnation_count,
-                recent_improvements=tuple(recent_improvements),
-                recent_acceptances=tuple(recent_acceptances),
-                last_created_new_best=last_created_new_best,
-            )
-            operator = self.scheduler.select(self.operators, iteration, scheduler_rng)
-            operator_name = str(operator.name)
-            operator_id = str(getattr(operator, "operator_id", operator_name))
-            path_before = copied_path(current_path)
-            operator_input = copied_path(current_path)
-            operator_rng = np.random.default_rng(
-                operator_seed_rng.integers(0, np.iinfo(np.uint64).max, dtype=np.uint64)
-            )
-            start_time = perf_counter()
-            try:
-                result = operator.apply(operator_input, environment, operator_rng, context_before)
-            except Exception as exc:  # safe operator boundary is intentional
-                result = unchanged_result(
-                    path_before,
-                    "operator raised an exception",
-                    exception_type=type(exc).__name__,
-                    exception_message=str(exc),
-                )
-            runtime_ms = (perf_counter() - start_time) * 1000.0
-            result = self._sanitize_result(result, path_before, environment)
-            try:
-                candidate_evaluation = self.evaluator.evaluate(result.path, environment)
-            except Exception as exc:  # malformed numerical output is a safe no-op
-                result = unchanged_result(
-                    path_before,
-                    "candidate evaluation failed",
-                    exception_type=type(exc).__name__,
-                    exception_message=str(exc),
-                )
-                candidate_evaluation = current_evaluation
+                recent_window=self.recent_window,
+            ),
+            clock=perf_counter,
+        )
+        steps: list[SearchStep] = []
 
-            temperature = self.acceptance.temperature(iteration, self.max_iterations, cost_scale)
-            accepted = bool(
-                result.success
-                and self.acceptance.accept(
-                    float(current_evaluation.total_cost),
-                    float(candidate_evaluation.total_cost),
-                    temperature,
-                    acceptance_rng,
-                )
-            )
-            best_before = best_evaluation
-            if accepted:
-                current_path = copied_path(result.path)
-                current_evaluation = candidate_evaluation
-            created_new_best = bool(
-                accepted
-                and float(current_evaluation.total_cost) < float(best_evaluation.total_cost) - 1e-12
-            )
-            if created_new_best:
-                best_path = copied_path(current_path)
-                best_evaluation = current_evaluation
-                stagnation_count = 0
-            else:
-                stagnation_count += 1
-            immediate_reward = float(
-                context_before.current_evaluation.total_cost - candidate_evaluation.total_cost
-            )
-            recent_improvements.append(immediate_reward)
-            recent_acceptances.append(accepted)
-            del recent_improvements[: max(0, len(recent_improvements) - self.recent_window)]
-            del recent_acceptances[: max(0, len(recent_acceptances) - self.recent_window)]
-            context_after = SearchContext(
-                iteration=iteration + 1,
-                max_iterations=self.max_iterations,
-                current_evaluation=current_evaluation,
-                best_evaluation=best_evaluation,
-                stagnation_count=stagnation_count,
-                recent_improvements=tuple(recent_improvements),
-                recent_acceptances=tuple(recent_acceptances),
-                last_created_new_best=created_new_best,
-            )
-            step = SearchStep(
-                iteration=iteration,
-                operator_id=operator_id,
-                operator_name=operator_name,
-                path_before=path_before,
-                candidate_path=copied_path(result.path),
-                current_path_after=copied_path(current_path),
-                evaluation_before=context_before.current_evaluation,
-                candidate_evaluation=candidate_evaluation,
-                current_evaluation_after=current_evaluation,
-                best_evaluation_before=best_before,
-                best_evaluation_after=best_evaluation,
-                context_before=context_before,
-                context_after=context_after,
-                operator_result=result,
-                accepted=accepted,
-                created_new_best=created_new_best,
-                temperature=temperature,
-                runtime_ms=runtime_ms,
-            )
+        def handle_core_step(
+            core_step: CoreSearchStep[Path],
+            facade: UAVSearchOperatorFacade,
+        ) -> None:
+            step = self._from_core_step(core_step)
             steps.append(step)
             if active_recorder is not None:
-                self._record_step(active_recorder, step, operator, environment, run_id, generation)
+                self._record_step(
+                    active_recorder,
+                    step,
+                    facade.native_operator,
+                    environment,
+                    run_id,
+                    generation,
+                )
             if on_step is not None:
                 on_step(step)
-            last_created_new_best = created_new_best
+
+        core_result = kernel.run(
+            environment,
+            rng,
+            initial_solution=initial_path,
+            on_step=handle_core_step,
+        )
 
         return SearchResult(
-            initial_path=copied_path(initial),
-            final_path=copied_path(current_path),
-            best_path=copied_path(best_path),
-            initial_evaluation=initial_evaluation,
-            final_evaluation=current_evaluation,
-            best_evaluation=best_evaluation,
+            initial_path=copied_path(core_result.initial_solution),
+            final_path=copied_path(core_result.final_solution),
+            best_path=copied_path(core_result.best_solution),
+            initial_evaluation=objective_to_evaluation_result(
+                core_result.initial_evaluation
+            ),
+            final_evaluation=objective_to_evaluation_result(
+                core_result.final_evaluation
+            ),
+            best_evaluation=objective_to_evaluation_result(
+                core_result.best_evaluation
+            ),
             steps=tuple(steps),
-            accepted_count=sum(step.accepted for step in steps),
+            accepted_count=core_result.accepted_count,
         )
 
     @staticmethod
     def _validate_initial_path(path: Path, environment: Environment2D) -> None:
-        if len(path) < 2:
-            raise ValueError("initial path must contain at least start and goal")
-        if path[0] != environment.start or path[-1] != environment.goal:
-            raise ValueError("initial path endpoints must equal environment start and goal")
-        if not all(
-            len(point) == 2
-            and all(isfinite(float(coordinate)) for coordinate in point)
-            and environment.in_bounds(point)
-            for point in path
-        ):
-            raise ValueError("initial path waypoints must be finite and in bounds")
+        validate_uav_initial_path(path, environment)
 
     @classmethod
     def _sanitize_result(
@@ -332,28 +238,39 @@ class SearchExecutor:
         parent: Path,
         environment: Environment2D,
     ) -> OperatorResult:
-        if not isinstance(result, OperatorResult):
-            return unchanged_result(parent, "operator returned an invalid result type")
-        candidate = copied_path(result.path)
-        valid = (
-            len(candidate) >= 2
-            and candidate[0] == parent[0]
-            and candidate[-1] == parent[-1]
-            and all(
-                len(point) == 2
-                and all(isfinite(float(coordinate)) for coordinate in point)
-                and environment.in_bounds(point)
-                for point in candidate
-            )
-        )
-        if not valid:
-            return unchanged_result(parent, "operator returned an invalid path")
-        return OperatorResult(
-            path=candidate,
-            modified_indices=tuple(int(index) for index in result.modified_indices),
-            success=bool(result.success),
-            info=dict(result.info),
-            failure_reason=result.failure_reason,
+        return sanitize_uav_operator_result(result, parent, environment)
+
+    @staticmethod
+    def _from_core_step(core_step: CoreSearchStep[Path]) -> SearchStep:
+        return SearchStep(
+            iteration=core_step.iteration,
+            operator_id=core_step.operator_id,
+            operator_name=core_step.operator_name,
+            path_before=copied_path(core_step.solution_before),
+            candidate_path=copied_path(core_step.candidate_solution),
+            current_path_after=copied_path(core_step.current_solution_after),
+            evaluation_before=objective_to_evaluation_result(
+                core_step.evaluation_before
+            ),
+            candidate_evaluation=objective_to_evaluation_result(
+                core_step.candidate_evaluation
+            ),
+            current_evaluation_after=objective_to_evaluation_result(
+                core_step.current_evaluation_after
+            ),
+            best_evaluation_before=objective_to_evaluation_result(
+                core_step.best_evaluation_before
+            ),
+            best_evaluation_after=objective_to_evaluation_result(
+                core_step.best_evaluation_after
+            ),
+            context_before=core_context_to_uav(core_step.context_before),
+            context_after=core_context_to_uav(core_step.context_after),
+            operator_result=outcome_to_uav_result(core_step.operator_outcome),
+            accepted=core_step.accepted,
+            created_new_best=core_step.created_new_best,
+            temperature=core_step.temperature,
+            runtime_ms=core_step.runtime_ms,
         )
 
     def _record_step(

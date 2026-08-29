@@ -12,7 +12,7 @@
 | Step 1：`InstanceRef`、`ObjectiveEvaluation` 与 UAV 纯适配 | 已完成 | `d44545f` |
 | Step 2：完整 UAV `DomainAdapter` | 已完成 | `eda6987`，标签 `phase1-step2` |
 | Hidden Test-v2 最终评价收口 | 已完成 | `a8be8f6`、`uav2d-hidden-test-v2-final-v1`、GitHub Release |
-| Step 3：通用搜索内核 | 未开始 | UAV shadow comparison 与 RNG identity 全绿 |
+| Step 3：通用搜索内核 | 已完成 | `39a835b` + UAV routing commit；shadow/RNG identity 全绿 |
 | Step 4：通用轨迹、诊断与 UAV snapshot | 未开始 | SQLite、JSONL、identity projection 保持一致 |
 | Step 5：通用候选验证与确定性策略 | 未开始 | UAV retention 逐字段一致，性能与确定性测试分离 |
 | Step 6：通用提案信封与领域 IR | 未开始 | UAV 旧 hash 兼容，领域/版本不匹配 fail-closed |
@@ -48,6 +48,8 @@
 - 创建不可变标签 `uav2d-hidden-test-v2-final-v1`。
 
 ### 3.2 Step 3：通用搜索内核
+
+状态：已完成。core 不导入 UAV 类型；UAV façade 保持原构造、返回类型、导入路径、trace identity 与四子流消费顺序。逐步 shadow hash 为 `d26477dd9d64bc581dfa4855c1a623369626403abaf98c07d95c2d7bd5f4a820`；当前完整测试为 `295 passed, 3 skipped`。
 
 - 在 core 定义泛型 `SearchContext`、`OperatorOutcome`、`SearchOperator`、`SearchStep`、`SearchResult`、搜索预算及调度接口。
 - 实现只依赖 `DomainAdapter`、operator、scheduler 和 acceptance policy 的通用搜索循环。
@@ -185,3 +187,4 @@
 | 2026-08-17 | Hidden Test-v2 执行 | execution receipt `d5ddb565…` | 6,960/6,960 唯一记录，0 API 调用 |
 | 2026-08-17 | Hidden Test-v2 审计 | audit receipt `6789dc49…` | `passed`；冻结 v1 不再重跑或调参 |
 | 2026-08-29 | Hidden Test-v2 收口 | `a8be8f6`，`uav2d-hidden-test-v2-final-v1` | 222 文件确定性归档，SHA-256 `06551f6d…cc30c`；Release 已发布；`291 passed, 3 skipped` |
+| 2026-08-29 | Step 3 通用搜索内核 | `39a835b` + UAV routing commit | 逐步 operator/solution/evaluation/acceptance/temperature/stagnation 与最终 RNG shadow 一致；`295 passed, 3 skipped` |
