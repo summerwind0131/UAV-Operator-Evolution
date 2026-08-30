@@ -8,7 +8,8 @@ version = "0.1.0"
 description = "Trajectory-informed operator evolution for reproducible UAV path-planning research"
 readme = "README.md"
 requires-python = ">=3.11"
-license = {text = "MIT"}
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{name = "Research MVP"}]
 dependencies = [
   "numpy>=1.26,<3",
@@ -16,10 +17,11 @@ dependencies = [
   "matplotlib>=3.8,<4",
   "pydantic>=2.7,<3",
   "PyYAML>=6,<7",
+  "trajectory-operator-evolution @ git+https://github.com/summerwind0131/trajectory-operator-evolution.git@458cd12789096a61ea5276c7a7b1286fe3155828",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=7.4,<9"]
+dev = ["pytest>=7.4,<9", "build>=1.2,<2"]
 llm = ["openai>=2.46,<3", "google-genai>=2.13,<3"]
 agent = ["openai-agents>=0.18,<0.19"]
 
