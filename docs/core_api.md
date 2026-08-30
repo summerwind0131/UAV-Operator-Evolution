@@ -26,6 +26,11 @@ into operator profiles and sequential synergies. `MechanismMemory` stores typed,
 provenanced mechanism records while leaving target-domain realization to its
 own compiler and validation gate.
 
+`MechanismRecordV1` is the cross-domain boundary. It carries only abstract
+ordinal context, direction-only effects, semantic mechanism tags and
+train/validation provenance. `MechanismBankV1` and fixed top-4 retrieval exclude
+domain IR, executable payloads, raw feature values and test evidence.
+
 ## Proposals and validation
 
 `CandidateProposalEnvelope` is the versioned outer proposal protocol. A

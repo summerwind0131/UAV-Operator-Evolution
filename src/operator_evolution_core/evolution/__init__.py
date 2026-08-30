@@ -9,6 +9,11 @@ from .contracts import (
     PopulationSeed,
     population_fingerprint,
 )
+from .transfer import (
+    MechanismTransferPreregistrationV1,
+    TransferBudgetV1,
+    TransferStatisticsV1,
+)
 
 __all__ = [
     "EvolutionArtifactSink",
@@ -18,4 +23,7 @@ __all__ = [
     "PopulationFreezeReceipt",
     "PopulationSeed",
     "population_fingerprint",
+    "MechanismTransferPreregistrationV1",
+    "TransferBudgetV1",
+    "TransferStatisticsV1",
 ]

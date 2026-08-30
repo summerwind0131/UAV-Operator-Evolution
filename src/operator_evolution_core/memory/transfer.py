@@ -81,6 +81,41 @@ class MechanismRecordV1(BaseModel):
         return self
 
 
+class MechanismBankV1(BaseModel):
+    """Immutable bank built only from independent train/validation evidence."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    schema_version: Literal["mechanism-bank-v1"] = "mechanism-bank-v1"
+    bank_id: str = Field(pattern=r"^mechanism-bank-v1-[0-9a-f]{16}$")
+    source_domain_id: str = Field(min_length=1, max_length=128)
+    bank_master_seeds: tuple[int, ...] = Field(min_length=1, max_length=64)
+    source_code_commit: str = Field(pattern=r"^[0-9a-f]{7,64}$")
+    records: tuple[MechanismRecordV1, ...] = Field(min_length=1, max_length=512)
+    bank_hash: str = Field(pattern=r"^[0-9a-f]{64}$")
+
+    @model_validator(mode="after")
+    def validate_bank(self) -> Self:
+        if len(set(self.bank_master_seeds)) != len(self.bank_master_seeds):
+            raise ValueError("bank_master_seeds must be unique")
+        record_ids = [record.mechanism_id for record in self.records]
+        if len(set(record_ids)) != len(record_ids):
+            raise ValueError("mechanism records must be unique")
+        for record in self.records:
+            if record.source_domain_id != self.source_domain_id:
+                raise ValueError("all records must belong to the bank source domain")
+            if record.bank_master_seed not in self.bank_master_seeds:
+                raise ValueError("record bank seed is not registered by this bank")
+            if record.source_code_commit != self.source_code_commit:
+                raise ValueError("record code commit differs from the bank commit")
+        expected_hash = mechanism_bank_hash(self)
+        if self.bank_hash != expected_hash:
+            raise ValueError("bank_hash does not match the bank payload")
+        if self.bank_id != f"mechanism-bank-v1-{expected_hash[:16]}":
+            raise ValueError("bank_id does not match bank_hash")
+        return self
+
+
 def _identity_payload(record: MechanismRecordV1 | dict[str, object]) -> dict[str, object]:
     if isinstance(record, MechanismRecordV1):
         payload = record.model_dump(mode="json")
@@ -123,6 +158,32 @@ def create_mechanism_record_v1(**payload: object) -> MechanismRecordV1:
     raw["provenance_hash"] = provenance_hash
     raw["mechanism_id"] = f"mechanism-v1-{provenance_hash[:16]}"
     return MechanismRecordV1.model_validate(raw)
+
+
+def mechanism_bank_hash(bank: MechanismBankV1 | dict[str, object]) -> str:
+    if isinstance(bank, MechanismBankV1):
+        payload = bank.model_dump(mode="json")
+    else:
+        payload = dict(bank)
+    payload.pop("bank_id", None)
+    payload.pop("bank_hash", None)
+    canonical = json.dumps(
+        _jsonable(payload),
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+        allow_nan=False,
+    ).encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest()
+
+
+def create_mechanism_bank_v1(**payload: object) -> MechanismBankV1:
+    raw = dict(payload)
+    raw.setdefault("schema_version", "mechanism-bank-v1")
+    bank_hash = mechanism_bank_hash(raw)
+    raw["bank_hash"] = bank_hash
+    raw["bank_id"] = f"mechanism-bank-v1-{bank_hash[:16]}"
+    return MechanismBankV1.model_validate(raw)
 
 
 def abstract_context_similarity(

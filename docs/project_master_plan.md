@@ -176,6 +176,8 @@
 
 ### 6.2 预注册实验设计
 
+状态：已冻结配置。`configs/mechanism_transfer_v1.yaml` 的内容 hash 为 `82de23ee4bca1c7767a49c2f6ca00c939d8dd995482e47e72e920ce28af34081`；严格 schema 固定双向、三臂、P0 对照、10 个共享 master seeds、两组互不重叠的独立 bank seeds、top-4、deterministic heuristic、400/240/400 与 3×3×8 预算，以及 10,000 次 bootstrap、95% CI、Holm 和“先可行率后可行成本”的顺序。远程 Provider 和 test bank evidence 在模型层被拒绝。
+
 - 每个方向设置三臂：从零设计、同领域迁移、跨领域迁移。
 - 每臂使用 10 个相同 master seeds、相同搜索/候选/Agent 预算；机制检索固定 top-4，依次按上下文相似度、证据强度、mechanism ID 决胜。
 - 机制库只由独立 bank seeds 的 train/validation 运行建立，不含 test 结果。
