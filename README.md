@@ -13,7 +13,7 @@ Phase 1–7 实现了环境生成、固定搜索、三态轨迹、条件化诊�
 - Agent 的文字判断不能接受候选，测试集也不能参与候选保留。
 - 核心流程单进程、CPU 可运行，不依赖 GPU、网络、SciPy、ROS、PX4 或 AirSim。
 
-项目正在从 UAV 单领域实现演进为通用的 Trajectory-Informed Operator Evolution 架构。完整路线、实时里程碑状态和交付门见 [`docs/project_master_plan.md`](docs/project_master_plan.md)；通用协议与零行为变化的架构依据见 [`docs/generalization_architecture.md`](docs/generalization_architecture.md)。通用化第一阶段 Step 0–7 与 JSSP 第二领域 qualification 均已完成，UAV golden identity 与旧 artifact hash 保持不变。JSSP 使用同一套 search、trace、diagnoser、memory、proposal、validation 和 candidate lifecycle；正式 400/240/400、3×3、60/41/41 实验的 9 个候选均未通过 validation，冻结后的 P0/Pn 在 41 个 test instances 上逐项打平。下一阶段是三仓拆分和 core `0.1.0` prerelease。
+项目正在从 UAV 单领域实现演进为通用的 Trajectory-Informed Operator Evolution 架构。完整路线、实时里程碑状态和交付门见 [`docs/project_master_plan.md`](docs/project_master_plan.md)；通用协议与零行为变化的架构依据见 [`docs/generalization_architecture.md`](docs/generalization_architecture.md)。通用化第一阶段 Step 0–7 与 JSSP 第二领域 qualification 均已完成，UAV golden identity 与旧 artifact hash 保持不变。JSSP 使用同一套 search、trace、diagnoser、memory、proposal、validation 和 candidate lifecycle；正式 400/240/400、3×3、60/41/41 实验的 9 个候选均未通过 validation，冻结后的 P0/Pn 在 41 个 test instances 上逐项打平。原始结果与复现包见 [cross-domain-core-qualification-v1 Release](https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/cross-domain-core-qualification-v1)，归档 SHA-256 为 `7c15634b708fd30f2505ceec5fedf2b1d2870ebcd3a71fcac486d9f35139851b`。下一阶段是三仓拆分和 core `0.1.0` prerelease。
 
 ## 系统架构与数据流
 

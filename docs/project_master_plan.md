@@ -112,7 +112,7 @@
 
 注册 smoke 使用 64 calls、2 代×2 候选、2 个 validation instances、2 次 timing repetitions；生成 1,024 条 trace，四个候选中一个通过 global paired gain 门，test 未打开。smoke receipt：`artifacts/releases/cross-domain-core-qualification-v1.smoke.json`，payload SHA-256 `697e5fd8…db38`。
 
-正式 qualification 使用 60×400 training、41×240 validation、3 代×3 候选、8 槽种群及 4 次 ABBA timing repetitions；保存 24,000 条训练 trace、8 个 operator profiles 和 64 个 sequence synergies。9 个候选全部未达到预注册保留门，最终 population 与 P0 相同。freeze receipt 签发后首次打开 41 个 test instances，P0/Pn 各 400 calls：两组可行率均为 1.0，平均 makespan 均为 1772.6585，41/41 逐实例打平，mean relative gain 0、win rate 0、tie rate 1。该零结果不重跑、不调参。formal receipt：`artifacts/releases/cross-domain-core-qualification-v1.formal.json`，payload SHA-256 `ad44cc84…2f7d`。
+正式 qualification 使用 60×400 training、41×240 validation、3 代×3 候选、8 槽种群及 4 次 ABBA timing repetitions；保存 24,000 条训练 trace、8 个 operator profiles 和 64 个 sequence synergies。9 个候选全部未达到预注册保留门，最终 population 与 P0 相同。freeze receipt 签发后首次打开 41 个 test instances，P0/Pn 各 400 calls：两组可行率均为 1.0，平均 makespan 均为 1772.6585，41/41 逐实例打平，mean relative gain 0、win rate 0、tie rate 1。该零结果不重跑、不调参。formal receipt：`artifacts/releases/cross-domain-core-qualification-v1.formal.json`，payload SHA-256 `ad44cc84…2f7d`；[GitHub Release](https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/cross-domain-core-qualification-v1) 复现包 SHA-256 `7c15634b…851b`。
 
 ### 4.1 数据、模型与确定性调度
 
