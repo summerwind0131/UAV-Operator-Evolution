@@ -15,7 +15,7 @@ Phase 1–7 实现了环境生成、固定搜索、三态轨迹、条件化诊�
 
 项目已经从 UAV 单领域实现演进为通用的 Trajectory-Informed Operator Evolution 架构。完整路线、实时里程碑状态和交付门见 [`docs/project_master_plan.md`](docs/project_master_plan.md)；通用协议与零行为变化的架构依据见 [`docs/generalization_architecture.md`](docs/generalization_architecture.md)。通用化第一阶段 Step 0–7 与 JSSP 第二领域 qualification 均已完成，UAV golden identity 与旧 artifact hash 保持不变。JSSP 使用同一套 search、trace、diagnoser、memory、proposal、validation 和 candidate lifecycle；正式 400/240/400、3×3、60/41/41 实验的 9 个候选均未通过 validation，冻结后的 P0/Pn 在 41 个 test instances 上逐项打平。原始结果与复现包见 [cross-domain-core-qualification-v1 Release](https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/cross-domain-core-qualification-v1)，归档 SHA-256 为 `7c15634b708fd30f2505ceec5fedf2b1d2870ebcd3a71fcac486d9f35139851b`。项目采用单仓三包结构：core、UAV 与 JSSP 在同一提交中共同版本化，core `0.1.0` 作为本仓库的独立 GitHub prerelease artifact 发布。
 
-core 的公开接口和打包边界见 [`docs/core_api.md`](docs/core_api.md)，单仓使用与独立 wheel 迁移说明见 [`docs/core_migration_v0.1.0.md`](docs/core_migration_v0.1.0.md)。
+core 的公开接口和打包边界见 [`docs/core_api.md`](docs/core_api.md)，单仓使用与独立 wheel 迁移说明见 [`docs/core_migration_v0.1.0.md`](docs/core_migration_v0.1.0.md)。独立分发包已发布在 [`trajectory-core-v0.1.0` prerelease](https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/trajectory-core-v0.1.0)，wheel SHA-256 为 `ada971c3bd061aac73842a984783803066a12babc5f62f5bac928b71fcb6752c`。
 
 ## 系统架构与数据流
 

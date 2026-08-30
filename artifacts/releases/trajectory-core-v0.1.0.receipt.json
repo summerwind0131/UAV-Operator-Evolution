@@ -1,0 +1,43 @@
+{
+  "schema_version": "trajectory-core-release-receipt-v1",
+  "repository": "summerwind0131/UAV-Operator-Evolution",
+  "release_url": "https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/trajectory-core-v0.1.0",
+  "tag": "trajectory-core-v0.1.0",
+  "source_commit": "4de3d6d5a39105d52f365865a952168c41b7284c",
+  "package_name": "trajectory-operator-evolution",
+  "package_version": "0.1.0",
+  "build_entrypoint": "scripts/build_core_distribution.py",
+  "source_path": "src/operator_evolution_core",
+  "prerelease": true,
+  "pypi_published": false,
+  "qualification": {
+    "domains": [
+      "uav-path-planning-2d/uav-v1",
+      "job-shop-scheduling/jssp-v1"
+    ],
+    "full_regression": "343 passed, 3 skipped, 1 deselected",
+    "cross_domain_tag": "cross-domain-core-qualification-v1"
+  },
+  "assets": [
+    {
+      "name": "trajectory_operator_evolution-0.1.0-py3-none-any.whl",
+      "size": 51549,
+      "sha256": "ada971c3bd061aac73842a984783803066a12babc5f62f5bac928b71fcb6752c"
+    },
+    {
+      "name": "trajectory_operator_evolution-0.1.0.tar.gz",
+      "size": 40444,
+      "sha256": "224c81be62214b61b2f48a27911a8944a4d3ce4077ba9e000d6f0f44d74947b7"
+    },
+    {
+      "name": "core_api.md",
+      "size": 1807,
+      "sha256": "e21a90766141f5a6cd8f3283d74e970afc204411d371a91d2c2884732bd3724f"
+    },
+    {
+      "name": "core_migration_v0.1.0.md",
+      "size": 1329,
+      "sha256": "8326df6216f290006ba94b7b8bda2c069f6c0ce10db408f19cacad6f5f8c33f5"
+    }
+  ]
+}

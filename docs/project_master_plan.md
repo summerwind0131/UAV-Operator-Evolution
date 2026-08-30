@@ -18,7 +18,7 @@
 | Step 6：通用提案信封与领域 IR | 已完成 | `proposal-envelope-v1`、`UAVDomainKit`、旧 hash 兼容与 fail-closed 已验收 |
 | Step 7：通用演化管理器依赖注入 | 已完成 | split freeze、依赖注入、全套 UAV gate 与性能门通过 |
 | JSSP 第二领域验证 | 已完成 | 正式 400/240/400、3×3、60/41/41 qualification 完成；标签 `cross-domain-core-qualification-v1` |
-| 单仓三包与 core `0.1.0` | 进行中 | 单仓 CI、独立 core wheel/sdist、GitHub prerelease、commit/hash receipt |
+| 单仓三包与 core `0.1.0` | 已完成 | 标签 `trajectory-core-v0.1.0`、独立 wheel/sdist、GitHub prerelease、commit/hash receipt |
 | UAV↔JSSP 机制迁移 | 未开始 | 双向三臂实验、封存测试、统计与复现包 |
 
 本文件是项目的唯一总体路线图。每次里程碑完成后更新状态、提交、测试结果和 artifact receipt；历史实验和 frozen artifact 不得覆盖。
@@ -150,7 +150,7 @@
 
 ## 5. 单仓三包与 core `0.1.0` 发布
 
-状态：进行中。曾完成 history-preserving 独立仓库构建验证，但在任何新远端创建或推送前决定保留 monorepo；该尝试通过 `fc7ea29`/`893960a` 两个可审计提交完整记录且最终源码树未改变。core 独立构建验证提交为 `458cd12789096a61ea5276c7a7b1286fe3155828`，10 项契约测试及 wheel/sdist 通过；JSSP 独立构建验证提交为 `76dfbf1665edd98ef69573a4473dcb833545ba70`，30 项领域测试及 wheel/sdist 通过。这两个本地验证提交仅作为打包审计依据，不对应新 GitHub 仓库。monorepo 已增加 Windows/Linux、Python 3.11/3.12 CI、无源码复制的 core 构建器、API/迁移文档以及跨平台档案字节保护；整仓 wheel/sdist 和独立 core wheel/sdist 均构建成功，完整回归为 `343 passed, 3 skipped, 1 deselected`。待完成 GitHub prerelease、release receipt 和标签后关闭本阶段。
+状态：已完成。曾完成 history-preserving 独立仓库构建验证，但在任何新远端创建或推送前决定保留 monorepo；该尝试通过 `fc7ea29`/`893960a` 两个可审计提交完整记录且最终源码树未改变。core 独立构建验证提交为 `458cd12789096a61ea5276c7a7b1286fe3155828`，10 项契约测试及 wheel/sdist 通过；JSSP 独立构建验证提交为 `76dfbf1665edd98ef69573a4473dcb833545ba70`，30 项领域测试及 wheel/sdist 通过。这两个本地验证提交仅作为打包审计依据，不对应新 GitHub 仓库。monorepo 已增加 Windows/Linux、Python 3.11/3.12 CI、无源码复制的 core 构建器、API/迁移文档以及跨平台档案字节保护；整仓 wheel/sdist 和独立 core wheel/sdist 均构建成功，完整回归为 `343 passed, 3 skipped, 1 deselected`。标签 `trajectory-core-v0.1.0` 固定源码提交 `4de3d6d5a39105d52f365865a952168c41b7284c`；[GitHub prerelease](https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/trajectory-core-v0.1.0) 已上传六个资产且未发布 PyPI。wheel SHA-256 为 `ada971c3…6752c`，sdist SHA-256 为 `224c81be…947b7`，release receipt 位于 `artifacts/releases/trajectory-core-v0.1.0.receipt.json`。
 
 ### 5.1 单仓包边界
 
@@ -211,3 +211,4 @@
 | 2026-08-30 | JSSP 领域基础与注册 smoke | `98e583e`–`3d24802`；receipt `697e5fd8…db38` | 60/41/41 content-disjoint split、八槽 `jssp-v1`、共享 search/trace/diagnosis/validation/lifecycle；64 calls、2×2 candidate smoke，1,024 traces，test 未打开 |
 | 2026-08-30 | JSSP 正式 qualification | `89861f8`；receipt `ad44cc84…2f7d` | 400/240/400、3×3、8 槽；24,000 training traces；9/9 候选未保留；41/41 test P0/Pn 打平，可行率 1.0；零效果冻结 |
 | 2026-08-30 | 单仓三包决策 | `fc7ea29` / `893960a` | 在新远端创建前取消三仓发布；core/UAV/JSSP 保留在现有仓库，同提交共同版本化 |
+| 2026-08-30 | core `0.1.0` prerelease | `4de3d6d`；标签 `trajectory-core-v0.1.0` | 343 passed、3 skipped、1 deselected；独立 wheel/sdist 与六项 Release 资产发布；wheel SHA `ada971c3…6752c` |
