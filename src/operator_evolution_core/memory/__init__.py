@@ -1,21 +1,22 @@
-"""Compatibility façade for the domain-independent mechanism memory."""
+"""Domain-independent persistent mechanism and evidence memory."""
 
-from operator_evolution_core.memory import (
+from .models import (
     CaseRecord,
-    FailureMode,
     FailureModeRecord,
     LineageRecord,
-    Mechanism,
     MechanismInsight,
-    MechanismMemory,
     MechanismRecord,
-    MemoryCase,
-    OperatorHistory,
     OperatorHistoryRecord,
     OperatorProfileRecord,
-    Synergy,
     SynergyRecord,
 )
+from .store import MechanismMemory
+
+Mechanism = MechanismRecord
+OperatorHistory = OperatorHistoryRecord
+FailureMode = FailureModeRecord
+Synergy = SynergyRecord
+MemoryCase = CaseRecord
 
 __all__ = [
     "CaseRecord",
