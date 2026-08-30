@@ -21,6 +21,7 @@ from jssp_operator_evolution.baselines import (
     spt_dispatch,
 )
 from jssp_operator_evolution.data import build_jssp_splits
+from jssp_operator_evolution.features import JSSP_FEATURE_CATALOG
 from jssp_operator_evolution.operators import (
     JSSPOperatorCompiler,
     initial_operator_population,
@@ -70,12 +71,17 @@ def test_shared_trace_recorder_and_diagnoser_accept_jssp_three_state_traces() ->
         ).run(instance, np.random.default_rng(31), on_step=sink)
 
         traces = recorder.update_delayed_rewards((2, 4))
-        profiles = OperatorDiagnoser(recorder).diagnose()
+        profiles = OperatorDiagnoser(
+            recorder,
+            feature_catalog=JSSP_FEATURE_CATALOG,
+            group_by="instance_shape",
+        ).diagnose()
 
     assert len(traces) == result.iterations == 16
     assert traces[0].before_state["instance"]["instance_id"] == instance.instance_id
     assert traces[0].candidate_state["objective_components"]["makespan"] >= 0
     assert traces[0].accepted_state["solution_hash"]
+    assert "critical_path_ratio" in traces[0].context["analysis"]
     assert profiles
 
 

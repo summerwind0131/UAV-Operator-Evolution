@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 
 import numpy as np
@@ -136,6 +137,9 @@ def run_offline_evolution_smoke(
     *,
     recorder: TrajectoryRecorder | None = None,
     config: JSSPEvolutionSmokeConfig | None = None,
+    parent_slot_order: Sequence[int] | None = None,
+    evidence_refs_by_parent: Mapping[str, Sequence[str]] | None = None,
+    persist_validation_evidence: bool | None = None,
 ) -> JSSPEvolutionSmokeOutcome:
     active = config or JSSPEvolutionSmokeConfig()
     kit = JSSPDomainKit()
@@ -156,11 +160,22 @@ def run_offline_evolution_smoke(
         recorder=recorder,
     )
     records: list[CandidateLifecycleRecord] = []
+    slot_order = tuple(parent_slot_order or range(len(population)))
+    if not slot_order or any(index < 0 or index >= len(population) for index in slot_order):
+        raise ValueError("parent_slot_order must contain valid population indices")
+    persist_evidence = (
+        recorder is not None
+        if persist_validation_evidence is None
+        else bool(persist_validation_evidence)
+    )
+    if persist_evidence and recorder is None:
+        raise ValueError("validation evidence persistence requires a recorder")
     for generation in range(active.generations):
         for candidate_index in range(active.candidates_per_generation):
-            slot = (
+            order_index = (
                 generation * active.candidates_per_generation + candidate_index
-            ) % len(population)
+            ) % len(slot_order)
+            slot = slot_order[order_index]
             parent_operator = population[slot]
             parent_ir = specs[parent_operator.operator_id]
             candidate_ir = _candidate_ir(parent_ir, generation, candidate_index)
@@ -169,7 +184,9 @@ def run_offline_evolution_smoke(
                 domain_id=kit.domain_id,
                 ir_version=kit.ir_version,
                 parent_ids=[parent_ir.operator_id],
-                evidence_refs=[],
+                evidence_refs=list(
+                    (evidence_refs_by_parent or {}).get(parent_ir.operator_id, ())
+                ),
                 design_rationale=(
                     "Bounded offline parameter variation for cross-domain "
                     "candidate-lifecycle qualification."
@@ -202,7 +219,7 @@ def run_offline_evolution_smoke(
                 candidate_index=candidate_index,
                 root_run_id="jssp-offline-smoke",
                 safety_failures=smoke.failures,
-                persist_evidence=recorder is not None,
+                persist_evidence=persist_evidence,
             )
             if validation_report.retained:
                 population[slot] = candidate_operator

@@ -66,6 +66,7 @@ class JSSPTrajectorySink:
                 ),
                 context={
                     **step.context_before.as_features(),
+                    "analysis": dict(before["features"]),
                     "instance_shape": (
                         f"{self.instance.job_count}x{self.instance.machines}"
                     ),
