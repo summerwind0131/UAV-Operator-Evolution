@@ -35,6 +35,10 @@ def test_two_generation_two_candidate_offline_lifecycle_and_freeze_gate() -> Non
     assert len(outcome.report.candidate_records) == 4
     assert all(record.smoke_passed for record in outcome.report.candidate_records)
     assert all(record.validation_outcomes == 1 for record in outcome.report.candidate_records)
+    assert all(record.parent_mean_best_makespan >= 0 for record in outcome.report.candidate_records)
+    assert all(record.candidate_mean_best_makespan >= 0 for record in outcome.report.candidate_records)
+    assert all(record.median_parent_runtime_ms >= 0 for record in outcome.report.candidate_records)
+    assert all(record.median_candidate_runtime_ms >= 0 for record in outcome.report.candidate_records)
     assert all(len(record.envelope_hash) == 64 for record in outcome.report.candidate_records)
     assert len(outcome.report.final_population_fingerprint) == 64
     assert outcome.report.freeze_receipt_id == outcome.freeze_receipt.receipt_id

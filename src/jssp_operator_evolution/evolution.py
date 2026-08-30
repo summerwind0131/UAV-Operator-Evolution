@@ -42,8 +42,13 @@ class CandidateLifecycleRecord(_ReportModel):
     envelope_hash: str
     smoke_passed: bool
     validation_outcomes: int
+    parent_mean_best_makespan: float
+    candidate_mean_best_makespan: float
     mean_gain: float
+    parent_feasibility_rate: float
     candidate_feasibility_rate: float
+    median_parent_runtime_ms: float
+    median_candidate_runtime_ms: float
     candidate_effective_call_rate: float
     candidate_acceptance_rate: float
     retained: bool
@@ -212,9 +217,44 @@ def run_offline_evolution_smoke(
                     envelope_hash=envelope.envelope_hash,
                     smoke_passed=smoke.smoke_passed,
                     validation_outcomes=len(validation_report.outcomes),
+                    parent_mean_best_makespan=float(
+                        np.mean(
+                            [
+                                outcome.parent_best_cost
+                                for outcome in validation_report.outcomes
+                            ]
+                        )
+                    ),
+                    candidate_mean_best_makespan=float(
+                        np.mean(
+                            [
+                                outcome.candidate_best_cost
+                                for outcome in validation_report.outcomes
+                            ]
+                        )
+                    ),
                     mean_gain=validation_report.mean_gain,
+                    parent_feasibility_rate=(
+                        validation_report.parent_feasibility_rate
+                    ),
                     candidate_feasibility_rate=(
                         validation_report.candidate_feasibility_rate
+                    ),
+                    median_parent_runtime_ms=float(
+                        np.median(
+                            [
+                                outcome.parent_runtime_ms
+                                for outcome in validation_report.outcomes
+                            ]
+                        )
+                    ),
+                    median_candidate_runtime_ms=float(
+                        np.median(
+                            [
+                                outcome.candidate_runtime_ms
+                                for outcome in validation_report.outcomes
+                            ]
+                        )
                     ),
                     candidate_effective_call_rate=(
                         validation_report.candidate_effective_call_rate
