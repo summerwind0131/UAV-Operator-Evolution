@@ -1,0 +1,160 @@
+{
+  "artifacts": {
+    "trajectory_jsonl": "artifacts/results/jssp-cross-domain-smoke-v1.jsonl",
+    "trajectory_jsonl_sha256": "4c0d03a1885edc820afa1fba5dd5a76b3a1539d2a3dfe28a5ff96eb98876c893",
+    "trajectory_sqlite": "artifacts/results/jssp-cross-domain-smoke-v1.sqlite",
+    "trajectory_sqlite_sha256": "eb2d4da155bc6574fef07c1a23f4f0aec6a5da053d13c56eeec91b67cd17ab25"
+  },
+  "code_commit": "3d248022c9c0ba1302b379f2be904399612165d2",
+  "configuration": {
+    "candidates_per_generation": 2,
+    "fitness_policy": "deterministic-v2",
+    "generations": 2,
+    "master_seed": 20260823,
+    "runtime_repetitions": 2,
+    "search_calls": 64,
+    "validation_instances": 2
+  },
+  "dataset": {
+    "orlib_jobshop1_sha256": "7f36d103332f94cfdeb76358e40927a57cfa7a426ebeaabd4de666350c69f028",
+    "sealed_test_instances": 41,
+    "train_instances": 60,
+    "validation_instances": 41
+  },
+  "diagnosis": {
+    "accepted": 784,
+    "attempts": 1024,
+    "operator_profiles": 12
+  },
+  "environment": {
+    "numpy": "1.26.4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pydantic": "2.13.4",
+    "python": "3.12.4"
+  },
+  "receipt_payload_sha256": "697e5fd882fb36e8f48c76f0d659919cd64f7cf1c70fd3acd3c1ae05bc5cdb38",
+  "report": {
+    "candidate_records": [
+      {
+        "candidate_acceptance_rate": 1.0,
+        "candidate_effective_call_rate": 1.0,
+        "candidate_feasibility_rate": 1.0,
+        "candidate_id": "jssp-g00-c00",
+        "candidate_index": 0,
+        "candidate_mean_best_makespan": 1182.5,
+        "envelope_hash": "012c3421d07adb49117e3a45ced102aa117fcf9e13331a4435a9e869037530f0",
+        "generation": 0,
+        "mean_gain": 0.0,
+        "median_candidate_runtime_ms": 62.435575000108656,
+        "median_parent_runtime_ms": 62.32529999994085,
+        "parent_feasibility_rate": 1.0,
+        "parent_id": "random-adjacent-swap",
+        "parent_mean_best_makespan": 1182.5,
+        "retained": false,
+        "retention_reasons": [
+          "no pre-registered effect threshold met"
+        ],
+        "smoke_passed": true,
+        "validation_outcomes": 2
+      },
+      {
+        "candidate_acceptance_rate": 0.625,
+        "candidate_effective_call_rate": 1.0,
+        "candidate_feasibility_rate": 1.0,
+        "candidate_id": "jssp-g00-c01",
+        "candidate_index": 1,
+        "candidate_mean_best_makespan": 1182.5,
+        "envelope_hash": "428323a9dee091022f0bf0b18257fe5809b262bd9e2d74c1cce6a6e593f37e4f",
+        "generation": 0,
+        "mean_gain": 0.0,
+        "median_candidate_runtime_ms": 168.7382999999727,
+        "median_parent_runtime_ms": 168.26337500003774,
+        "parent_feasibility_rate": 1.0,
+        "parent_id": "random-two-point-swap",
+        "parent_mean_best_makespan": 1182.5,
+        "retained": false,
+        "retention_reasons": [
+          "no pre-registered effect threshold met"
+        ],
+        "smoke_passed": true,
+        "validation_outcomes": 2
+      },
+      {
+        "candidate_acceptance_rate": 0.875,
+        "candidate_effective_call_rate": 0.9375,
+        "candidate_feasibility_rate": 1.0,
+        "candidate_id": "jssp-g01-c00",
+        "candidate_index": 0,
+        "candidate_mean_best_makespan": 1150.5,
+        "envelope_hash": "5aad7aa22ba5c84728695cec6ff06450ab473203575389565a6812fb16a914e9",
+        "generation": 1,
+        "mean_gain": 0.0,
+        "median_candidate_runtime_ms": 166.92774999995663,
+        "median_parent_runtime_ms": 175.60127500001954,
+        "parent_feasibility_rate": 1.0,
+        "parent_id": "bounded-insertion",
+        "parent_mean_best_makespan": 1150.5,
+        "retained": false,
+        "retention_reasons": [
+          "no pre-registered effect threshold met"
+        ],
+        "smoke_passed": true,
+        "validation_outcomes": 2
+      },
+      {
+        "candidate_acceptance_rate": 0.6875,
+        "candidate_effective_call_rate": 1.0,
+        "candidate_feasibility_rate": 1.0,
+        "candidate_id": "jssp-g01-c01",
+        "candidate_index": 1,
+        "candidate_mean_best_makespan": 1115.5,
+        "envelope_hash": "19f2b1eddb8cdd9db1c167695a622247baf79ee0547f18e9096ee399eeb520e1",
+        "generation": 1,
+        "mean_gain": 0.03041862151809796,
+        "median_candidate_runtime_ms": 185.8641499999294,
+        "median_parent_runtime_ms": 200.1923749999719,
+        "parent_feasibility_rate": 1.0,
+        "parent_id": "bounded-reversal",
+        "parent_mean_best_makespan": 1150.5,
+        "retained": true,
+        "retention_reasons": [
+          "global paired gain"
+        ],
+        "smoke_passed": true,
+        "validation_outcomes": 2
+      }
+    ],
+    "candidates_per_generation": 2,
+    "final_population_fingerprint": "8a4586f11ac281bb48184abdc2f719590e5686c20c45f3e0c8a261a806eada5a",
+    "final_population_ids": [
+      "random-adjacent-swap",
+      "random-two-point-swap",
+      "bounded-insertion",
+      "jssp-g01-c01",
+      "critical-block-adjacent-swap",
+      "critical-block-endpoint-swap",
+      "bottleneck-block-insertion",
+      "high-idle-gap-relocation"
+    ],
+    "freeze_receipt_id": "1e7465799589e8a82918ef96807ea4b546b276a9abfefb38a89642274322cc95",
+    "generations": 2,
+    "initial_population_ids": [
+      "random-adjacent-swap",
+      "random-two-point-swap",
+      "bounded-insertion",
+      "bounded-reversal",
+      "critical-block-adjacent-swap",
+      "critical-block-endpoint-swap",
+      "bottleneck-block-insertion",
+      "high-idle-gap-relocation"
+    ],
+    "master_seed": 20260823,
+    "runtime_repetitions": 2,
+    "schema_version": "jssp-evolution-smoke-v1",
+    "search_calls": 64,
+    "trace_count": 1024,
+    "validation_instances": 2
+  },
+  "schema_version": "cross-domain-core-qualification-smoke-receipt-v1",
+  "test_accessed": false
+}

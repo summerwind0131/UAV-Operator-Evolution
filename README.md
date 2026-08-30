@@ -13,7 +13,7 @@ Phase 1–7 实现了环境生成、固定搜索、三态轨迹、条件化诊�
 - Agent 的文字判断不能接受候选，测试集也不能参与候选保留。
 - 核心流程单进程、CPU 可运行，不依赖 GPU、网络、SciPy、ROS、PX4 或 AirSim。
 
-项目正在从 UAV 单领域实现演进为通用的 Trajectory-Informed Operator Evolution 架构。完整路线、实时里程碑状态和交付门见 [`docs/project_master_plan.md`](docs/project_master_plan.md)；通用协议与零行为变化的架构依据见 [`docs/generalization_architecture.md`](docs/generalization_architecture.md)。通用化第一阶段 Step 0–7 已完成，UAV golden identity 与旧 artifact hash 保持不变；下一阶段是在当前仓库接入 JSSP，验证同一核心能否覆盖离散排列与约束问题。
+项目正在从 UAV 单领域实现演进为通用的 Trajectory-Informed Operator Evolution 架构。完整路线、实时里程碑状态和交付门见 [`docs/project_master_plan.md`](docs/project_master_plan.md)；通用协议与零行为变化的架构依据见 [`docs/generalization_architecture.md`](docs/generalization_architecture.md)。通用化第一阶段 Step 0–7 已完成，UAV golden identity 与旧 artifact hash 保持不变。JSSP 第二领域现已接通确定性调度、八槽 `jssp-v1` IR、封存数据、共享搜索/轨迹/诊断/validation 和 2×2 离线演化 smoke；下一门是正式预算 qualification 与冻结后的 P0/Pn test 比较。
 
 ## 系统架构与数据流
 
@@ -96,6 +96,7 @@ J(x) = 1.0 L(x) + 1000.0 C(x) + 5.0 S(x) + 10.0 R(x) + 0.5 N(x)
 | 模块 | 职责 |
 | --- | --- |
 | `operator_evolution_core/contracts/` | 实验性实例/评价模型与可组合 DomainAdapter 协议；不依赖 UAV 实现 |
+| `jssp_operator_evolution/` | JSSP 适配器、确定性 schedule builder、`jssp-v1` IR、八槽种群、数据 split、baseline 与演化 smoke |
 | `domain/` | UAV 实例/评价纯转换及初始化、评价、特征、codec、guard、trace encoder 装配 |
 | `environment/` | 连续几何、障碍物、风险区、六类地图、数据集清单与内容哈希 |
 | `path/` | 路径模型、A* 初始化、视线简化、目标函数和状态特征 |
