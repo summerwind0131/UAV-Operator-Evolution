@@ -31,7 +31,9 @@ class Operation(_FrozenModel):
     """One non-preemptive operation in job precedence order."""
 
     machine: int = Field(ge=0)
-    duration: int = Field(ge=1)
+    # OR-Library's intentionally "doomed" orb07 instance contains one
+    # documented zero-duration operation, so the classic corpus requires >= 0.
+    duration: int = Field(ge=0)
 
 
 class JobShopInstance(_FrozenModel):
