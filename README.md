@@ -13,7 +13,7 @@ Phase 1–7 实现了环境生成、固定搜索、三态轨迹、条件化诊�
 - Agent 的文字判断不能接受候选，测试集也不能参与候选保留。
 - 核心流程单进程、CPU 可运行，不依赖 GPU、网络、SciPy、ROS、PX4 或 AirSim。
 
-项目已经完成从 UAV 单领域实现到通用 Trajectory-Informed Operator Evolution 架构的第一轮验证。完整路线、实时里程碑状态和交付门见 [`docs/project_master_plan.md`](docs/project_master_plan.md)；通用协议与零行为变化的架构依据见 [`docs/generalization_architecture.md`](docs/generalization_architecture.md)。通用化 Step 0–7 与 JSSP 第二领域 qualification 均已完成，UAV golden identity 与旧 artifact hash 保持不变。通用实现已拆到 [`trajectory-operator-evolution`](https://github.com/summerwind0131/trajectory-operator-evolution)，JSSP 领域已拆到 [`JSSP-Operator-Evolution`](https://github.com/summerwind0131/JSSP-Operator-Evolution)；本仓库只保留 UAV 领域实现，并固定依赖 core 提交 `458cd12789096a61ea5276c7a7b1286fe3155828`。原始跨领域结果与复现包仍见 [cross-domain-core-qualification-v1 Release](https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/cross-domain-core-qualification-v1)，归档 SHA-256 为 `7c15634b708fd30f2505ceec5fedf2b1d2870ebcd3a71fcac486d9f35139851b`。
+项目正在从 UAV 单领域实现演进为通用的 Trajectory-Informed Operator Evolution 架构。完整路线、实时里程碑状态和交付门见 [`docs/project_master_plan.md`](docs/project_master_plan.md)；通用协议与零行为变化的架构依据见 [`docs/generalization_architecture.md`](docs/generalization_architecture.md)。通用化第一阶段 Step 0–7 与 JSSP 第二领域 qualification 均已完成，UAV golden identity 与旧 artifact hash 保持不变。JSSP 使用同一套 search、trace、diagnoser、memory、proposal、validation 和 candidate lifecycle；正式 400/240/400、3×3、60/41/41 实验的 9 个候选均未通过 validation，冻结后的 P0/Pn 在 41 个 test instances 上逐项打平。原始结果与复现包见 [cross-domain-core-qualification-v1 Release](https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/cross-domain-core-qualification-v1)，归档 SHA-256 为 `7c15634b708fd30f2505ceec5fedf2b1d2870ebcd3a71fcac486d9f35139851b`。下一阶段是三仓拆分和 core `0.1.0` prerelease。
 
 ## 系统架构与数据流
 
@@ -95,7 +95,8 @@ J(x) = 1.0 L(x) + 1000.0 C(x) + 5.0 S(x) + 10.0 R(x) + 0.5 N(x)
 
 | 模块 | 职责 |
 | --- | --- |
-| 外部 `operator_evolution_core` | 固定提交依赖提供实例/评价协议、通用 search/trace/diagnosis/memory/proposal/validation |
+| `operator_evolution_core/contracts/` | 实验性实例/评价模型与可组合 DomainAdapter 协议；不依赖 UAV 实现 |
+| `jssp_operator_evolution/` | JSSP 适配器、确定性 schedule builder、`jssp-v1` IR、八槽种群、数据 split、baseline 与演化 smoke |
 | `domain/` | UAV 实例/评价纯转换及初始化、评价、特征、codec、guard、trace encoder 装配 |
 | `environment/` | 连续几何、障碍物、风险区、六类地图、数据集清单与内容哈希 |
 | `path/` | 路径模型、A* 初始化、视线简化、目标函数和状态特征 |
@@ -743,7 +744,7 @@ Step 1 的通用契约与 UAV 纯适配器回归门：
 python -m pytest tests/test_core_contracts.py tests/test_uav_contract_adapters.py
 ```
 
-`InstanceRef` 只保存可稳定比较的实例身份，不复制完整地图；`ObjectiveEvaluation` 统一采用“有限标量成本、越小越好”的语义。两者由固定版本的外部 core 提供。
+`InstanceRef` 只保存可稳定比较的实例身份，不复制完整地图；`ObjectiveEvaluation` 统一采用“有限标量成本、越小越好”的语义。二者目前均为实验性内部 API。
 
 Step 2 的完整 UAV `DomainAdapter` characterization 门：
 
@@ -751,7 +752,7 @@ Step 2 的完整 UAV `DomainAdapter` characterization 门：
 python -m pytest tests/test_uav_domain_adapter.py tests/test_uav_phase1_characterization.py
 ```
 
-该 adapter 将初始化、评价、特征、路径复制/规范化、结构校验和 trace snapshot 拆成六个小组件。搜索和 recorder 已通过它接入外部通用 core，并由 Step 3–4 shadow/identity 回归门保证行为不变。
+该 adapter 将初始化、评价、特征、路径复制/规范化、结构校验和 trace snapshot 拆成六个小组件。当前搜索与 recorder 尚未改用它；这条切换及新旧 shadow comparison 属于 Step 3–4。
 
 Phase 1–7 完整 smoke：
 

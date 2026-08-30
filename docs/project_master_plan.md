@@ -18,7 +18,7 @@
 | Step 6：通用提案信封与领域 IR | 已完成 | `proposal-envelope-v1`、`UAVDomainKit`、旧 hash 兼容与 fail-closed 已验收 |
 | Step 7：通用演化管理器依赖注入 | 已完成 | split freeze、依赖注入、全套 UAV gate 与性能门通过 |
 | JSSP 第二领域验证 | 已完成 | 正式 400/240/400、3×3、60/41/41 qualification 完成；标签 `cross-domain-core-qualification-v1` |
-| 三仓拆分与 core `0.1.0` | 进行中 | core/JSSP 保留历史的独立提交与构建已完成；待创建远端、发布 prerelease、三仓最终 CI |
+| 三仓拆分与 core `0.1.0` | 未开始 | 三仓 CI、GitHub prerelease、固定 commit/hash receipt |
 | UAV↔JSSP 机制迁移 | 未开始 | 双向三臂实验、封存测试、统计与复现包 |
 
 本文件是项目的唯一总体路线图。每次里程碑完成后更新状态、提交、测试结果和 artifact receipt；历史实验和 frozen artifact 不得覆盖。
@@ -110,9 +110,9 @@
 
 状态：已完成。`JobShopInstance/JobShopSolution`、无外部求解器的确定性 schedule builder、完整 `DomainAdapter`、固定八槽 P0、`jssp-v1` typed IR/compiler、三类 baseline、OR-Library 归档与 60/41/41 split 均已验收。JSSP 复用同一个 generic search、三态 recorder、延迟奖励、diagnoser、core memory、proposal envelope、CRN/ABBA validation、`deterministic-v2` retention 和 population freeze。
 
-注册 smoke 使用 64 calls、2 代×2 候选、2 个 validation instances、2 次 timing repetitions；生成 1,024 条 trace，四个候选中一个通过 global paired gain 门，test 未打开。smoke receipt 已迁入 `JSSP-Operator-Evolution/artifacts/releases/cross-domain-core-qualification-v1.smoke.json`，payload SHA-256 `697e5fd8…db38`。
+注册 smoke 使用 64 calls、2 代×2 候选、2 个 validation instances、2 次 timing repetitions；生成 1,024 条 trace，四个候选中一个通过 global paired gain 门，test 未打开。smoke receipt：`artifacts/releases/cross-domain-core-qualification-v1.smoke.json`，payload SHA-256 `697e5fd8…db38`。
 
-正式 qualification 使用 60×400 training、41×240 validation、3 代×3 候选、8 槽种群及 4 次 ABBA timing repetitions；保存 24,000 条训练 trace、8 个 operator profiles 和 64 个 sequence synergies。9 个候选全部未达到预注册保留门，最终 population 与 P0 相同。freeze receipt 签发后首次打开 41 个 test instances，P0/Pn 各 400 calls：两组可行率均为 1.0，平均 makespan 均为 1772.6585，41/41 逐实例打平，mean relative gain 0、win rate 0、tie rate 1。该零结果不重跑、不调参。formal receipt 已迁入 `JSSP-Operator-Evolution/artifacts/releases/cross-domain-core-qualification-v1.formal.json`，payload SHA-256 `ad44cc84…2f7d`；[GitHub Release](https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/cross-domain-core-qualification-v1) 复现包 SHA-256 `7c15634b…851b`。
+正式 qualification 使用 60×400 training、41×240 validation、3 代×3 候选、8 槽种群及 4 次 ABBA timing repetitions；保存 24,000 条训练 trace、8 个 operator profiles 和 64 个 sequence synergies。9 个候选全部未达到预注册保留门，最终 population 与 P0 相同。freeze receipt 签发后首次打开 41 个 test instances，P0/Pn 各 400 calls：两组可行率均为 1.0，平均 makespan 均为 1772.6585，41/41 逐实例打平，mean relative gain 0、win rate 0、tie rate 1。该零结果不重跑、不调参。formal receipt：`artifacts/releases/cross-domain-core-qualification-v1.formal.json`，payload SHA-256 `ad44cc84…2f7d`；[GitHub Release](https://github.com/summerwind0131/UAV-Operator-Evolution/releases/tag/cross-domain-core-qualification-v1) 复现包 SHA-256 `7c15634b…851b`。
 
 ### 4.1 数据、模型与确定性调度
 
@@ -149,8 +149,6 @@
 - 创建 `cross-domain-core-qualification-v1` 标签。
 
 ## 5. 三仓拆分与 core `0.1.0` 发布
-
-状态：进行中。已从不可变的 `cross-domain-core-qualification-v1` 检查点建立 history-preserving subtree 分支和临时 clone；core 独立发布提交为 `458cd12789096a61ea5276c7a7b1286fe3155828`，10 项契约测试通过，wheel/sdist 构建通过；JSSP 独立提交为 `76dfbf1665edd98ef69573a4473dcb833545ba70`，30 项领域测试通过，wheel/sdist 构建通过，并固定依赖该 core 提交。现有主仓库已移除 vendored core/JSSP 源码并转换为同一固定依赖，UAV 回归为 `312 passed, 3 skipped, 1 deselected`，wheel/sdist 构建通过。远端仓库可见性与 core prerelease 尚待收口。
 
 ### 5.1 独立仓库职责
 
@@ -210,4 +208,3 @@
 | 2026-08-29 | Step 7 演化管理器依赖注入 | `refactor: inject generic evolution dependencies` | population freeze 后才开放 test；UAV 全套 gate `310 passed, 3 skipped, 1 deselected`；中位性能变化 `-0.594%`，标签 `uav-generalization-phase1-v1` |
 | 2026-08-30 | JSSP 领域基础与注册 smoke | `98e583e`–`3d24802`；receipt `697e5fd8…db38` | 60/41/41 content-disjoint split、八槽 `jssp-v1`、共享 search/trace/diagnosis/validation/lifecycle；64 calls、2×2 candidate smoke，1,024 traces，test 未打开 |
 | 2026-08-30 | JSSP 正式 qualification | `89861f8`；receipt `ad44cc84…2f7d` | 400/240/400、3×3、8 槽；24,000 training traces；9/9 候选未保留；41/41 test P0/Pn 打平，可行率 1.0；零效果冻结 |
-| 2026-08-30 | 三仓本地拆分 | core `458cd12`；JSSP `76dfbf1` | history-preserving clone；core 10 项、JSSP 30 项测试与 wheel/sdist 均通过；两领域固定同一 core commit |

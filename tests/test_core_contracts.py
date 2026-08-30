@@ -3,12 +3,14 @@ from __future__ import annotations
 import math
 from pathlib import Path
 
-import operator_evolution_core
 import pytest
 from pydantic import ValidationError
 
 from operator_evolution_core.contracts import InstanceRef, ObjectiveEvaluation
 from uav_operator_evolution.reproducibility import stable_hash
+
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_instance_ref_is_strict_content_addressed_and_json_stable() -> None:
@@ -59,8 +61,8 @@ def test_core_contracts_reject_nonfinite_or_negative_constraint_values() -> None
         )
 
 
-def test_external_core_has_no_domain_implementation_imports() -> None:
-    core_root = Path(operator_evolution_core.__file__).resolve().parent
+def test_experimental_core_has_no_domain_implementation_imports() -> None:
+    core_root = ROOT / "src" / "operator_evolution_core"
     sources = "\n".join(
         path.read_text(encoding="utf-8") for path in sorted(core_root.rglob("*.py"))
     )
