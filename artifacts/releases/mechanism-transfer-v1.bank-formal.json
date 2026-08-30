@@ -1,0 +1,2780 @@
+{
+  "payload": {
+    "experiment_id": "mechanism-transfer-v1",
+    "jssp_bank": {
+      "bank_hash": "3315df6485d475861ef9f0d047b3d956a1d2db0006a5cfe54bec61c1244a30a1",
+      "bank_id": "mechanism-bank-v1-3315df6485d47586",
+      "bank_master_seeds": [
+        2026090301,
+        2026090302,
+        2026090303,
+        2026090304
+      ],
+      "records": [
+        {
+          "bank_master_seed": 2026090301,
+          "bank_run_id": "jssp-mechanism-bank-2026090301",
+          "evidence_refs": [
+            "profile:d4be7909d04107a3a75b525e3d094606143ef0036fe95b56d8bd0e1404b7a027",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5335697399527187,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "preserve",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-d3a15ff4d620826a",
+          "mechanism_tags": [
+            "repair",
+            "intensify",
+            "rollback"
+          ],
+          "provenance_hash": "d3a15ff4d620826a264286d0e7e327befbeeda8f1edbfeadb2c8e3335e4124d1",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "bottleneck-block-insertion",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090301,
+          "bank_run_id": "jssp-mechanism-bank-2026090301",
+          "evidence_refs": [
+            "profile:16bed3057963298197f5a2b8b89b2393ff0b4e84e9ec2088b857cdceb38de644",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5132387706855792,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "preserve",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-29ce340a0f4c81d3",
+          "mechanism_tags": [
+            "diversify",
+            "intensify"
+          ],
+          "provenance_hash": "29ce340a0f4c81d3ae0de552034adafa6265ef8fde48b184c4142e6b04e416a9",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "bounded-insertion",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090301,
+          "bank_run_id": "jssp-mechanism-bank-2026090301",
+          "evidence_refs": [
+            "profile:0978a5e74550d60b7bb4ada30e79689328dee5433e26284b89375d24d65e7cf4",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5302600472813239,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "preserve",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-93632b4f6a7794bf",
+          "mechanism_tags": [
+            "diversify",
+            "intensify"
+          ],
+          "provenance_hash": "93632b4f6a7794bf97cfe24c3469c77c8aae915eb3927363543c5f49c065e189",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "bounded-reversal",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090301,
+          "bank_run_id": "jssp-mechanism-bank-2026090301",
+          "evidence_refs": [
+            "profile:0f91e2cd5889220fab212acdf32022dbe8b227ef698ed11284da5f1122cc7f6f",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.6703309692671395,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-dcbbe5973ba5dad1",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "dcbbe5973ba5dad1055851830d36d0687cde0bbfed1c0b7c5765a27f962d8366",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "critical-block-adjacent-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "low"
+          }
+        },
+        {
+          "bank_master_seed": 2026090301,
+          "bank_run_id": "jssp-mechanism-bank-2026090301",
+          "evidence_refs": [
+            "profile:bae5b8520534232c2b9d7baec755dec43fd94d1037ebe677f98816c196a6f516",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.6634751773049645,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-ea89b432f1893381",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "ea89b432f18933813a91f79705cfc6db625befc2c53e60bd27f8d0982c836398",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "critical-block-endpoint-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "low"
+          }
+        },
+        {
+          "bank_master_seed": 2026090301,
+          "bank_run_id": "jssp-mechanism-bank-2026090301",
+          "evidence_refs": [
+            "profile:b1a0e849e3d9fa7f600b0c814f3c1e41d5a23d26805ab17f48792ce3db2e3478",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5180851063829788,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "preserve",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-ed5c7b86262c12a2",
+          "mechanism_tags": [
+            "repair",
+            "intensify",
+            "rollback"
+          ],
+          "provenance_hash": "ed5c7b86262c12a2bbc95138a07a9cf9b760a6093a3d0da4aabe798b7f7164ac",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "high-idle-gap-relocation",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090301,
+          "bank_run_id": "jssp-mechanism-bank-2026090301",
+          "evidence_refs": [
+            "profile:8bd58470c53cdffc5b70233046fd853f9118ef2c249cf1c964d3f8bcc825b15f",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5034278959810875,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "preserve",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-f59a4780d521768d",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "f59a4780d521768da9ab8147f6d899cabf26dc273f1a948a7bcb40d672128921",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "random-adjacent-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090301,
+          "bank_run_id": "jssp-mechanism-bank-2026090301",
+          "evidence_refs": [
+            "profile:c83664b8379bedeb8cc3ce3173220fb97f9256fd0d58797146eade297a043e2f",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5390070921985816,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "preserve",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-0813c0a006bb28cd",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "0813c0a006bb28cdfd022792f1cbe246d0d8b96f47b5be55acc6a63de22b2d20",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "random-two-point-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090302,
+          "bank_run_id": "jssp-mechanism-bank-2026090302",
+          "evidence_refs": [
+            "profile:0efda7c8128fd2e88ce26348c079338b3911ae34129b2a05ceabf3d0cb87c036",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5371158392434988,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "preserve",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-24c90942d438923e",
+          "mechanism_tags": [
+            "repair",
+            "intensify",
+            "rollback"
+          ],
+          "provenance_hash": "24c90942d438923e8dcefc6e31eda3016d197dbf48d9fe3eee4d93d01c3a00bb",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "bottleneck-block-insertion",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090302,
+          "bank_run_id": "jssp-mechanism-bank-2026090302",
+          "evidence_refs": [
+            "profile:a28e032a33a5ae3b2632901dfd0aed9d6fc1821bc14bf5d9cb5841bfdcfa647b",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5125295508274231,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "preserve",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-6c74de5b536e13b0",
+          "mechanism_tags": [
+            "diversify",
+            "intensify"
+          ],
+          "provenance_hash": "6c74de5b536e13b0eb3c259a76d2dad73ae646dea72972277f1216a5b7c6cf95",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "bounded-insertion",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090302,
+          "bank_run_id": "jssp-mechanism-bank-2026090302",
+          "evidence_refs": [
+            "profile:88b43a32d2e485e3096899722c6b1df055b1878ddc74590ef10f5accf2d0032c",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5289598108747045,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "preserve",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-29232aed63b76c9b",
+          "mechanism_tags": [
+            "diversify",
+            "intensify"
+          ],
+          "provenance_hash": "29232aed63b76c9b09e3e788fcbc05676e2524bc46debbb5806d58f24fed973e",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "bounded-reversal",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090302,
+          "bank_run_id": "jssp-mechanism-bank-2026090302",
+          "evidence_refs": [
+            "profile:459ef1ca1e2c2df92861d1afb73aa5726516915698e7da5b17107881ae41173f",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.6747044917257683,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-89f50acbc51ada8e",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "89f50acbc51ada8e0429578663b30fedf4e9c03513df794781cec3e0b56900ae",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "critical-block-adjacent-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "low"
+          }
+        },
+        {
+          "bank_master_seed": 2026090302,
+          "bank_run_id": "jssp-mechanism-bank-2026090302",
+          "evidence_refs": [
+            "profile:16cb8e98f89ef20d32bfad0bfca6d08d767afbd5d2c08fb2b3703ac51fea675f",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.6640661938534279,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-b5d1d1739b584637",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "b5d1d1739b584637ca6c1817ebf5ee17fcc9030f4cbc56f2ff744f8084397f2e",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "critical-block-endpoint-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "low"
+          }
+        },
+        {
+          "bank_master_seed": 2026090302,
+          "bank_run_id": "jssp-mechanism-bank-2026090302",
+          "evidence_refs": [
+            "profile:56278665f3e37afcb9c91215c47a29518f237936e76650ffcbd356f93cd4ccc3",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5197399527186761,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "preserve",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-46ce34e4f229d01a",
+          "mechanism_tags": [
+            "repair",
+            "intensify",
+            "rollback"
+          ],
+          "provenance_hash": "46ce34e4f229d01ae9d56b83a423a8df94c1ff7a9903577d047c3b616a2884ac",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "high-idle-gap-relocation",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090302,
+          "bank_run_id": "jssp-mechanism-bank-2026090302",
+          "evidence_refs": [
+            "profile:dd281383c69b5e124ce8272db482724ae0bc0fb7ed0ae0d1f4f80e32a555b6a8",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5035460992907801,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "preserve",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-d71b70619e311926",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "d71b70619e3119261a6887eb951496fccdfe3c844d711aaf443ab74a4238cc55",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "random-adjacent-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090302,
+          "bank_run_id": "jssp-mechanism-bank-2026090302",
+          "evidence_refs": [
+            "profile:3cd5fec978af88db263fe89b0b2789b2f99047bbe1f28cad02c6a40a443d08d1",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.541371158392435,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "preserve",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-115d04b5197e6826",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "115d04b5197e6826d272205b16e98919a393eff5b540918e73987f305c669456",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "random-two-point-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090303,
+          "bank_run_id": "jssp-mechanism-bank-2026090303",
+          "evidence_refs": [
+            "profile:9bb4ca5c6c329119f1643c1f95242a742b239388cb26db9e5b46c6697307c252",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5317966903073286,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "preserve",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-449d7d5e232a41b1",
+          "mechanism_tags": [
+            "repair",
+            "intensify",
+            "rollback"
+          ],
+          "provenance_hash": "449d7d5e232a41b1ecbe5247e54236f30cf953a885a5cb0e5c6bfbde04f35460",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "bottleneck-block-insertion",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090303,
+          "bank_run_id": "jssp-mechanism-bank-2026090303",
+          "evidence_refs": [
+            "profile:c3cd4fbc4f2b89cd50059ec8f829826e46119c4b6533bb4d990f554e3fac5869",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5152482269503547,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "preserve",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-cff4329cc6b723b6",
+          "mechanism_tags": [
+            "diversify",
+            "intensify"
+          ],
+          "provenance_hash": "cff4329cc6b723b6b8080ce41e4b700639a7e7e5d0d5060de30db122398e4658",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "bounded-insertion",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090303,
+          "bank_run_id": "jssp-mechanism-bank-2026090303",
+          "evidence_refs": [
+            "profile:67e6fd61e901e03ed8a25f5e8de085d8211fa620dc637e1c1939cfd76ccd7765",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5280141843971631,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "preserve",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-54cf18a7db60df65",
+          "mechanism_tags": [
+            "diversify",
+            "intensify"
+          ],
+          "provenance_hash": "54cf18a7db60df65394200ed92e9daf3191f3169217cd5e074db0f319ada3198",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "bounded-reversal",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090303,
+          "bank_run_id": "jssp-mechanism-bank-2026090303",
+          "evidence_refs": [
+            "profile:188cd8f26ad2208ebea93da7a33763fe5ee1e282954a530f238238c5ba26c733",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.6757683215130024,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-8e69472396ebbb4c",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "8e69472396ebbb4c8e4c2f6cac5196d1c54b43d814c3718c53bd47052f7a6b05",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "critical-block-adjacent-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "low"
+          }
+        },
+        {
+          "bank_master_seed": 2026090303,
+          "bank_run_id": "jssp-mechanism-bank-2026090303",
+          "evidence_refs": [
+            "profile:c66d8329b6fdb8d49b6d6aac45031279572e4b67a72bc1a939e8911a57d05411",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.6666666666666666,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-86d6ae5030851e43",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "86d6ae5030851e434f3806bed862fa5072d4668352834253e7149f6c0f473a39",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "critical-block-endpoint-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "low"
+          }
+        },
+        {
+          "bank_master_seed": 2026090303,
+          "bank_run_id": "jssp-mechanism-bank-2026090303",
+          "evidence_refs": [
+            "profile:72b3fdf247cfd1572ad0b072d6f539accf090d3cbf56033a7ed90fcdf0712554",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5187943262411348,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "preserve",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-76f7b0e7bab53fee",
+          "mechanism_tags": [
+            "repair",
+            "intensify",
+            "rollback"
+          ],
+          "provenance_hash": "76f7b0e7bab53feecf0d96387f5051a0ba8c8f5625bcb901258c7f12f9709eb6",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "high-idle-gap-relocation",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090303,
+          "bank_run_id": "jssp-mechanism-bank-2026090303",
+          "evidence_refs": [
+            "profile:0833ff0a237f1629d369a6fafe08407c71339be5bd8440b81f92d338aae5907c",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5030732860520094,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "preserve",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-bfa99577d1e68492",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "bfa99577d1e68492456fe22686f1ae8d26c5c0a99003a9df0acf3ced00268eaa",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "random-adjacent-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090303,
+          "bank_run_id": "jssp-mechanism-bank-2026090303",
+          "evidence_refs": [
+            "profile:75bf56445f7886fffc4b09299250b32279356ee5caccd83b421c56c2ed26bb9a",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5394799054373522,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "preserve",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-a47bd648d5cb55a6",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "a47bd648d5cb55a6b1f82b872c48c6657c22fda8a76e28651e5d2c2332a0be0b",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "random-two-point-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090304,
+          "bank_run_id": "jssp-mechanism-bank-2026090304",
+          "evidence_refs": [
+            "profile:2d612829c6d821af030a85819d01057db5b17bd967d5769baecf19965fd511a2",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5361702127659574,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "preserve",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-f709c8257c9faed1",
+          "mechanism_tags": [
+            "repair",
+            "intensify",
+            "rollback"
+          ],
+          "provenance_hash": "f709c8257c9faed14d589ac96a97b9c0b8a9b3e9a48f9bba5ef5fe7f098dc7ee",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "bottleneck-block-insertion",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090304,
+          "bank_run_id": "jssp-mechanism-bank-2026090304",
+          "evidence_refs": [
+            "profile:c0184c72c4d8fc63e04bb44f0c84d4a815065c7714288bf3e9400f45147d2486",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5145390070921986,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "preserve",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-67e01a8c35d20d7f",
+          "mechanism_tags": [
+            "diversify",
+            "intensify"
+          ],
+          "provenance_hash": "67e01a8c35d20d7f05e73cefcdbca63f5215b14b47db88b39836043e89ab3219",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "bounded-insertion",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090304,
+          "bank_run_id": "jssp-mechanism-bank-2026090304",
+          "evidence_refs": [
+            "profile:2a76b6a5f3327ac0801e65edad5b4c13d800c364f9b62944bab8fef8fea43949",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5255319148936171,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "preserve",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-8667af3cdb845a59",
+          "mechanism_tags": [
+            "diversify",
+            "intensify"
+          ],
+          "provenance_hash": "8667af3cdb845a595a74ca190c9a44c1732aae0fe3d83ad60dda7ad11d3b5b93",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "bounded-reversal",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090304,
+          "bank_run_id": "jssp-mechanism-bank-2026090304",
+          "evidence_refs": [
+            "profile:9439a190eb8229bb0abf53462078b474cdbe69eeb3fcbed7a98160ee241434df",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.667612293144208,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-ff2615c900b9fdeb",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "ff2615c900b9fdeb07d2a5c146644e8fb48c631ea671a069b40f8d37d440daf2",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "critical-block-adjacent-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "low"
+          }
+        },
+        {
+          "bank_master_seed": 2026090304,
+          "bank_run_id": "jssp-mechanism-bank-2026090304",
+          "evidence_refs": [
+            "profile:1da14457f98b42003c8d4527eca747b9d3bbcec460f097c011b771b4402fa1bf",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.6660756501182032,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-8702825a8bb7e934",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "8702825a8bb7e93480a4fa9bbb582947c71fd4c49f12a43738427acdef21d95f",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "critical-block-endpoint-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "low"
+          }
+        },
+        {
+          "bank_master_seed": 2026090304,
+          "bank_run_id": "jssp-mechanism-bank-2026090304",
+          "evidence_refs": [
+            "profile:874de3d77c7af32a5cf755a3942204c6504a8f86edddd1b0502b6b2c81dfc433",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5195035460992907,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "preserve",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-ed05ebc369383da1",
+          "mechanism_tags": [
+            "repair",
+            "intensify",
+            "rollback"
+          ],
+          "provenance_hash": "ed05ebc369383da101a0ff02734e9847dea4a007b94a9fbf0537f8dd27dc60b5",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "high-idle-gap-relocation",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090304,
+          "bank_run_id": "jssp-mechanism-bank-2026090304",
+          "evidence_refs": [
+            "profile:c83e060a4275948773a2f80c004fff4daaea519bca2212ab931829f7405fda9d",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5026004728132387,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "preserve",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-6ba2052e17066bb4",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "6ba2052e17066bb45b13dfc7466bd50fbde3ad87855af2fe89246d35e527b9f0",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "random-adjacent-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090304,
+          "bank_run_id": "jssp-mechanism-bank-2026090304",
+          "evidence_refs": [
+            "profile:b7ec170660e964d2151268c8fd6bb7991b58ed2d47a1c1c98280a0a40b4770b7",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4230,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5385342789598109,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "preserve",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield",
+            "disruptive-change"
+          ],
+          "mechanism_id": "mechanism-v1-9a9acbadb526fffc",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "9a9acbadb526fffc08ab6b82993ff8ac08dfb591ceda08bc86bc959e5e7e7f16",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "jssp",
+          "source_operator_id": "random-two-point-swap",
+          "source_population_fingerprint": "d8e62d07fe721ded5803fb72e056392d5159e755d9159f182559b686e061c161",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "high",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        }
+      ],
+      "schema_version": "mechanism-bank-v1",
+      "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+      "source_domain_id": "jssp"
+    },
+    "jssp_config": {
+      "train_calls": 400,
+      "train_instances": 60,
+      "validation_calls": 240,
+      "validation_instances": 41
+    },
+    "mode": "formal",
+    "preregistration_hash": "82de23ee4bca1c7767a49c2f6ca00c939d8dd995482e47e72e920ce28af34081",
+    "remote_provider_calls": 0,
+    "schema_version": "mechanism-bank-build-receipt-v1",
+    "source_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+    "test_instances_opened": false,
+    "uav_bank": {
+      "bank_hash": "263566de7858015cbaba0ce75cd46705f19349a21fb781874328805178aa4af1",
+      "bank_id": "mechanism-bank-v1-263566de7858015c",
+      "bank_master_seeds": [
+        2026090201,
+        2026090202,
+        2026090203,
+        2026090204
+      ],
+      "records": [
+        {
+          "bank_master_seed": 2026090201,
+          "bank_run_id": "uav-mechanism-bank-2026090201",
+          "evidence_refs": [
+            "profile:cd6da280aac77ed0f902426358c9975162aa93033c3b10dc8da1d91ce3bb10f6",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5583333333333333,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-99abe36009ed3a3c",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "99abe36009ed3a3c22c4b2cdca90cb319b109ad6b238a13b5649613c44845112",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "delete_waypoint",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090201,
+          "bank_run_id": "uav-mechanism-bank-2026090201",
+          "evidence_refs": [
+            "profile:58c78e4769116b143b84a2252cadb33db6b6bff1c91e8fd6b2bd3f2a3375b03d",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5036904761904762,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "risk",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-ee6d81d49bcd57e6",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "ee6d81d49bcd57e6d42171b99434a45f2a422080fe2f9ddfe8648702b96b7cbd",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "insert_waypoint",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090201,
+          "bank_run_id": "uav-mechanism-bank-2026090201",
+          "evidence_refs": [
+            "profile:333b9f16ee50b6dcd3dd7f06db0fde8d9ddfc36bf15c9fa7f98b72e9a3d23321",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "preserve",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-bfe27509839d48bc",
+          "mechanism_tags": [
+            "repair",
+            "rollback"
+          ],
+          "provenance_hash": "bfe27509839d48bc4c5069faf0f70eb01847b1e52a7c1b65b07c4e8f2e83d86b",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "obstacle_detour",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "low",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090201,
+          "bank_run_id": "uav-mechanism-bank-2026090201",
+          "evidence_refs": [
+            "profile:92070578d4acfaf5e8b2ddc85c2b3f7b4b57a4f2dc75809b56a2eaf42c2d2d21",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5679761904761905,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "increase",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-3e76fb12c103b8e8",
+          "mechanism_tags": [
+            "repair",
+            "diversify",
+            "rollback"
+          ],
+          "provenance_hash": "3e76fb12c103b8e8441d090c4f6449e24d546fb9a81e7dad86ca4a4fb55aba59",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "partial_reconstruction",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090201,
+          "bank_run_id": "uav-mechanism-bank-2026090201",
+          "evidence_refs": [
+            "profile:1b7b2dd034527d476acd9687a32e69254426aabc7d874ecd318d171cf7eacef7",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5451190476190476,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "risk",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-81889c357336068f",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "81889c357336068faa10c39b3907c70d6ee7c63859603f5411c5df80c90d1ca1",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "segment_shift",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090201,
+          "bank_run_id": "uav-mechanism-bank-2026090201",
+          "evidence_refs": [
+            "profile:625ff8615385528c396e2c05851119212d347921c4b3064ee30e03a3aeee33e7",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5686904761904762,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-1bc22d01acee5f50",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "1bc22d01acee5f5007b19a64c63bb7da166f9dbc05d9dac1ac65dca0c89a9b6c",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "shortcut",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090201,
+          "bank_run_id": "uav-mechanism-bank-2026090201",
+          "evidence_refs": [
+            "profile:c8f2e84d1e1e4462759f7a5d3c536137449fb279f8c6e97819792d05201755bd",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5173809523809524,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-c36462d2fe4128d7",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "c36462d2fe4128d7f55fc95d061d5b972f9a7e53aa35ee0d0c604fd648ff3c74",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "smooth_segment",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "low",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090201,
+          "bank_run_id": "uav-mechanism-bank-2026090201",
+          "evidence_refs": [
+            "profile:38c4ee356a22ae23286096a9fde55a4cac50eaf2f880f01395fedb985efbee5d",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5502380952380952,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "risk",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-ad9433e1bb117f63",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "ad9433e1bb117f634506c677e4ee7147e986281bb5daacbc2d9b87981d5861d7",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "waypoint_perturb",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090202,
+          "bank_run_id": "uav-mechanism-bank-2026090202",
+          "evidence_refs": [
+            "profile:4df56dd96d17e483dff7ecd68f37672d3ae05d2e149d81e4860cb83f184480dd",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5580952380952381,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-bebf1b9dd1580d2f",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "bebf1b9dd1580d2fb6d12b40d6c6e03a003ff20696d1f0c4ca1a1766ea24df4e",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "delete_waypoint",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090202,
+          "bank_run_id": "uav-mechanism-bank-2026090202",
+          "evidence_refs": [
+            "profile:889e8893464c7b8e517b589c0104e0d1001f75d01741cf96362fde1a9bcbb04f",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5042857142857143,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "risk",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-619bf97feaaf1f89",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "619bf97feaaf1f89f5d326e92dccf98ab85663089539ccbef5728c4c9723b630",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "insert_waypoint",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090202,
+          "bank_run_id": "uav-mechanism-bank-2026090202",
+          "evidence_refs": [
+            "profile:b1448b7eb2cb306fd362a497c8c746ca4034da022fa945565a5fdd07d9c144c4",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "preserve",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-029ce0895b1853bf",
+          "mechanism_tags": [
+            "repair",
+            "rollback"
+          ],
+          "provenance_hash": "029ce0895b1853bfd5f52d35522e6b14471bdbc3da4ce9f1a961c9facbbad4bf",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "obstacle_detour",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "low",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090202,
+          "bank_run_id": "uav-mechanism-bank-2026090202",
+          "evidence_refs": [
+            "profile:5d83a839632828652e6586ff31221223134867cb922e63b41eb04b850304cc7b",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5680952380952381,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "increase",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-70993936b3f9d701",
+          "mechanism_tags": [
+            "repair",
+            "diversify",
+            "rollback"
+          ],
+          "provenance_hash": "70993936b3f9d701ee74ed2af930b5c29dc26387f1962773e9b89940db6426f2",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "partial_reconstruction",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090202,
+          "bank_run_id": "uav-mechanism-bank-2026090202",
+          "evidence_refs": [
+            "profile:00d7176dbef0321ce265d47b0c413db70c40a305d8afda6004b64f8ff2832ba0",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5439285714285714,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "risk",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-7d9700d3847537d5",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "7d9700d3847537d586561437ae7a3eb36985528dcf2448b4d9864c24317649cd",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "segment_shift",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090202,
+          "bank_run_id": "uav-mechanism-bank-2026090202",
+          "evidence_refs": [
+            "profile:666ae4647e93d5d1dc4f88f4754c065ae3b8f437a3b338a044d854f8e4d93ddf",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5691666666666667,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-3599c84ea8b7d31b",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "3599c84ea8b7d31b0c0e2a4d91ed681bad45555f97469da99d1c376539e06bc1",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "shortcut",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090202,
+          "bank_run_id": "uav-mechanism-bank-2026090202",
+          "evidence_refs": [
+            "profile:4cdda83540ab39b9f84ff3c1b5d90c334d86bab9fc34d43c2730c58bffbf7c01",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5175,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-2c54668070a42daa",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "2c54668070a42daa60fcadcf6d54efcf465085874df8ef2827c6e5362221c0b7",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "smooth_segment",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "low",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090202,
+          "bank_run_id": "uav-mechanism-bank-2026090202",
+          "evidence_refs": [
+            "profile:5edddf069a24b1294385d5d313f713aad75dc59979a0dc4d75d1c789fc0f4ba3",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5510714285714285,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "risk",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-647b56b46044fb8a",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "647b56b46044fb8a81b3e9019594cc23eb88e243092a8667f6beabd35b60fe46",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "waypoint_perturb",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090203,
+          "bank_run_id": "uav-mechanism-bank-2026090203",
+          "evidence_refs": [
+            "profile:aea960bc410a5658abb45587341e4d92a0005e021de5725e870b1bdd189b41ac",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.555,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-5a5a2337af7853ae",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "5a5a2337af7853ae9abf3a473d0de8f8e7cae8f0dd34ab6a37315491d1bbca26",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "delete_waypoint",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090203,
+          "bank_run_id": "uav-mechanism-bank-2026090203",
+          "evidence_refs": [
+            "profile:22c566e2609382ba0505241a2a2d600c01bb5d0eaccac7e2d6978d9271761a8b",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5041666666666667,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "risk",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-de45e1477fef01d7",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "de45e1477fef01d77b5bc39d6f11efdf269059d3655907e8e3355b6c8a62f6e6",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "insert_waypoint",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090203,
+          "bank_run_id": "uav-mechanism-bank-2026090203",
+          "evidence_refs": [
+            "profile:a2b078f782198747d55ed0535cc50c811f7d0770b2f80a29a3a678ec698dff0e",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "preserve",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-5a742b5a4de8445c",
+          "mechanism_tags": [
+            "repair",
+            "rollback"
+          ],
+          "provenance_hash": "5a742b5a4de8445c814e217bc5c42ceb1b5fab081bb2f61ac939759685897960",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "obstacle_detour",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "low",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090203,
+          "bank_run_id": "uav-mechanism-bank-2026090203",
+          "evidence_refs": [
+            "profile:77bf79309bc1adcb1bf817d6598d4bfcb1ada3fbb888e03b093237c3813dc6a8",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5670238095238095,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "increase",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-36f522fc31d14ed5",
+          "mechanism_tags": [
+            "repair",
+            "diversify",
+            "rollback"
+          ],
+          "provenance_hash": "36f522fc31d14ed5ca84615066884cba5bdcca2b379e202333fdf683100f1b00",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "partial_reconstruction",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090203,
+          "bank_run_id": "uav-mechanism-bank-2026090203",
+          "evidence_refs": [
+            "profile:3e7f37178706a52d6fbd5756a8a607f001681a4b7713827e9017cf42fc01b9a3",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5439285714285714,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "risk",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-80a976a787b03fa7",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "80a976a787b03fa7fc1d762507c7d2957756e5a6f443fb05faee06993ca64916",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "segment_shift",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090203,
+          "bank_run_id": "uav-mechanism-bank-2026090203",
+          "evidence_refs": [
+            "profile:eaef5495c7630b97f3e42db5e3932a84c0af3aac22750be37f0a7b715cc9070b",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.570952380952381,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-2c545f3ea0ffc0f6",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "2c545f3ea0ffc0f674d6564e765ce702ab5603d86efc15f6079cadd3dd844cca",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "shortcut",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090203,
+          "bank_run_id": "uav-mechanism-bank-2026090203",
+          "evidence_refs": [
+            "profile:d3a7f2249edfe37f4682ff927b8279ab6926871ba01f3ee0da99a6744f8c0873",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5171428571428571,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-7908e36e56e60e92",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "7908e36e56e60e92b023a0501b519f4aec6236c19aa8edf2b822c63b7e1f7582",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "smooth_segment",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "low",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090203,
+          "bank_run_id": "uav-mechanism-bank-2026090203",
+          "evidence_refs": [
+            "profile:43cb0a4ca71f553195df8110c9565aad6745b37adf4d713c7eee734908cc761e",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5498809523809524,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "risk",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-2b47eff40c209632",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "2b47eff40c209632862ea30c4ef28e4a24d38e05a9817a82e3370fa38d3400d5",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "waypoint_perturb",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090204,
+          "bank_run_id": "uav-mechanism-bank-2026090204",
+          "evidence_refs": [
+            "profile:5c6fc9faf8628c36cd21835a8684ea282c22bf8ba6975e93deb6e8c3e6b35c44",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5515476190476191,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-4ac96e537eb08910",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "4ac96e537eb089102b5bc6c8c8db0e34e03da95b6ff7031ea0e5cea25e4a2569",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "delete_waypoint",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090204,
+          "bank_run_id": "uav-mechanism-bank-2026090204",
+          "evidence_refs": [
+            "profile:626134a63a568c1bb37a8c2ff418bc0ca335d0db622bc595d576f930beab913d",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5040476190476191,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "risk",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-89f0d045aa3fcb57",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "89f0d045aa3fcb57655ed9f218ceaf1af15e7fc57a3bc2706789fe71c5b21044",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "insert_waypoint",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090204,
+          "bank_run_id": "uav-mechanism-bank-2026090204",
+          "evidence_refs": [
+            "profile:e438e09fa1407270f6f526cec523b23f52a49c28b5a49093d8f4ca0bca830ab7",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "preserve",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-2f3d95a516d6272d",
+          "mechanism_tags": [
+            "repair",
+            "rollback"
+          ],
+          "provenance_hash": "2f3d95a516d6272d4a3723f0cc0269e149729982ee81aada11720ceec1223c22",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "obstacle_detour",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "low",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090204,
+          "bank_run_id": "uav-mechanism-bank-2026090204",
+          "evidence_refs": [
+            "profile:5d7d3f7b664995cef86783046406443180c49ab33cb5f7340baa134da6263f2f",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5630952380952381,
+          "expected_effect": {
+            "cost": "preserve",
+            "diversity": "increase",
+            "feasibility": "improve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-c413b9ed9bb7d44f",
+          "mechanism_tags": [
+            "repair",
+            "diversify",
+            "rollback"
+          ],
+          "provenance_hash": "c413b9ed9bb7d44f4f0ca412b2c26f9da56885540fe91d7efd42b36e14d541ee",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "partial_reconstruction",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090204,
+          "bank_run_id": "uav-mechanism-bank-2026090204",
+          "evidence_refs": [
+            "profile:ae295a8804ac974e2a515c485f5574656c0b400603c4c708c2110c4c50d72a16",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.545952380952381,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "risk",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-bc2987276ad088ce",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "bc2987276ad088cea85c5337c31942551e541f66fbf9d67c99b26aba08616ea5",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "segment_shift",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090204,
+          "bank_run_id": "uav-mechanism-bank-2026090204",
+          "evidence_refs": [
+            "profile:c6e7539bebf36a11013740ebf79e802394537a97fbccc24e9fb7204ec20b1686",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5727380952380953,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context"
+          ],
+          "mechanism_id": "mechanism-v1-3f571e1b3f76673a",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "3f571e1b3f76673a216103e0fa7dd3f50a0bd349154273d0eae1818c5a78010a",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "shortcut",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "medium"
+          }
+        },
+        {
+          "bank_master_seed": 2026090204,
+          "bank_run_id": "uav-mechanism-bank-2026090204",
+          "evidence_refs": [
+            "profile:5aaddedc038dd1757ef728d627f5f6f3d05e3709dfc7e4f2b6fa1787fc8404fe",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5178571428571429,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "decrease",
+            "feasibility": "preserve",
+            "locality": "local"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-5fdff4621191600a",
+          "mechanism_tags": [
+            "intensify"
+          ],
+          "provenance_hash": "5fdff4621191600ade2f33ce3d5c25123cffdfc504b833284e7f676e954c4842",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "smooth_segment",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "low",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        },
+        {
+          "bank_master_seed": 2026090204,
+          "bank_run_id": "uav-mechanism-bank-2026090204",
+          "evidence_refs": [
+            "profile:09523bc20a9046736ff33a962072db946d16801fe5713cf8506090d27ecedf14",
+            "split:train",
+            "split:validation"
+          ],
+          "evidence_sample_count": 4200,
+          "evidence_splits": [
+            "train",
+            "validation"
+          ],
+          "evidence_strength": 0.5470238095238096,
+          "expected_effect": {
+            "cost": "improve",
+            "diversity": "increase",
+            "feasibility": "risk",
+            "locality": "mixed"
+          },
+          "failure_modes": [
+            "inapplicable-context",
+            "low-yield"
+          ],
+          "mechanism_id": "mechanism-v1-f3dfa127053ca995",
+          "mechanism_tags": [
+            "diversify"
+          ],
+          "provenance_hash": "f3dfa127053ca995628e89c94d1d74edc39c5995718ad7a75e1cf13d9b47f508",
+          "schema_version": "mechanism-record-v1",
+          "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+          "source_domain_id": "uav-path-planning-2d",
+          "source_operator_id": "waypoint_perturb",
+          "source_population_fingerprint": "708c6853b5b742b7e59d1fb1ec1aa77cf99081a78d409b75c6b738caf1b45a50",
+          "trigger_context": {
+            "constraint_pressure": "high",
+            "diversity": "medium",
+            "feasibility": "feasible",
+            "phase": "unknown",
+            "stagnation": "high"
+          }
+        }
+      ],
+      "schema_version": "mechanism-bank-v1",
+      "source_code_commit": "f3cbebde0734ed33a2a14be733024d31a0e6f35c",
+      "source_domain_id": "uav-path-planning-2d"
+    },
+    "uav_config": {
+      "train_calls": 400,
+      "train_instances": 60,
+      "validation_calls": 240,
+      "validation_instances": 40
+    }
+  },
+  "payload_sha256": "58b02c41b4d2fc99c2c6a73b9661b38d66f79f64bdc1e15a9365763f7cff3b81"
+}
