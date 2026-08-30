@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from collections.abc import Mapping, Sequence
+from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
 
 import numpy as np
@@ -140,6 +140,7 @@ def run_offline_evolution_smoke(
     parent_slot_order: Sequence[int] | None = None,
     evidence_refs_by_parent: Mapping[str, Sequence[str]] | None = None,
     persist_validation_evidence: bool | None = None,
+    progress_callback: Callable[[str], None] | None = None,
 ) -> JSSPEvolutionSmokeOutcome:
     active = config or JSSPEvolutionSmokeConfig()
     kit = JSSPDomainKit()
@@ -283,6 +284,13 @@ def run_offline_evolution_smoke(
                     retention_reasons=list(validation_report.retention_reasons),
                 )
             )
+            if progress_callback is not None:
+                progress_callback(
+                    "validation candidate "
+                    f"{generation + 1}/{active.generations}:"
+                    f"{candidate_index + 1}/{active.candidates_per_generation} "
+                    f"retained={validation_report.retained}"
+                )
 
     final_ids = [operator.operator_id for operator in population]
     fingerprint = population_fingerprint(final_ids, specs, kit)

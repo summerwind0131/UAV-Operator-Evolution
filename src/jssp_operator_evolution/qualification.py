@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass
 from time import perf_counter
 
@@ -218,6 +219,7 @@ def run_training_diagnostics(
     memory: MechanismMemory,
     *,
     config: JSSPFormalQualificationConfig,
+    progress_callback: Callable[[str], None] | None = None,
 ) -> TrainingDiagnostics:
     adapter = create_jssp_domain_adapter()
     population = initial_operator_population()
@@ -258,6 +260,11 @@ def run_training_diagnostics(
             sum(step.operator_outcome.success for step in result.steps)
             / max(1, result.iterations)
         )
+        if progress_callback is not None:
+            progress_callback(
+                f"training instance {index + 1}/{len(training)} "
+                f"best={result.best_evaluation.scalar_cost:.0f}"
+            )
     traces = recorder.update_delayed_rewards(
         (5, 10, 20),
         run_id="jssp-formal-training",
@@ -345,6 +352,7 @@ def compare_frozen_populations(
     final_population: tuple[CompiledJSSPOperator, ...],
     *,
     config: JSSPFormalQualificationConfig,
+    progress_callback: Callable[[str], None] | None = None,
 ) -> FrozenPopulationComparison:
     adapter = create_jssp_domain_adapter()
     instances = splits.open_test(receipt)[: config.test_instances]
@@ -401,6 +409,12 @@ def compare_frozen_populations(
                 pn_acceptance_rate=pn_result.acceptance_rate,
             )
         )
+        if progress_callback is not None:
+            progress_callback(
+                f"frozen test instance {index + 1}/{len(instances)} "
+                f"p0={outcomes[-1].p0_best_makespan:.0f} "
+                f"pn={outcomes[-1].pn_best_makespan:.0f}"
+            )
     gains = [outcome.relative_gain for outcome in outcomes]
     return FrozenPopulationComparison(
         test_instances=len(outcomes),
@@ -420,6 +434,7 @@ def run_formal_qualification(
     memory: MechanismMemory,
     *,
     config: JSSPFormalQualificationConfig | None = None,
+    progress_callback: Callable[[str], None] | None = None,
 ) -> tuple[JSSPFormalQualificationReport, JSSPEvolutionSmokeOutcome]:
     active = config or JSSPFormalQualificationConfig()
     training = run_training_diagnostics(
@@ -427,6 +442,7 @@ def run_formal_qualification(
         recorder,
         memory,
         config=active,
+        progress_callback=progress_callback,
     )
     evolution = run_offline_evolution_smoke(
         splits,
@@ -441,6 +457,7 @@ def run_formal_qualification(
         parent_slot_order=training.summary.parent_slot_order,
         evidence_refs_by_parent=training.summary.evidence_refs_by_parent,
         persist_validation_evidence=False,
+        progress_callback=progress_callback,
     )
     frozen = compare_frozen_populations(
         splits,
@@ -448,6 +465,7 @@ def run_formal_qualification(
         initial_operator_population(),
         evolution.final_population,
         config=active,
+        progress_callback=progress_callback,
     )
     report = JSSPFormalQualificationReport(
         configuration=active.as_dict(),
