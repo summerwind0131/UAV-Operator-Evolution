@@ -1,9 +1,4 @@
-"""Experimental domain-independent contracts for operator evolution.
-
-The package remains internal to the UAV repository until a second domain has
-validated the interfaces.  Its modules must never import UAV implementation
-types.
-"""
+"""Domain-independent trajectory-informed operator-evolution core."""
 
 from .contracts import (
     DatasetSplit,
@@ -70,6 +65,7 @@ from .evolution import (
     PopulationSeed,
     population_fingerprint,
 )
+from .memory import MechanismMemory, MechanismRecord
 
 __all__ = [
     "DatasetSplit",
@@ -127,4 +123,6 @@ __all__ = [
     "PopulationFreezeReceipt",
     "PopulationSeed",
     "population_fingerprint",
+    "MechanismMemory",
+    "MechanismRecord",
 ]
