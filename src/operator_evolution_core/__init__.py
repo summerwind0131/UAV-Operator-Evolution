@@ -65,7 +65,15 @@ from .evolution import (
     PopulationSeed,
     population_fingerprint,
 )
-from .memory import MechanismMemory, MechanismRecord
+from .memory import (
+    AbstractMechanismContextV1,
+    ExpectedMechanismEffectV1,
+    MechanismMemory,
+    MechanismRecord,
+    MechanismRecordV1,
+    create_mechanism_record_v1,
+    retrieve_top4_mechanisms_v1,
+)
 
 __all__ = [
     "DatasetSplit",
@@ -125,4 +133,9 @@ __all__ = [
     "population_fingerprint",
     "MechanismMemory",
     "MechanismRecord",
+    "MechanismRecordV1",
+    "AbstractMechanismContextV1",
+    "ExpectedMechanismEffectV1",
+    "create_mechanism_record_v1",
+    "retrieve_top4_mechanisms_v1",
 ]

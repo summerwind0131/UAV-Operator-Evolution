@@ -169,6 +169,8 @@
 
 ### 6.1 机制协议与安全边界
 
+状态：已完成协议层。`MechanismRecordV1` 使用内容寻址的 mechanism ID 和 provenance hash，只接受抽象序数上下文、方向性预期效果、四类机制标签、train/validation 证据引用及独立 bank provenance；模型为 frozen/extra-forbid，无法携带 selector、primitive、IR、程序或 test split。固定 top-4 检索严格按上下文相似度、证据强度、mechanism ID 排序，定向回归 `5 passed`。
+
 - core 新增 `MechanismRecordV1`：来源领域、`repair/diversify/intensify/rollback` 标签、触发上下文、预期效果、失败模式、证据引用和 provenance hash。
 - 跨领域只传递机制记录，不传 selector、primitive、IR、程序或领域特征原值；目标领域必须重新设计，并由自己的 compiler/validation gate 判定是否合法。
 
