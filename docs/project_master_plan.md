@@ -182,6 +182,8 @@ bank smoke 已完成：UAV/JSSP 各使用 1 个独立 bank seed、2 train、2 va
 
 正式 bank 已完成：UAV 使用 4 个 bank seeds × (60 train×400 + 40 validation×240)，JSSP 使用 4 个 bank seeds × (60 train×400 + 41 validation×240)，各生成 32 条记录。每个 seed 恰有 8 个 P0 operator profile，全部 evidence split 为 train/validation；test 打开数与远程调用数均为 0。receipt 为 `artifacts/releases/mechanism-transfer-v1.bank-formal.json`，payload SHA-256 `58b02c41…f3b81`。正式 bank 自此冻结，后续三臂只读该 artifact。
 
+双向三臂 lifecycle smoke 已完成：同一 master seed 下，UAV/JSSP 均运行 scratch、same-domain、cross-domain 三臂；每臂 64 calls、1 个 validation instance、1 个候选。same/cross 固定检索 top-4，目标域重新生成并通过自己的 IR/compiler smoke gate；六个 outcome 均未打开 test，远程调用数为 0。receipt 为 `artifacts/releases/mechanism-transfer-v1.arms-smoke.json`，payload SHA-256 `f023f6ba…f0f92b`。
+
 - 每个方向设置三臂：从零设计、同领域迁移、跨领域迁移。
 - 每臂使用 10 个相同 master seeds、相同搜索/候选/Agent 预算；机制检索固定 top-4，依次按上下文相似度、证据强度、mechanism ID 决胜。
 - 机制库只由独立 bank seeds 的 train/validation 运行建立，不含 test 结果。

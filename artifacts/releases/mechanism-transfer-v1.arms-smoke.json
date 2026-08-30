@@ -1,0 +1,453 @@
+{
+  "payload": {
+    "arms": [
+      "scratch",
+      "same-domain",
+      "cross-domain"
+    ],
+    "designer": "deterministic-heuristic",
+    "experiment_id": "mechanism-transfer-v1",
+    "formal_bank_receipt_sha256": "58b02c41b4d2fc99c2c6a73b9661b38d66f79f64bdc1e15a9365763f7cff3b81",
+    "master_seeds": [
+      2026090101
+    ],
+    "mode": "smoke",
+    "outcomes": [
+      {
+        "arm": "scratch",
+        "candidates": [
+          {
+            "candidate_acceptance_rate": 0.375,
+            "candidate_effective_call_rate": 0.875,
+            "candidate_feasibility_rate": 1.0,
+            "candidate_index": 0,
+            "candidate_operator_id": "transfer_diversify_d89cc9898833",
+            "evidence": {
+              "arm": "scratch",
+              "mechanism_ids": [],
+              "query_context": {
+                "constraint_pressure": "medium",
+                "diversity": "medium",
+                "feasibility": "mixed",
+                "phase": "early",
+                "stagnation": "low"
+              },
+              "schema_version": "transfer-evidence-selection-v1",
+              "source_bank_hash": null,
+              "source_domain_id": null,
+              "target_domain_id": "uav-path-planning-2d"
+            },
+            "generation": 0,
+            "mean_gain": 0.0007428166616049752,
+            "parent_feasibility_rate": 1.0,
+            "parent_operator_id": "waypoint_perturb",
+            "retained": false,
+            "retention_reasons": [
+              "no pre-registered effect threshold met"
+            ],
+            "schema_version": "transfer-candidate-lifecycle-v1",
+            "smoke_passed": true,
+            "validation_outcomes": 1
+          }
+        ],
+        "candidates_per_generation": 1,
+        "final_population_ids": [
+          "waypoint_perturb",
+          "segment_shift",
+          "insert_waypoint",
+          "delete_waypoint",
+          "shortcut",
+          "smooth_segment",
+          "obstacle_detour",
+          "partial_reconstruction"
+        ],
+        "generations": 1,
+        "initial_population_ids": [
+          "waypoint_perturb",
+          "segment_shift",
+          "insert_waypoint",
+          "delete_waypoint",
+          "shortcut",
+          "smooth_segment",
+          "obstacle_detour",
+          "partial_reconstruction"
+        ],
+        "master_seed": 2026090101,
+        "remote_provider_calls": 0,
+        "runtime_repetitions": 2,
+        "schema_version": "transfer-arm-lifecycle-v1",
+        "search_calls": 64,
+        "target_domain_id": "uav-path-planning-2d",
+        "test_instances_opened": false,
+        "validation_instances": 1
+      },
+      {
+        "arm": "scratch",
+        "candidates": [
+          {
+            "candidate_acceptance_rate": 0.5,
+            "candidate_effective_call_rate": 1.0,
+            "candidate_feasibility_rate": 1.0,
+            "candidate_index": 0,
+            "candidate_operator_id": "transfer-diversify-b19188631c10",
+            "evidence": {
+              "arm": "scratch",
+              "mechanism_ids": [],
+              "query_context": {
+                "constraint_pressure": "medium",
+                "diversity": "medium",
+                "feasibility": "mixed",
+                "phase": "early",
+                "stagnation": "low"
+              },
+              "schema_version": "transfer-evidence-selection-v1",
+              "source_bank_hash": null,
+              "source_domain_id": null,
+              "target_domain_id": "jssp"
+            },
+            "generation": 0,
+            "mean_gain": 0.054030874785591765,
+            "parent_feasibility_rate": 1.0,
+            "parent_operator_id": "random-adjacent-swap",
+            "retained": true,
+            "retention_reasons": [
+              "global paired gain"
+            ],
+            "schema_version": "transfer-candidate-lifecycle-v1",
+            "smoke_passed": true,
+            "validation_outcomes": 1
+          }
+        ],
+        "candidates_per_generation": 1,
+        "final_population_ids": [
+          "transfer-diversify-b19188631c10",
+          "random-two-point-swap",
+          "bounded-insertion",
+          "bounded-reversal",
+          "critical-block-adjacent-swap",
+          "critical-block-endpoint-swap",
+          "bottleneck-block-insertion",
+          "high-idle-gap-relocation"
+        ],
+        "generations": 1,
+        "initial_population_ids": [
+          "random-adjacent-swap",
+          "random-two-point-swap",
+          "bounded-insertion",
+          "bounded-reversal",
+          "critical-block-adjacent-swap",
+          "critical-block-endpoint-swap",
+          "bottleneck-block-insertion",
+          "high-idle-gap-relocation"
+        ],
+        "master_seed": 2026090101,
+        "remote_provider_calls": 0,
+        "runtime_repetitions": 2,
+        "schema_version": "transfer-arm-lifecycle-v1",
+        "search_calls": 64,
+        "target_domain_id": "jssp",
+        "test_instances_opened": false,
+        "validation_instances": 1
+      },
+      {
+        "arm": "same-domain",
+        "candidates": [
+          {
+            "candidate_acceptance_rate": 0.0,
+            "candidate_effective_call_rate": 0.0,
+            "candidate_feasibility_rate": 1.0,
+            "candidate_index": 0,
+            "candidate_operator_id": "transfer_intensify_69235fb949ed",
+            "evidence": {
+              "arm": "same-domain",
+              "mechanism_ids": [
+                "mechanism-v1-3f571e1b3f76673a",
+                "mechanism-v1-2c545f3ea0ffc0f6",
+                "mechanism-v1-3599c84ea8b7d31b",
+                "mechanism-v1-1bc22d01acee5f50"
+              ],
+              "query_context": {
+                "constraint_pressure": "medium",
+                "diversity": "medium",
+                "feasibility": "mixed",
+                "phase": "early",
+                "stagnation": "low"
+              },
+              "schema_version": "transfer-evidence-selection-v1",
+              "source_bank_hash": "263566de7858015cbaba0ce75cd46705f19349a21fb781874328805178aa4af1",
+              "source_domain_id": "uav-path-planning-2d",
+              "target_domain_id": "uav-path-planning-2d"
+            },
+            "generation": 0,
+            "mean_gain": -9.46633426994313e-05,
+            "parent_feasibility_rate": 1.0,
+            "parent_operator_id": "waypoint_perturb",
+            "retained": false,
+            "retention_reasons": [
+              "no pre-registered effect threshold met"
+            ],
+            "schema_version": "transfer-candidate-lifecycle-v1",
+            "smoke_passed": true,
+            "validation_outcomes": 1
+          }
+        ],
+        "candidates_per_generation": 1,
+        "final_population_ids": [
+          "waypoint_perturb",
+          "segment_shift",
+          "insert_waypoint",
+          "delete_waypoint",
+          "shortcut",
+          "smooth_segment",
+          "obstacle_detour",
+          "partial_reconstruction"
+        ],
+        "generations": 1,
+        "initial_population_ids": [
+          "waypoint_perturb",
+          "segment_shift",
+          "insert_waypoint",
+          "delete_waypoint",
+          "shortcut",
+          "smooth_segment",
+          "obstacle_detour",
+          "partial_reconstruction"
+        ],
+        "master_seed": 2026090101,
+        "remote_provider_calls": 0,
+        "runtime_repetitions": 2,
+        "schema_version": "transfer-arm-lifecycle-v1",
+        "search_calls": 64,
+        "target_domain_id": "uav-path-planning-2d",
+        "test_instances_opened": false,
+        "validation_instances": 1
+      },
+      {
+        "arm": "same-domain",
+        "candidates": [
+          {
+            "candidate_acceptance_rate": 0.625,
+            "candidate_effective_call_rate": 1.0,
+            "candidate_feasibility_rate": 1.0,
+            "candidate_index": 0,
+            "candidate_operator_id": "transfer-intensify-a4407498260a",
+            "evidence": {
+              "arm": "same-domain",
+              "mechanism_ids": [
+                "mechanism-v1-8e69472396ebbb4c",
+                "mechanism-v1-89f50acbc51ada8e",
+                "mechanism-v1-dcbbe5973ba5dad1",
+                "mechanism-v1-ff2615c900b9fdeb"
+              ],
+              "query_context": {
+                "constraint_pressure": "medium",
+                "diversity": "medium",
+                "feasibility": "mixed",
+                "phase": "early",
+                "stagnation": "low"
+              },
+              "schema_version": "transfer-evidence-selection-v1",
+              "source_bank_hash": "3315df6485d475861ef9f0d047b3d956a1d2db0006a5cfe54bec61c1244a30a1",
+              "source_domain_id": "jssp",
+              "target_domain_id": "jssp"
+            },
+            "generation": 0,
+            "mean_gain": 0.05574614065180103,
+            "parent_feasibility_rate": 1.0,
+            "parent_operator_id": "random-adjacent-swap",
+            "retained": true,
+            "retention_reasons": [
+              "global paired gain"
+            ],
+            "schema_version": "transfer-candidate-lifecycle-v1",
+            "smoke_passed": true,
+            "validation_outcomes": 1
+          }
+        ],
+        "candidates_per_generation": 1,
+        "final_population_ids": [
+          "transfer-intensify-a4407498260a",
+          "random-two-point-swap",
+          "bounded-insertion",
+          "bounded-reversal",
+          "critical-block-adjacent-swap",
+          "critical-block-endpoint-swap",
+          "bottleneck-block-insertion",
+          "high-idle-gap-relocation"
+        ],
+        "generations": 1,
+        "initial_population_ids": [
+          "random-adjacent-swap",
+          "random-two-point-swap",
+          "bounded-insertion",
+          "bounded-reversal",
+          "critical-block-adjacent-swap",
+          "critical-block-endpoint-swap",
+          "bottleneck-block-insertion",
+          "high-idle-gap-relocation"
+        ],
+        "master_seed": 2026090101,
+        "remote_provider_calls": 0,
+        "runtime_repetitions": 2,
+        "schema_version": "transfer-arm-lifecycle-v1",
+        "search_calls": 64,
+        "target_domain_id": "jssp",
+        "test_instances_opened": false,
+        "validation_instances": 1
+      },
+      {
+        "arm": "cross-domain",
+        "candidates": [
+          {
+            "candidate_acceptance_rate": 0.0,
+            "candidate_effective_call_rate": 0.0,
+            "candidate_feasibility_rate": 1.0,
+            "candidate_index": 0,
+            "candidate_operator_id": "transfer_intensify_d12d651d28ef",
+            "evidence": {
+              "arm": "cross-domain",
+              "mechanism_ids": [
+                "mechanism-v1-8e69472396ebbb4c",
+                "mechanism-v1-89f50acbc51ada8e",
+                "mechanism-v1-dcbbe5973ba5dad1",
+                "mechanism-v1-ff2615c900b9fdeb"
+              ],
+              "query_context": {
+                "constraint_pressure": "medium",
+                "diversity": "medium",
+                "feasibility": "mixed",
+                "phase": "early",
+                "stagnation": "low"
+              },
+              "schema_version": "transfer-evidence-selection-v1",
+              "source_bank_hash": "3315df6485d475861ef9f0d047b3d956a1d2db0006a5cfe54bec61c1244a30a1",
+              "source_domain_id": "jssp",
+              "target_domain_id": "uav-path-planning-2d"
+            },
+            "generation": 0,
+            "mean_gain": -9.46633426994313e-05,
+            "parent_feasibility_rate": 1.0,
+            "parent_operator_id": "waypoint_perturb",
+            "retained": false,
+            "retention_reasons": [
+              "no pre-registered effect threshold met"
+            ],
+            "schema_version": "transfer-candidate-lifecycle-v1",
+            "smoke_passed": true,
+            "validation_outcomes": 1
+          }
+        ],
+        "candidates_per_generation": 1,
+        "final_population_ids": [
+          "waypoint_perturb",
+          "segment_shift",
+          "insert_waypoint",
+          "delete_waypoint",
+          "shortcut",
+          "smooth_segment",
+          "obstacle_detour",
+          "partial_reconstruction"
+        ],
+        "generations": 1,
+        "initial_population_ids": [
+          "waypoint_perturb",
+          "segment_shift",
+          "insert_waypoint",
+          "delete_waypoint",
+          "shortcut",
+          "smooth_segment",
+          "obstacle_detour",
+          "partial_reconstruction"
+        ],
+        "master_seed": 2026090101,
+        "remote_provider_calls": 0,
+        "runtime_repetitions": 2,
+        "schema_version": "transfer-arm-lifecycle-v1",
+        "search_calls": 64,
+        "target_domain_id": "uav-path-planning-2d",
+        "test_instances_opened": false,
+        "validation_instances": 1
+      },
+      {
+        "arm": "cross-domain",
+        "candidates": [
+          {
+            "candidate_acceptance_rate": 0.625,
+            "candidate_effective_call_rate": 1.0,
+            "candidate_feasibility_rate": 1.0,
+            "candidate_index": 0,
+            "candidate_operator_id": "transfer-intensify-f6d2b267be89",
+            "evidence": {
+              "arm": "cross-domain",
+              "mechanism_ids": [
+                "mechanism-v1-3f571e1b3f76673a",
+                "mechanism-v1-2c545f3ea0ffc0f6",
+                "mechanism-v1-3599c84ea8b7d31b",
+                "mechanism-v1-1bc22d01acee5f50"
+              ],
+              "query_context": {
+                "constraint_pressure": "medium",
+                "diversity": "medium",
+                "feasibility": "mixed",
+                "phase": "early",
+                "stagnation": "low"
+              },
+              "schema_version": "transfer-evidence-selection-v1",
+              "source_bank_hash": "263566de7858015cbaba0ce75cd46705f19349a21fb781874328805178aa4af1",
+              "source_domain_id": "uav-path-planning-2d",
+              "target_domain_id": "jssp"
+            },
+            "generation": 0,
+            "mean_gain": 0.05574614065180103,
+            "parent_feasibility_rate": 1.0,
+            "parent_operator_id": "random-adjacent-swap",
+            "retained": true,
+            "retention_reasons": [
+              "global paired gain"
+            ],
+            "schema_version": "transfer-candidate-lifecycle-v1",
+            "smoke_passed": true,
+            "validation_outcomes": 1
+          }
+        ],
+        "candidates_per_generation": 1,
+        "final_population_ids": [
+          "transfer-intensify-f6d2b267be89",
+          "random-two-point-swap",
+          "bounded-insertion",
+          "bounded-reversal",
+          "critical-block-adjacent-swap",
+          "critical-block-endpoint-swap",
+          "bottleneck-block-insertion",
+          "high-idle-gap-relocation"
+        ],
+        "generations": 1,
+        "initial_population_ids": [
+          "random-adjacent-swap",
+          "random-two-point-swap",
+          "bounded-insertion",
+          "bounded-reversal",
+          "critical-block-adjacent-swap",
+          "critical-block-endpoint-swap",
+          "bottleneck-block-insertion",
+          "high-idle-gap-relocation"
+        ],
+        "master_seed": 2026090101,
+        "remote_provider_calls": 0,
+        "runtime_repetitions": 2,
+        "schema_version": "transfer-arm-lifecycle-v1",
+        "search_calls": 64,
+        "target_domain_id": "jssp",
+        "test_instances_opened": false,
+        "validation_instances": 1
+      }
+    ],
+    "preregistration_hash": "82de23ee4bca1c7767a49c2f6ca00c939d8dd995482e47e72e920ce28af34081",
+    "remote_provider_calls": 0,
+    "retrieval_limit": 4,
+    "schema_version": "mechanism-transfer-arm-receipt-v1",
+    "source_commit": "12fd8489c66ac414f23ceff86d708dc714c1b1a4",
+    "test_instances_opened": false
+  },
+  "payload_sha256": "f023f6bad255dd175525f8ec62ab1919f7d3c512bac87fabf7e5deab4ff0f92b"
+}
